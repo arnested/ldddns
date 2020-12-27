@@ -74,14 +74,14 @@ func extractServices(_ context.Context, container types.ContainerJSON) map[strin
 
 		proto := netdb.GetProtoByName(port[1])
 
-		portNumber, err := strconv.Atoi(port[0])
+		portNumber, err := strconv.ParseUint(port[0], 10, 16)
 		if err != nil {
 			log.Printf("Could not get port number from %q", k)
 
 			continue
 		}
 
-		service := netdb.GetServByPort(portNumber, proto)
+		service := netdb.GetServByPort(int(portNumber), proto)
 
 		if service == nil || proto == nil {
 			continue
