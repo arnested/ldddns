@@ -1,0 +1,10 @@
+---
+whitelist:
+  - MIT
+  - Apache-2.0
+  - BSD-2-Clause
+  - BSD-3-Clause
+  - CC-BY-SA-4.0
+
+exceptions:
+  - github.com/gogo/protobuf/proto
