@@ -16,7 +16,7 @@ this. I.e. `my.fancy.site` will be rewritten to `my-fancy.local`.
 If the containers also have exposed ports (and the ports can be looked
 up in `/etc/services`) the service will also broadcast the
 service/domain for service discovery (i.e. `_https._tcp.` for
-https://my-fance.local).
+https://my-fancy.local).
 
 ## Install
 
