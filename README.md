@@ -1,4 +1,4 @@
-# Local Development with Docker DNS
+# Local Docker Development DNS
 
 A systemd service that will monitor your Docker host and provide
 DNS names for containers with a `VIRTUAL_HOST` environment variable.
