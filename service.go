@@ -12,7 +12,7 @@ import (
 
 func installService() {
 	serviceUnit := `[Unit]
-Description=Docker Name Service
+Description=Local Docker Development DNS
 BindTo=docker.service
 After=docker.service
 
