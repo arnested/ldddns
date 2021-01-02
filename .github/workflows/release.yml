@@ -1,4 +1,4 @@
-name: Bump version
+name: Release
 on:
   push:
     branches:
@@ -17,6 +17,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         DEFAULT_BUMP: patch
+        RELEASE_BRANCHES: main
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
