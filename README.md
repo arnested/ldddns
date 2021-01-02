@@ -22,9 +22,13 @@ https://my-fancy.local).
 
 Download the binary and installed it as e.g. `/usr/local/bin/ldddns`.
 
-Create a systemd service unit:
 ```console
-/usr/local/bin/ldddns | sudo dd of=/etc/systemd/system/ldddns.service
+sudo sh -c "curl --fail -sSL -o /usr/local/bin/ldddns https://github.com/arnested/ldddns/releases/latest/download/ldddns_$(uname -s)_$(uname -m) && chmod +x /usr/local/bin/ldddns"
+```
+
+Create a systemd service unit file:
+```console
+sudo sh -c "/usr/local/bin/ldddns > /etc/systemd/system/ldddns.service"
 ```
 
 Enable and start the service unit:
