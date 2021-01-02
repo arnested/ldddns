@@ -17,13 +17,14 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         DEFAULT_BUMP: patch
-    - name: Create release
-      if: ${{ steps.version.outputs.new_tag }} != ""
-      uses: actions/create-release@v1
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+    - name: Run GoReleaser
+      uses: goreleaser/goreleaser-action@v2
+      with:
+        version: ${{ steps.version.outputs.tag }}
+        args: release --rm-dist
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ steps.version.outputs.new_tag }}
-        release_name: Release ${{ steps.version.outputs.new_tag }}
-        draft: false
-        prerelease: false
