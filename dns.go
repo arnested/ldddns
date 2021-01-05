@@ -7,7 +7,7 @@ import (
 	"github.com/holoplot/go-avahi"
 )
 
-func addToDNS(eg *avahi.EntryGroup, hostname string, ips []string, services map[string]uint16) {
+func addToDNS(eg *avahi.EntryGroup, hostname string, ips []string, services map[string]uint16, name string) {
 	if hostname == "" {
 		return
 	}
@@ -29,7 +29,7 @@ func addToDNS(eg *avahi.EntryGroup, hostname string, ips []string, services map[
 				int32(net.FlagLoopback),
 				avahi.ProtoInet,
 				0,
-				hostname,
+				name,
 				service,
 				"local",
 				hostname,

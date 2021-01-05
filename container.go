@@ -47,7 +47,7 @@ func handleContainer(
 
 	hostname = rewriteHostname(ctx, hostname)
 
-	addToDNS(eg, hostname, ips, services)
+	addToDNS(eg, hostname, ips, services, container.Name[1:])
 }
 
 // extractIPnumbers from a container.
