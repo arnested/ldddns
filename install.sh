@@ -16,7 +16,7 @@ ldddns_install() {
     trap cleanup EXIT
 
     echo Downloading ldddns binary
-    curl --proto =https --fail -sSL -o "${tmpdir}/ldddns" "https://github.com/arnested/ldddns/releases/latest/download/ldddns_$(uname -s)_$(uname -m)"
+    curl --proto =https --fail --location --progress-bar --output "${tmpdir}/ldddns" "https://github.com/arnested/ldddns/releases/latest/download/ldddns_$(uname -s)_$(uname -m)"
 
     chmod +x "${tmpdir}/ldddns"
 
