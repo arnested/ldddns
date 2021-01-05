@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net"
 
 	"github.com/holoplot/go-avahi"
 )
@@ -16,7 +17,7 @@ func addToDNS(eg *avahi.EntryGroup, hostname string, ips []string, services map[
 			continue
 		}
 
-		err := eg.AddAddress(avahi.InterfaceUnspec, avahi.ProtoUnspec, 0, hostname, ip)
+		err := eg.AddAddress(int32(net.FlagLoopback), avahi.ProtoInet, 0, hostname, ip)
 		if err != nil {
 			panic(fmt.Errorf("AddAddess() failed: %w", err))
 		}
@@ -25,8 +26,8 @@ func addToDNS(eg *avahi.EntryGroup, hostname string, ips []string, services map[
 
 		for service, portNumber := range services {
 			err = eg.AddService(
-				avahi.InterfaceUnspec,
-				avahi.ProtoUnspec,
+				int32(net.FlagLoopback),
+				avahi.ProtoInet,
 				0,
 				hostname,
 				service,
