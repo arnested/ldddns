@@ -15,14 +15,14 @@ ldddns_install() {
     }
     trap cleanup EXIT
 
-    echo -n Finding latest package name...
-    package=$(curl --proto =https --fail -sSL "https://github.com/arnested/ldddns/releases/latest/download/checksums.txt" | grep -i $(uname -s) | grep $(dpkg --print-architecture) | grep \.deb | awk '{print $2}')
-    echo " $package"
+    echo -n "Finding latest package name..."
+    package=$(curl --proto =https --fail -sSL "https://github.com/arnested/ldddns/releases/latest/download/checksums.txt" | grep -i "$(uname -s)" | grep "$(dpkg --print-architecture)" | grep \.deb | awk '{print $2}')
+    echo " ${package}"
 
-    echo Downloading $package...
+    echo "Downloading ${package}..."
     curl --proto =https --fail --location --progress-bar --output "${tmpdir}/${package}" "https://github.com/arnested/ldddns/releases/latest/download/${package}"
 
-    echo Installing $package...
+    echo "Installing ${package}..."
     pkexec dpkg -i "${tmpdir}/${package}"
 }
 
