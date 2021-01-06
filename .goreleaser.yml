@@ -47,7 +47,6 @@ nfpms:
     contents:
       - src: ldddns.service
         dst: /lib/systemd/system/ldddns.service
-        type: config
 
       - src: ldddns.env
         dst: /etc/default/ldddns
