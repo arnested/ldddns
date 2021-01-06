@@ -42,8 +42,10 @@ ldddns_install() {
         systemctl restart ldddns.service
     fi
 
-    echo Enabling systemd service
-    systemctl enable --now ldddns.service;
+    if ! systemctl is-enabled --quiet ldddns.service; then
+        echo Enabling systemd service
+        systemctl enable --now ldddns.service;
+    fi
 }
 
 pkexec bash -c "$(declare -f ldddns_install) ; ldddns_install"
