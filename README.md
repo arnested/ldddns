@@ -25,3 +25,10 @@ Download the `.deb` file and run:
 ```console
 sudo dpkg -i ldddns_0.0.16_linux_amd64.deb
 ```
+
+Or just run the following command which will download and install the
+latest package for you:
+
+```console
+curl -fsSL https://raw.githubusercontent.com/arnested/ldddns/main/install.sh | bash
+```
