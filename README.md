@@ -20,6 +20,8 @@ https://my-fancy.local).
 
 ## Install
 
+Download the `.deb` file and run:
+
 ```console
-curl -fsSL https://raw.githubusercontent.com/arnested/ldddns/main/install.sh | bash
+sudo dpkg -i ldddns_0.0.16_linux_amd64.deb
 ```
