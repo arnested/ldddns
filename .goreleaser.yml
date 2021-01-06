@@ -31,3 +31,28 @@ release:
   # If set to true, will mark the release as not ready for production.
   # Default is false.
   prerelease: auto
+
+nfpms:
+  -
+    vendor: Arne Jørgensen
+    maintainer: Arne Jørgensen <arne@arnested.dk>
+    description: Local Docker Development DNS
+    license: MIT
+    formats:
+      - deb
+    dependencies:
+      - docker.io
+      - libsystemd0
+    bindir: /usr/libexec
+    contents:
+      - src: ldddns.service
+        dst: /lib/systemd/system/ldddns.service
+        type: config
+
+      - src: ldddns.env
+        dst: /etc/default/ldddns
+        type: config
+    scripts:
+      postinstall: "scripts/postinstall.sh"
+      preremove: "scripts/preremove.sh"
+      postremove: "scripts/postremove.sh"

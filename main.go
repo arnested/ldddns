@@ -17,12 +17,13 @@ import (
 	"github.com/holoplot/go-avahi"
 )
 
-func main() {
-	if len(os.Args) < 2 || os.Args[1] != "service" {
-		installService()
-		os.Exit(0)
-	}
+// Version string to be set at compile time via command line (-ldflags "-X main.version=1.2.3").
+var (
+	version string
+)
 
+func main() {
+	logf(PriNotice, "Starting ldddns %s...", version)
 	// Setup stuff.
 	docker, err := client.NewClientWithOpts(client.FromEnv)
 	if err != nil {
