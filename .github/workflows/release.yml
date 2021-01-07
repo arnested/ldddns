@@ -55,6 +55,10 @@ jobs:
         output_files: '["deb/index.html"]'
         builtin_stylesheet: base.css
         extensions: '["extra"]'
+    - name: Fix link / package name in GitHub Pages
+      run: |
+        DEB=$(grep linux_amd64.deb dist/checksums.txt | awk '{print $2}')
+        sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" deb/index.html
     - name: Add install script to GitHub Pages
       run: cp -v install.sh deb/install.sh
     - name: Deploy deb packages
