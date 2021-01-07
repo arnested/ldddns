@@ -46,8 +46,8 @@ jobs:
     - name: apt-ftparchive release
       run: |
         apt-ftparchive release . > Release
-        gpg -abs -o - Release > Release.gpg
-        gpg --clearsign -o - Release > InRelease
+        gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
+        gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
       working-directory: deb
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@3.7.1
