@@ -1,0 +1,23 @@
+body {
+  font-family : system-ui, -apple-system;
+  width : 60em;
+  margin : 10ex auto
+}
+
+code {
+  background-color : whitesmoke;
+  color : DarkSlateGrey;
+  padding : 0.5ex 0.5em;
+  border-radius : 0.75em
+}
+
+code.language-console {
+  padding : 2ex 2em;
+  margin : 2ex 0;
+  display : block
+}
+
+code.language-console:before {
+  content : "$ ";
+  color : black
+}

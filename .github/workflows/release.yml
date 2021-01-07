@@ -53,6 +53,7 @@ jobs:
       with:
         input_files: '[["README.md"]]'
         output_files: '["deb/index.html"]'
+        builtin_stylesheet: base.css
         extensions: '["extra"]'
     - name: Add install script to GitHub Pages
       run: cp -v install.sh deb/install.sh
