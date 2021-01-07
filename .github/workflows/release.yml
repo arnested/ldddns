@@ -38,7 +38,7 @@ jobs:
       run: |
         mkdir -p deb
         cp -v dist/*.deb deb/
-    - name: dpkg-scanpackages
+    - name: Scan packages
       run: |
         dpkg-scanpackages --multiversion . > Packages
         gzip -k -f Packages
