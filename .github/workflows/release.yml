@@ -29,18 +29,22 @@ jobs:
         args: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: |
+    - name: Import GPG signing key
+      run: |
         mkdir -p ~/.gnupg/
         printf "${{ secrets.GPG_SIGNING_KEY }}" | base64 --decode > ~/.gnupg/private.key
         gpg --import --no-tty --batch --yes ~/.gnupg/private.key
-    - run: |
+    - name: Copy deb packages into build area
+      run: |
         mkdir -p deb
-        cp dist/*.deb deb/
-    - run: |
+        cp -v dist/*.deb deb/
+    - name: dpkg-scanpackages
+      run: |
         dpkg-scanpackages --multiversion . > Packages
         gzip -k -f Packages
-        working-directory: deb
-    - run: |
+      working-directory: deb
+    - name: apt-ftparchive release
+      run: |
         apt-ftparchive release . > Release
         gpg -abs -o - Release > Release.gpg
         gpg --clearsign -o - Release > InRelease
