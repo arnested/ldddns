@@ -53,6 +53,7 @@ jobs:
       with:
         input_files: '[["README.md"]]'
         output_files: '["deb/index.html"]'
+        extensions: '["extra"]'
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
