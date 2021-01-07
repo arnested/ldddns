@@ -32,8 +32,8 @@ jobs:
     - name: Import GPG signing key
       run: |
         mkdir -p -m 0700 ~/.gnupg/
-        printf "${{ secrets.GPG_SIGNING_KEY }}" | base64 --decode > ~/.gnupg/private.key
-        gpg --import --no-tty --batch --yes ~/.gnupg/private.key
+        printf "${{ secrets.GPG_SIGNING_KEY }}" > ~/.gnupg/private-key.asc
+        gpg --import --no-tty --batch --yes ~/.gnupg/private-key.asc
     - name: Copy deb packages into build area
       run: |
         mkdir -p deb
