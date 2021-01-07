@@ -54,6 +54,8 @@ jobs:
         input_files: '[["README.md"]]'
         output_files: '["deb/index.html"]'
         extensions: '["extra"]'
+    - name: Add install script to GitHub Pages
+      run: cp -v install.sh deb/install.sh
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:

@@ -30,5 +30,5 @@ Or just run the following command which will download and install the
 latest package for you:
 
 ```console
-curl -fsSL https://raw.githubusercontent.com/arnested/ldddns/main/install.sh | bash
+curl -fsSL https://ldddns.arnested.dk/install.sh | bash
 ```
