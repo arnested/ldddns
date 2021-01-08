@@ -1,7 +1,7 @@
 body {
   font-family: system-ui, -apple-system;
   padding: 0 2em;
-  width: 60em;
+  max-width: 60em;
   margin: 10ex auto;
 }
 
@@ -15,7 +15,7 @@ code {
 code.language-console {
   padding: 2ex 1em;
   margin: 2ex 0;
-  font-size: xx-large;
+  font-size: 25px;
   font-weight: bold;
   display: block;
 }
