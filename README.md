@@ -53,7 +53,7 @@ updates.
 You can get the status of the service by running:
 
 ```console
-$ sudo systemctl status ldddns.service
+sudo systemctl status ldddns.service
 ● ldddns.service - Local Docker Development DNS
      Loaded: loaded (/lib/systemd/system/ldddns.service; enabled; vendor preset: enabled)
      Active: active (running) since Fri 2021-01-08 09:29:46 CET; 44min ago
@@ -72,7 +72,7 @@ jan 08 10:13:52 pop-os ldddns[87715]: added address for "my-fancy.local" pointin
 Or follow the log with:
 
 ```console
-$ sudo journalctl --follow --unit ldddns.service
+sudo journalctl --follow --unit ldddns.service
 ```
 
 ## Bugs, thoughts, and comments
