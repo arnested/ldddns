@@ -1,23 +1,26 @@
 body {
-  font-family : system-ui, -apple-system;
-  width : 60em;
-  margin : 10ex auto
+  font-family: system-ui, -apple-system;
+  padding: 0 2em;
+  width: 60em;
+  margin: 10ex auto;
 }
 
 code {
-  background-color : whitesmoke;
-  color : DarkSlateGrey;
-  padding : 0.5ex 0.5em;
-  border-radius : 0.75em
+  background-color: whitesmoke;
+  color: darkslategrey;
+  padding: 0.5ex 0.5em;
+  border-radius: 0.75em;
 }
 
 code.language-console {
-  padding : 2ex 2em;
-  margin : 2ex 0;
-  display : block
+  padding: 2ex 1em;
+  margin: 2ex 0;
+  font-size: xx-large;
+  font-weight: bold;
+  display: block;
 }
 
-code.language-console:before {
-  content : "$ ";
-  color : black
+code.language-console::before {
+  content: "$ ";
+  color: black;
 }
