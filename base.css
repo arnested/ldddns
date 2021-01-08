@@ -16,11 +16,11 @@ code.language-console {
   padding: 2ex 1em;
   margin: 2ex 0;
   font-size: 25px;
-  font-weight: bold;
   display: block;
 }
 
 code.language-console::before {
   content: "$ ";
   color: black;
+  font-weight: bold;
 }
