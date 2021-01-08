@@ -16,6 +16,7 @@ code.language-console {
   padding: 2ex 1em;
   margin: 2ex 0;
   display: block;
+  overflow-x: auto;
 }
 
 @media only screen and (max-width: 980px) {
