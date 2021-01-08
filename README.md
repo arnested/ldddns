@@ -1,7 +1,10 @@
 # Local Docker Development DNS
 
 A systemd service that will monitor your Docker host and provide
-DNS names for containers with a `VIRTUAL_HOST` environment variable.
+DNS names for containers based of the container name.
+
+If a `VIRTUAL_HOST` environment variable is present the DNS we will
+base the DNS of that instead.
 
 The service broadcasts the domain names using multicast DNS
 (a.k.a. mDNS, zeroconf, bounjour, avahi).

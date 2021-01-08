@@ -39,15 +39,15 @@ func handleContainer(
 	}
 
 	hostname := extractHostname(ctx, container)
-	if hostname == "" {
-		return
-	}
-
 	services := extractServices(ctx, container)
 
-	hostname = rewriteHostname(ctx, hostname)
-
-	addToDNS(eg, hostname, ips, services, container.Name[1:])
+	if hostname != "" {
+		hostname = rewriteHostname(hostname)
+		addToDNS(eg, hostname, ips, services, container.Name[1:])
+	} else {
+		containerHostname := rewriteHostname(container.Name[1:] + ".local")
+		addToDNS(eg, containerHostname, ips, services, container.Name[1:])
+	}
 }
 
 // extractIPnumbers from a container.
