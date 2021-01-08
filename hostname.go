@@ -1,17 +1,18 @@
 package main
 
 import (
-	"context"
 	"strings"
 
 	"golang.org/x/net/publicsuffix"
 )
 
 // rewriteHostname will make `hostname` suitable for dns-sd.
-func rewriteHostname(_ context.Context, hostname string) string {
+func rewriteHostname(hostname string) string {
 	suffix, _ := publicsuffix.PublicSuffix(hostname)
 	basename := hostname[:len(hostname)-len(suffix)-1]
-	sanitizedHostname := strings.ReplaceAll(basename, ".", "-") + ".local"
+	basename = strings.ReplaceAll(basename, ".", "-")
+	basename = strings.ReplaceAll(basename, "_", "-")
+	sanitizedHostname := basename + ".local"
 
 	if hostname != sanitizedHostname {
 		logf(PriInfo, "Rewrote hostname from %q to %q\n", hostname, sanitizedHostname)
