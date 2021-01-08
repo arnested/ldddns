@@ -15,8 +15,13 @@ code {
 code.language-console {
   padding: 2ex 1em;
   margin: 2ex 0;
-  font-size: 25px;
   display: block;
+}
+
+@media only screen and (max-width: 980px) {
+  code.language-console {
+    font-size: 25px;
+  }
 }
 
 code.language-console::before {
