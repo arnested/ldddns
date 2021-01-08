@@ -3,11 +3,12 @@
 A systemd service that will monitor your Docker host and provide
 DNS names for containers with a `VIRTUAL_HOST` environment variable.
 
-The service broadcasts the domain names using multicast DNS.
+The service broadcasts the domain names using multicast DNS
+(a.k.a. mDNS, zeroconf, bounjour, avahi).
 
 A limitation of this is that domains name can only be on the `.local`
 TLD and only have one level below the TLD. A benefit is that you don't
-have change your DNS server or configure stuff i `/etc/resolv` or
+have to change your DNS server or configure stuff in `/etc/resolv` or
 similar.
 
 The service will rewrite hostnames in `VIRTUAL_HOST` to match
