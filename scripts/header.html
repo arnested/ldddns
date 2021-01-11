@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Local Docker Development DNS</title>
+<meta name="describtiob" content="A systemd service that will monitor your Docker host and provide DNS names for containers based of the container name.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body {
   font-family: system-ui, -apple-system;
+  font-size: 16px;
   padding: 0 2em;
   max-width: 60em;
   margin: 10ex auto;
@@ -23,12 +26,6 @@ code.language-console {
   margin: 2ex 0;
   display: block;
   overflow-x: auto;
-}
-
-@media only screen and (max-width: 980px) {
-  code.language-console {
-    font-size: 25px;
-  }
 }
 
 code.language-console::before {
