@@ -52,13 +52,13 @@ jobs:
     - uses: ZacJW/markdown-html-action@1.1.1
       with:
         input_files: '[["README.md"]]'
-        output_files: '["/tmp/README.html"]'
+        output_files: '["README.html"]'
     - name: Fix link / package name in GitHub Pages
       run: |
         DEB=$(grep linux_amd64.deb dist/checksums.txt | awk '{print $2}')
-        sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" /tmp/README.html
-        sed -i 's/<!DOCTYPE html>//' /tmp/README.html
-        cat scripts/header.html /tmp/README.html scripts/footer.html > deb/index.html
+        sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" README.html
+        sed -i 's/<!DOCTYPE html>//' README.html
+        cat scripts/header.html README.html scripts/footer.html > deb/index.html
     - name: Add install script to GitHub Pages
       run: cp -v install.sh deb/install.sh
     - name: Deploy deb packages
