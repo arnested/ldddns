@@ -49,7 +49,7 @@ jobs:
         gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
         gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
       working-directory: deb
-    - uses: ZacJW/markdown-html-action@1.1.0
+    - uses: ZacJW/markdown-html-action@1.1.1
       with:
         input_files: '[["README.md"]]'
         output_files: '["deb/index.html"]'
