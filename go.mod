@@ -1,4 +1,4 @@
-module ldddns.arnested.dk
+module arnested.dk/go/ldddns
 
 go 1.15
 
