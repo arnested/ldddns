@@ -51,6 +51,13 @@ nfpms:
       - src: ldddns.env
         dst: /etc/default/ldddns
         type: config
+
+      - src: scripts/ldddns.list
+        dst: /etc/apt/sources.list.d/ldddns.list
+
+      - src: scripts/ldddns.asc
+        dst: /etc/apt/trusted.gpg.d/ldddns.asc
+
     scripts:
       postinstall: "scripts/postinstall.sh"
       preremove: "scripts/preremove.sh"
