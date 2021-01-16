@@ -1,11 +1,11 @@
 [Unit]
 Description=Local Docker Development DNS
+Documentation=https://ldddns.arnested.dk
 BindTo=docker.service
 After=docker.service
 
 [Service]
 Type=notify
-EnvironmentFile=-/etc/default/ldddns
 ExecStart=/usr/libexec/ldddns
 SuccessExitStatus=15
 Restart=on-failure
