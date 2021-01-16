@@ -4,7 +4,13 @@ set -e
 
 docker_version=$(/usr/bin/docker version --format '{{ .Server.APIVersion }}')
 
-/usr/bin/sed -i "s/\(DOCKER_API_VERSION=\).*/\1${docker_version}/" /etc/default/ldddns
+mkdir --parents /usr/lib/systemd/system/ldddns.service.d
+printf "[Service]\nEnvironment=DOCKER_API_VERSION=%s\n" "${docker_version}" > /usr/lib/systemd/system/ldddns.service.d/docker-version.conf
+
+# Remove config file from previous versions.
+if [ -f /etc/default/ldddns ]; then
+    rm /etc/default/ldddns
+fi
 
 /bin/systemctl daemon-reload
 

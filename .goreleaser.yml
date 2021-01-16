@@ -48,10 +48,6 @@ nfpms:
       - src: ldddns.service
         dst: /lib/systemd/system/ldddns.service
 
-      - src: ldddns.env
-        dst: /etc/default/ldddns
-        type: config
-
       - src: scripts/ldddns.list
         dst: /etc/apt/sources.list.d/ldddns.list
 

@@ -5,7 +5,6 @@ After=docker.service
 
 [Service]
 Type=notify
-EnvironmentFile=-/etc/default/ldddns
 ExecStart=/usr/libexec/ldddns
 SuccessExitStatus=15
 Restart=on-failure
