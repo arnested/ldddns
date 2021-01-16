@@ -48,13 +48,13 @@ nfpms:
       - src: ldddns.service
         dst: /lib/systemd/system/ldddns.service
 
-      - src: scripts/ldddns.list
+      - src: deb/ldddns.list
         dst: /etc/apt/sources.list.d/ldddns.list
 
-      - src: scripts/ldddns.asc
+      - src: deb/ldddns.asc
         dst: /etc/apt/trusted.gpg.d/ldddns.asc
 
     scripts:
-      postinstall: "scripts/postinstall.sh"
-      preremove: "scripts/preremove.sh"
-      postremove: "scripts/postremove.sh"
+      postinstall: "deb/postinstall.sh"
+      preremove: "deb/preremove.sh"
+      postremove: "deb/postremove.sh"
