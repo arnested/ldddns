@@ -36,19 +36,19 @@ jobs:
         gpg --import --no-tty --batch --yes ~/.gnupg/private-key.asc
     - name: Copy deb packages into build area
       run: |
-        mkdir -p deb
-        cp -v dist/*.deb deb/
+        mkdir -p site
+        cp -v dist/*.deb site/
     - name: Scan packages
       run: |
         dpkg-scanpackages --multiversion . > Packages
         gzip -k -f Packages
-      working-directory: deb
+      working-directory: site
     - name: apt-ftparchive release
       run: |
         apt-ftparchive release . > Release
         gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
         gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
-      working-directory: deb
+      working-directory: site
     - uses: ZacJW/markdown-html-action@1.1.1
       with:
         input_files: '[["README.md"]]'
@@ -58,13 +58,13 @@ jobs:
         DEB=$(grep linux_amd64.deb dist/checksums.txt | awk '{print $2}')
         sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" README.html
         sed -i 's/<!DOCTYPE html>//' README.html
-        cat scripts/header.html README.html scripts/footer.html > deb/index.html
+        cat page/header.html README.html page/footer.html > site/index.html
     - name: Add install script to GitHub Pages
-      run: cp -v install.sh deb/install.sh
+      run: cp -v install.sh site/install.sh
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: deb
+        FOLDER: site
         CLEAN: true
