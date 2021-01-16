@@ -1,5 +1,6 @@
 [Unit]
 Description=Local Docker Development DNS
+Documentation=https://ldddns.arnested.dk
 BindTo=docker.service
 After=docker.service
 
