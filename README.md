@@ -3,8 +3,8 @@
 A systemd service that will monitor your Docker host and provide
 DNS names for containers based of the container name.
 
-If a `VIRTUAL_HOST` environment variable is present the DNS we will
-base the DNS of that instead.
+If a `VIRTUAL_HOST` environment variable is present a hostname based
+on that will also be set.
 
 The service broadcasts the domain names using multicast DNS
 (a.k.a. mDNS, zeroconf, bounjour, avahi).
@@ -14,13 +14,15 @@ TLD and only have one level below the TLD. A benefit is that you don't
 have to change your DNS server or configure stuff in `/etc/resolv` or
 similar.
 
-The service will rewrite hostnames in `VIRTUAL_HOST` to match
-this. I.e. `my.fancy.site` will be rewritten to `my-fancy.local`.
+The service will rewrite hostnames to match this. I.e. `my.fancy.site`
+will be rewritten to `my-fancy.local`.
 
 If the containers also have exposed ports (and the ports can be looked
 up in `/etc/services`) the service will also broadcast the
 service/domain for service discovery (i.e. `_https._tcp.` for
-https://my-fancy.local).
+https://my-fancy.local). It will broadcast the domain based on
+`VIRTUAL_HOST` if set and otherwise the one based on the container
+name.
 
 ## Install
 
@@ -30,7 +32,7 @@ release](https://github.com/arnested/ldddns/releases/latest) and open
 it or run:
 
 ```console
-sudo dpkg -i ldddns_0.0.41_linux_amd64.deb
+sudo dpkg -i ldddns_0.0.57_linux_amd64.deb
 ```
 
 Or just run the following command which will download and install the
@@ -67,9 +69,10 @@ sudo systemctl status ldddns.service
              └─87715 /usr/libexec/ldddns
 
 jan 08 09:29:46 pop-os systemd[1]: Starting Local Docker Development DNS...
-jan 08 09:29:46 pop-os ldddns[87715]: Starting ldddns 0.0.41...
+jan 08 09:29:46 pop-os ldddns[87715]: Starting ldddns 0.0.57...
 jan 08 09:29:46 pop-os systemd[1]: Started Local Docker Development DNS.
 jan 08 10:13:52 pop-os ldddns[87715]: added address for "my-fancy.local" pointing to "172.19.0.3"
+jan 08 10:13:52 pop-os ldddns[87715]: added service "_http._tcp" pointing to "my-fancy.local"
 ```
 
 Or follow the log with:

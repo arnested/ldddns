@@ -43,11 +43,11 @@ func handleContainer(
 
 	if hostname != "" {
 		hostname = rewriteHostname(hostname)
-		addToDNS(eg, hostname, ips, services, container.Name[1:])
-	} else {
-		containerHostname := rewriteHostname(container.Name[1:] + ".local")
-		addToDNS(eg, containerHostname, ips, services, container.Name[1:])
+		addToDNS(eg, hostname, ips, services, container.Name[1:], true)
 	}
+
+	containerHostname := rewriteHostname(container.Name[1:] + ".local")
+	addToDNS(eg, containerHostname, ips, services, container.Name[1:], hostname == "")
 }
 
 // extractIPnumbers from a container.
