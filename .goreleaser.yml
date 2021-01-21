@@ -41,7 +41,7 @@ nfpms:
     formats:
       - deb
     dependencies:
-      - docker.io
+      - docker.io | docker-ce
       - libsystemd0
     bindir: /usr/libexec
     contents:
