@@ -25,14 +25,12 @@ func (e *EntryGroups) Get(containerID string) (*avahi.EntryGroup, func(), error)
 		empty, err := e.groups[containerID].IsEmpty()
 		if err != nil {
 			logf(PriErr, "checking whether Avahi entry group is empty: %v", err)
-
-			return
 		}
 
 		if !empty {
 			err := e.groups[containerID].Commit()
 			if err != nil {
-				logf(PriErr, "error committing: %v\n", err)
+				logf(PriErr, "error committing: %v", err)
 			}
 		}
 

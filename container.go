@@ -16,37 +16,33 @@ func handleContainer(
 	container types.ContainerJSON,
 	egs *EntryGroups,
 	status string,
-) {
+) error {
 	eg, commit, err := egs.Get(container.ID)
 	defer commit()
 
 	if err != nil {
-		panic(fmt.Errorf("cannot get entry group for container %q: %w", container.ID, err))
+		return fmt.Errorf("cannot get entry group for container: %w", err)
 	}
 
 	empty, err := eg.IsEmpty()
 	if err != nil {
-		logf(PriErr, "checking whether Avahi entry group is empty: %v", err)
-
-		return
+		return fmt.Errorf("checking whether Avahi entry group is empty: %w", err)
 	}
 
 	if !empty {
 		err := eg.Reset()
 		if err != nil {
-			logf(PriErr, "resetting Avahi entry group is empty: %v", err)
-
-			return
+			return fmt.Errorf("resetting Avahi entry group is empty: %w", err)
 		}
 	}
 
 	if status == "die" || status == "kill" || status == "pause" {
-		return
+		return nil
 	}
 
 	ips := extractIPNumbers(ctx, container)
 	if len(ips) == 0 {
-		return
+		return nil
 	}
 
 	hostname := extractHostname(ctx, container)
@@ -59,6 +55,8 @@ func handleContainer(
 
 	containerHostname := rewriteHostname(container.Name[1:] + ".local")
 	addToDNS(eg, containerHostname, ips, services, container.Name[1:], hostname == "")
+
+	return nil
 }
 
 // extractIPnumbers from a container.
