@@ -24,9 +24,20 @@ func handleContainer(
 		panic(fmt.Errorf("cannot get entry group for container %q: %w", container.ID, err))
 	}
 
-	empty, _ := eg.IsEmpty()
+	empty, err := eg.IsEmpty()
+	if err != nil {
+		logf(PriErr, "checking whether Avahi entry group is empty: %v", err)
+
+		return
+	}
+
 	if !empty {
-		_ = eg.Reset()
+		err := eg.Reset()
+		if err != nil {
+			logf(PriErr, "resetting Avahi entry group is empty: %v", err)
+
+			return
+		}
 	}
 
 	if status == "die" || status == "kill" || status == "pause" {
