@@ -1,42 +1,42 @@
 Package: ldddns
-Version: 0.0.62
+Version: 0.0.63
 Architecture: arm64
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 8970
 Depends: docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.62_linux_arm64.deb
-Size: 3343064
-MD5sum: c7eccf320f555f0ac3a495a792017473
-SHA1: ce3eef97f459ab48d2e571fd92c0125225c6b2cf
-SHA256: a80bd04e12c913f6cef69e1ce87b9a3fff41c0d6c28c33a91ca79cb9343a763a
+Filename: ./ldddns_0.0.63_linux_arm64.deb
+Size: 3342742
+MD5sum: d237479f1cc7400f8c42a33188485dd8
+SHA1: 8765530745d57ff5b5a72da632aba1a259cf679e
+SHA256: 1a7c506b06795c97e7827f109c615f2350a30fb8fcb435b1c13084da25452cd3
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
 Package: ldddns
-Version: 0.0.62
+Version: 0.0.63
 Architecture: i386
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 8170
 Depends: docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.62_linux_386.deb
-Size: 3486326
-MD5sum: f668c2e265c38df891f63f28cd5a2da8
-SHA1: 64eccd4932f8cc1e10493cdb1530da31a617ec17
-SHA256: 17eb719042fce93ad4b18ad3eeb37bc9a2525b7bec8e5c17e99b90bb4040d02e
+Filename: ./ldddns_0.0.63_linux_386.deb
+Size: 3486066
+MD5sum: fadb6cfd22a93f3d01b653fe7ad95901
+SHA1: e8517d088d17684d5a775099122d16231527cc0e
+SHA256: 10ec63f92e200babf9f54e9d3a0c113d9d5a2aa878df9eea7bcaaaa75e536910
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
 Package: ldddns
-Version: 0.0.62
+Version: 0.0.63
 Architecture: amd64
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 9654
 Depends: docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.62_linux_amd64.deb
-Size: 3683156
-MD5sum: d516160b2b3c0e9af8f0ca5acda0296b
-SHA1: fa9cedd59b0e88d1e349a21d4b9e193df8d987cd
-SHA256: a754a5ceea8d7e3cc3d0bf90fbc88ecf81cf8f7ca5f8a745aff91438401a3eb5
+Filename: ./ldddns_0.0.63_linux_amd64.deb
+Size: 3682794
+MD5sum: 7146c613a1a310865275fecdfad8ec63
+SHA1: dc951a020f239ab55a7eb91c06ecad236d2a1573
+SHA256: ae1c29effecf092c03222ddcb75f7e9fce6a5c41d830cdefc4956ecf596526ab
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
