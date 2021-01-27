@@ -47,13 +47,27 @@ func main() {
 
 	started := time.Now()
 
-	_, _ = daemon.SdNotify(true, daemon.SdNotifyReady)
+	_, err = daemon.SdNotify(true, daemon.SdNotifyReady)
+	if err != nil {
+		logf(PriErr, "notifying systemd we're ready: %v", err)
+
+		return
+	}
 
 	// Do the magic work.
-	containers, _ := docker.ContainerList(ctx, types.ContainerListOptions{})
+	containers, err := docker.ContainerList(ctx, types.ContainerListOptions{})
+	if err != nil {
+		logf(PriErr, "getting container list: %v", err)
+	}
 
 	for _, container := range containers {
-		containerJSON, _ := docker.ContainerInspect(ctx, container.ID)
+		containerJSON, err := docker.ContainerInspect(ctx, container.ID)
+		if err != nil {
+			logf(PriErr, "inspecting container: %v", err)
+
+			return
+		}
+
 		handleContainer(ctx, containerJSON, egs, "start")
 	}
 
@@ -93,7 +107,12 @@ func listen(ctx context.Context, docker *client.Client, egs *EntryGroups, starte
 
 // handleMsg handles an event message.
 func handleMsg(ctx context.Context, docker *client.Client, egs *EntryGroups, id string, status string) {
-	container, _ := docker.ContainerInspect(ctx, id)
+	container, err := docker.ContainerInspect(ctx, id)
+	if err != nil {
+		logf(PriErr, "inspecting container: %v", err)
+
+		return
+	}
 
 	handleContainer(ctx, container, egs, status)
 }

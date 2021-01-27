@@ -17,5 +17,5 @@ const (
 )
 
 func logf(priority Priority, format string, a ...interface{}) {
-	journal.Print(journal.Priority(priority), format, a...)
+	_ = journal.Print(journal.Priority(priority), format, a...)
 }
