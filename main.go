@@ -59,14 +59,7 @@ func main() {
 	}
 
 	for _, container := range containers {
-		containerJSON, err := docker.ContainerInspect(ctx, container.ID)
-		if err != nil {
-			logf(PriErr, "inspecting container: %v", err)
-
-			continue
-		}
-
-		err = handleContainer(ctx, containerJSON, egs, "start")
+		err = handleContainer(ctx, docker, container.ID, egs, "start")
 		if err != nil {
 			logf(PriErr, "handling container: %v", err)
 
@@ -110,14 +103,7 @@ func listen(ctx context.Context, docker *client.Client, egs *EntryGroups, starte
 
 // handleMsg handles an event message.
 func handleMsg(ctx context.Context, docker *client.Client, egs *EntryGroups, id string, status string) {
-	container, err := docker.ContainerInspect(ctx, id)
-	if err != nil {
-		logf(PriErr, "inspecting container: %v", err)
-
-		return
-	}
-
-	err = handleContainer(ctx, container, egs, status)
+	err := handleContainer(ctx, docker, id, egs, status)
 	if err != nil {
 		logf(PriErr, "handling container: %v", err)
 	}
