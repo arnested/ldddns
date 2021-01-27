@@ -8,16 +8,18 @@ import (
 	"strings"
 
 	"github.com/docker/docker/api/types"
+	"github.com/docker/docker/client"
 	"honnef.co/go/netdb"
 )
 
 func handleContainer(
 	ctx context.Context,
-	container types.ContainerJSON,
+	docker *client.Client,
+	containerID string,
 	egs *EntryGroups,
 	status string,
 ) error {
-	eg, commit, err := egs.Get(container.ID)
+	eg, commit, err := egs.Get(containerID)
 	defer commit()
 
 	if err != nil {
@@ -38,6 +40,11 @@ func handleContainer(
 
 	if status == "die" || status == "kill" || status == "pause" {
 		return nil
+	}
+
+	container, err := docker.ContainerInspect(ctx, containerID)
+	if err != nil {
+		return fmt.Errorf("inspecting container: %w", err)
 	}
 
 	ips := extractIPNumbers(ctx, container)
