@@ -49,9 +49,7 @@ func main() {
 
 	_, err = daemon.SdNotify(true, daemon.SdNotifyReady)
 	if err != nil {
-		logf(PriErr, "notifying systemd we're ready: %v", err)
-
-		return
+		panic(fmt.Errorf("notifying systemd we're ready: %w", err))
 	}
 
 	// Do the magic work.
@@ -65,10 +63,15 @@ func main() {
 		if err != nil {
 			logf(PriErr, "inspecting container: %v", err)
 
-			return
+			continue
 		}
 
-		handleContainer(ctx, containerJSON, egs, "start")
+		err = handleContainer(ctx, containerJSON, egs, "start")
+		if err != nil {
+			logf(PriErr, "handling container: %v", err)
+
+			continue
+		}
 	}
 
 	listen(ctx, docker, egs, started)
@@ -114,5 +117,8 @@ func handleMsg(ctx context.Context, docker *client.Client, egs *EntryGroups, id 
 		return
 	}
 
-	handleContainer(ctx, container, egs, status)
+	err = handleContainer(ctx, container, egs, status)
+	if err != nil {
+		logf(PriErr, "handling container: %v", err)
+	}
 }

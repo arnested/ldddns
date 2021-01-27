@@ -1,6 +1,10 @@
 package main
 
-import "github.com/coreos/go-systemd/journal"
+import (
+	"fmt"
+
+	"github.com/coreos/go-systemd/journal"
+)
 
 type Priority int
 
@@ -17,5 +21,8 @@ const (
 )
 
 func logf(priority Priority, format string, a ...interface{}) {
-	_ = journal.Print(journal.Priority(priority), format, a...)
+	err := journal.Print(journal.Priority(priority), format, a...)
+	if err != nil {
+		panic(fmt.Errorf("could not log: %w", err))
+	}
 }

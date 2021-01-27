@@ -15,7 +15,7 @@ func rewriteHostname(hostname string) string {
 	sanitizedHostname := basename + ".local"
 
 	if hostname != sanitizedHostname {
-		logf(PriInfo, "Rewrote hostname from %q to %q\n", hostname, sanitizedHostname)
+		logf(PriInfo, "Rewrote hostname from %q to %q", hostname, sanitizedHostname)
 	}
 
 	return sanitizedHostname
