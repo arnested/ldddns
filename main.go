@@ -52,7 +52,17 @@ func main() {
 		panic(fmt.Errorf("notifying systemd we're ready: %w", err))
 	}
 
+	err = conn.AddMatchSignal(
+		dbus.WithMatchObjectPath("/org/freedesktop/NetworkManager"),
+		dbus.WithMatchInterface("org.freedesktop.NetworkManager"),
+		dbus.WithMatchSender("org.freedesktop.NetworkManager"),
+	)
+	if err != nil {
+		panic(fmt.Errorf("add dbus NetworkManager signal matcher: %w", err))
+	}
+
 	// Do the magic work.
+	go networkState(ctx, docker, egs, conn)
 	handleExistingContainers(ctx, docker, egs)
 	listen(ctx, docker, egs, started)
 }
