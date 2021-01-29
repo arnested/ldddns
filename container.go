@@ -52,16 +52,16 @@ func handleContainer(
 		return nil
 	}
 
-	hostname := extractHostname(ctx, container)
+	hostnames := extractHostnames(ctx, container)
 	services := extractServices(ctx, container)
 
-	if hostname != "" {
+	for i, hostname := range hostnames {
 		hostname = rewriteHostname(hostname)
-		addToDNS(eg, hostname, ips, services, container.Name[1:], true)
+		addToDNS(eg, hostname, ips, services, container.Name[1:], i == 0)
 	}
 
 	containerHostname := rewriteHostname(container.Name[1:] + ".local")
-	addToDNS(eg, containerHostname, ips, services, container.Name[1:], hostname == "")
+	addToDNS(eg, containerHostname, ips, services, container.Name[1:], len(hostnames) == 0)
 
 	return nil
 }
@@ -109,13 +109,16 @@ func extractServices(_ context.Context, container types.ContainerJSON) map[strin
 	return services
 }
 
-// extractHostname from a container.
-func extractHostname(_ context.Context, container types.ContainerJSON) string {
-	for _, v := range container.Config.Env {
-		if strings.HasPrefix(v, "VIRTUAL_HOST=") {
-			return v[13:]
+// Extract hostnames from a container, return them as string slices.
+func extractHostnames(_ context.Context, container types.ContainerJSON) []string {
+	prefix := "VIRTUAL_HOST="
+
+	for _, s := range container.Config.Env {
+		if strings.HasPrefix(s, prefix) {
+			// Support multiple hostnames separated with comma and/or space.
+			return strings.FieldsFunc(s[len(prefix):], func(r rune) bool { return r == ' ' || r == ',' })
 		}
 	}
 
-	return ""
+	return []string{}
 }
