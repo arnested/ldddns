@@ -115,12 +115,8 @@ func extractHostnames(_ context.Context, container types.ContainerJSON) []string
 
 	for _, s := range container.Config.Env {
 		if strings.HasPrefix(s, prefix) {
-			// Support multiple hostnames separated with comma.
-			if strings.Index(s, ",") > 0 {
-				return strings.Split(s[len(prefix):], ",")
-			}
-
-			return []string{s[len(prefix):]}
+			// Support multiple hostnames separated with comma and/or space.
+			return strings.FieldsFunc(s[len(prefix):], func(r rune) bool { return r == ' ' || r == ',' })
 		}
 	}
 
