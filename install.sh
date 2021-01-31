@@ -23,7 +23,7 @@ ldddns_install() {
     curl --proto =https --fail --location --progress-bar --output "${tmpdir}/${package}" "https://github.com/arnested/ldddns/releases/latest/download/${package}"
 
     echo "Installing ${package}..."
-    pkexec dpkg -i "${tmpdir}/${package}"
+    yes | aptdcon --hide-terminal --install "${tmpdir}/${package}" > /dev/null
 }
 
 ldddns_install
