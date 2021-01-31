@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-if [ -z "$BASH" ] ;then echo Please run this with bash; exit 1; fi
+if [ -z "${BASH}" ]; then
+    echo >&2 Please run the install with bash.
+    exit 1
+fi
 
 set -euo pipefail
 
 ldddns_install() {
-    set -euo pipefail
-
-    tmpdir="$(mktemp -d)"
+    tmpdir="$(mktemp --directory)"
 
     # Make a cleanup function
     cleanup() {
@@ -16,7 +17,7 @@ ldddns_install() {
     trap cleanup EXIT
 
     echo -n "Finding latest package name..."
-    package=$(curl --proto =https --fail -sSL "https://github.com/arnested/ldddns/releases/latest/download/checksums.txt" | grep -i "$(uname -s)" | grep "$(dpkg --print-architecture)" | grep \.deb | awk '{print $2}')
+    package=$(curl --proto =https --fail --location --silent --show-error "https://github.com/arnested/ldddns/releases/latest/download/checksums.txt" | grep --ignore-case "$(uname -s)" | grep "$(dpkg --print-architecture)" | grep \.deb | awk '{print $2}')
     echo " ${package}"
 
     echo "Downloading ${package}..."
