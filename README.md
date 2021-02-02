@@ -39,7 +39,7 @@ Or just run the following command which will download and install the
 latest package for you:
 
 ```console
-curl -fsSL https://ldddns.arnested.dk/install | bash
+curl -fsSL https://ldddns.arnested.dk/install.sh | bash
 ```
 
 For other distributions download the binary from the [latest

@@ -60,7 +60,7 @@ jobs:
         sed -i 's/<!DOCTYPE html>//' README.html
         cat page/header.html README.html page/footer.html > site/index.html
     - name: Add install script to GitHub Pages
-      run: cp -v install site/install
+      run: cp -v install.sh site/install.sh
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
