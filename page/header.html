@@ -39,6 +39,22 @@ code.language-console::before {
   color: black;
   font-weight: bold;
 }
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: black;
+    color: white;
+  }
+
+  code {
+    background-color: darkslategrey;
+    color: whitesmoke;
+  }
+
+  code.language-console::before {
+    color: white;
+  }
+}
 </style>
 </head>
 <body>
