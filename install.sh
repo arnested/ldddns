@@ -5,6 +5,11 @@ if [ -z "${BASH}" ]; then
     exit 1
 fi
 
+if [[ ! -x "$(command -v aptdcon)" && ! -x "$(command -v dpkg)" ]]; then
+    echo >&2 Install only runs on Debian based distributions.
+    exit 2
+fi
+
 set -euo pipefail
 
 ldddns_install() {
@@ -24,7 +29,13 @@ ldddns_install() {
     curl --proto =https --fail --location --progress-bar --output "${tmpdir}/${package}" "https://github.com/arnested/ldddns/releases/latest/download/${package}"
 
     echo "Installing ${package}..."
-    yes | aptdcon --hide-terminal --install "${tmpdir}/${package}" > /dev/null
+    if [[ -x "$(command -v aptdcon)"  ]]; then
+        yes | aptdcon --hide-terminal --install "${tmpdir}/${package}" > /dev/null
+    elif [[ -x "$(command -v pkexec)"  ]]; then
+        pkexec dpkg --install  "${tmpdir}/${package}"
+    else
+        sudo dpkg --install  "${tmpdir}/${package}"
+    fi
 }
 
 ldddns_install
