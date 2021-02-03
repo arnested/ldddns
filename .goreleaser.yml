@@ -41,6 +41,7 @@ nfpms:
     formats:
       - deb
     dependencies:
+      - avahi-daemon
       - docker.io | docker-ce
       - libsystemd0
     bindir: /usr/libexec
