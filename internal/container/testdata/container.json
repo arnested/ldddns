@@ -1,0 +1,260 @@
+{
+  "Id": "67804081963dc72057dde0578b0779d13d1e10b72afb878405a7a68882f5517a",
+  "Created": "2021-02-02T15:06:48.505438247Z",
+  "Path": "docker-entrypoint.sh",
+  "Args": [
+    "yarn",
+    "start"
+  ],
+  "State": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 30875,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2021-02-02T15:06:49.283111618Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "Image": "sha256:933900325ffa038d7f7c54a1258bf1cd005aad1a2ef39a0ffea63260fb1a3e4f",
+  "ResolvConfPath": "/var/lib/docker/containers/67804081963dc72057dde0578b0779d13d1e10b72afb878405a7a68882f5517a/resolv.conf",
+  "HostnamePath": "/var/lib/docker/containers/67804081963dc72057dde0578b0779d13d1e10b72afb878405a7a68882f5517a/hostname",
+  "HostsPath": "/var/lib/docker/containers/67804081963dc72057dde0578b0779d13d1e10b72afb878405a7a68882f5517a/hosts",
+  "LogPath": "/var/lib/docker/containers/67804081963dc72057dde0578b0779d13d1e10b72afb878405a7a68882f5517a/67804081963dc72057dde0578b0779d13d1e10b72afb878405a7a68882f5517a-json.log",
+  "Name": "/foobar_client_1",
+  "RestartCount": 0,
+  "Driver": "overlay2",
+  "Platform": "linux",
+  "MountLabel": "",
+  "ProcessLabel": "",
+  "AppArmorProfile": "docker-default",
+  "ExecIDs": null,
+  "HostConfig": {
+    "Binds": [
+      "/home/arne/src/github.com/example/foobar/client:/app:rw"
+    ],
+    "ContainerIDFile": "",
+    "LogConfig": {
+      "Type": "json-file",
+      "Config": {}
+    },
+    "NetworkMode": "foobar_default",
+    "PortBindings": {
+      "3000/tcp": [
+        {
+          "HostIp": "",
+          "HostPort": ""
+        }
+      ],
+      "80/tcp": [
+        {
+          "HostIp": "",
+          "HostPort": ""
+        }
+      ]
+    },
+    "RestartPolicy": {
+      "Name": "",
+      "MaximumRetryCount": 0
+    },
+    "AutoRemove": false,
+    "VolumeDriver": "",
+    "VolumesFrom": [],
+    "CapAdd": null,
+    "CapDrop": null,
+    "Capabilities": null,
+    "Dns": null,
+    "DnsOptions": null,
+    "DnsSearch": null,
+    "ExtraHosts": null,
+    "GroupAdd": null,
+    "IpcMode": "shareable",
+    "Cgroup": "",
+    "Links": null,
+    "OomScoreAdj": 0,
+    "PidMode": "",
+    "Privileged": false,
+    "PublishAllPorts": false,
+    "ReadonlyRootfs": false,
+    "SecurityOpt": null,
+    "UTSMode": "",
+    "UsernsMode": "",
+    "ShmSize": 67108864,
+    "Runtime": "runc",
+    "ConsoleSize": [
+      0,
+      0
+    ],
+    "Isolation": "",
+    "CpuShares": 0,
+    "Memory": 0,
+    "NanoCpus": 0,
+    "CgroupParent": "",
+    "BlkioWeight": 0,
+    "BlkioWeightDevice": null,
+    "BlkioDeviceReadBps": null,
+    "BlkioDeviceWriteBps": null,
+    "BlkioDeviceReadIOps": null,
+    "BlkioDeviceWriteIOps": null,
+    "CpuPeriod": 0,
+    "CpuQuota": 0,
+    "CpuRealtimePeriod": 0,
+    "CpuRealtimeRuntime": 0,
+    "CpusetCpus": "",
+    "CpusetMems": "",
+    "Devices": null,
+    "DeviceCgroupRules": null,
+    "DeviceRequests": null,
+    "KernelMemory": 0,
+    "KernelMemoryTCP": 0,
+    "MemoryReservation": 0,
+    "MemorySwap": 0,
+    "MemorySwappiness": null,
+    "OomKillDisable": false,
+    "PidsLimit": null,
+    "Ulimits": null,
+    "CpuCount": 0,
+    "CpuPercent": 0,
+    "IOMaximumIOps": 0,
+    "IOMaximumBandwidth": 0,
+    "MaskedPaths": [
+      "/proc/asound",
+      "/proc/acpi",
+      "/proc/kcore",
+      "/proc/keys",
+      "/proc/latency_stats",
+      "/proc/timer_list",
+      "/proc/timer_stats",
+      "/proc/sched_debug",
+      "/proc/scsi",
+      "/sys/firmware"
+    ],
+    "ReadonlyPaths": [
+      "/proc/bus",
+      "/proc/fs",
+      "/proc/irq",
+      "/proc/sys",
+      "/proc/sysrq-trigger"
+    ]
+  },
+  "GraphDriver": {
+    "Data": {
+      "LowerDir": "/var/lib/docker/overlay2/cae16dd5284c2e0f24330df27c0eda6be8ddf38d574498336a5919729fc95167-init/diff:/var/lib/docker/overlay2/5e7660a41d5dff86ab6cf1abca3179f6e9d1cd0a4712519cf90c5d5a09009ce4/diff:/var/lib/docker/overlay2/1392d42a2ed35a5c6d9ce53bd4f3622f57f133d28da71c04bdd4aca5e04cd92b/diff:/var/lib/docker/overlay2/04230accd1cabb00b18a805ade109783dd410f22dc7fb0e8b7e488fb670436c5/diff:/var/lib/docker/overlay2/133f85cc3aaf0e20b03a54f9c0d47e537f5d484bea95960850fba8f98f0a1a99/diff",
+      "MergedDir": "/var/lib/docker/overlay2/cae16dd5284c2e0f24330df27c0eda6be8ddf38d574498336a5919729fc95167/merged",
+      "UpperDir": "/var/lib/docker/overlay2/cae16dd5284c2e0f24330df27c0eda6be8ddf38d574498336a5919729fc95167/diff",
+      "WorkDir": "/var/lib/docker/overlay2/cae16dd5284c2e0f24330df27c0eda6be8ddf38d574498336a5919729fc95167/work"
+    },
+    "Name": "overlay2"
+  },
+  "Mounts": [
+    {
+      "Type": "bind",
+      "Source": "/home/arne/src/github.com/example/foobar/client",
+      "Destination": "/app",
+      "Mode": "rw",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "Config": {
+    "Hostname": "67804081963d",
+    "Domainname": "",
+    "User": "",
+    "AttachStdin": false,
+    "AttachStdout": false,
+    "AttachStderr": false,
+    "ExposedPorts": {
+      "3000/tcp": {},
+      "80/tcp": {}
+    },
+    "Tty": false,
+    "OpenStdin": false,
+    "StdinOnce": false,
+    "Env": [
+      "DANGEROUSLY_DISABLE_HOST_CHECK=true",
+      "PORT=80",
+      "VIRTUAL_HOST=foobar.local baz.docker",
+      "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "NODE_VERSION=14.15.4",
+      "YARN_VERSION=1.22.5"
+    ],
+    "Cmd": [
+      "yarn",
+      "start"
+    ],
+    "Image": "node:14-alpine3.12",
+    "Volumes": {
+      "/app": {}
+    },
+    "WorkingDir": "/app",
+    "Entrypoint": [
+      "docker-entrypoint.sh"
+    ],
+    "OnBuild": null,
+    "Labels": {
+      "com.docker.compose.config-hash": "ad38b926f39685dc6ef3b3c793b8a78ebdc317e7b3723c3d9bcca69311016e90",
+      "com.docker.compose.container-number": "1",
+      "com.docker.compose.oneoff": "False",
+      "com.docker.compose.project": "foobar",
+      "com.docker.compose.project.config_files": "docker-compose.yml,docker-compose.override.yml",
+      "com.docker.compose.project.working_dir": "/home/arne/src/github.com/example/foobar",
+      "com.docker.compose.service": "client",
+      "com.docker.compose.version": "1.25.0"
+    }
+  },
+  "NetworkSettings": {
+    "Bridge": "",
+    "SandboxID": "d7b3a1c03dcb0e29e504a59e5c3ea5fc0ab24f71972d32a71e80f0630613b2a8",
+    "HairpinMode": false,
+    "LinkLocalIPv6Address": "",
+    "LinkLocalIPv6PrefixLen": 0,
+    "Ports": {
+      "3000/tcp": [
+        {
+          "HostIp": "0.0.0.0",
+          "HostPort": "32771"
+        }
+      ],
+      "80/tcp": [
+        {
+          "HostIp": "0.0.0.0",
+          "HostPort": "32772"
+        }
+      ]
+    },
+    "SandboxKey": "/var/run/docker/netns/d7b3a1c03dcb",
+    "SecondaryIPAddresses": null,
+    "SecondaryIPv6Addresses": null,
+    "EndpointID": "",
+    "Gateway": "",
+    "GlobalIPv6Address": "",
+    "GlobalIPv6PrefixLen": 0,
+    "IPAddress": "",
+    "IPPrefixLen": 0,
+    "IPv6Gateway": "",
+    "MacAddress": "",
+    "Networks": {
+      "foobar_default": {
+        "IPAMConfig": null,
+        "Links": null,
+        "Aliases": [
+          "67804081963d",
+          "client"
+        ],
+        "NetworkID": "4bb33c5401c21e8b3d1cf29375530147a158be63ee8f29e81f82f378ec0cf04a",
+        "EndpointID": "33b549509cf9f36d7cad353d1e0eb863c22654eab4ba1719ed63142bc24d5c3f",
+        "Gateway": "172.18.0.1",
+        "IPAddress": "172.18.0.4",
+        "IPPrefixLen": 16,
+        "IPv6Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "MacAddress": "02:42:ac:12:00:04",
+        "DriverOpts": null
+      }
+    }
+  }
+}

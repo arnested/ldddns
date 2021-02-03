@@ -53,6 +53,11 @@ func main() {
 	}
 
 	// Do the magic work.
+	handleExistingContainers(ctx, docker, egs)
+	listen(ctx, docker, egs, started)
+}
+
+func handleExistingContainers(ctx context.Context, docker *client.Client, egs *EntryGroups) {
 	containers, err := docker.ContainerList(ctx, types.ContainerListOptions{})
 	if err != nil {
 		logf(PriErr, "getting container list: %v", err)
@@ -66,8 +71,6 @@ func main() {
 			continue
 		}
 	}
-
-	listen(ctx, docker, egs, started)
 }
 
 func listen(ctx context.Context, docker *client.Client, egs *EntryGroups, started time.Time) {
@@ -93,18 +96,13 @@ func listen(ctx context.Context, docker *client.Client, egs *EntryGroups, starte
 		case err := <-errs:
 			panic(fmt.Errorf("go error reading docker events: %w", err))
 		case msg := <-msgs:
-			handleMsg(ctx, docker, egs, msg.ID, msg.Status)
+			err := handleContainer(ctx, docker, msg.ID, egs, msg.Status)
+			if err != nil {
+				logf(PriErr, "handling container: %v", err)
+			}
 		case <-sig:
 			logf(PriNotice, "Shutting down")
 			os.Exit(int(syscall.SIGTERM))
 		}
-	}
-}
-
-// handleMsg handles an event message.
-func handleMsg(ctx context.Context, docker *client.Client, egs *EntryGroups, id string, status string) {
-	err := handleContainer(ctx, docker, id, egs, status)
-	if err != nil {
-		logf(PriErr, "handling container: %v", err)
 	}
 }
