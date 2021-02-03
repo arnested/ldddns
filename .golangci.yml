@@ -7,6 +7,9 @@ linters-settings:
     # 'default' case is present, even if all enum members aren't listed in the
     # switch
     default-signifies-exhaustive: true
+  errcheck:
+    check-blank: true
+    check-type-assertions: true
 
 issues:
   exclude-rules:
