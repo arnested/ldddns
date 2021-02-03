@@ -45,7 +45,7 @@ curl -fsSL https://ldddns.arnested.dk/install.sh | bash
 For other distributions download the binary from the [latest
 release](https://github.com/arnested/ldddns/releases/latest) and
 create a systemd service unit file yourself based on
-[`ldddns.service`](https://github.com/arnested/ldddns/blob/main/ldddns.service).
+[`ldddns.service`](https://github.com/arnested/ldddns/blob/main/systemd/ldddns.service).
 
 ### Updates
 

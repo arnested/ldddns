@@ -45,7 +45,7 @@ nfpms:
       - libsystemd0
     bindir: /usr/libexec
     contents:
-      - src: ldddns.service
+      - src: systemd/ldddns.service
         dst: /lib/systemd/system/ldddns.service
 
       - src: deb/ldddns.list
