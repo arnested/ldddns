@@ -3,13 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
-	"strconv"
-	"strings"
 
-	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/client"
-	"honnef.co/go/netdb"
+	"ldddns.arnested.dk/internal/container"
 )
 
 func handleContainer(
@@ -42,83 +38,28 @@ func handleContainer(
 		return nil
 	}
 
-	container, err := docker.ContainerInspect(ctx, containerID)
+	containerJSON, err := docker.ContainerInspect(ctx, containerID)
 	if err != nil {
 		return fmt.Errorf("inspecting container: %w", err)
 	}
 
-	ips := extractIPNumbers(ctx, container)
+	c := container.Container{ContainerJSON: containerJSON}
+
+	ips := c.IPAddresses()
 	if len(ips) == 0 {
 		return nil
 	}
 
-	hostnames := extractHostnames(ctx, container)
-	services := extractServices(ctx, container)
+	hostnames := c.HostnamesFromEnv("VIRTUAL_HOST")
+	services := c.Services()
 
 	for i, hostname := range hostnames {
 		hostname = rewriteHostname(hostname)
-		addToDNS(eg, hostname, ips, services, container.Name[1:], i == 0)
+		addToDNS(eg, hostname, ips, services, c.Name(), i == 0)
 	}
 
-	containerHostname := rewriteHostname(container.Name[1:] + ".local")
-	addToDNS(eg, containerHostname, ips, services, container.Name[1:], len(hostnames) == 0)
+	containerHostname := rewriteHostname(c.Name() + ".local")
+	addToDNS(eg, containerHostname, ips, services, c.Name(), len(hostnames) == 0)
 
 	return nil
-}
-
-// extractIPnumbers from a container.
-func extractIPNumbers(_ context.Context, container types.ContainerJSON) []string {
-	ips := []string{}
-
-	if container.NetworkSettings.IPAddress != "" {
-		ips = append(ips, container.NetworkSettings.IPAddress)
-	}
-
-	for _, v := range container.NetworkSettings.Networks {
-		ips = append(ips, v.IPAddress)
-	}
-
-	return ips
-}
-
-// extractServices from a container.
-func extractServices(_ context.Context, container types.ContainerJSON) map[string]uint16 {
-	services := map[string]uint16{}
-
-	for k := range container.NetworkSettings.Ports {
-		port := strings.SplitN(string(k), "/", 2)
-
-		proto := netdb.GetProtoByName(port[1])
-
-		portNumber, err := strconv.ParseUint(port[0], 10, 16)
-		if err != nil {
-			log.Printf("Could not get port number from %q", k)
-
-			continue
-		}
-
-		service := netdb.GetServByPort(int(portNumber), proto)
-
-		if service == nil || proto == nil {
-			continue
-		}
-
-		services[fmt.Sprintf("_%s._%s", service.Name, proto.Name)] = uint16(portNumber)
-	}
-
-	return services
-}
-
-// Extract hostnames from a container, return them as string slices.
-func extractHostnames(_ context.Context, container types.ContainerJSON) []string {
-	prefix := "VIRTUAL_HOST="
-
-	for _, s := range container.Config.Env {
-		if strings.HasPrefix(s, prefix) {
-			// Support multiple hostnames separated with comma and/or space.
-			return strings.FieldsFunc(s[len(prefix):], func(r rune) bool { return r == ' ' || r == ',' })
-		}
-	}
-
-	return []string{}
 }
