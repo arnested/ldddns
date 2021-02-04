@@ -7,11 +7,7 @@ import (
 	"github.com/holoplot/go-avahi"
 )
 
-func addToDNS(eg *avahi.EntryGroup, hostname string, ips []string, services map[string]uint16, name string, srv bool) {
-	if hostname == "" {
-		return
-	}
-
+func addAddress(eg *avahi.EntryGroup, hostname string, ips []string) {
 	for _, ip := range ips {
 		if ip == "" {
 			continue
@@ -23,26 +19,32 @@ func addToDNS(eg *avahi.EntryGroup, hostname string, ips []string, services map[
 		}
 
 		logf(PriDebug, "added address for %q pointing to %q", hostname, ip)
+	}
+}
 
-		if srv {
-			for service, portNumber := range services {
-				err = eg.AddService(
-					int32(net.FlagBroadcast),
-					avahi.ProtoInet,
-					0,
-					name,
-					service,
-					"local",
-					hostname,
-					portNumber,
-					nil,
-				)
-				if err != nil {
-					panic(fmt.Errorf("AddService() failed: %w", err))
-				}
+func addServices(eg *avahi.EntryGroup, hostname string, ips []string, services map[string]uint16, name string) {
+	for _, ip := range ips {
+		if ip == "" {
+			continue
+		}
 
-				logf(PriDebug, "added service %q pointing to %q", service, hostname)
+		for service, portNumber := range services {
+			err := eg.AddService(
+				int32(net.FlagBroadcast),
+				avahi.ProtoInet,
+				0,
+				name,
+				service,
+				"local",
+				hostname,
+				portNumber,
+				nil,
+			)
+			if err != nil {
+				panic(fmt.Errorf("AddService() failed: %w", err))
 			}
+
+			logf(PriDebug, "added service %q pointing to %q", service, hostname)
 		}
 	}
 }

@@ -50,16 +50,18 @@ func handleContainer(
 		return nil
 	}
 
-	hostnames := c.HostnamesFromEnv("VIRTUAL_HOST")
-	services := c.Services()
-
-	for i, hostname := range hostnames {
-		hostname = rewriteHostname(hostname)
-		addToDNS(eg, hostname, ips, services, c.Name(), i == 0)
+	hostnames, err := hostnames(c)
+	if err != nil {
+		return fmt.Errorf("getting hostnames: %w", err)
 	}
 
-	containerHostname := rewriteHostname(c.Name() + ".local")
-	addToDNS(eg, containerHostname, ips, services, c.Name(), len(hostnames) == 0)
+	for _, hostname := range hostnames {
+		addAddress(eg, hostname, ips)
+	}
+
+	if services := c.Services(); len(hostnames) > 0 {
+		addServices(eg, hostnames[0], ips, services, c.Name())
+	}
 
 	return nil
 }
