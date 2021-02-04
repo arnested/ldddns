@@ -43,6 +43,11 @@ func hostnames(c container.Container) ([]string, error) {
 // rewriteHostname will make `hostname` suitable for dns-sd.
 func rewriteHostname(hostname string) string {
 	suffix, _ := publicsuffix.PublicSuffix(hostname)
+
+	if suffix == hostname {
+		hostname = hostname + "." + suffix
+	}
+
 	basename := hostname[:len(hostname)-len(suffix)-1]
 	basename = strings.ReplaceAll(basename, ".", "-")
 	basename = strings.ReplaceAll(basename, "_", "-")
