@@ -30,6 +30,9 @@ func hostnames(c container.Container) ([]string, error) {
 
 		case lookup[0:4] == "env:":
 			hostnames = append(hostnames, c.HostnamesFromEnv(lookup[4:])...)
+
+		case lookup[0:6] == "label:":
+			hostnames = append(hostnames, c.HostnamesFromLabel(lookup[6:])...)
 		}
 	}
 

@@ -74,3 +74,13 @@ func (c Container) HostnamesFromEnv(envName string) []string {
 
 	return []string{}
 }
+
+// HostnamesFromLabel a container, return them as string slices.
+func (c Container) HostnamesFromLabel(label string) []string {
+	if s, ok := c.Config.Labels[label]; ok {
+		// Support multiple hostnames separated with comma and/or space.
+		return strings.FieldsFunc(s, func(r rune) bool { return r == ' ' || r == ',' })
+	}
+
+	return []string{}
+}
