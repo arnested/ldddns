@@ -5,7 +5,10 @@ import (
 	"net"
 
 	"github.com/holoplot/go-avahi"
+	"ldddns.arnested.dk/internal/log"
 )
+
+const tld = "local"
 
 func addAddress(eg *avahi.EntryGroup, hostname string, ips []string) {
 	for _, ip := range ips {
@@ -18,7 +21,7 @@ func addAddress(eg *avahi.EntryGroup, hostname string, ips []string) {
 			panic(fmt.Errorf("AddAddess() failed: %w", err))
 		}
 
-		logf(PriDebug, "added address for %q pointing to %q", hostname, ip)
+		log.Logf(log.PriDebug, "added address for %q pointing to %q", hostname, ip)
 	}
 }
 
@@ -35,7 +38,7 @@ func addServices(eg *avahi.EntryGroup, hostname string, ips []string, services m
 				0,
 				name,
 				service,
-				"local",
+				tld,
 				hostname,
 				portNumber,
 				nil,
@@ -44,7 +47,7 @@ func addServices(eg *avahi.EntryGroup, hostname string, ips []string, services m
 				panic(fmt.Errorf("AddService() failed: %w", err))
 			}
 
-			logf(PriDebug, "added service %q pointing to %q", service, hostname)
+			log.Logf(log.PriDebug, "added service %q pointing to %q", service, hostname)
 		}
 	}
 }

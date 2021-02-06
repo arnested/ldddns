@@ -1,4 +1,4 @@
-package main
+package log
 
 import (
 	"fmt"
@@ -8,7 +8,6 @@ import (
 
 type Priority int
 
-// nolint:deadcode
 const (
 	PriEmerg Priority = iota
 	PriAlert
@@ -20,7 +19,7 @@ const (
 	PriDebug
 )
 
-func logf(priority Priority, format string, a ...interface{}) {
+func Logf(priority Priority, format string, a ...interface{}) {
 	err := journal.Print(journal.Priority(priority), format, a...)
 	if err != nil {
 		panic(fmt.Errorf("could not log: %w", err))

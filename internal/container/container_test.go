@@ -12,7 +12,7 @@ import (
 )
 
 func containerJSON() (*types.ContainerJSON, error) {
-	jsonFile, err := os.Open("testdata/container.json")
+	jsonFile, err := os.Open("../../testdata/container.json")
 	if err != nil {
 		return nil, fmt.Errorf("opening JSON test data: %w", err)
 	}
