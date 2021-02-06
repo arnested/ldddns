@@ -12,7 +12,7 @@ import (
 )
 
 func containerJSON() (*types.ContainerJSON, error) {
-	jsonFile, err := os.Open("testdata/container.json")
+	jsonFile, err := os.Open("../../testdata/container.json")
 	if err != nil {
 		return nil, fmt.Errorf("opening JSON test data: %w", err)
 	}
@@ -133,6 +133,32 @@ func TestHostnamesFromEnv(t *testing.T) {
 	}
 
 	noHostnames := data.HostnamesFromEnv("NON_EXISTING_ENV_VAR")
+
+	if len(noHostnames) != 0 {
+		t.Errorf("Didn't expected any hostnames from `NON_EXISTING_ENV_VAR`, got %q.", noHostnames)
+	}
+}
+
+func TestHostnamesFromLabel(t *testing.T) {
+	t.Parallel()
+
+	data, err := containerData()
+	if err != nil {
+		t.Fatalf("getting test data: %s", err)
+	}
+
+	expected := []string{"client"}
+	hostnames := data.HostnamesFromLabel("com.docker.compose.service")
+
+	if len(hostnames) != len(expected) {
+		t.Errorf("Expected %d hostnames, got %d hostnames.", len(expected), len(hostnames))
+	}
+
+	if len(hostnames) > 0 && hostnames[0] != expected[0] {
+		t.Errorf("Expected first hostname to be %q, got %q.", expected[0], hostnames[0])
+	}
+
+	noHostnames := data.HostnamesFromLabel("org.example.non-existing")
 
 	if len(noHostnames) != 0 {
 		t.Errorf("Didn't expected any hostnames from `NON_EXISTING_ENV_VAR`, got %q.", noHostnames)

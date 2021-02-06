@@ -5,6 +5,7 @@ import (
 	"sync"
 
 	"github.com/holoplot/go-avahi"
+	"ldddns.arnested.dk/internal/log"
 )
 
 type EntryGroups struct {
@@ -24,13 +25,13 @@ func (e *EntryGroups) Get(containerID string) (*avahi.EntryGroup, func(), error)
 	commit := func() {
 		empty, err := e.groups[containerID].IsEmpty()
 		if err != nil {
-			logf(PriErr, "checking whether Avahi entry group is empty: %v", err)
+			log.Logf(log.PriErr, "checking whether Avahi entry group is empty: %v", err)
 		}
 
 		if !empty {
 			err := e.groups[containerID].Commit()
 			if err != nil {
-				logf(PriErr, "error committing: %v", err)
+				log.Logf(log.PriErr, "error committing: %v", err)
 			}
 		}
 

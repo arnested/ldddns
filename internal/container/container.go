@@ -2,12 +2,12 @@ package container
 
 import (
 	"fmt"
-	"log"
 	"strconv"
 	"strings"
 
 	"github.com/docker/docker/api/types"
 	"honnef.co/go/netdb"
+	"ldddns.arnested.dk/internal/log"
 )
 
 type Container struct {
@@ -44,7 +44,7 @@ func (c Container) Services() map[string]uint16 {
 
 		portNumber, err := strconv.ParseUint(port[0], 10, 16)
 		if err != nil {
-			log.Printf("Could not get port number from %q", k)
+			log.Logf(log.PriErr, "Could not get port number from %q", k)
 
 			continue
 		}
@@ -70,6 +70,16 @@ func (c Container) HostnamesFromEnv(envName string) []string {
 			// Support multiple hostnames separated with comma and/or space.
 			return strings.FieldsFunc(s[len(prefix):], func(r rune) bool { return r == ' ' || r == ',' })
 		}
+	}
+
+	return []string{}
+}
+
+// HostnamesFromLabel a container, return them as string slices.
+func (c Container) HostnamesFromLabel(label string) []string {
+	if s, ok := c.Config.Labels[label]; ok {
+		// Support multiple hostnames separated with comma and/or space.
+		return strings.FieldsFunc(s, func(r rune) bool { return r == ' ' || r == ',' })
 	}
 
 	return []string{}
