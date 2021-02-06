@@ -61,29 +61,56 @@ code.language-console::before {
 
 <h1>Local Docker Development DNS</h1>
 <p>A systemd service that will monitor your Docker host and provide
-DNS names for containers based of the container name.</p>
-<p>If a <code>VIRTUAL_HOST</code> environment variable is present a hostname based
-on that will also be set.</p>
+DNS names for the containers.</p>
 <p>The service broadcasts the domain names using multicast DNS
-(a.k.a. mDNS, zeroconf, bounjour, avahi).</p>
+(a.k.a. mDNS, zeroconf, Bonjour, Avahi).</p>
 <p>A limitation of this is that domains name can only be on the <code>.local</code>
 TLD and only have one level below the TLD. A benefit is that you don't
 have to change your DNS server or configure stuff in <code>/etc/resolv</code> or
 similar.</p>
-<p>The service will rewrite hostnames to match this. I.e. <code>my.fancy.site</code>
-will be rewritten to <code>my-fancy.local</code>.</p>
 <p>If the containers also have exposed ports (and the ports can be looked
 up in <code>/etc/services</code>) the service will also broadcast the
-service/domain for service discovery (i.e. <code>_https._tcp.</code> for
-https://my-fancy.local). It will broadcast the domain based on
-<code>VIRTUAL_HOST</code> if set and otherwise the one based on the container
-name.</p>
+service/domain for service discovery. I.e., <code>_https._tcp.</code> for
+https://my-fancy.local (a.k.a. DNS-SD). Only <em>one</em> domain name can be
+broadcast per service per container.</p>
+<p>Per default domain names will be generated from the <code>VIRTUAL_HOST</code>
+environment variable is present (several hostnames can be separated by
+space or comma) and from the container name.</p>
+<p>If the hostnames do not fulfill the rule of being on the <code>.local</code> TLD
+and have only one level below the service will rewrite it.
+I.e. <code>my.fancy.com</code> will be rewritten to <code>my-fancy.local</code>.</p>
+<h2>Configuration</h2>
+<p>You can configure where the service should look for hostnames:</p>
+<ul>
+<li>Environment variables (configured with <code>env:&lt;VAR_NAME&gt;</code>) - several
+  hostnames can be separated by spaces or commas.</li>
+<li>Container name (configured with <code>containerName</code>) - the container
+  name will never be a valid hostname to begin with, but as mentioned
+  the <code>ldddns</code> will rewrite it into one.</li>
+<li>Labels (configured with <code>label:&lt;label.name&gt;</code>) - several hostnames
+  can be separated by spaces or commas.</li>
+</ul>
+<p>You configure it be setting the environment variable
+<code>LDDDNS_HOSTNAME_LOOKUP</code> in a systemd unit override file.</p>
+<p>For example, you could create a file named
+<code>/etc/systemd/system/ldddns.service.d/override.conf</code> with the content:</p>
+<pre><code class="language-ini">[Service]
+Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,label:org.example.my.hostname,env:OTHER_VAR,containerName
+</code></pre>
+<p>This will create a hostname for all hostnames in the <code>VIRTUAL_HOST</code>
+environment variable, the <code>org.example.my.hostname</code> label, the
+<code>OTHER_VAR</code> environment variable, and the container name.</p>
+<p>The first hostname found will be broadcast as a DNS-SD service.</p>
+<p>The default configuration is the equivalent of setting:</p>
+<pre><code class="language-ini">[Service]
+Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,containerName
+</code></pre>
 <h2>Install</h2>
 <p>For Pop!_OS, Ubuntu, Debian and the like, download the <code>.deb</code> package
 file from the <a href="https://github.com/arnested/ldddns/releases/latest">latest
 release</a> and open
 it or run:</p>
-<pre><code class="language-console">sudo dpkg -i <a href="https://github.com/arnested/ldddns/releases/latest/download/ldddns_0.0.70_linux_amd64.deb">ldddns_0.0.70_linux_amd64.deb</a>
+<pre><code class="language-console">sudo dpkg -i <a href="https://github.com/arnested/ldddns/releases/latest/download/ldddns_0.0.71_linux_amd64.deb">ldddns_0.0.71_linux_amd64.deb</a>
 </code></pre>
 <p>Or just run the following command which will download and install the
 latest package for you:</p>
@@ -94,7 +121,7 @@ release</a> and
 create a systemd service unit file yourself based on
 <a href="https://github.com/arnested/ldddns/blob/main/systemd/ldddns.service"><code>ldddns.service</code></a>.</p>
 <h3>Updates</h3>
-<p>When you install the package it will add an APT source list so you
+<p>When you install the package it will add an APT source list so, you
 will receive future updates to <code>ldddns</code> along with your other system
 updates.</p>
 <h2>Keeping an eye on things</h2>
@@ -110,8 +137,9 @@ updates.</p>
              └─87715 /usr/libexec/ldddns
 
 jan 08 09:29:46 pop-os systemd[1]: Starting Local Docker Development DNS...
-jan 08 09:29:46 pop-os ldddns[87715]: Starting ldddns 0.0.57...
+jan 08 09:29:46 pop-os ldddns[87715]: Starting ldddns v0.0.71...
 jan 08 09:29:46 pop-os systemd[1]: Started Local Docker Development DNS.
+jan 08 10:13:52 pop-os ldddns[87715]: Rewrote hostname from &quot;my.fancy.com&quot; to &quot;my-fancy.local&quot;
 jan 08 10:13:52 pop-os ldddns[87715]: added address for &quot;my-fancy.local&quot; pointing to &quot;172.19.0.3&quot;
 jan 08 10:13:52 pop-os ldddns[87715]: added service &quot;_http._tcp&quot; pointing to &quot;my-fancy.local&quot;
 </code></pre>
@@ -120,8 +148,8 @@ jan 08 10:13:52 pop-os ldddns[87715]: added service &quot;_http._tcp&quot; point
 </code></pre>
 <h2>Bugs, thoughts, and comments</h2>
 <p>Bugs, thoughts, and comments are welcome.</p>
-<p>You can use the <a href="https://github.com/arnested/ldddns/issues">GitHub
-Issues</a> and/or <a href="https://github.com/arnested/ldddns/discussions">GitHub
+<p>Feel free to get in touch at <a href="https://github.com/arnested/ldddns/issues">GitHub
+Issues</a> and <a href="https://github.com/arnested/ldddns/discussions">GitHub
 Discussions</a>.</p>
 </body>
 </html>
