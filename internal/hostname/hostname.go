@@ -31,7 +31,7 @@ func Hostnames(c container.Container, hostnameLookup []string) ([]string, error)
 		hostnames[i] = RewriteHostname(hostname)
 	}
 
-	return hostnames, nil
+	return removeDuplicates(hostnames), nil
 }
 
 // rewriteHostname will make `hostname` suitable for dns-sd.
@@ -78,4 +78,19 @@ func RewriteHostname(hostname string) string {
 	}
 
 	return sanitizedHostname
+}
+
+// removeDuplicates and keep the order
+func removeDuplicates(a []string) []string {
+	result := []string{}
+	seen := make(map[string]string, len(a))
+
+	for _, val := range a {
+		if _, ok := seen[val]; !ok {
+			result = append(result, val)
+			seen[val] = val
+		}
+	}
+
+	return result
 }

@@ -58,6 +58,7 @@ func TestHostnames(t *testing.T) {
 	hostnames, err := hostname.Hostnames(*data, []string{
 		"env:VIRTUAL_HOST",
 		"containerName",
+		"env:VIRTUAL_HOST", // we repeat VIRTUAL_HOST to check if we remove duplicates
 		"label:com.docker.compose.service",
 	})
 	if err != nil {
