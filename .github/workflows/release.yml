@@ -64,7 +64,6 @@ jobs:
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@4.0.0
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: site
-        CLEAN: true
+        branch: gh-pages
+        folder: site
+        clean: true
