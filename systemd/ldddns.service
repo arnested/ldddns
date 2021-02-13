@@ -7,7 +7,6 @@ After=docker.service
 [Service]
 Type=notify
 ExecStart=/usr/libexec/ldddns
-SuccessExitStatus=15
 Restart=on-failure
 DynamicUser=yes
 SupplementaryGroups=docker

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net"
 
 	"github.com/holoplot/go-avahi"
@@ -18,7 +17,9 @@ func addAddress(eg *avahi.EntryGroup, hostname string, ips []string) {
 
 		err := eg.AddAddress(int32(net.FlagBroadcast), avahi.ProtoInet, 16, hostname, ip)
 		if err != nil {
-			panic(fmt.Errorf("AddAddess() failed: %w", err))
+			log.Logf(log.PriErr, "addAddess() failed: %v", err)
+
+			continue
 		}
 
 		log.Logf(log.PriDebug, "added address for %q pointing to %q", hostname, ip)
@@ -44,7 +45,9 @@ func addServices(eg *avahi.EntryGroup, hostname string, ips []string, services m
 				nil,
 			)
 			if err != nil {
-				panic(fmt.Errorf("AddService() failed: %w", err))
+				log.Logf(log.PriErr, "AddService() failed: %v", err)
+
+				continue
 			}
 
 			log.Logf(log.PriDebug, "added service %q pointing to %q", service, hostname)
