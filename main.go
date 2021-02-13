@@ -24,6 +24,7 @@ type Config struct {
 
 func main() {
 	log.Logf(log.PriNotice, "Starting ldddns v%s...", version)
+	defer log.Logf(log.PriNotice, "Stopped ldddns v%s.", version)
 
 	// Setup stuff.
 	var config Config
@@ -37,6 +38,7 @@ func main() {
 	if err != nil {
 		panic(fmt.Errorf("cannot create docker client: %w", err))
 	}
+	defer docker.Close()
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
@@ -45,11 +47,13 @@ func main() {
 	if err != nil {
 		panic(fmt.Errorf("cannot get dbus system bus: %w", err))
 	}
+	defer conn.Close()
 
 	avahiServer, err := avahi.ServerNew(conn)
 	if err != nil {
 		panic(fmt.Errorf("avahi new failed: %w", err))
 	}
+	defer avahiServer.Close()
 
 	egs := NewEntryGroups(avahiServer)
 
@@ -63,4 +67,9 @@ func main() {
 	// Do the magic work.
 	handleExistingContainers(ctx, config, docker, egs)
 	listen(ctx, config, docker, egs, started)
+
+	_, err = daemon.SdNotify(true, daemon.SdNotifyStopping)
+	if err != nil {
+		log.Logf(log.PriErr, "notifying systemd we're shutting down: %v", err)
+	}
 }

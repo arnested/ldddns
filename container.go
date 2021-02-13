@@ -120,8 +120,7 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *Entr
 				log.Logf(log.PriErr, "handling container: %v", err)
 			}
 		case <-sig:
-			log.Logf(log.PriNotice, "Shutting down")
-			os.Exit(int(syscall.SIGTERM))
+			return
 		}
 	}
 }
