@@ -80,7 +80,7 @@ func RewriteHostname(hostname string) string {
 	return sanitizedHostname
 }
 
-// removeDuplicates and keep the order
+// removeDuplicates and keep the order.
 func removeDuplicates(a []string) []string {
 	result := []string{}
 	seen := make(map[string]string, len(a))
