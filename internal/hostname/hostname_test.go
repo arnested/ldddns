@@ -3,7 +3,7 @@ package hostname_test
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"testing"
 
@@ -20,7 +20,7 @@ func containerJSON() (*types.ContainerJSON, error) {
 
 	defer jsonFile.Close()
 
-	byteValue, err := ioutil.ReadAll(jsonFile)
+	byteValue, err := io.ReadAll(jsonFile)
 	if err != nil {
 		return nil, fmt.Errorf("reading JSON test data: %w", err)
 	}

@@ -1,6 +1,6 @@
 module ldddns.arnested.dk
 
-go 1.15
+go 1.16
 
 require (
 	github.com/Microsoft/go-winio v0.4.16 // indirect
@@ -16,7 +16,6 @@ require (
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/holoplot/go-avahi v0.0.0-20200423113835-c8b94bb23ec8
 	github.com/kelseyhightower/envconfig v1.4.0
-	github.com/kr/pretty v0.2.0 // indirect
 	github.com/moby/term v0.0.0-20201216013528-df9cb8a40635 // indirect
 	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
@@ -27,7 +26,6 @@ require (
 	golang.org/x/time v0.0.0-20201208040808-7e3f01d25324 // indirect
 	google.golang.org/genproto v0.0.0-20201214200347-8c77b98c765d // indirect
 	google.golang.org/grpc v1.34.0 // indirect
-	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 	gotest.tools/v3 v3.0.3 // indirect
 	honnef.co/go/netdb v0.0.0-20150201073656-a416d700ae39
