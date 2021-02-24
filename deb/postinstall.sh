@@ -12,6 +12,12 @@ if [ -f /etc/default/ldddns ]; then
     rm /etc/default/ldddns
 fi
 
+# Work around systemd reporting dropins being changed on disk.
+# See https://github.com/systemd/systemd/issues/17730
+for dropin in $(systemctl cat ldddns.service | grep '^# /etc/systemd/system/ldddns.service.d/' | cut -c 3-); do
+    [ -e "${dropin}" ] && touch "${dropin}"
+done
+
 /bin/systemctl daemon-reload
 
 if /bin/systemctl is-active --quiet ldddns.service; then
