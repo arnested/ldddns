@@ -14,10 +14,12 @@ fi
 
 # Work around systemd reporting dropins being changed on disk.
 # See https://github.com/systemd/systemd/issues/17730
-# Fixed in https://github.com/systemd/systemd/pull/18869
-for dropin in $(systemctl cat ldddns.service | grep '^# /etc/systemd/system/ldddns.service.d/' | cut -c 3-); do
-    [ -e "${dropin}" ] && touch "${dropin}"
-done
+# Fixed in 248-rc3 (https://github.com/systemd/systemd/pull/18869).
+if [ "$(systemd --version | head -1 | sed -e 's/systemd \([0-9]*\).*/\1/')" -lt "248" ]; then
+    for dropin in $(systemctl cat ldddns.service | grep '^# /etc/systemd/system/ldddns.service.d/' | cut -c 3-); do
+        [ -e "${dropin}" ] && touch "${dropin}"
+    done
+fi
 
 /bin/systemctl daemon-reload
 
