@@ -54,7 +54,7 @@ jobs:
         GO111MODULE: 'on'
       run: go test -v -race -cover -covermode=atomic -coverprofile=coverage.txt ./...
     - name: Upload coverage report to Codecov
-      uses: codecov/codecov-action@v1.2.2
+      uses: codecov/codecov-action@v1.3.1
       with:
         flags: go${{ matrix.go-version }}
         token: ${{secrets.CODECOV_TOKEN}}
