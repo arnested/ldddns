@@ -6,7 +6,7 @@ After=docker.service
 
 [Service]
 Type=notify
-ExecStart=/usr/libexec/ldddns
+ExecStart=/usr/libexec/ldddns start
 Restart=on-failure
 DynamicUser=yes
 SupplementaryGroups=docker

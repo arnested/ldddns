@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
+	_ "embed"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/coreos/go-systemd/daemon"
@@ -13,9 +15,12 @@ import (
 	"ldddns.arnested.dk/internal/log"
 )
 
-// Version string to be set at compile time via command line (-ldflags "-X main.version=1.2.3").
 var (
-	version string
+	//go:embed LICENSE
+	//nolint:gochecknoglobals
+	license string
+	// Version string to be set at compile time via command line (-ldflags "-X main.version=1.2.3").
+	version = "DEV"
 )
 
 type Config struct {
@@ -23,6 +28,13 @@ type Config struct {
 }
 
 func main() {
+	if len(os.Args) <= 1 || os.Args[1] != "start" {
+		fmt.Fprintf(os.Stderr, "ldddns v%s (https://ldddns.arnested.dk)\n\n", version)
+		fmt.Fprintln(os.Stderr, license)
+
+		return
+	}
+
 	log.Logf(log.PriNotice, "Starting ldddns v%s...", version)
 	defer log.Logf(log.PriNotice, "Stopped ldddns v%s.", version)
 
