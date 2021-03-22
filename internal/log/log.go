@@ -14,9 +14,9 @@ const (
 	PriEmerg Priority = iota
 	// PriAlert is the alert log level.
 	PriAlert
-	// PerCrit is the critical log level.
+	// PriCrit is the critical log level.
 	PriCrit
-	// PerErr is the error log level.
+	// PriErr is the error log level.
 	PriErr
 	// PriWarning is the warning log level.
 	PriWarning

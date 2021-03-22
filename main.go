@@ -23,6 +23,7 @@ var (
 	version = "DEV"
 )
 
+// Config is the configuration used to create hostnams for containers.
 type Config struct {
 	HostnameLookup []string `split_words:"true" default:"env:VIRTUAL_HOST,containerName"`
 }
