@@ -21,11 +21,11 @@ func handleContainer(
 	ctx context.Context,
 	docker *client.Client,
 	containerID string,
-	egs *EntryGroups,
+	egs *entryGroups,
 	status string,
 	config Config,
 ) error {
-	eg, commit, err := egs.Get(containerID)
+	eg, commit, err := egs.get(containerID)
 	defer commit()
 
 	if err != nil {
@@ -76,7 +76,7 @@ func handleContainer(
 	return nil
 }
 
-func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *EntryGroups) {
+func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *entryGroups) {
 	containers, err := docker.ContainerList(ctx, types.ContainerListOptions{})
 	if err != nil {
 		log.Logf(log.PriErr, "getting container list: %v", err)
@@ -92,7 +92,7 @@ func handleExistingContainers(ctx context.Context, config Config, docker *client
 	}
 }
 
-func listen(ctx context.Context, config Config, docker *client.Client, egs *EntryGroups, started time.Time) {
+func listen(ctx context.Context, config Config, docker *client.Client, egs *entryGroups, started time.Time) {
 	filter := filters.NewArgs()
 	filter.Add("type", "container")
 	filter.Add("event", "die")

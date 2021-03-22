@@ -10,15 +10,17 @@ import (
 	"ldddns.arnested.dk/internal/log"
 )
 
+// Container holds information about a container.
 type Container struct {
 	types.ContainerJSON
 }
 
-// Names is the containers name without the leading '/'.
+// Name is the containers name without the leading '/'.
 func (c Container) Name() string {
 	return c.ContainerJSON.Name[1:]
 }
 
+// IPAddresses returns a slice of the IPv4 addresses of the container.
 func (c Container) IPAddresses() []string {
 	ips := []string{}
 
