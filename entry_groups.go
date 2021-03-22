@@ -8,20 +8,21 @@ import (
 	"ldddns.arnested.dk/internal/log"
 )
 
-type EntryGroups struct {
+type entryGroups struct {
 	avahiServer *avahi.Server
 	groups      map[string]*avahi.EntryGroup
 	mutex       sync.Mutex
 }
 
-func NewEntryGroups(avahiServer *avahi.Server) *EntryGroups {
-	return &EntryGroups{
+func newEntryGroups(avahiServer *avahi.Server) *entryGroups {
+	return &entryGroups{
 		avahiServer: avahiServer,
 		groups:      make(map[string]*avahi.EntryGroup),
+		mutex:       sync.Mutex{},
 	}
 }
 
-func (e *EntryGroups) Get(containerID string) (*avahi.EntryGroup, func(), error) {
+func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error) {
 	commit := func() {
 		empty, err := e.groups[containerID].IsEmpty()
 		if err != nil {

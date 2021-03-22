@@ -11,6 +11,8 @@ import (
 
 const tld = ".local"
 
+// Hostnames returns a slice of the hostnames we should use for the
+// container.
 func Hostnames(c container.Container, hostnameLookup []string) ([]string, error) {
 	var hostnames []string
 
@@ -34,7 +36,7 @@ func Hostnames(c container.Container, hostnameLookup []string) ([]string, error)
 	return removeDuplicates(hostnames), nil
 }
 
-// rewriteHostname will make `hostname` suitable for dns-sd.
+// RewriteHostname will make `hostname` suitable for dns-sd.
 func RewriteHostname(hostname string) string {
 	p := idna.New(
 		idna.BidiRule(),

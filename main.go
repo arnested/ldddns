@@ -67,7 +67,7 @@ func main() {
 	}
 	defer avahiServer.Close()
 
-	egs := NewEntryGroups(avahiServer)
+	egs := newEntryGroups(avahiServer)
 
 	started := time.Now()
 
