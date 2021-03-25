@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	_ "embed"
+	"flag"
 	"fmt"
 	"os"
 	"time"
@@ -11,7 +12,6 @@ import (
 	"github.com/docker/docker/client"
 	"github.com/godbus/dbus/v5"
 	"github.com/holoplot/go-avahi"
-	"github.com/kelseyhightower/envconfig"
 	"ldddns.arnested.dk/internal/log"
 )
 
@@ -23,15 +23,13 @@ var (
 	version = "DEV"
 )
 
-// Config is the configuration used to create hostnams for containers.
-type Config struct {
-	HostnameLookup []string `split_words:"true" default:"env:VIRTUAL_HOST,containerName"`
-}
-
 func main() {
-	if len(os.Args) <= 1 || os.Args[1] != "start" {
-		fmt.Fprintf(os.Stderr, "ldddns v%s (https://ldddns.arnested.dk)\n\n", version)
-		fmt.Fprintln(os.Stderr, license)
+	configUnit := flag.String("config", "", "the name of the systemd unit with config")
+	start := flag.Bool("start", false, "start the service")
+	flag.Parse()
+
+	if !*start {
+		fmt.Fprintf(os.Stderr, "ldddns v%s (https://ldddns.arnested.dk)\n\n%s\n", version, license)
 
 		return
 	}
@@ -39,12 +37,9 @@ func main() {
 	log.Logf(log.PriNotice, "Starting ldddns v%s...", version)
 	defer log.Logf(log.PriNotice, "Stopped ldddns v%s.", version)
 
-	// Setup stuff.
-	var config Config
-
-	err := envconfig.Process("ldddns", &config)
+	config, err := config(*configUnit)
 	if err != nil {
-		panic(fmt.Errorf("could not read environment config: %w", err))
+		panic(fmt.Errorf("cannot get config: %w", err))
 	}
 
 	docker, err := client.NewClientWithOpts(client.FromEnv)

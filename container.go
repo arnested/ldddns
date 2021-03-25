@@ -69,7 +69,7 @@ func handleContainer(
 		addAddress(eg, hostname, ips)
 	}
 
-	if services := c.Services(); len(hostnames) > 0 {
+	if services := c.Services(); config.BroadcastService && len(hostnames) > 0 {
 		addServices(eg, hostnames[0], ips, services, c.Name())
 	}
 

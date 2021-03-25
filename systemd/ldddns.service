@@ -6,7 +6,7 @@ After=docker.service
 
 [Service]
 Type=notify
-ExecStart=/usr/libexec/ldddns start
+ExecStart=/usr/libexec/ldddns -start -config=%n
 Restart=on-failure
 DynamicUser=yes
 SupplementaryGroups=docker
@@ -36,3 +36,7 @@ UMask=0777
 
 [Install]
 WantedBy=docker.service
+
+[X-ldddns]
+HostnameLookup=env:VIRTUAL_HOST, containerName
+BroadcastService=yes

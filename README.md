@@ -27,7 +27,7 @@ I.e. `my.fancy.com` will be rewritten to `my-fancy.local`.
 
 ## Configuration
 
-You can configure where the service should look for hostnames:
+You can configure where the service should create hostnames from:
 
 * Environment variables (configured with `env:<VAR_NAME>`) - several
   hostnames can be separated by spaces or commas.
@@ -37,28 +37,30 @@ You can configure where the service should look for hostnames:
 * Labels (configured with `label:<label.name>`) - several hostnames
   can be separated by spaces or commas.
 
-You configure it be setting the environment variable
-`LDDDNS_HOSTNAME_LOOKUP` in a systemd unit override file.
+You configure it by adding a `[X-ldddns]` section to a systemd unit
+override file.
 
 For example, you could create a file named
 `/etc/systemd/system/ldddns.service.d/override.conf` with the content:
 
 ```ini
-[Service]
-Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,label:org.example.my.hostname,env:OTHER_VAR,containerName
+[X-ldddns]
+HostnameLookup=env:VIRTUAL_HOST, label:org.example.my.hostname, env:OTHER_VAR, containerName
+BroadcastService=no
 ```
 
 This will create a hostname for all hostnames in the `VIRTUAL_HOST`
-environment variable, the `org.example.my.hostname` label, the
-`OTHER_VAR` environment variable, and the container name.
+environment variable, from the value of the `org.example.my.hostname`
+label, from the `OTHER_VAR` environment variable, and the container name.
 
 The first hostname found will be broadcast as a DNS-SD service.
 
 The default configuration is the equivalent of setting:
 
 ```ini
-[Service]
-Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,containerName
+[X-ldddns]
+HostnameLookup=env:VIRTUAL_HOST, containerName
+BroadcastService=yes
 ```
 
 ## Install
@@ -69,7 +71,7 @@ release](https://github.com/arnested/ldddns/releases/latest) and open
 it or run:
 
 ```console
-sudo dpkg -i ldddns_0.0.71_linux_amd64.deb
+sudo dpkg -i ldddns_0.0.93_linux_amd64.deb
 ```
 
 Or just run the following command which will download and install the
