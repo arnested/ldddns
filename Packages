@@ -1,42 +1,42 @@
 Package: ldddns
-Version: 0.0.95
+Version: 0.0.96
 Architecture: arm64
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 8330
 Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.95_linux_arm64.deb
+Filename: ./ldddns_0.0.96_linux_arm64.deb
 Size: 3093324
-MD5sum: 66ba5e0b3cf74828a3eaa367b80ca372
-SHA1: e9484a38f94c385b1bd422ba03ddd7214f7e58d1
-SHA256: ad4ebc24a3a254d9ab18b732592ed8bf48156d98023f7551e2e7e4750a5d6a1e
+MD5sum: 82c91cf3b8b4f0af944aa15e3a5ae221
+SHA1: 2eb6095bcdf8dd3590ba3502c93875be3ce1bca9
+SHA256: 2bd57b1483f09a150dfe84d7a80c81b422448680bbf4f077b8a6482451396443
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
 Package: ldddns
-Version: 0.0.95
-Architecture: amd64
-Maintainer: Arne Jørgensen <arne@arnested.dk>
-Installed-Size: 8942
-Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.95_linux_amd64.deb
-Size: 3412760
-MD5sum: 8be6ee903567461806c9b6408de8d6ef
-SHA1: 6f9bad42313e80e62d3ad8f98e5558195fea7606
-SHA256: 28c4a3be8d0592f05f745fb965f31955ca5467e9d7ab12736be19f9674046de0
-Description: Local Docker Development DNS
-Vendor: Arne Jørgensen
-
-Package: ldddns
-Version: 0.0.95
+Version: 0.0.96
 Architecture: i386
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 7666
 Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.95_linux_386.deb
-Size: 3249292
-MD5sum: 1ca629d312b9f3f05f2a57cd27531871
-SHA1: c1b67e4f71aed71bbdc304d1f80c2135a711e0fa
-SHA256: 1b38dfee19a77d2b5aa42e2cc5355616e4ab75390683410282a4f1c78cbe8ee7
+Filename: ./ldddns_0.0.96_linux_386.deb
+Size: 3249288
+MD5sum: 6ec733017752d2029213ac9ac04be969
+SHA1: f6b86c4eda880e31ed07b998635faa00dacc8cde
+SHA256: 71a9281720fd64f2265f971b755e2460413c84239fd33aed71ac30e6ce20f61d
+Description: Local Docker Development DNS
+Vendor: Arne Jørgensen
+
+Package: ldddns
+Version: 0.0.96
+Architecture: amd64
+Maintainer: Arne Jørgensen <arne@arnested.dk>
+Installed-Size: 8942
+Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
+Filename: ./ldddns_0.0.96_linux_amd64.deb
+Size: 3412752
+MD5sum: 0be07492a2a80a5059bb61fbce2e7f04
+SHA1: c4b82b168c8b0e6c5533f679c6a53a4160186ed1
+SHA256: eae82f4dd0055f94997fbcb6dcc732a079b36e397736ec93671add479848d738
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
