@@ -64,7 +64,7 @@ jobs:
     - name: Add install script to GitHub Pages
       run: cp -v install.sh site/install.sh
     - name: Deploy deb packages
-      uses: JamesIves/github-pages-deploy-action@4.1.0
+      uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
         branch: gh-pages
         folder: site
