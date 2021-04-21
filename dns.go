@@ -15,7 +15,7 @@ func addAddress(eg *avahi.EntryGroup, hostname string, ips []string) {
 			continue
 		}
 
-		err := eg.AddAddress(int32(net.FlagBroadcast), avahi.ProtoInet, 16, hostname, ip)
+		err := eg.AddAddress(int32(net.FlagLoopback), avahi.ProtoInet, 16, hostname, ip)
 		if err != nil {
 			log.Logf(log.PriErr, "addAddess() failed: %v", err)
 
@@ -34,7 +34,7 @@ func addServices(eg *avahi.EntryGroup, hostname string, ips []string, services m
 
 		for service, portNumber := range services {
 			err := eg.AddService(
-				int32(net.FlagBroadcast),
+				int32(net.FlagLoopback),
 				avahi.ProtoInet,
 				0,
 				name,
