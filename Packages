@@ -1,42 +1,42 @@
 Package: ldddns
-Version: 0.0.103
-Architecture: arm64
-Maintainer: Arne Jørgensen <arne@arnested.dk>
-Installed-Size: 8330
-Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.103_linux_arm64.deb
-Size: 3093494
-MD5sum: c5a622e164973167ff01d9e6d53e0f26
-SHA1: c64de46a0a6a6f15a2da8745859401df1963cf07
-SHA256: ac1925fbadd93c819679929b248c823bea9890606fabb615c6f383246f624072
-Description: Local Docker Development DNS
-Vendor: Arne Jørgensen
-
-Package: ldddns
-Version: 0.0.103
-Architecture: i386
-Maintainer: Arne Jørgensen <arne@arnested.dk>
-Installed-Size: 7666
-Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.103_linux_386.deb
-Size: 3249276
-MD5sum: 3622957c0bd84907a737e489b80b72df
-SHA1: b25c284d7924e4dbfa7061d61611571404afbccd
-SHA256: 0cc5b14affe636d06883e08b72abd78b599bc84aebdbbf9d83316a38d37673d4
-Description: Local Docker Development DNS
-Vendor: Arne Jørgensen
-
-Package: ldddns
-Version: 0.0.103
+Version: 0.0.104
 Architecture: amd64
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 8942
 Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.0.103_linux_amd64.deb
-Size: 3412692
-MD5sum: 13222c52cf6cff79fa677e82e4a3a8e8
-SHA1: 76d462360a9d2fdafc9796d371abc74cc49bb8c2
-SHA256: 115d0c2630edf4d800ca8876697da64469b86238543505535242061e5be4d82a
+Filename: ./ldddns_0.0.104_linux_amd64.deb
+Size: 3412688
+MD5sum: a0c80b56e4ee8678c55af556b738ff0d
+SHA1: c7df05ee454d410fc2b90661e9b09c0493db569d
+SHA256: ba2a814231421abaea95c079cd8c550a2f31302ba7dfc0ebc61c15442fdd4bb0
+Description: Local Docker Development DNS
+Vendor: Arne Jørgensen
+
+Package: ldddns
+Version: 0.0.104
+Architecture: arm64
+Maintainer: Arne Jørgensen <arne@arnested.dk>
+Installed-Size: 8330
+Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
+Filename: ./ldddns_0.0.104_linux_arm64.deb
+Size: 3093492
+MD5sum: 7e985fb3b27a14b25d005d590cbe5742
+SHA1: 5efe30d1b4555a5e073bcf40aa08a8ceeef11169
+SHA256: f87da06c2a247fe6e7f3b18336cc96f98e2f62d2afffa2464291723643b6d927
+Description: Local Docker Development DNS
+Vendor: Arne Jørgensen
+
+Package: ldddns
+Version: 0.0.104
+Architecture: i386
+Maintainer: Arne Jørgensen <arne@arnested.dk>
+Installed-Size: 7666
+Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
+Filename: ./ldddns_0.0.104_linux_386.deb
+Size: 3249270
+MD5sum: d86f1d284f2935a1a5845b176718d691
+SHA1: ee3d6cbfbdef4ccc19a3d3d2578da1e7e62c50ef
+SHA256: ff90b800ca98c470b40b420faadc89f23cb16763d804a7791c4d81f7e2840491
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
