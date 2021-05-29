@@ -5,6 +5,7 @@ import (
 	_ "embed"
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/coreos/go-systemd/daemon"
@@ -72,7 +73,7 @@ func main() {
 
 	started := time.Now()
 
-	_, err = daemon.SdNotify(true, daemon.SdNotifyReady)
+	err = sdNotify(daemon.SdNotifyReady, version, config)
 	if err != nil {
 		panic(fmt.Errorf("notifying systemd we're ready: %w", err))
 	}
@@ -81,8 +82,21 @@ func main() {
 	handleExistingContainers(ctx, config, docker, egs)
 	listen(ctx, config, docker, egs, started)
 
-	_, err = daemon.SdNotify(true, daemon.SdNotifyStopping)
+	err = sdNotify(daemon.SdNotifyStopping, version, config)
 	if err != nil {
 		log.Logf(log.PriErr, "notifying systemd we're shutting down: %v", err)
 	}
+}
+
+func sdNotify(state string, version string, config Config) error {
+	_, err := daemon.SdNotify(true, fmt.Sprintf(
+		"%s\nSTATUS=v%s; HostnameLookup='%s';",
+		state,
+		version,
+		strings.Join(config.HostnameLookup, " ")))
+	if err != nil {
+		return fmt.Errorf("failed to notify systemd: %w", err)
+	}
+
+	return nil
 }
