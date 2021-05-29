@@ -14,7 +14,6 @@ jobs:
   go_generate:
     name: Check generated code is up to date
     needs: go-version
-    if: '!github.event.deleted'
     runs-on: ubuntu-latest
     env:
       workdir: go/src/${{ needs.go-version.outputs.module }}
@@ -38,7 +37,6 @@ jobs:
   build_and_test:
     name: Build and test
     needs: go-version
-    if: '!github.event.deleted'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -60,7 +58,6 @@ jobs:
   license_check:
     name: License check
     needs: go-version
-    if: '!github.event.deleted'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
