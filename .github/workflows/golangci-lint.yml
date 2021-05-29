@@ -6,15 +6,15 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.1
-      - uses: arnested/go-version-action@main
+      - uses: actions/checkout@v2
+      - uses: arnested/go-version-action@v1
         id: go-version
       - name: Setup Go ${{ steps.go-version.outputs.minimal }}
         uses: actions/setup-go@v2
         with:
           go-version: ${{ steps.go-version.outputs.minimal }}
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v2.5.2
+        uses: golangci/golangci-lint-action@v2
         with:
           version: latest
           only-new-issues: true
