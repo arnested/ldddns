@@ -14,8 +14,8 @@ similar.
 If the containers also have exposed ports (and the ports can be looked
 up in `/etc/services`) the service will also broadcast the
 service/domain for service discovery. I.e., `_https._tcp.` for
-https://my-fancy.local (a.k.a. DNS-SD). Only _one_ domain name can be
-broadcast per service per container.
+https://my-example.local (a.k.a. DNS-SD). Only _one_ domain name can
+be broadcast per service per container.
 
 Per default domain names will be generated from the `VIRTUAL_HOST`
 environment variable is present (several hostnames can be separated by
@@ -23,7 +23,7 @@ space or comma) and from the container name.
 
 If the hostnames do not fulfill the rule of being on the `.local` TLD
 and have only one level below the service will rewrite it.
-I.e. `my.fancy.com` will be rewritten to `my-fancy.local`.
+I.e. `my.example.com` will be rewritten to `my-example.local`.
 
 ## Configuration
 
@@ -69,7 +69,7 @@ release](https://github.com/arnested/ldddns/releases/latest) and open
 it or run:
 
 ```console
-sudo dpkg -i ldddns_0.0.71_linux_amd64.deb
+sudo dpkg -i ldddns_0.0.111_linux_amd64.deb
 ```
 
 Or just run the following command which will download and install the
@@ -98,19 +98,23 @@ You can get the status of the service by running:
 sudo systemctl status ldddns.service
 ● ldddns.service - Local Docker Development DNS
      Loaded: loaded (/lib/systemd/system/ldddns.service; enabled; vendor preset: enabled)
-     Active: active (running) since Fri 2021-01-08 09:29:46 CET; 44min ago
-   Main PID: 87715 (ldddns)
-      Tasks: 8 (limit: 47858)
-     Memory: 5.2M
+    Drop-In: /usr/lib/systemd/system/ldddns.service.d
+             └─docker-version.conf
+     Active: active (running) since Sat 2021-05-29 21:31:56 CEST; 1h 1min ago
+       Docs: https://ldddns.arnested.dk
+   Main PID: 133660 (ldddns)
+     Status: "v0.0.111; HostnameLookup='env:VIRTUAL_HOST containerName';"
+      Tasks: 14 (limit: 47843)
+     Memory: 4.7M
      CGroup: /system.slice/ldddns.service
-             └─87715 /usr/libexec/ldddns
+             └─133660 /usr/libexec/ldddns start
 
-jan 08 09:29:46 pop-os systemd[1]: Starting Local Docker Development DNS...
-jan 08 09:29:46 pop-os ldddns[87715]: Starting ldddns v0.0.71...
-jan 08 09:29:46 pop-os systemd[1]: Started Local Docker Development DNS.
-jan 08 10:13:52 pop-os ldddns[87715]: Rewrote hostname from "my.fancy.com" to "my-fancy.local"
-jan 08 10:13:52 pop-os ldddns[87715]: added address for "my-fancy.local" pointing to "172.19.0.3"
-jan 08 10:13:52 pop-os ldddns[87715]: added service "_http._tcp" pointing to "my-fancy.local"
+may 29 21:31:56 pop-os systemd[1]: Starting Local Docker Development DNS...
+may 29 21:31:56 pop-os ldddns[133660]: Starting ldddns v0.0.111...
+may 29 21:31:56 pop-os systemd[1]: Started Local Docker Development DNS.
+may 29 21:31:56 pop-os ldddns[133660]: Rewrote hostname from "my.example.com" to "my-example.local"
+may 29 21:31:56 pop-os ldddns[133660]: added address for "my-example.local" pointing to "172.18.0.2"
+may 29 21:31:56 pop-os ldddns[133660]: added service "_https._tcp" pointing to "my-example.local"
 ```
 
 Or follow the log with:
