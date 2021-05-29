@@ -1,8 +1,10 @@
 name: Release
 on:
-  push:
-    branches:
-    - main
+  workflow_run:
+    workflows: ["Build and test"]
+    branches: [main]
+    types:
+      - completed
 jobs:
   bump-version:
     runs-on: ubuntu-latest
