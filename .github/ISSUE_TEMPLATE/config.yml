@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask a question or get support
+    url: https://github.com/arnested/ldddns/discussions
+    about: Please use the discussions forum
+  - name: View documentation
+    url: https://ldddns.arnested.dk
+    about: Visit the main site, and please come back if you still have questions
