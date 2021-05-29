@@ -57,7 +57,6 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         flags: go${{ matrix.go-version }}
-        token: ${{secrets.CODECOV_TOKEN}}
   license_check:
     name: License check
     needs: go-version
