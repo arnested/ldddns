@@ -54,11 +54,16 @@ environment variable, the `org.example.my.hostname` label, the
 
 The first hostname found will be broadcast as a DNS-SD service.
 
+Containers started with `docker-compose run` are ignored by
+default. You can included them by setting the environment variable
+`LDDDNS_IGNORE_DOCKER_COMPOSE_ONEOFF` to `false`.
+
 The default configuration is the equivalent of setting:
 
 ```ini
 [Service]
 Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,containerName
+Environment=LDDDNS_IGNORE_DOCKER_COMPOSE_ONEOFF=true
 ```
 
 ## Install
