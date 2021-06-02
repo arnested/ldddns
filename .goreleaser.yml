@@ -49,8 +49,8 @@ nfpms:
       - src: systemd/ldddns.service
         dst: /lib/systemd/system/ldddns.service
 
-      - src: deb/ldddns.list
-        dst: /etc/apt/sources.list.d/ldddns.list
+      - src: deb/ldddns.sources
+        dst: /etc/apt/sources.list.d/ldddns.sources
 
       - src: deb/ldddns.asc
         dst: /etc/apt/trusted.gpg.d/ldddns.asc
