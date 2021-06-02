@@ -102,16 +102,20 @@ Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,label:org.example.my.hostnam
 environment variable, the <code>org.example.my.hostname</code> label, the
 <code>OTHER_VAR</code> environment variable, and the container name.</p>
 <p>The first hostname found will be broadcast as a DNS-SD service.</p>
+<p>Containers started with <code>docker-compose run</code> are ignored by
+default. You can included them by setting the environment variable
+<code>LDDDNS_IGNORE_DOCKER_COMPOSE_ONEOFF</code> to <code>false</code>.</p>
 <p>The default configuration is the equivalent of setting:</p>
 <pre><code class="language-ini">[Service]
 Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,containerName
+Environment=LDDDNS_IGNORE_DOCKER_COMPOSE_ONEOFF=true
 </code></pre>
 <h2>Install</h2>
 <p>For Pop!_OS, Ubuntu, Debian and the like, download the <code>.deb</code> package
 file from the <a href="https://github.com/arnested/ldddns/releases/latest">latest
 release</a> and open
 it or run:</p>
-<pre><code class="language-console">sudo dpkg -i <a href="https://github.com/arnested/ldddns/releases/latest/download/ldddns_0.0.114_linux_amd64.deb">ldddns_0.0.114_linux_amd64.deb</a>
+<pre><code class="language-console">sudo dpkg -i <a href="https://github.com/arnested/ldddns/releases/latest/download/ldddns_0.1.0_linux_amd64.deb">ldddns_0.1.0_linux_amd64.deb</a>
 </code></pre>
 <p>Or just run the following command which will download and install the
 latest package for you:</p>
