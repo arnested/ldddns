@@ -1,0 +1,6 @@
+X-Repolib-Name: Local Docker Development DNS
+Enabled: yes
+Types: deb
+URIs: https://ldddns.arnested.dk
+Suites: ./
+Components:
