@@ -1,8 +1,11 @@
 name: "CodeQL"
 
 on:
-  push:
+  workflow_run:
+    workflows: ['Build and test']
     branches: [main]
+    types:
+      - completed
   pull_request:
     branches: [main]
   schedule:
