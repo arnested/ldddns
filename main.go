@@ -5,7 +5,6 @@ import (
 	_ "embed"
 	"fmt"
 	"os"
-	"strings"
 	"time"
 
 	"github.com/coreos/go-systemd/daemon"
@@ -26,7 +25,8 @@ var (
 
 // Config is the configuration used to create hostnams for containers.
 type Config struct {
-	HostnameLookup []string `split_words:"true" default:"env:VIRTUAL_HOST,containerName"`
+	HostnameLookup            []string `split_words:"true" default:"env:VIRTUAL_HOST,containerName"`
+	IgnoreDockerComposeOneoff bool     `split_words:"true" default:"true"`
 }
 
 func main() {
@@ -90,10 +90,11 @@ func main() {
 
 func sdNotify(state string, version string, config Config) error {
 	_, err := daemon.SdNotify(true, fmt.Sprintf(
-		"%s\nSTATUS=v%s; HostnameLookup='%s';",
+		"%s\nSTATUS=v%s; %#v;",
 		state,
 		version,
-		strings.Join(config.HostnameLookup, " ")))
+		config,
+	))
 	if err != nil {
 		return fmt.Errorf("failed to notify systemd: %w", err)
 	}

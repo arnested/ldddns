@@ -55,6 +55,10 @@ func handleContainer(
 
 	c := container.Container{ContainerJSON: containerJSON}
 
+	if ignoreOneoff(c, config) {
+		return nil
+	}
+
 	ips := c.IPAddresses()
 	if len(ips) == 0 {
 		return nil
@@ -74,6 +78,25 @@ func handleContainer(
 	}
 
 	return nil
+}
+
+func ignoreOneoff(c container.Container, config Config) bool {
+	if !config.IgnoreDockerComposeOneoff {
+		return false
+	}
+
+	oneoff, ok := c.Config.Labels["com.docker.compose.oneoff"]
+	if !ok {
+		return false
+	}
+
+	if oneoff != "True" {
+		return false
+	}
+
+	log.Logf(log.PriNotice, "Ignoring oneoff container: %s", c.ID)
+
+	return true
 }
 
 func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *entryGroups) {
