@@ -1,42 +1,42 @@
 Package: ldddns
-Version: 0.1.3
+Version: 0.1.4
 Architecture: arm64
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 8522
 Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.1.3_linux_arm64.deb
-Size: 3124278
-MD5sum: 06abf3c4ad0ff21bfc3da206841028d3
-SHA1: 2d65d4500a3fe1f71bb6fa7ff4d6a1dde6a93df9
-SHA256: 94361e38c4b7a0aa310a9296e99604b9d9043750b789b843274728a97fa771d7
+Filename: ./ldddns_0.1.4_linux_arm64.deb
+Size: 3124284
+MD5sum: 3cb60dd075eb19ecda3f1c471798c43c
+SHA1: 683f52282a77dd3084100a77d935e95ad1597893
+SHA256: 451847693d629825e192553c848afa3139486f05f8db142da0e9413e157111c2
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
 Package: ldddns
-Version: 0.1.3
+Version: 0.1.4
 Architecture: i386
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 7842
 Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.1.3_linux_386.deb
-Size: 3288092
-MD5sum: 72cfd84d07a80a3a82a83245e5a5d296
-SHA1: c35d22fdac8f71f8ae471ef9db15bdc9ac6469e6
-SHA256: 5586825211e254affe2cdf2f540ee75a9157a8c87d3f1d4ef2df3df367e68138
+Filename: ./ldddns_0.1.4_linux_386.deb
+Size: 3288084
+MD5sum: d7b76d1a1b2c234054a84160d039b243
+SHA1: 1350a1f741dd69fa536b7dcb961282cba80ef7d8
+SHA256: c8ddaaf1518f4daea76113b043638466b32aaf72a0f5be01172b95ecd0a0d82e
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
 Package: ldddns
-Version: 0.1.3
+Version: 0.1.4
 Architecture: amd64
 Maintainer: Arne Jørgensen <arne@arnested.dk>
 Installed-Size: 9150
 Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
-Filename: ./ldddns_0.1.3_linux_amd64.deb
-Size: 3442942
-MD5sum: eedbe3818e6aef807d14ee20af4f3c86
-SHA1: 20f92e5b705949cef90e4bc2f9e6a1f9b598f7de
-SHA256: 7857599e52359ec248bd168a8e8067cfea11b963bbb20673db18a2869463607a
+Filename: ./ldddns_0.1.4_linux_amd64.deb
+Size: 3442940
+MD5sum: 6f6ea04a289850e8390a22ef5e823620
+SHA1: 2c19cb20d63d9e873ae03deb8165eae085da165a
+SHA256: 89dc5110eb6cecdbfa609094e9f231d9bee5327f6a76ec736463d175021daa07
 Description: Local Docker Development DNS
 Vendor: Arne Jørgensen
 
