@@ -3,4 +3,4 @@ Enabled: yes
 Types: deb
 URIs: https://ldddns.arnested.dk
 Suites: /
-Signed-By: /usr/share/keyrings/ldddns.asc
+Signed-By: /usr/share/keyrings/ldddns.gpg

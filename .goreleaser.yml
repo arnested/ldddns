@@ -52,8 +52,8 @@ nfpms:
       - src: deb/ldddns.sources
         dst: /etc/apt/sources.list.d/ldddns.sources
 
-      - src: deb/ldddns.asc
-        dst: /usr/share/keyrings/ldddns.asc
+      - src: deb/ldddns.gpg
+        dst: /usr/share/keyrings/ldddns.gpg
 
     scripts:
       postinstall: "deb/postinstall.sh"
