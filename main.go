@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	_ "embed"
+	"encoding/json"
 	"fmt"
 	"os"
 	"time"
@@ -89,11 +90,16 @@ func main() {
 }
 
 func sdNotify(state string, version string, config Config) error {
-	_, err := daemon.SdNotify(true, fmt.Sprintf(
-		"%s\nSTATUS=v%s; %#v;",
+	cfg, err := json.Marshal(config)
+	if err != nil {
+		return fmt.Errorf("could not marshal config as JSON: %w", err)
+	}
+
+	_, err = daemon.SdNotify(true, fmt.Sprintf(
+		"%s\nSTATUS=v%s; %s",
 		state,
 		version,
-		config,
+		cfg,
 	))
 	if err != nil {
 		return fmt.Errorf("failed to notify systemd: %w", err)
