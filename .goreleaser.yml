@@ -60,11 +60,6 @@ nfpms:
       preremove: "deb/preremove.sh"
       postremove: "deb/postremove.sh"
 
-    deb:
-      triggers:
-        interest_noawait:
-          - /usr/bin/dockerd
-
 announce:
   twitter:
     enabled: true
