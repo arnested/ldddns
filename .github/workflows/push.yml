@@ -45,6 +45,8 @@ jobs:
         go-version: ${{ fromJSON(needs.go-version.outputs.matrix) }}
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: Setup Go ${{ matrix.go-version }}
       uses: actions/setup-go@v2
       with:
@@ -57,6 +59,16 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         flags: go${{ matrix.go-version }}
+    - name: Run GoReleaser
+      uses: goreleaser/goreleaser-action@v2
+      with:
+        version: latest
+        args: release --skip-publish
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Debian packages
+        path: dist/*.deb
+
   license_check:
     name: License check
     needs: go-version
