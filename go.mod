@@ -8,7 +8,7 @@ require (
 	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf
 	github.com/docker/docker v20.10.8+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
-	github.com/godbus/dbus/v5 v5.0.4
+	github.com/godbus/dbus/v5 v5.0.5
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/holoplot/go-avahi v0.0.0-20210401075512-c53ad3453c09
 	github.com/kelseyhightower/envconfig v1.4.0
