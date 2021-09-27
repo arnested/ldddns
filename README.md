@@ -74,7 +74,7 @@ release](https://github.com/arnested/ldddns/releases/latest) and open
 it or run:
 
 ```console
-sudo dpkg -i ldddns_0.0.111_linux_amd64.deb
+sudo dpkg -i ldddns_1.0.0_linux_amd64.deb
 ```
 
 Or just run the following command which will download and install the
@@ -103,23 +103,21 @@ You can get the status of the service by running:
 sudo systemctl status ldddns.service
 ● ldddns.service - Local Docker Development DNS
      Loaded: loaded (/lib/systemd/system/ldddns.service; enabled; vendor preset: enabled)
-    Drop-In: /usr/lib/systemd/system/ldddns.service.d
-             └─docker-version.conf
-     Active: active (running) since Sat 2021-05-29 21:31:56 CEST; 1h 1min ago
+     Active: active (running) since Mon 2021-09-27 23:05:59 CEST; 2s ago
        Docs: https://ldddns.arnested.dk
-   Main PID: 133660 (ldddns)
-     Status: "v0.0.111; HostnameLookup='env:VIRTUAL_HOST containerName';"
-      Tasks: 14 (limit: 47843)
-     Memory: 4.7M
+   Main PID: 2207145 (ldddns)
+     Status: "v1.0.0; {"HostnameLookup":["env:VIRTUAL_HOST","containerName"],"IgnoreDockerComposeOneoff":true}"
+      Tasks: 11 (limit: 47832)
+     Memory: 8.2M
      CGroup: /system.slice/ldddns.service
-             └─133660 /usr/libexec/ldddns start
+             └─2207145 /usr/libexec/ldddns start
 
-may 29 21:31:56 pop-os systemd[1]: Starting Local Docker Development DNS...
-may 29 21:31:56 pop-os ldddns[133660]: Starting ldddns v0.0.111...
-may 29 21:31:56 pop-os systemd[1]: Started Local Docker Development DNS.
-may 29 21:31:56 pop-os ldddns[133660]: Rewrote hostname from "my.example.com" to "my-example.local"
-may 29 21:31:56 pop-os ldddns[133660]: added address for "my-example.local" pointing to "172.18.0.2"
-may 29 21:31:56 pop-os ldddns[133660]: added service "_https._tcp" pointing to "my-example.local"
+sep 27 23:05:59 pop-os systemd[1]: Starting Local Docker Development DNS...
+sep 27 23:05:59 pop-os ldddns[133660]: Starting ldddns v1.0.0...
+sep 27 23:05:59 pop-os systemd[1]: Started Local Docker Development DNS.
+sep 27 23:05:59 pop-os ldddns[133660]: Rewrote hostname from "my.example.com" to "my-example.local"
+sep 27 23:05:59 pop-os ldddns[133660]: added address for "my-example.local" pointing to "172.18.0.2"
+sep 27 23:05:59 pop-os ldddns[133660]: added service "_https._tcp" pointing to "my-example.local"
 ```
 
 Or follow the log with:
