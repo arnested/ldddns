@@ -103,21 +103,22 @@ You can get the status of the service by running:
 sudo systemctl status ldddns.service
 ● ldddns.service - Local Docker Development DNS
      Loaded: loaded (/lib/systemd/system/ldddns.service; enabled; vendor preset: enabled)
-     Active: active (running) since Mon 2021-09-27 23:05:59 CEST; 2s ago
+     Active: active (running) since Mon 2022-01-03 09:13:14 CET; 5 days ago
        Docs: https://ldddns.arnested.dk
-   Main PID: 2207145 (ldddns)
-     Status: "v1.0.0; {"HostnameLookup":["env:VIRTUAL_HOST","containerName"],"IgnoreDockerComposeOneoff":true}"
-      Tasks: 11 (limit: 47832)
-     Memory: 8.2M
+   Main PID: 5414 (ldddns)
+     Status: "v1.0.13; {"HostnameLookup":["env:VIRTUAL_HOST","containerName"],"IgnoreDockerComposeOneoff":true}"
+      Tasks: 14 (limit: 47870)
+     Memory: 13.7M
+        CPU: 6.243s
      CGroup: /system.slice/ldddns.service
-             └─2207145 /usr/libexec/ldddns start
+             └─5414 /usr/libexec/ldddns start
 
-sep 27 23:05:59 pop-os systemd[1]: Starting Local Docker Development DNS...
-sep 27 23:05:59 pop-os ldddns[133660]: Starting ldddns v1.0.0...
-sep 27 23:05:59 pop-os systemd[1]: Started Local Docker Development DNS.
-sep 27 23:05:59 pop-os ldddns[133660]: Rewrote hostname from "my.example.com" to "my-example.local"
-sep 27 23:05:59 pop-os ldddns[133660]: added address for "my-example.local" pointing to "172.18.0.2"
-sep 27 23:05:59 pop-os ldddns[133660]: added service "_https._tcp" pointing to "my-example.local"
+jan 07 12:46:11 pop-os systemd[1]: Starting Local Docker Development DNS...
+jan 07 12:46:11 pop-os ldddns[5414]: Starting ldddns v1.0.13...
+jan 07 12:46:11 pop-os systemd[1]: Started Local Docker Development DNS.
+jan 07 12:46:11 pop-os ldddns[5414]: Rewrote hostname from "my.example.com" to "my-example.local"
+jan 07 12:46:11 pop-os ldddns[5414]: added address for "my-example.local" pointing to "172.18.0.2"
+jan 07 12:46:11 pop-os ldddns[5414]: added service "_https._tcp" pointing to "my-example.local"
 ```
 
 Or follow the log with:

@@ -24,7 +24,7 @@ jobs:
       with:
         path: ${{env.workdir}}
     - name: Setup Go ${{ needs.go-version.outputs.minimal }}
-      uses: actions/setup-go@v2
+      uses: WillAbides/setup-go-faster@v1.7.0
       with:
         go-version: ${{ needs.go-version.outputs.minimal }}
     - name: go generate
@@ -47,10 +47,15 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Setup Go ${{ matrix.go-version }}
-      uses: actions/setup-go@v2
+    - name: Setup Go ${{ matrix.go-version }}.x
+      uses: WillAbides/setup-go-faster@v1.7.0
       with:
-        go-version: ${{ matrix.go-version }}
+        go-version: ${{ matrix.go-version }}.x
+        ignore-local: true
+    - name: go version
+      env:
+        GO111MODULE: 'on'
+      run: go version
     - name: go test
       env:
         GO111MODULE: 'on'
@@ -76,7 +81,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup Go ${{ needs.go-version.outputs.minimal }}
-      uses: actions/setup-go@v2
+      uses: WillAbides/setup-go-faster@v1.7.0
       with:
         go-version: ${{ needs.go-version.outputs.minimal }}
     - name: Install wwhrd
