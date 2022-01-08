@@ -40,11 +40,16 @@ func (c Container) Services() map[string]uint16 {
 	services := map[string]uint16{}
 
 	for k := range c.NetworkSettings.Ports {
-		port := strings.SplitN(string(k), "/", 2)
+		port, protoName, found := strings.Cut(string(k), "/")
+		if !found {
+			log.Logf(log.PriErr, "Port not found in: %q", k)
 
-		proto := netdb.GetProtoByName(port[1])
+			continue
+		}
 
-		portNumber, err := strconv.ParseUint(port[0], 10, 16)
+		proto := netdb.GetProtoByName(protoName)
+
+		portNumber, err := strconv.ParseUint(port, 10, 16)
 		if err != nil {
 			log.Logf(log.PriErr, "Could not get port number from %q", k)
 
