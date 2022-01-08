@@ -10,7 +10,7 @@ jobs:
       - uses: arnested/go-version-action@v1
         id: go-version
       - name: Setup Go ${{ steps.go-version.outputs.minimal }}
-        uses: actions/setup-go@v2
+        uses: WillAbides/setup-go-faster@v1.7.0
         with:
           go-version: ${{ steps.go-version.outputs.minimal }}
       - name: golangci-lint
