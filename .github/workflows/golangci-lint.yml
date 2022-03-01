@@ -6,7 +6,7 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: arnested/go-version-action@v1
         id: go-version
       - name: Setup Go ${{ steps.go-version.outputs.minimal }}
