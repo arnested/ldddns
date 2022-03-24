@@ -116,14 +116,14 @@ func getVersion() string {
 
 	if version == "" {
 		version = versioninfo.Revision
+
+		if versioninfo.DirtyBuild {
+			version += "-dirty"
+		}
 	}
 
 	if buildinfo.Main.Version != "(devel)" {
 		version = buildinfo.Main.Version
-	}
-
-	if versioninfo.DirtyBuild {
-		version += "-dirty"
 	}
 
 	return version
