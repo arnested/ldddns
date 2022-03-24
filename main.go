@@ -20,7 +20,6 @@ import (
 
 var (
 	//go:embed LICENSE
-	//nolint:gochecknoglobals
 	license string
 	// Version string to be set at compile time via command line (-ldflags "-X main.version=1.2.3").
 	version string
@@ -124,7 +123,7 @@ func getVersion() string {
 	}
 
 	if versioninfo.DirtyBuild {
-		version = version + "-dirty"
+		version += "-dirty"
 	}
 
 	return version

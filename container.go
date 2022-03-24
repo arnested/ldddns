@@ -17,6 +17,7 @@ import (
 	"ldddns.arnested.dk/internal/log"
 )
 
+//nolint:cyclop
 func handleContainer(
 	ctx context.Context,
 	docker *client.Client,
@@ -25,20 +26,20 @@ func handleContainer(
 	status string,
 	config Config,
 ) error {
-	eg, commit, err := egs.get(containerID)
+	entryGroup, commit, err := egs.get(containerID)
 	defer commit()
 
 	if err != nil {
 		return fmt.Errorf("cannot get entry group for container: %w", err)
 	}
 
-	empty, err := eg.IsEmpty()
+	empty, err := entryGroup.IsEmpty()
 	if err != nil {
 		return fmt.Errorf("checking whether Avahi entry group is empty: %w", err)
 	}
 
 	if !empty {
-		err := eg.Reset()
+		err := entryGroup.Reset()
 		if err != nil {
 			return fmt.Errorf("resetting Avahi entry group is empty: %w", err)
 		}
@@ -53,39 +54,39 @@ func handleContainer(
 		return fmt.Errorf("inspecting container: %w", err)
 	}
 
-	c := container.Container{ContainerJSON: containerJSON}
+	containerInfo := container.Container{ContainerJSON: containerJSON}
 
-	if ignoreOneoff(c, config) {
+	if ignoreOneoff(containerInfo, config) {
 		return nil
 	}
 
-	ips := c.IPAddresses()
-	if len(ips) == 0 {
+	ipNumbers := containerInfo.IPAddresses()
+	if len(ipNumbers) == 0 {
 		return nil
 	}
 
-	hostnames, err := hostname.Hostnames(c, config.HostnameLookup)
+	hostnames, err := hostname.Hostnames(containerInfo, config.HostnameLookup)
 	if err != nil {
 		return fmt.Errorf("getting hostnames: %w", err)
 	}
 
 	for _, hostname := range hostnames {
-		addAddress(eg, hostname, ips)
+		addAddress(entryGroup, hostname, ipNumbers)
 	}
 
-	if services := c.Services(); len(hostnames) > 0 {
-		addServices(eg, hostnames[0], ips, services, c.Name())
+	if services := containerInfo.Services(); len(hostnames) > 0 {
+		addServices(entryGroup, hostnames[0], ipNumbers, services, containerInfo.Name())
 	}
 
 	return nil
 }
 
-func ignoreOneoff(c container.Container, config Config) bool {
+func ignoreOneoff(containerInfo container.Container, config Config) bool {
 	if !config.IgnoreDockerComposeOneoff {
 		return false
 	}
 
-	oneoff, ok := c.Config.Labels["com.docker.compose.oneoff"]
+	oneoff, ok := containerInfo.Config.Labels["com.docker.compose.oneoff"]
 	if !ok {
 		return false
 	}
@@ -94,12 +95,13 @@ func ignoreOneoff(c container.Container, config Config) bool {
 		return false
 	}
 
-	log.Logf(log.PriNotice, "Ignoring oneoff container: %s", c.ID)
+	log.Logf(log.PriNotice, "Ignoring oneoff container: %s", containerInfo.ID)
 
 	return true
 }
 
 func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *entryGroups) {
+	//nolint:exhaustivestruct
 	containers, err := docker.ContainerList(ctx, types.ContainerListOptions{})
 	if err != nil {
 		log.Logf(log.PriErr, "getting container list: %v", err)
@@ -126,8 +128,9 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 
 	msgs, errs := docker.Events(ctx, types.EventsOptions{
 		Filters: filter,
-		Since:   strconv.FormatInt(started.Unix(), 10),
-		Until:   "",
+		//nolint:gomnd
+		Since: strconv.FormatInt(started.Unix(), 10),
+		Until: "",
 	})
 
 	sig := make(chan os.Signal, 1)

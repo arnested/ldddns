@@ -12,31 +12,31 @@ const (
 	tld   = "local"
 )
 
-func addAddress(eg *avahi.EntryGroup, hostname string, ips []string) {
-	for _, ip := range ips {
-		if ip == "" {
+func addAddress(entryGroup *avahi.EntryGroup, hostname string, ipNumbers []string) {
+	for _, ipNumber := range ipNumbers {
+		if ipNumber == "" {
 			continue
 		}
 
-		err := eg.AddAddress(iface, avahi.ProtoInet, 16, hostname, ip)
+		err := entryGroup.AddAddress(iface, avahi.ProtoInet, uint32(net.FlagMulticast), hostname, ipNumber)
 		if err != nil {
 			log.Logf(log.PriErr, "addAddess() failed: %v", err)
 
 			continue
 		}
 
-		log.Logf(log.PriDebug, "added address for %q pointing to %q", hostname, ip)
+		log.Logf(log.PriDebug, "added address for %q pointing to %q", hostname, ipNumber)
 	}
 }
 
-func addServices(eg *avahi.EntryGroup, hostname string, ips []string, services map[string]uint16, name string) {
+func addServices(entryGroup *avahi.EntryGroup, hostname string, ips []string, services map[string]uint16, name string) {
 	for _, ip := range ips {
 		if ip == "" {
 			continue
 		}
 
 		for service, portNumber := range services {
-			err := eg.AddService(
+			err := entryGroup.AddService(
 				iface,
 				avahi.ProtoInet,
 				0,
