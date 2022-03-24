@@ -218,6 +218,18 @@
           "HostPort": "32771"
         }
       ],
+      "no-port": [
+        {
+          "HostIp": "0.0.0.0",
+          "HostPort": "32771"
+        }
+      ],
+      "65536/more-than-16-bit": [
+        {
+          "HostIp": "0.0.0.0",
+          "HostPort": "32771"
+        }
+      ],
       "80/tcp": [
         {
           "HostIp": "0.0.0.0",
