@@ -39,14 +39,20 @@ func (c Container) IPAddresses() []string {
 func (c Container) Services() map[string]uint16 {
 	services := map[string]uint16{}
 
-	for k := range c.NetworkSettings.Ports {
-		port := strings.SplitN(string(k), "/", 2)
+	for portProto := range c.NetworkSettings.Ports {
+		port, protoName, found := strings.Cut(string(portProto), "/")
+		if !found {
+			log.Logf(log.PriErr, "Port not found in: %q", portProto)
 
-		proto := netdb.GetProtoByName(port[1])
+			continue
+		}
 
-		portNumber, err := strconv.ParseUint(port[0], 10, 16)
+		proto := netdb.GetProtoByName(protoName)
+
+		//nolint:gomnd
+		portNumber, err := strconv.ParseUint(port, 10, 16)
 		if err != nil {
-			log.Logf(log.PriErr, "Could not get port number from %q", k)
+			log.Logf(log.PriErr, "Could not get port number from %q", portProto)
 
 			continue
 		}

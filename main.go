@@ -6,8 +6,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"runtime/debug"
 	"time"
 
+	"github.com/carlmjohnson/versioninfo"
 	"github.com/coreos/go-systemd/daemon"
 	"github.com/docker/docker/client"
 	"github.com/godbus/dbus/v5"
@@ -18,10 +20,9 @@ import (
 
 var (
 	//go:embed LICENSE
-	//nolint:gochecknoglobals
 	license string
 	// Version string to be set at compile time via command line (-ldflags "-X main.version=1.2.3").
-	version = "DEV"
+	version string
 )
 
 // Config is the configuration used to create hostnams for containers.
@@ -31,15 +32,17 @@ type Config struct {
 }
 
 func main() {
+	version := getVersion()
+
 	if len(os.Args) <= 1 || os.Args[1] != "start" {
-		fmt.Fprintf(os.Stderr, "ldddns v%s (https://ldddns.arnested.dk)\n\n", version)
+		fmt.Fprintf(os.Stderr, "ldddns %s - https://ldddns.arnested.dk\n\n", version)
 		fmt.Fprintln(os.Stderr, license)
 
 		return
 	}
 
-	log.Logf(log.PriNotice, "Starting ldddns v%s...", version)
-	defer log.Logf(log.PriNotice, "Stopped ldddns v%s.", version)
+	log.Logf(log.PriNotice, "Starting ldddns %s...", version)
+	defer log.Logf(log.PriNotice, "Stopped ldddns %s.", version)
 
 	// Setup stuff.
 	var config Config
@@ -96,7 +99,7 @@ func sdNotify(state string, version string, config Config) error {
 	}
 
 	_, err = daemon.SdNotify(true, fmt.Sprintf(
-		"%s\nSTATUS=v%s; %s",
+		"%s\nSTATUS=version %s; %s",
 		state,
 		version,
 		cfg,
@@ -106,4 +109,22 @@ func sdNotify(state string, version string, config Config) error {
 	}
 
 	return nil
+}
+
+func getVersion() string {
+	buildinfo, _ := debug.ReadBuildInfo()
+
+	if version == "" {
+		version = versioninfo.Revision
+	}
+
+	if buildinfo.Main.Version != "(devel)" {
+		version = buildinfo.Main.Version
+	}
+
+	if versioninfo.DirtyBuild {
+		version += "-dirty"
+	}
+
+	return version
 }

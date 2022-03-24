@@ -47,6 +47,7 @@ func containerData() (*container.Container, error) {
 	return &data, nil
 }
 
+//nolint:cyclop
 func TestHostnames(t *testing.T) {
 	t.Parallel()
 

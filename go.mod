@@ -1,6 +1,6 @@
 module ldddns.arnested.dk
 
-go 1.17
+go 1.18
 
 require (
 	github.com/Microsoft/go-winio v0.5.2 // indirect
@@ -21,6 +21,7 @@ require (
 )
 
 require (
+	github.com/carlmjohnson/versioninfo v0.21.1 // indirect
 	github.com/docker/distribution v2.8.0+incompatible // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect

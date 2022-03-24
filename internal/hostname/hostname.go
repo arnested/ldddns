@@ -13,19 +13,19 @@ const tld = ".local"
 
 // Hostnames returns a slice of the hostnames we should use for the
 // container.
-func Hostnames(c container.Container, hostnameLookup []string) ([]string, error) {
+func Hostnames(containerInfo container.Container, hostnameLookup []string) ([]string, error) {
 	var hostnames []string
 
 	for _, lookup := range hostnameLookup {
 		switch {
 		case lookup == "containerName":
-			hostnames = append(hostnames, c.Name()+tld)
+			hostnames = append(hostnames, containerInfo.Name()+tld)
 
 		case lookup[0:4] == "env:":
-			hostnames = append(hostnames, c.HostnamesFromEnv(lookup[4:])...)
+			hostnames = append(hostnames, containerInfo.HostnamesFromEnv(lookup[4:])...)
 
 		case lookup[0:6] == "label:":
-			hostnames = append(hostnames, c.HostnamesFromLabel(lookup[6:])...)
+			hostnames = append(hostnames, containerInfo.HostnamesFromLabel(lookup[6:])...)
 		}
 	}
 
@@ -38,7 +38,7 @@ func Hostnames(c container.Container, hostnameLookup []string) ([]string, error)
 
 // RewriteHostname will make `hostname` suitable for dns-sd.
 func RewriteHostname(hostname string) string {
-	p := idna.New(
+	profile := idna.New(
 		idna.BidiRule(),
 		idna.MapForLookup(),
 		idna.RemoveLeadingDots(true),
@@ -52,25 +52,25 @@ func RewriteHostname(hostname string) string {
 	// the function deals with turning the string into a valid
 	// hostname.
 	//nolint:errcheck
-	unicodeHostname, _ := p.ToUnicode(hostname)
+	unicodeHostname, _ := profile.ToUnicode(hostname)
 
 	suffix, _ := publicsuffix.PublicSuffix(unicodeHostname)
 
-	re := regexp.MustCompile(`\.` + suffix + `$`)
-	basename := re.ReplaceAllString(unicodeHostname, "")
+	suffixRegExp := regexp.MustCompile(`\.` + suffix + `$`)
+	basename := suffixRegExp.ReplaceAllString(unicodeHostname, "")
 
-	re = regexp.MustCompile(`[^\pL\d-]`)
-	basename = re.ReplaceAllString(basename, "-")
+	suffixRegExp = regexp.MustCompile(`[^\pL\d-]`)
+	basename = suffixRegExp.ReplaceAllString(basename, "-")
 
-	re = regexp.MustCompile(`--+`)
-	basename = re.ReplaceAllString(basename, "-")
+	suffixRegExp = regexp.MustCompile(`--+`)
+	basename = suffixRegExp.ReplaceAllString(basename, "-")
 
-	re = regexp.MustCompile(`(^-+|-+$)`)
-	basename = re.ReplaceAllString(basename, "")
+	suffixRegExp = regexp.MustCompile(`(^-+|-+$)`)
+	basename = suffixRegExp.ReplaceAllString(basename, "")
 
 	sanitizedHostname := basename + tld
 
-	sanitizedHostname, err := p.ToASCII(sanitizedHostname)
+	sanitizedHostname, err := profile.ToASCII(sanitizedHostname)
 	if err != nil {
 		panic(err)
 	}
