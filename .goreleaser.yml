@@ -6,6 +6,8 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
+    ldflags:
+      - -s -w -X main.version={{.Tag}}
 archives:
   - format: binary
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
@@ -18,7 +20,7 @@ archives:
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: '{{ trimprefix .Tag "v" }}-snapshot-{{ .ShortCommit }}'
+  name_template: '{{ .Tag }}-snapshot-{{ .ShortCommit }}'
 changelog:
   sort: asc
   filters:
