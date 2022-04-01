@@ -6,7 +6,7 @@ require (
 	github.com/Microsoft/go-winio v0.5.2 // indirect
 	github.com/containerd/containerd v1.6.1 // indirect
 	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf
-	github.com/docker/docker v20.10.13+incompatible
+	github.com/docker/docker v20.10.14+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0
 	github.com/gorilla/mux v1.8.0 // indirect
@@ -20,8 +20,9 @@ require (
 	honnef.co/go/netdb v0.0.0-20210921115105-e902e863d85d
 )
 
+require github.com/carlmjohnson/versioninfo v0.21.1
+
 require (
-	github.com/carlmjohnson/versioninfo v0.21.1 // indirect
 	github.com/docker/distribution v2.8.0+incompatible // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
