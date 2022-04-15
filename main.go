@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/carlmjohnson/versioninfo"
-	"github.com/coreos/go-systemd/daemon"
+	"github.com/coreos/go-systemd/v22/daemon"
 	"github.com/docker/docker/client"
 	"github.com/godbus/dbus/v5"
 	"github.com/holoplot/go-avahi"
