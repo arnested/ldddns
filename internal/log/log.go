@@ -3,7 +3,7 @@ package log
 import (
 	"fmt"
 
-	"github.com/coreos/go-systemd/journal"
+	"github.com/coreos/go-systemd/v22/journal"
 )
 
 // Priority is the log level.
