@@ -5,6 +5,8 @@ on:
     branches: [main]
     types:
       - completed
+permissions:
+  contents: write
 jobs:
   bump-version:
     runs-on: ubuntu-latest
@@ -18,7 +20,7 @@ jobs:
       uses: anothrNick/github-tag-action@1.38.0
       id: version
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
         WITH_V: true
         DEFAULT_BUMP: patch
         RELEASE_BRANCHES: main
@@ -37,7 +39,7 @@ jobs:
         version: latest
         args: release
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
         TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
         TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
         TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
