@@ -8,7 +8,6 @@ After=docker.service
 Type=notify
 ExecStart=/usr/libexec/ldddns start
 Restart=on-failure
-DynamicUser=yes
 SupplementaryGroups=docker
 CapabilityBoundingSet=
 DevicePolicy=closed
