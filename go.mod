@@ -16,7 +16,7 @@ require (
 )
 
 require (
-	github.com/carlmjohnson/versioninfo v0.22.2
+	github.com/carlmjohnson/versioninfo v0.22.4
 	github.com/coreos/go-systemd/v22 v22.3.2
 )
 
