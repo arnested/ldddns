@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/Microsoft/go-winio v0.5.2 // indirect
-	github.com/docker/docker v20.10.16+incompatible
+	github.com/docker/docker v20.10.17+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0
 	github.com/holoplot/go-avahi v1.0.0
