@@ -7,7 +7,7 @@ require (
 	github.com/docker/docker v20.10.17+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0
-	github.com/holoplot/go-avahi v1.0.0
+	github.com/holoplot/go-avahi v1.0.1
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	golang.org/x/net v0.0.0-20220412020605-290c469a71a5
