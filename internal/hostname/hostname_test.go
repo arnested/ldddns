@@ -118,3 +118,19 @@ func TestRewriteHostname(t *testing.T) {
 		})
 	}
 }
+
+func FuzzRewriteHostname(f *testing.F) {
+	f.Add("example.com")
+	f.Add("example87.com")
+	f.Add("foo_bar")
+	f.Add("foo__bar")
+	f.Add("foo_-_bar")
+	f.Add("_foo_bar_")
+	f.Add("-foo_bar-")
+	f.Add("blåbærgrød")
+	f.Add("xn--blbrgrd-fxak7p.local")
+
+	f.Fuzz(func(t *testing.T, a string) {
+		hostname.RewriteHostname(a)
+	})
+}

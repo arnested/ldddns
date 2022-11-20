@@ -56,7 +56,7 @@ func RewriteHostname(hostname string) string {
 
 	suffix, _ := publicsuffix.PublicSuffix(unicodeHostname)
 
-	suffixRegExp := regexp.MustCompile(`\.` + suffix + `$`)
+	suffixRegExp := regexp.MustCompile(`\.` + regexp.QuoteMeta(suffix) + `$`)
 	basename := suffixRegExp.ReplaceAllString(unicodeHostname, "")
 
 	suffixRegExp = regexp.MustCompile(`[^\pL\d-]`)
@@ -72,7 +72,7 @@ func RewriteHostname(hostname string) string {
 
 	sanitizedHostname, err := profile.ToASCII(sanitizedHostname)
 	if err != nil {
-		panic(err)
+		log.Logf(log.PriErr, "Could not rewrite hostname %q into proper IDNA", hostname)
 	}
 
 	if hostname != sanitizedHostname {
