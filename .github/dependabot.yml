@@ -3,14 +3,14 @@ updates:
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
-    interval: monthly
+    interval: daily
     timezone: Europe/Copenhagen
   reviewers:
   - arnested
 - package-ecosystem: gomod
   directory: "/"
   schedule:
-    interval: monthly
+    interval: daily
     timezone: Europe/Copenhagen
   reviewers:
   - arnested
