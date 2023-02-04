@@ -69,6 +69,10 @@ jobs:
       with:
         version: latest
         args: release --snapshot
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Debian packages
+        path: dist/*.deb
 
   license_check:
     name: License check
