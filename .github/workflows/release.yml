@@ -65,16 +65,17 @@ jobs:
         gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
         gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
       working-directory: site
-    - uses: ZacJW/markdown-html-action@1.1.1
+    - uses: BaileyJM02/markdown-to-pdf@v1.2.0
       with:
-        input_files: '[["README.md"]]'
-        output_files: '["README.html"]'
+        input_path: index.md
+        output_dir: site/
+        build_html: true
+        build_pdf: false
+        template: page/template.html
     - name: Fix link / package name in GitHub Pages
       run: |
         DEB=$(grep linux_amd64.deb dist/checksums.txt | awk '{print $2}')
         sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" README.html
-        sed -i 's/<!DOCTYPE html>//' README.html
-        cat page/header.html README.html page/footer.html > site/index.html
     - name: Add install script to GitHub Pages
       run: cp -v install.sh site/install.sh
     - name: Deploy deb packages
@@ -83,7 +84,3 @@ jobs:
         branch: gh-pages
         folder: site
         clean: true
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Debian packages
-        path: dist/*.deb
