@@ -35,7 +35,7 @@ jobs:
         GO111MODULE: 'on'
       run: go version
     - name: Run GoReleaser
-      uses: goreleaser/goreleaser-action@v3
+      uses: goreleaser/goreleaser-action@v4
       with:
         version: latest
         args: release
@@ -83,3 +83,7 @@ jobs:
         branch: gh-pages
         folder: site
         clean: true
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Debian packages
+        path: dist/*.deb
