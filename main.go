@@ -52,7 +52,10 @@ func main() {
 		panic(fmt.Errorf("could not read environment config: %w", err))
 	}
 
-	docker, err := client.NewClientWithOpts(client.FromEnv)
+	docker, err := client.NewClientWithOpts(
+		client.FromEnv,
+		client.WithAPIVersionNegotiation(),
+	)
 	if err != nil {
 		panic(fmt.Errorf("cannot create docker client: %w", err))
 	}
