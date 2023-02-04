@@ -75,7 +75,7 @@ jobs:
     - name: Fix link / package name in GitHub Pages
       run: |
         DEB=$(grep linux_amd64.deb dist/checksums.txt | awk '{print $2}')
-        sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" index.html
+        sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" site/index.html
     - name: Add install script to GitHub Pages
       run: cp -v install.sh site/install.sh
     - name: Deploy deb packages
