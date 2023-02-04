@@ -84,3 +84,4 @@ jobs:
         branch: gh-pages
         folder: site
         clean: true
+        single-commit: true
