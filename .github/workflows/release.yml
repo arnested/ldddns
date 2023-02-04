@@ -83,3 +83,7 @@ jobs:
         branch: gh-pages
         folder: site
         clean: true
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Debian packages
+        path: dist/*.deb

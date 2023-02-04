@@ -68,11 +68,7 @@ jobs:
       uses: goreleaser/goreleaser-action@v4
       with:
         version: latest
-        args: release --skip-publish
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Debian packages
-        path: dist/*.deb
+        args: release --snapshot
 
   license_check:
     name: License check
