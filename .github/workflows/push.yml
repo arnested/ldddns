@@ -9,6 +9,7 @@ jobs:
     outputs:
       minimal: ${{ steps.go-version.outputs.minimal }}
       matrix: ${{ steps.go-version.outputs.matrix }}
+      module: ${{ steps.go-version.outputs.module }}
     steps:
     - uses: actions/checkout@v3
     - uses: arnested/go-version-action@v1
