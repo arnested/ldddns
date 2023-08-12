@@ -5,10 +5,11 @@ permissions:
 jobs:
   go-version:
     name: Lookup go versions
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       minimal: ${{ steps.go-version.outputs.minimal }}
       matrix: ${{ steps.go-version.outputs.matrix }}
+      module: ${{ steps.go-version.outputs.module }}
     steps:
     - uses: actions/checkout@v3
     - uses: arnested/go-version-action@v1
@@ -16,7 +17,7 @@ jobs:
   go_generate:
     name: Check generated code is up to date
     needs: go-version
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       workdir: go/src/${{ needs.go-version.outputs.module }}
     steps:
@@ -39,7 +40,7 @@ jobs:
   build_and_test:
     name: Build and test
     needs: go-version
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         go-version: ${{ fromJSON(needs.go-version.outputs.matrix) }}
@@ -77,7 +78,7 @@ jobs:
   license_check:
     name: License check
     needs: go-version
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
     - name: Setup Go ${{ needs.go-version.outputs.minimal }}
