@@ -20,6 +20,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+    - uses: arnested/go-version-action@v1
+      id: go-version
+    - name: Setup Go ${{ steps.go-version.outputs.minimal }}
+      uses: WillAbides/setup-go-faster@v1.10.1
+      with:
+        go-version: ${{ steps.go-version.outputs.minimal }}
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
