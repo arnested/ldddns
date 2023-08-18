@@ -1,10 +1,17 @@
 name: Golang Security Checker
 on:
-- pull_request
-- push
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 15 * * 0'
 
 permissions:
   contents: read
+  actions: read
+  pull-requests: read
+  security-events: write
 
 jobs:
   gosec:
@@ -17,4 +24,9 @@ jobs:
       - name: Run Gosec Security Scanner
         uses: securego/gosec@master
         with:
-          args: ./...
+          args: '-no-fail -fmt sarif -out results.sarif -tests ./...'
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
