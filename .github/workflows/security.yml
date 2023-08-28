@@ -1,4 +1,4 @@
-name: Golang Security Checker
+name: Security Checks
 on:
   pull_request:
     branches: [main]
@@ -15,6 +15,7 @@ permissions:
 
 jobs:
   gosec:
+    name: Golang Security Checker
     runs-on: ubuntu-22.04
     env:
       GO111MODULE: on
@@ -30,3 +31,11 @@ jobs:
         with:
           # Path to SARIF file relative to the root of the repository
           sarif_file: results.sarif
+  govulncheck:
+    name: Govulncheck
+    runs-on: ubuntu-22.04
+    steps:
+    - id: govulncheck
+      uses: golang/govulncheck-action@master
+      with:
+        go-version-file: go.mod
