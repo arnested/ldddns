@@ -10,7 +10,7 @@ jobs:
     name: shellcheck
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Run shellcheck
       uses: ludeeus/action-shellcheck@2.0.0
       env:
