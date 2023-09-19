@@ -11,7 +11,7 @@ jobs:
       matrix: ${{ steps.go-version.outputs.matrix }}
       module: ${{ steps.go-version.outputs.module }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     - uses: arnested/go-version-action@v1
       id: go-version
   go_generate:
@@ -21,7 +21,7 @@ jobs:
     env:
       workdir: go/src/${{ needs.go-version.outputs.module }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
       with:
         path: ${{env.workdir}}
     - name: Setup Go ${{ needs.go-version.outputs.minimal }}
@@ -45,7 +45,7 @@ jobs:
       matrix:
         go-version: ${{ fromJSON(needs.go-version.outputs.matrix) }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 0
     - name: Setup Go ${{ matrix.go-version }}.x
@@ -80,7 +80,7 @@ jobs:
     needs: go-version
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     - name: Setup Go ${{ needs.go-version.outputs.minimal }}
       uses: WillAbides/setup-go-faster@v1.11.0
       with:
