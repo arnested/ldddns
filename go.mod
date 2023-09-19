@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/Microsoft/go-winio v0.6.1 // indirect
-	github.com/docker/docker v24.0.5+incompatible
+	github.com/docker/docker v24.0.6+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0
 	github.com/holoplot/go-avahi v1.0.1
