@@ -1,4 +1,4 @@
-FROM golang:1.21.2
+FROM golang:1.21.3
 
 # The purpose of this Dockerfile is just to "trick" Dependabot into
 # creating a pull request when a new version of Go is released. This
