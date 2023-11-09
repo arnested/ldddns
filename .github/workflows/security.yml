@@ -39,3 +39,4 @@ jobs:
       uses: golang/govulncheck-action@master
       with:
         go-version-file: go.mod
+        check-latest: true
