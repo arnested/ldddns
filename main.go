@@ -26,17 +26,18 @@ var (
 )
 
 // Config is the configuration used to create hostnams for containers.
+//
+//nolint:musttag
 type Config struct {
-	HostnameLookup            []string `split_words:"true" default:"env:VIRTUAL_HOST,containerName"`
-	IgnoreDockerComposeOneoff bool     `split_words:"true" default:"true"`
+	HostnameLookup            []string `default:"env:VIRTUAL_HOST,containerName" split_words:"true"`
+	IgnoreDockerComposeOneoff bool     `default:"true"                           split_words:"true"`
 }
 
 func main() {
 	version := getVersion()
 
 	if len(os.Args) <= 1 || os.Args[1] != "start" {
-		fmt.Fprintf(os.Stderr, "ldddns %s - https://ldddns.arnested.dk\n\n", version)
-		fmt.Fprintln(os.Stderr, license)
+		fmt.Fprintf(os.Stderr, "ldddns %s - https://ldddns.arnested.dk\n\n%s", version, license)
 
 		return
 	}
