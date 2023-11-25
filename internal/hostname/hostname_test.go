@@ -38,7 +38,7 @@ func containerJSON() (*types.ContainerJSON, error) {
 
 func containerData() (*container.Container, error) {
 	containerJSON, err := containerJSON()
-	if err != nil {
+	if (err != nil) || (containerJSON == nil) {
 		return nil, fmt.Errorf("getting JSON test data: %w", err)
 	}
 
