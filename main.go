@@ -115,8 +115,6 @@ func sdNotify(state string, version string, config Config) error {
 }
 
 func getVersion() string {
-	buildinfo, _ := debug.ReadBuildInfo()
-
 	if version == "" {
 		version = versioninfo.Revision
 
@@ -125,7 +123,9 @@ func getVersion() string {
 		}
 	}
 
-	if buildinfo.Main.Version != "(devel)" {
+	buildinfo, ok := debug.ReadBuildInfo()
+
+	if ok && (buildinfo != nil) && (buildinfo.Main.Version != "(devel)") {
 		version = buildinfo.Main.Version
 	}
 
