@@ -128,9 +128,8 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 
 	msgs, errs := docker.Events(ctx, types.EventsOptions{
 		Filters: filter,
-		//nolint:gomnd
-		Since: strconv.FormatInt(started.Unix(), 10),
-		Until: "",
+		Since:   strconv.FormatInt(started.Unix(), 10),
+		Until:   "",
 	})
 
 	sig := make(chan os.Signal, 1)

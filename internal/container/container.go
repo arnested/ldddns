@@ -49,7 +49,6 @@ func (c Container) Services() map[string]uint16 {
 
 		proto := netdb.GetProtoByName(protoName)
 
-		//nolint:gomnd
 		portNumber, err := strconv.ParseUint(port, 10, 16)
 		if err != nil {
 			log.Logf(log.PriErr, "Could not get port number from %q", portProto)
