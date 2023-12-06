@@ -19,7 +19,7 @@ import (
 )
 
 var (
-	//go:embed LICENSE
+	//go:embed LICENSE.md
 	license string
 	// Version string to be set at compile time via command line (-ldflags "-X main.version=1.2.3").
 	version string
