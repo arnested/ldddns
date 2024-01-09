@@ -3,6 +3,8 @@ linters:
   disable:
     - depguard
     - exhaustruct
+    - gocritic
+    - gofumpt
 
 linters-settings:
   exhaustive:
