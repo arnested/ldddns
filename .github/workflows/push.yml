@@ -50,6 +50,22 @@ jobs:
         name: Debian packages
         path: dist/*.deb
 
+  nilaway:
+    name: Nilaway
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Go
+      uses: WillAbides/setup-go-faster@v1.13.0
+      with:
+        go-version-file: go.mod
+    - name: Install nilaway
+      run: go install go.uber.org/nilaway/cmd/nilaway@latest
+    - name: Run nilaway
+      run: nilaway ./...
+
   license_check:
     name: License check
     runs-on: ubuntu-22.04
