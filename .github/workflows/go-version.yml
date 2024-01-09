@@ -30,10 +30,14 @@ jobs:
           commit-message: |
             Update Go version to ${{ steps.go-version.outputs.latest }}
 
-            See [the release history](https://go.dev/doc/devel/release#go${{ steps.go-version.outputs.latest }}.
+            See the release history: https://go.dev/doc/devel/release#go${{ steps.go-version.outputs.latest }}.
           branch: go-version-update
           delete-branch: true
           title: Update Go version to ${{ steps.go-version.outputs.latest }}
+          body: |
+            Update Go version to ${{ steps.go-version.outputs.latest }}
+
+            See [the release history](https://go.dev/doc/devel/release#go${{ steps.go-version.outputs.latest }}).
           token: ${{ secrets.PAT_TOKEN }}
   unstable:
     name: Unstable
@@ -62,10 +66,14 @@ jobs:
           commit-message: |
             Test Go unstable version ${{ steps.go-version.outputs.latest }}
 
-            See [the draft release notes](https://tip.golang.org/doc/go${{ steps.go-minor-version.outputs.latest }}.
-
-            This pull request is only intented for getting feedback on compatibility with future Go versions. Don't merge it!
+            See the draft release notes: https://tip.golang.org/doc/go${{ steps.go-minor-version.outputs.latest }}.
           branch: go-version-unstable-test
           delete-branch: true
           title: Test Go unstable version ${{ steps.go-version.outputs.latest }}
+          body: |
+            Test Go unstable version ${{ steps.go-version.outputs.latest }}
+
+            See [the draft release notes](https://tip.golang.org/doc/go${{ steps.go-minor-version.outputs.latest }}).
+
+            This pull request is only intented for getting feedback on compatibility with future Go versions. Don't merge it!
           token: ${{ secrets.PAT_TOKEN }}
