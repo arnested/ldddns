@@ -10,12 +10,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: arnested/go-version-action@v1
-        id: go-version
-      - name: Setup Go ${{ steps.go-version.outputs.minimal }}
+      - name: Setup Go
         uses: WillAbides/setup-go-faster@v1.13.0
         with:
-          go-version: ${{ steps.go-version.outputs.minimal }}
+          go-version-file: go.mod
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:

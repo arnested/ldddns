@@ -3,56 +3,33 @@ name: Build and test
 permissions:
   contents: write
 jobs:
-  go-version:
-    name: Lookup go versions
-    runs-on: ubuntu-22.04
-    outputs:
-      minimal: ${{ steps.go-version.outputs.minimal }}
-      matrix: ${{ steps.go-version.outputs.matrix }}
-      module: ${{ steps.go-version.outputs.module }}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: arnested/go-version-action@v1
-      id: go-version
   go_generate:
     name: Check generated code is up to date
-    needs: go-version
     runs-on: ubuntu-22.04
-    env:
-      workdir: go/src/${{ needs.go-version.outputs.module }}
     steps:
     - uses: actions/checkout@v4
-      with:
-        path: ${{env.workdir}}
-    - name: Setup Go ${{ needs.go-version.outputs.minimal }}
+    - name: Setup Go
       uses: WillAbides/setup-go-faster@v1.13.0
       with:
-        go-version: ${{ needs.go-version.outputs.minimal }}
+        go-version-file: go.mod
     - name: go generate
       env:
         GO111MODULE: 'on'
         GOPATH: ${{ github.workspace }}/go
-      working-directory: ${{env.workdir}}
       run: go generate -x
     - name: Diff after go generate
-      working-directory: ${{env.workdir}}
       run: git diff --exit-code
   build_and_test:
     name: Build and test
-    needs: go-version
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        go-version: ${{ fromJSON(needs.go-version.outputs.matrix) }}
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - name: Setup Go ${{ matrix.go-version }}.x
+    - name: Setup Go
       uses: WillAbides/setup-go-faster@v1.13.0
       with:
-        go-version: ${{ matrix.go-version }}.x
-        ignore-local: true
+        go-version-file: go.mod
     - name: go version
       env:
         GO111MODULE: 'on'
@@ -63,8 +40,6 @@ jobs:
       run: go test -v -race -cover -covermode=atomic -coverprofile=coverage.txt ./...
     - name: Upload coverage report to Codecov
       uses: codecov/codecov-action@v3
-      with:
-        flags: go${{ matrix.go-version }}
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v5
       with:
@@ -77,18 +52,15 @@ jobs:
 
   license_check:
     name: License check
-    needs: go-version
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
-    - name: Setup Go ${{ needs.go-version.outputs.minimal }}
+    - name: Setup Go
       uses: WillAbides/setup-go-faster@v1.13.0
       with:
-        go-version: ${{ needs.go-version.outputs.minimal }}
+        go-version-file: go.mod
     - name: Install wwhrd
-      env:
-        GO111MODULE: 'off'
-      run: go get -u github.com/frapposelli/wwhrd
+      run: go install github.com/frapposelli/wwhrd@latest
     - name: go mod vendor
       env:
         GO111MODULE: 'on'
