@@ -35,7 +35,7 @@ jobs:
           delete-branch: true
           title: Update Go version to ${{ steps.go-version.outputs.latest }}
           body: |
-            Update Go version to ${{ steps.go-version.outputs.latest }}
+            Update Go version to ${{ steps.go-version.outputs.latest }}.
 
             See [the release history](https://go.dev/doc/devel/release#go${{ steps.go-version.outputs.latest }}).
           token: ${{ secrets.PAT_TOKEN }}
@@ -49,10 +49,11 @@ jobs:
         with:
           patch-level: true
           unstable: true
-      - uses: arnested/go-version-action@v1
-        id: go-minor-version
-        with:
-          unstable: true
+      - name: Get draft release notes URL
+        id: release-notes
+        run: |
+          # shellcheck disable=SC2086
+          echo "URL=https://tip.golang.org/doc/go$(sed -E 's/([0-9]+\.[0-9]+).*/\1/' <<< '${{ steps.go-version.outputs.latest }}')" >> $GITHUB_OUTPUT
       - name: Setup Go ${{ steps.go-version.outputs.latest }}
         uses: WillAbides/setup-go-faster@v1.13.0
         with:
@@ -66,14 +67,14 @@ jobs:
           commit-message: |
             Test Go unstable version ${{ steps.go-version.outputs.latest }}
 
-            See the draft release notes: https://tip.golang.org/doc/go${{ steps.go-minor-version.outputs.latest }}.
+            See the draft release notes: ${{ steps.release-notes.outputs.URL }}.
           branch: go-version-unstable-test
           delete-branch: true
           title: Test Go unstable version ${{ steps.go-version.outputs.latest }}
           body: |
-            Test Go unstable version ${{ steps.go-version.outputs.latest }}
+            Test Go unstable version ${{ steps.go-version.outputs.latest }}.
 
-            See [the draft release notes](https://tip.golang.org/doc/go${{ steps.go-minor-version.outputs.latest }}).
+            See [the draft release notes](${{ steps.release-notes.outputs.URL }}).
 
             This pull request is only intented for getting feedback on compatibility with future Go versions. Don't merge it!
           token: ${{ secrets.PAT_TOKEN }}
