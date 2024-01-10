@@ -73,6 +73,8 @@ jobs:
         sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" site/index.html
     - name: Add install script to GitHub Pages
       run: cp -v install.sh site/install.sh
+    - name: Add favicons to GitHub Pages
+      run: cp -vR page/favicons site/
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
