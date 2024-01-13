@@ -40,6 +40,10 @@ jobs:
       run: go test -v -race -cover -covermode=atomic -coverprofile=coverage.txt ./...
     - name: Upload coverage report to Codecov
       uses: codecov/codecov-action@v3
+    - name: Install changelog management tool
+      run: go install github.com/goreleaser/chglog/cmd/chglog@latest
+    - name: Build changelog
+      run: chglog init
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v5
       with:

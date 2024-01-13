@@ -33,6 +33,10 @@ jobs:
       env:
         GO111MODULE: 'on'
       run: go version
+    - name: Install changelog management tool
+      run: go install github.com/goreleaser/chglog/cmd/chglog@latest
+    - name: Build changelog
+      run: chglog init
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v5
       with:

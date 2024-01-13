@@ -50,6 +50,7 @@ nfpms:
       - docker.io | docker-ce
       - libsystemd0
     bindir: /usr/libexec
+    changelog: ./changelog.yml
     contents:
       - src: systemd/ldddns.service
         dst: /lib/systemd/system/ldddns.service
