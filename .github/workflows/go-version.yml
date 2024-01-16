@@ -18,7 +18,7 @@ jobs:
         with:
           patch-level: true
       - name: Setup Go ${{ steps.go-version.outputs.latest }}
-        uses: WillAbides/setup-go-faster@v1.13.0
+        uses: WillAbides/setup-go-faster@v1.14.0
         with:
           go-version: ${{ steps.go-version.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
@@ -54,7 +54,7 @@ jobs:
           # shellcheck disable=SC2086
           echo "URL=https://tip.golang.org/doc/go$(sed -E 's/([0-9]+\.[0-9]+).*/\1/' <<< '${{ steps.go-version.outputs.latest }}')" >> $GITHUB_OUTPUT
       - name: Setup Go ${{ steps.go-version.outputs.latest }}
-        uses: WillAbides/setup-go-faster@v1.13.0
+        uses: WillAbides/setup-go-faster@v1.14.0
         with:
           go-version: ${{ steps.go-version.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
