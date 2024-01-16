@@ -21,7 +21,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Setup Go
-      uses: WillAbides/setup-go-faster@v1.13.0
+      uses: WillAbides/setup-go-faster@v1.14.0
       with:
         go-version-file: go.mod
     - name: Initialize CodeQL
