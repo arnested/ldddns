@@ -61,6 +61,7 @@ jobs:
     - name: apt-ftparchive release
       run: |
         apt-ftparchive -o APT::FTPArchive::Release::Origin="Arne Jørgensen" -o APT::FTPArchive::Release::Label="${{ steps.go-version.outputs.module }}" release . > Release
+        echo 'Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@' >> Release
         gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
         gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
       working-directory: site
@@ -79,6 +80,8 @@ jobs:
       run: cp -v install.sh site/install.sh
     - name: Add favicons to GitHub Pages
       run: cp -vR page/favicons site/
+    - name: Add changelog to GitHub Pages
+      run: chglog format --template deb --output site/changelog
     - name: Deploy deb packages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
