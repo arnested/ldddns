@@ -55,7 +55,7 @@ jobs:
         cp -v dist/*.deb site/
     - name: Scan packages
       run: |
-        dpkg-scanpackages --multiversion . > Packages
+        apt-ftparchive packages . > Packages
         gzip -k -f Packages
       working-directory: site
     - name: apt-ftparchive release

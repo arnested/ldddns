@@ -4,5 +4,5 @@ deb:
   distribution: []
   urgency: ""
 debug: false
-owner: ""
-package-name: ""
+owner: "Arne Jørgensen"
+package-name: "ldddns"
