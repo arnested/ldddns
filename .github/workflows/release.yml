@@ -61,10 +61,12 @@ jobs:
     - name: apt-ftparchive release
       run: |
         apt-ftparchive -o APT::FTPArchive::Release::Origin="Arne Jørgensen" -o APT::FTPArchive::Release::Label="${{ steps.go-version.outputs.module }}" release . > Release
-        echo 'Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@' >> Release
+        echo "Changelogs: $(gh api /repos/{owner}/{repo}/pages --jq .html_url)changelog?path=@CHANGEPATH@" >> Release
         gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
         gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
       working-directory: site
+      env:
+        GH_TOKEN: ${{ github.token }}
     - uses: BaileyJM02/markdown-to-pdf@v1.2.0
       with:
         input_path: index.md
