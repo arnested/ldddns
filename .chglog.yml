@@ -1,5 +1,6 @@
 ---
 conventional-commits: false
+exclude-merge-commits: true
 deb:
   distribution: []
   urgency: ""
