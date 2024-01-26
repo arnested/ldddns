@@ -41,7 +41,7 @@ jobs:
     - name: Upload coverage report to Codecov
       uses: codecov/codecov-action@v3
     - name: Install changelog management tool
-      run: go install github.com/goreleaser/chglog/cmd/chglog@latest
+      run: go install github.com/goreleaser/chglog/cmd/chglog@main
     - name: Build changelog
       run: chglog init
     - name: Run GoReleaser
