@@ -24,7 +24,7 @@ jobs:
       - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
       - run: git diff
       - name: "Create pull request"
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: |
             Update Go version to ${{ steps.go-version.outputs.latest }}
@@ -60,7 +60,7 @@ jobs:
       - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
       - run: git diff
       - name: "Create pull request"
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           draft: true
           commit-message: |
