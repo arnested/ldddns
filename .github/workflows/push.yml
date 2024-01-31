@@ -39,7 +39,7 @@ jobs:
         GO111MODULE: 'on'
       run: go test -v -race -cover -covermode=atomic -coverprofile=coverage.txt ./...
     - name: Upload coverage report to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
     - name: Install changelog management tool
       run: go install github.com/goreleaser/chglog/cmd/chglog@main
     - name: Build changelog
