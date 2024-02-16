@@ -14,7 +14,7 @@ similar.
 If the containers also have exposed ports (and the ports can be looked
 up in `/etc/services`) the service will also broadcast the
 service/domain for service discovery. I.e., `_https._tcp.` for
-https://my-example.local (a.k.a. DNS-SD). Only _one_ domain name can
+<https://my-example.local> (a.k.a. DNS-SD). Only _one_ domain name can
 be broadcast per service per container.
 
 Per default domain names will be generated from the `VIRTUAL_HOST`

@@ -1,7 +1,8 @@
+---
 name: Shellcheck
 on:
-- pull_request
-- push
+  - pull_request
+  - push
 
 permissions:
   contents: read
@@ -10,8 +11,8 @@ jobs:
     name: shellcheck
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-    - name: Run shellcheck
-      uses: ludeeus/action-shellcheck@2.0.0
-      env:
-        SHELLCHECK_OPTS: -o all
+      - uses: actions/checkout@v4
+      - name: Run shellcheck
+        uses: ludeeus/action-shellcheck@2.0.0
+        env:
+          SHELLCHECK_OPTS: -o all

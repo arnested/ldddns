@@ -1,3 +1,4 @@
+---
 on: push
 name: Build and test
 permissions:
@@ -7,83 +8,83 @@ jobs:
     name: Check generated code is up to date
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup Go
-      uses: WillAbides/setup-go-faster@v1.14.0
-      with:
-        go-version-file: go.mod
-    - name: go generate
-      env:
-        GO111MODULE: 'on'
-        GOPATH: ${{ github.workspace }}/go
-      run: go generate -x
-    - name: Diff after go generate
-      run: git diff --exit-code
+      - uses: actions/checkout@v4
+      - name: Setup Go
+        uses: WillAbides/setup-go-faster@v1.14.0
+        with:
+          go-version-file: go.mod
+      - name: go generate
+        env:
+          GO111MODULE: 'on'
+          GOPATH: ${{ github.workspace }}/go
+        run: go generate -x
+      - name: Diff after go generate
+        run: git diff --exit-code
   build_and_test:
     name: Build and test
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup Go
-      uses: WillAbides/setup-go-faster@v1.14.0
-      with:
-        go-version-file: go.mod
-    - name: go version
-      env:
-        GO111MODULE: 'on'
-      run: go version
-    - name: go test
-      env:
-        GO111MODULE: 'on'
-      run: go test -v -race -cover -covermode=atomic -coverprofile=coverage.txt ./...
-    - name: Upload coverage report to Codecov
-      uses: codecov/codecov-action@v4
-    - name: Install changelog management tool
-      run: go install github.com/goreleaser/chglog/cmd/chglog@main
-    - name: Build changelog
-      run: chglog init
-    - name: Run GoReleaser
-      uses: goreleaser/goreleaser-action@v5
-      with:
-        version: latest
-        args: release --snapshot
-    - uses: actions/upload-artifact@v4
-      with:
-        name: Debian packages
-        path: dist/*.deb
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Go
+        uses: WillAbides/setup-go-faster@v1.14.0
+        with:
+          go-version-file: go.mod
+      - name: go version
+        env:
+          GO111MODULE: 'on'
+        run: go version
+      - name: go test
+        env:
+          GO111MODULE: 'on'
+        run: go test -v -race -cover -covermode=atomic -coverprofile=coverage.txt ./...
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v4
+      - name: Install changelog management tool
+        run: go install github.com/goreleaser/chglog/cmd/chglog@main
+      - name: Build changelog
+        run: chglog init
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v5
+        with:
+          version: latest
+          args: release --snapshot
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Debian packages
+          path: dist/*.deb
 
   nilaway:
     name: Nilaway
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup Go
-      uses: WillAbides/setup-go-faster@v1.14.0
-      with:
-        go-version-file: go.mod
-    - name: Install nilaway
-      run: go install go.uber.org/nilaway/cmd/nilaway@latest
-    - name: Run nilaway
-      run: nilaway ./...
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Go
+        uses: WillAbides/setup-go-faster@v1.14.0
+        with:
+          go-version-file: go.mod
+      - name: Install nilaway
+        run: go install go.uber.org/nilaway/cmd/nilaway@latest
+      - name: Run nilaway
+        run: nilaway ./...
 
   license_check:
     name: License check
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup Go
-      uses: WillAbides/setup-go-faster@v1.14.0
-      with:
-        go-version-file: go.mod
-    - name: Install wwhrd
-      run: go install github.com/frapposelli/wwhrd@latest
-    - name: go mod vendor
-      env:
-        GO111MODULE: 'on'
-      run: go mod vendor
-    - name: wwhrd check
-      run: wwhrd check
+      - uses: actions/checkout@v4
+      - name: Setup Go
+        uses: WillAbides/setup-go-faster@v1.14.0
+        with:
+          go-version-file: go.mod
+      - name: Install wwhrd
+        run: go install github.com/frapposelli/wwhrd@latest
+      - name: go mod vendor
+        env:
+          GO111MODULE: 'on'
+        run: go mod vendor
+      - name: wwhrd check
+        run: wwhrd check

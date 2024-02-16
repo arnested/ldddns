@@ -1,3 +1,4 @@
+---
 name: Actionlint
 on:
   - pull_request

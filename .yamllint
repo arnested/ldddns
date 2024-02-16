@@ -1,0 +1,17 @@
+---
+extends: default
+
+ignore-from-file:
+  - .gitignore
+
+rules:
+  indentation:
+    spaces: 2
+  line-length: disable
+  truthy:
+    check-keys: false
+  braces:
+    min-spaces-inside: 1
+    max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 0

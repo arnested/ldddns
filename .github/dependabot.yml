@@ -1,16 +1,17 @@
+---
 version: 2
 updates:
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: daily
-    timezone: Europe/Copenhagen
-  reviewers:
-  - arnested
-- package-ecosystem: gomod
-  directory: "/"
-  schedule:
-    interval: daily
-    timezone: Europe/Copenhagen
-  reviewers:
-  - arnested
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+      timezone: Europe/Copenhagen
+    reviewers:
+      - arnested
+  - package-ecosystem: gomod
+    directory: "/"
+    schedule:
+      interval: daily
+      timezone: Europe/Copenhagen
+    reviewers:
+      - arnested
