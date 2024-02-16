@@ -1,3 +1,4 @@
+---
 name: Security Checks
 on:
   pull_request:
@@ -17,8 +18,6 @@ jobs:
   gosec:
     name: Golang Security Checker
     runs-on: ubuntu-22.04
-    env:
-      GO111MODULE: on
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4

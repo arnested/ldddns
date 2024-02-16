@@ -1,3 +1,4 @@
+---
 name: Release
 on:
   workflow_run:
@@ -11,89 +12,89 @@ jobs:
   bump-version:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - uses: arnested/go-version-action@v1
-      id: go-version
-    - name: Bump version and push tag
-      uses: anothrNick/github-tag-action@1.67.0
-      id: version
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-        WITH_V: true
-        DEFAULT_BUMP: patch
-        DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-        RELEASE_BRANCHES: main
-    - name: Setup Go
-      uses: WillAbides/setup-go-faster@v1.14.0
-      with:
-        go-version-file: go.mod
-    - name: go version
-      env:
-        GO111MODULE: 'on'
-      run: go version
-    - name: Install changelog management tool
-      run: go install github.com/goreleaser/chglog/cmd/chglog@main
-    - name: Build changelog
-      run: chglog init
-    - name: Run GoReleaser
-      uses: goreleaser/goreleaser-action@v5
-      with:
-        version: latest
-        args: release
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-    - name: Import GPG signing key
-      run: |
-        mkdir -m 0700 ~/.gnupg/
-        printf -- "${{ secrets.GPG_SIGNING_KEY }}" > ~/.gnupg/private-key.asc
-        gpg --import --no-tty --batch --yes ~/.gnupg/private-key.asc
-    - name: Copy deb packages into build area
-      run: |
-        mkdir -p site
-        cp -v dist/*.deb site/
-    - name: Scan packages
-      run: |
-        apt-ftparchive packages . > Packages
-        gzip -k -f Packages
-      working-directory: site
-    - name: apt-ftparchive release
-      run: |
-        apt-ftparchive -o APT::FTPArchive::Release::Origin="Arne Jørgensen" -o APT::FTPArchive::Release::Label="${{ steps.go-version.outputs.module }}" release . > Release
-        echo "Changelogs: $(gh api /repos/{owner}/{repo}/pages --jq .html_url)changelog?path=@CHANGEPATH@" >> Release
-        gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
-        gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
-      working-directory: site
-      env:
-        GH_TOKEN: ${{ github.token }}
-    - uses: BaileyJM02/markdown-to-pdf@v1.2.0
-      with:
-        input_path: index.md
-        output_dir: site/
-        build_html: true
-        build_pdf: false
-        template: page/template.html
-    - name: Fix link / package name in GitHub Pages
-      run: |
-        DEB=$(grep linux_amd64.deb dist/checksums.txt | awk '{print $2}')
-        sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" site/index.html
-    - name: Add install script to GitHub Pages
-      run: cp -v install.sh site/install.sh
-    - name: Add favicons to GitHub Pages
-      run: cp -vR page/favicons site/
-    - name: Add changelog to GitHub Pages
-      run: chglog format --template deb --output site/changelog
-    - name: Deploy deb packages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: site
-        clean: true
-        single-commit: true
-    - name: Post status to Google Chat
-      if: ${{ always() }}
-      uses: containrrr/shoutrrr-action@v1
-      with:
-        url: "${{ secrets.WATCHTOWER_NOTIFICATION_URL }}"
-        message: "Released `${{ github.repository }}`@`${{ github.sha }}` as ${{ steps.version.outputs.tag }}: *${{ job.status }}*."
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: arnested/go-version-action@v1
+        id: go-version
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.67.0
+        id: version
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          WITH_V: true
+          DEFAULT_BUMP: patch
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          RELEASE_BRANCHES: main
+      - name: Setup Go
+        uses: WillAbides/setup-go-faster@v1.14.0
+        with:
+          go-version-file: go.mod
+      - name: go version
+        env:
+          GO111MODULE: 'on'
+        run: go version
+      - name: Install changelog management tool
+        run: go install github.com/goreleaser/chglog/cmd/chglog@main
+      - name: Build changelog
+        run: chglog init
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v5
+        with:
+          version: latest
+          args: release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Import GPG signing key
+        run: |
+          mkdir -m 0700 ~/.gnupg/
+          printf -- "${{ secrets.GPG_SIGNING_KEY }}" > ~/.gnupg/private-key.asc
+          gpg --import --no-tty --batch --yes ~/.gnupg/private-key.asc
+      - name: Copy deb packages into build area
+        run: |
+          mkdir -p site
+          cp -v dist/*.deb site/
+      - name: Scan packages
+        run: |
+          apt-ftparchive packages . > Packages
+          gzip -k -f Packages
+        working-directory: site
+      - name: apt-ftparchive release
+        run: |
+          apt-ftparchive -o APT::FTPArchive::Release::Origin="Arne Jørgensen" -o APT::FTPArchive::Release::Label="${{ steps.go-version.outputs.module }}" release . > Release
+          echo "Changelogs: $(gh api /repos/\{owner\}/\{repo\}/pages --jq .html_url)changelog?path=@CHANGEPATH@" >> Release
+          gpg -abs --no-tty --batch --yes -o - Release > Release.gpg
+          gpg --clearsign --no-tty --batch --yes -o - Release > InRelease
+        working-directory: site
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - uses: BaileyJM02/markdown-to-pdf@v1.2.0
+        with:
+          input_path: index.md
+          output_dir: site/
+          build_html: true
+          build_pdf: false
+          template: page/template.html
+      - name: Fix link / package name in GitHub Pages
+        run: |
+          DEB=$(grep linux_amd64.deb dist/checksums.txt | awk '{print $2}')
+          sed -i "s/ldddns_.*_linux_amd64.deb/<a href=\"https:\/\/github.com\/arnested\/ldddns\/releases\/latest\/download\/${DEB}\">${DEB}<\/a>/" site/index.html
+      - name: Add install script to GitHub Pages
+        run: cp -v install.sh site/install.sh
+      - name: Add favicons to GitHub Pages
+        run: cp -vR page/favicons site/
+      - name: Add changelog to GitHub Pages
+        run: chglog format --template deb --output site/changelog
+      - name: Deploy deb packages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: site
+          clean: true
+          single-commit: true
+      - name: Post status to Google Chat
+        if: ${{ always() }}
+        uses: containrrr/shoutrrr-action@v1
+        with:
+          url: "${{ secrets.WATCHTOWER_NOTIFICATION_URL }}"
+          message: "Released `${{ github.repository }}`@`${{ github.sha }}` as ${{ steps.version.outputs.tag }}: *${{ job.status }}*."
