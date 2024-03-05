@@ -3,7 +3,7 @@ name: Go version update
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 21 * * *'
+    - cron: '45 * * * *'
 
 permissions:
   contents: write
