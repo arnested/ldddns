@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 22 Mar 2024 08:22:53 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ efec3bdc32b5b7d23e4fc08d3be778d2             1785 Packages
+ 27cd7a5847553f23a7fa8b668f826596              845 Packages.gz
+ 0d46a882f2012dc98161cc47397d8ca4               88 Release
+SHA1:
+ 88c545ab135d134ef338313f7a9188ee65b4417f             1785 Packages
+ 6f81883a7bf1db4f51e158dd3b0e1b538fc8011e              845 Packages.gz
+ 49a1c20e7a6c4b5726e0ca3cbbfb46b31d113a1e               88 Release
+SHA256:
+ 534f0f02fc5fb003e710fca09f643f3aa402fe550b6ec3b93a6148b6c4f3f885             1785 Packages
+ e73453d3619245cc799b70d43e77553a78374cd5b130ffa8932a4e734e3d9823              845 Packages.gz
+ 8058eaa26be11c07a0bd7a3d8d101c54f97489dc15b4e582aa1fbff892920d8f               88 Release
+SHA512:
+ 9dcb59e06c0fe37d454efd7509457008c787c22a53279bfe166b4c4c81a9e0b733a9a62d657badcb63d42f76bf7f0e940341e53d0cfaa413bc57811ad265339d             1785 Packages
+ 6d8383f0bf1875e90d1424bedfbe2df3f07d101fd5fd7eb281f2cd615aa52e43c13294362fd51b6cc7e8904ee93ad0ac141cc5406d5dd9a5ed6d66bbc4be304c              845 Packages.gz
+ 0590343c33b3258d9aaa196ddf79489c2fee831002ca9feef4de52849f26cea851611ae10df20cfcf86b863aee119bca102a7a67c4bbbd33e5b4a5cb40d6cd07               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmX9P94ACgkQnwaxeMQI
+vd6kTAwAnZB82lmR+RIbA/qzN+czk8Va7eNxQWVHuwcDz5fPVCwPO+0esXcd4uIo
+K9RLEkMoM5/HLWboXUckfPa5y4z3PXNDHW32tau/H2/hdr9lxyi1psvOLA+q086n
+agUMU7NK+m7GE5GDAGm97eCgIuGIFkYfdeuUAs7w4gcFENZgupfVaMa7JmWk1s0D
+TrgZuN613PcXv2vnVtTtK1lQ8gEzCD69nphZ541lpcKPM2/ijzy8fQ1cAzmzPYbI
+nR8yddViSRELdAUT5h3BS4gRjjsF4kySWvsJPfCk1Tbf1irtz8tky6vFrCr5VbIr
+ljR3nzUNf44UHgrDqcXJ527+BFG/rWn3y6wZlApMQniy1A0CoQUFp+jsPuAfTiJC
+6YgHYB7MNLSSj15r9OmH7kYglHWE5T/F1Vwcd+P06IG5/papNw1IKpGQf2Mj85+q
+Qii/GZdMw1jYlF+KIHQlxlBdRO8iQ9IT4vf6hXouugMZ8YgjVSBMBlCXdBuQtyV2
+08juGSV9
+=Un3R
+-----END PGP SIGNATURE-----
