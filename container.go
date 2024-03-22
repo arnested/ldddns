@@ -102,7 +102,6 @@ func ignoreOneoff(containerInfo container.Container, config Config) bool {
 }
 
 func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *entryGroups) {
-	//nolint:exhaustivestruct
 	containers, err := docker.ContainerList(ctx, typesContainer.ListOptions{})
 	if err != nil {
 		log.Logf(log.PriErr, "getting container list: %v", err)
