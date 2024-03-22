@@ -4,8 +4,7 @@ linters:
   disable:
     - depguard
     - exhaustruct
-    - gocritic
-    - gofumpt
+    - tagliatelle
 
 linters-settings:
   exhaustive:

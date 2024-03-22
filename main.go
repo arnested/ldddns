@@ -27,10 +27,10 @@ var (
 
 // Config is the configuration used to create hostnams for containers.
 //
-//nolint:musttag
+//nolint:lll
 type Config struct {
-	HostnameLookup            []string `default:"env:VIRTUAL_HOST,containerName" split_words:"true"`
-	IgnoreDockerComposeOneoff bool     `default:"true"                           split_words:"true"`
+	HostnameLookup            []string `default:"env:VIRTUAL_HOST,containerName" json:"HostnameLookup"            split_words:"true"`
+	IgnoreDockerComposeOneoff bool     `default:"true"                           json:"IgnoreDockerComposeOneoff" split_words:"true"`
 }
 
 func main() {
