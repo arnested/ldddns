@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/docker/docker/api/types"
+	typesContainer "github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/client"
 	"ldddns.arnested.dk/internal/container"
@@ -102,7 +103,7 @@ func ignoreOneoff(containerInfo container.Container, config Config) bool {
 
 func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *entryGroups) {
 	//nolint:exhaustivestruct
-	containers, err := docker.ContainerList(ctx, types.ContainerListOptions{})
+	containers, err := docker.ContainerList(ctx, typesContainer.ListOptions{})
 	if err != nil {
 		log.Logf(log.PriErr, "getting container list: %v", err)
 	}
