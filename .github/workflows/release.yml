@@ -68,7 +68,7 @@ jobs:
         working-directory: site
         env:
           GH_TOKEN: ${{ github.token }}
-      - uses: BaileyJM02/markdown-to-pdf@v2
+      - uses: BaileyJM02/markdown-to-pdf@v1.2.0
         with:
           input_path: index.md
           output_dir: site/
