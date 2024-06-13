@@ -4,7 +4,7 @@ name: Build and test
 permissions:
   contents: write
 jobs:
-  go_generate:
+  generated:
     name: Check generated code is up to date
     runs-on: ubuntu-22.04
     steps:
@@ -13,13 +13,14 @@ jobs:
         uses: WillAbides/setup-go-faster@v1.14.0
         with:
           go-version-file: go.mod
+      - name: go mod tidy
+        run: |
+          go mod tidy
+          git diff --exit-code
       - name: go generate
-        env:
-          GO111MODULE: 'on'
-          GOPATH: ${{ github.workspace }}/go
-        run: go generate -x
-      - name: Diff after go generate
-        run: git diff --exit-code
+        run: |
+          go generate -x
+          git diff --exit-code
   build_and_test:
     name: Build and test
     runs-on: ubuntu-22.04
@@ -32,15 +33,23 @@ jobs:
         with:
           go-version-file: go.mod
       - name: go version
-        env:
-          GO111MODULE: 'on'
         run: go version
+      - name: go mod verify
+        run: go mod verify
+      - name: go vet
+        run: go vet ./...
+      - name: go fmt ./..
+        run: |
+          go fmt ./...
+          git diff --exit-code
       - name: Test
         uses: robherley/go-test-action@v0.4.1
         with:
-          testArguments: -race -cover -covermode=atomic -coverprofile=coverage.txt ./...
+          testArguments: -race -shuffle=on -benchtime=1x -cover -covermode=atomic -coverprofile=coverage.txt ./...
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
       - name: Install changelog management tool
         run: go install github.com/goreleaser/chglog/cmd/chglog@main
       - name: Build changelog
@@ -48,7 +57,7 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
-          version: latest
+          version: v2
           args: release --snapshot
       - uses: actions/upload-artifact@v4
         with:
