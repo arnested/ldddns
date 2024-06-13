@@ -31,9 +31,9 @@ jobs:
         with:
           go-version-file: go.mod
       - name: go version
-        env:
-          GO111MODULE: 'on'
         run: go version
+      - name: run go install to warm proxy.go.dev
+        run: go install ${{ steps.go-version.outputs.module }}@${{ steps.version.outputs.tag }}
       - name: Install changelog management tool
         run: go install github.com/goreleaser/chglog/cmd/chglog@main
       - name: Build changelog
