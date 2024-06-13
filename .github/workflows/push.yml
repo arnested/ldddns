@@ -48,6 +48,8 @@ jobs:
           testArguments: -race -shuffle=on -benchtime=1x -cover -covermode=atomic -coverprofile=coverage.txt ./...
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
       - name: Install changelog management tool
         run: go install github.com/goreleaser/chglog/cmd/chglog@main
       - name: Build changelog
