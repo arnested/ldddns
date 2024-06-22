@@ -6,8 +6,7 @@ on:
     - cron: '45 * * * *'
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   stable:
@@ -86,3 +85,4 @@ jobs:
             See [the draft release notes](${{ steps.release-notes.outputs.URL }}).
 
             This pull request is only intented for getting feedback on compatibility with future Go versions. Don't merge it!
+          token: ${{ secrets.PAT_TOKEN }}
