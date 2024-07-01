@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Mon, 01 Jul 2024 18:22:10 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ e295fb2167889bc993cf5def871db928             1785 Packages
+ 10beafca24dab51614e91edc38f8d86a              839 Packages.gz
+ ec7f679e559646c113569098749510e0               88 Release
+SHA1:
+ 87a2e36c863bf64b6c076f971829dc34169a69b5             1785 Packages
+ 133c55777a235a4b3c6e301b959a0cf75c81011f              839 Packages.gz
+ c665c681ba7d9f87bbd1291796904b00829712ce               88 Release
+SHA256:
+ c06314557712fbf696990d3078bc43222768ffa215d408658a5cd29faebdbe2d             1785 Packages
+ c0f0d25512ca12289110887e27d0a929712a5e0ce46860c12111fa10f4e2a843              839 Packages.gz
+ 6f0cfde67512e7b039aeca4e9ded0e571c61cdae1218abc9a7fe6adc5e65fc46               88 Release
+SHA512:
+ b5e331ae1d4a196e07a87d3a2247d0e60578b186e9f6b0f37b7940223f0151c87f513224d006b3cd0e836eac4b5242c107207cdf6cd83f33cd1e709598ab19ac             1785 Packages
+ c337bfa082b32221cf65db9d92a94231c82e3e961363ff60495b1f099cbd11c954d0e12f458458ff4fedcf1d51497e4e06a780daa3df097d975a7710aa80b801              839 Packages.gz
+ ddb03cb293bab6ae6a7aee65293ead93a7b79420809c135824a3dac34383129842f84a7ddf3ab33fdad15b74b2b6df7fc909dc9bf6eafd04ef828d621de52786               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmaC89MACgkQnwaxeMQI
+vd4j1gwApqsVnyDXksfPEfYUugr7/zwxGNSfKAW6LAPc6NRQwL/3rS8GRNQtFMis
+yxISRsj0eEBMEdQO3D2CFNcb4sSsVpOVtyIWvWKTL+VWHtOEi/svB/kjUj+PP1dx
+AJ3eHSVmyIO8ztgZJMbMZTBlfEQeekky2tUVj6/MxbM5iyLdcc346MOO680kLgh4
+RD6gSvglc2MepdVoHwUTqRN6vQw3t1jM3WYVUEbtkN3aNnyszhgUp/n8d4HOfN9N
+8wYOsFyfhwgyry/pYxjU4rgfZey94gygqctGqrxItK7k/LViqXc5AXkyx7FHA46Q
+9PH0J8+5GKhWUeabg3EPcQ2nWtxetH8Z/4fCy1AKfhsG/Q+esXSygYdbFLapqy8E
+worX9TIEUEvdCz0ZTq0KIhqfbAVa7vo48gISboyrXjLvW1puKo1IGWkXy9H57d/1
+v7tkx3OL67+i8t94gBu2zf/Y2hTYdjvpRlzKjCsXeeMvK+0FEFDTpK10eIGit1Pg
+lOwwur3Z
+=be5P
+-----END PGP SIGNATURE-----
