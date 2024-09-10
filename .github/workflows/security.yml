@@ -22,7 +22,7 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v4
       - name: Run Gosec Security Scanner
-        uses: securego/gosec@master
+        uses: securego/gosec@v2.21.2
         with:
           args: '-no-fail -fmt sarif -out results.sarif -tests ./...'
       - name: Upload SARIF file
@@ -40,7 +40,7 @@ jobs:
         with:
           go-version-file: go.mod
       - id: govulncheck
-        uses: golang/govulncheck-action@master
+        uses: golang/govulncheck-action@v1.0.3
         with:
           govulncheck-action: go.mod
           output-format: sarif
