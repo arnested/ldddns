@@ -56,7 +56,7 @@ func (c Container) Services() map[string]uint16 {
 			continue
 		}
 
-		//nolint:gomnd
+		//nolint:mnd,gomnd
 		if portNumber > 65535 {
 			log.Logf(log.PriErr, "Port number %d is too large", portNumber)
 
