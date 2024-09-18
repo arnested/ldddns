@@ -42,7 +42,6 @@ jobs:
       - id: govulncheck
         uses: golang/govulncheck-action@v1.0.3
         with:
-          govulncheck-action: go.mod
           output-format: sarif
           output-file: results.sarif
       - name: Fix SARIF format
