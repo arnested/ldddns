@@ -56,6 +56,13 @@ func (c Container) Services() map[string]uint16 {
 			continue
 		}
 
+		//nolint:gomnd
+		if portNumber > 65535 {
+			log.Logf(log.PriErr, "Port number %d is too large", portNumber)
+
+			continue
+		}
+
 		service := netdb.GetServByPort(int(portNumber), proto)
 
 		if service == nil || proto == nil {
