@@ -9,8 +9,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/docker/docker/api/types"
 	typesContainer "github.com/docker/docker/api/types/container"
+	"github.com/docker/docker/api/types/events"
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/client"
 	"ldddns.arnested.dk/internal/container"
@@ -126,7 +126,7 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 	filter.Add("event", "start")
 	filter.Add("event", "unpause")
 
-	msgs, errs := docker.Events(ctx, types.EventsOptions{
+	msgs, errs := docker.Events(ctx, events.ListOptions{
 		Filters: filter,
 		Since:   strconv.FormatInt(started.Unix(), 10),
 		Until:   "",

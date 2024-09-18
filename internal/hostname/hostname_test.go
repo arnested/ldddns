@@ -108,10 +108,9 @@ func TestRewriteHostname(t *testing.T) {
 	}
 
 	for _, tt := range testdata {
-		tt := tt
 		t.Run(tt.in, func(t *testing.T) {
-			t.Logf("%q %q\n", tt.in, tt.out)
 			t.Parallel()
+
 			if s := hostname.RewriteHostname(tt.in); s != tt.out {
 				t.Errorf("got %q from %q, want %q", s, tt.in, tt.out)
 			}
@@ -130,7 +129,7 @@ func FuzzRewriteHostname(f *testing.F) {
 	f.Add("blåbærgrød")
 	f.Add("xn--blbrgrd-fxak7p.local")
 
-	f.Fuzz(func(t *testing.T, a string) {
+	f.Fuzz(func(_ *testing.T, a string) {
 		hostname.RewriteHostname(a)
 	})
 }
