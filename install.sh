@@ -17,6 +17,28 @@ fi
 
 set -euo pipefail
 
+ldddns_preinstall(){
+    
+    avahi_install(){
+        echo "Installing avahi-daemon..."
+        sudo apt-get install avahi-daemon avahi-discover avahi-utils libnss-mdns mdns-scan -y
+    }
+
+    avahi_status(){
+        if [ $(sudo systemctl is-active avahi-daemon) == "inactive" ]; then
+            echo "WARNING: avahi-daemon is inactive! Please activated to make use of ldddns..."
+        fi
+    }
+
+    # Check if avahi-daemon exists
+    echo "Checking dependencies..."
+    which avahi-daemon > /dev/null || avahi_install
+
+    # Will show a warning if avahi-daemon is not active 
+    avahi_status
+
+}
+
 ldddns_install() {
     tmpdir="$(mktemp --directory)"
 
@@ -47,4 +69,5 @@ ldddns_install() {
     fi
 }
 
+ldddns_preinstall
 ldddns_install
