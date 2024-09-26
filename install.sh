@@ -6,11 +6,11 @@ if [ -z "${BASH}" ]; then
     exit 1
 fi
 
+aptget="$(command -v apt-get || true)"
 aptdcon="$(command -v aptdcon || true)"
-dpkg="$(command -v dpkg || true)"
 pkexec="$(command -v pkexec || true)"
 
-if [[ ! -x "${aptdcon}" && ! -x "${dpkg}" ]]; then
+if [[ ! -x "${aptdcon}" && ! -x "${aptget}" ]]; then
     echo >&2 Install only runs on Debian based distributions.
     exit 2
 fi
@@ -25,6 +25,7 @@ ldddns_install() {
         rm --recursive --force -- "${tmpdir}"
     }
     trap cleanup EXIT
+    setfacl -m u:_apt:rx "${tmpdir}"
 
     echo -n "Finding latest package name..."
 
@@ -38,12 +39,13 @@ ldddns_install() {
     curl --proto =https --fail --location --progress-bar --output "${tmpdir}/${package}" "https://github.com/arnested/ldddns/releases/latest/download/${package}"
 
     echo "Installing ${package}..."
+
     if [[ -x "${aptdcon}"  ]]; then
         yes | aptdcon --hide-terminal --install "${tmpdir}/${package}" > /dev/null
     elif [[ -x "${pkexec}"  ]]; then
-        pkexec dpkg --install  "${tmpdir}/${package}"
+        pkexec apt-get install  "${tmpdir}/${package}"
     else
-        sudo dpkg --install  "${tmpdir}/${package}"
+        sudo apt-get install  "${tmpdir}/${package}"
     fi
 }
 
