@@ -1,9 +1,10 @@
 [Unit]
 Description=Local Docker Development DNS
 Documentation=https://ldddns.arnested.dk
-BindTo=docker.service
+BindsTo=docker.service
 After=docker.service
-Requisite=avahi-daemon
+BindsTo=avahi-daemon.service
+After=avahi-daemon.service
 
 [Service]
 Type=notify
