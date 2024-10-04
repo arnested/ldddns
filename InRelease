@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 04 Oct 2024 19:42:05 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 1dd3770377bb3db209959d01eeded89d             1824 Packages
+ 4787db207c09cb41da475d840be3c57f              854 Packages.gz
+ 4c208edee20d08c27bcb159d76828a06               88 Release
+SHA1:
+ 4593c3bb23c0acbdfc27d276d1fdd47420a256ac             1824 Packages
+ ff8f1767b14617c418aca175f062a86bce40185b              854 Packages.gz
+ b38effee3515dfb82996952acd31acb5bed61b9f               88 Release
+SHA256:
+ a289221ba8d9b0749a617e69a93f11e709b2b3fad454564fb10dacea4a733688             1824 Packages
+ 11383a08ee90f134edcda4ca22d3e866259c91712131411065d4332bf544c074              854 Packages.gz
+ 716098f17c4dff141dc08b033d0b20e71a373f613cec72917cd634afddb85491               88 Release
+SHA512:
+ 98d779514238e424ba1cc6bd81ab2e79af682e0902320c3bdae22246f709fbeef0f8cfcd12fcab3ae89b22910d25e01f3ffb48d912d5a5778f36f606eeba4930             1824 Packages
+ 7181cac6a59a52f1e2aaa414d1b31150dbff596d2e877e54c5e71780d8c58db88285f483dc2418e37322b90f726a003060edf5c1815832b49938da3c95d5d147              854 Packages.gz
+ 4f4d95bee5d4240a8faa5c5a7cde88cf19a5dbb1907d1d9f8e277152391fb3eda33668ef9dd9e9b5d857af47cea2a8ce4bbfd4105b046996efd6075cd1212102               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmcARQ0ACgkQnwaxeMQI
+vd5rtAv+JnPrYDtyf6VddmIbWAUs/ylnFzfZW38v50eEF+nBNqKAwGPM/YBxe4qK
+RIjYB6vUB2dssYOSeFJCUxwXSmlNUaBQT8AaBvu2zgyxrIgbA/DeJYsR9izTaVYd
+HQsmBVGXhsBreUbkq/qecMZRSQk79vLFBvfcaYB683VAdZxs6oTxYQU35sKhwK12
+F0yifXmfDGffsGdtfyyFuV9vendU3g9xRadFIez7GiPRpElW3RLC+pnyMQdWLWAV
+/Pkzd23SB6TPKBZf5TMuRIy+L/m0hKrRN6YL2niqU5P3DJfC2PJTYk5kiK5mfWMT
+BDhF65o678uJMvW4xDQDr4fOnwPYIudC/P+xjNhhM1l2N97K61oaAsGAQNjw73yA
+GLDZyIN0R+Avmi8NxPw8MKGkNOSFpWSQ39OpT6mbqZUdmqe7V/d26T1jjV/aQRuE
+3dTbhb5fRhe6QxSERd4XVBjL7Envb0nrx1Md6cNaCFyBmFiSGDgHs6WRtVg8VDem
+Nv6nJOGe
+=Fh8T
+-----END PGP SIGNATURE-----
