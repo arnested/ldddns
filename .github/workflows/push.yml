@@ -47,7 +47,7 @@ jobs:
         with:
           testArguments: -race -shuffle=on -benchtime=1x -cover -covermode=atomic -coverprofile=coverage.txt ./...
       - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Install changelog management tool
