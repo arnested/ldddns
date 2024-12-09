@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Mon, 09 Dec 2024 19:11:17 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ df06f4b54a3f81a1045b575edc5993ca             1824 Packages
+ 9c035ed24a7466a15fe91bcedad052f3              852 Packages.gz
+ 05110ddc2ad1392cda8f5e4cfa5f2720               88 Release
+SHA1:
+ a9ac4fb994284d2182775243c178fb8d28a4e1c5             1824 Packages
+ 3ec21bd8494d39efd2e56865f736be04053a22fe              852 Packages.gz
+ 5e1f27fe344acffbaf2cb27634f6e511e5b5de6a               88 Release
+SHA256:
+ 7bfdd06a6c978cbd28da5c5dc5726a3f9d36b2b48b9acda022bbfb20397b08cd             1824 Packages
+ 794482c78f4f67ae40a0b1a6b74cc9ebde2b9519dc7e2e30764ceec99bad7ab1              852 Packages.gz
+ 02b0e4266f2be2e6f70723e862def8ef2ae4d12f518a4cb15e9e13ec177646ed               88 Release
+SHA512:
+ 446a0db62a6cc0e68c0b5b43652b213abe88c703e5a6ba619dccf371830036d97e287e7d61cbe6b322b0206157349ab6a5c5d453faaf0b62707af96951e75814             1824 Packages
+ ab5b02a65110a91182e336f79e8fb9ec4a02c1f070651222655ffdab5beb43ad2b2a20c2998b75348f1b43b1a3b10fe6e227c661c44ad78663f667184c180c9e              852 Packages.gz
+ 2104eecace699148e9b404e2bbc26b3ada234aa38b79f3064be33328d63d5e9536b2d928648f71e93c4a1e3f17c01c8039d806dc9c36148b02f82f15755c1794               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmdXQNYACgkQnwaxeMQI
+vd5p3Qv/RdFxU6NoSz9HcVVzH3pjxsjHvg4OaZaV2SNvsyxeqxcgIb5vxi1oKkbT
+fHXCXgAmIKu/0yYLKYy02vqxn8Aud2FKIrLJ1LAR0v78isVzTP73g09FEDYN+x5a
+dJClCVXcyuQ4QYhgUWE5O1syFYkPIb1iRMB8Vk+jsAMigaiopdiUMu5y5phBOGVS
+Dde2i8y2DNlaw27WX2u4+6aTqF0r/jfZQC8Ks4BT1lb+fBCHklcLU7EeglZXKnce
+Xzusobp6iU0G6WyQwo5y+sH1hdEjWtgS6h6sbPWNzqzjuXYDhSp65HNgyy30u18j
+n/6Ky86Y1I8Z3IOcquXdPOj3FPvER6RPIgo7Sy0wd69Sq0T0PUbfCgwgu8rRULLR
+n5y/LRxqQVu4XvLTooEtu8IrJGJdshvIiaHoDXxYAtUTUhv/7+BAu0SRBWGdhNJ1
+0GV+zUIFZ8hV8Wxbyj67qvxJUkoTGxSB+e2lm/6Ujrw7Sf0S0eFb7jtE/tHZ+joA
+YGS61K+w
+=Ed/5
+-----END PGP SIGNATURE-----
