@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 19 Dec 2024 22:02:11 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 29ce735e3d7ce4e4b96df7c5f0aefcd4             1824 Packages
+ ff8b81140ff7b49ddbcd920279bfba5d              850 Packages.gz
+ cd0bbae582af3785704e1f4e3c3ed426               88 Release
+SHA1:
+ 8fb908a18457a3c11d831648200414bbd51f2f2a             1824 Packages
+ ca3932732160b0d1d04d3349198f6deb0f825df0              850 Packages.gz
+ b72756e9d8210507256cbc1267e70339b2dbc137               88 Release
+SHA256:
+ 2553d374d019e201182ae09d799c618a59459625ae78f40617adf5e5a146758d             1824 Packages
+ b27335177b358b3e2f9b1df2ed896f84835cc869f6bd3602ca1ff079e38a0d08              850 Packages.gz
+ fcf8286016ba8e82b1eeb7eaec892bf9551ba1532723aaba6726c5fa1d3887b2               88 Release
+SHA512:
+ 1ed828c513f54bb5e0c57f5e10f4c25f6b8d22ae37107f07e9e501374c6a4723e45f770a38fefc778e19a3b6a1a507be47db7d2e0a5980b63c65b17ea2777185             1824 Packages
+ 3ccdd776fb301da5f9efad86c4f2431b130adc25cbbdae1d66ae8af529d5df4257e8ed14a461f2154f6040c0c0fc8eb98615421c68f3cd9b1db5a4469252ed63              850 Packages.gz
+ fbbaed4e5d2db996d27e468bcd8e1b52aa881989deef5a0289eb20a1ba0c35082ae730ce657b5b333b3859eaf4ca7d66ffa7bd0f7d3aea4b0c97f11657f4dbe1               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmdkl+MACgkQnwaxeMQI
+vd6s5Av9GKSPXfbvcGVXisO5kvGky8ElcB+LD41kcaQWHIgGhOmMOkNTdcr8O5je
+6kIYj1TtuFXTbRXjxK0lCzqPiS1PLg53ds5yfYQWu5htSs/99V3ovmCCBDMw2QuQ
+vze4FUDv+AGRfAktua416fela8Fk0zbub7fFGt3aLLhGFpAS8W7oy7LiZGUcjMBN
+S7T0+0C4dQrkqZZsyXml/afEVjTnILbazOHN/XAwJWH4G5UxRUzeICit0EAEjGHO
+1gVqWq634XkOg5TJKKaO28Y0etNZcjzK86SMx4PhTHK3oVRet0GpC5sHQsagfOxi
+XakvU9ZIbpZNjZnVUqTrEku03e3ECXy3XPxEb0CTloEbCwRTEKO+orR/g87uH3io
+jDXPV+gssb1UmhOd1Dy/l/scZkZFz9opyhLXSf1t7Ue4eCXZXuysZMD9ML1y65JQ
+MXa6vpz2WEeu7W3vg6ZgQgY5fFaIYfJFHjhKwQGUkezkMFC8LaYLsRgBxvX2h90o
+kTWzAkmL
+=2Ar8
+-----END PGP SIGNATURE-----
