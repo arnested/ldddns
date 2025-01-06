@@ -86,6 +86,8 @@ jobs:
         run: cp -vR page/favicons site/
       - name: Add changelog to GitHub Pages
         run: chglog format --template deb --output site/changelog
+      - name: Add .well-known for Bluesky to GitHub Pages
+        run: cp -vR page/.well-known site/
       - name: Deploy deb packages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
