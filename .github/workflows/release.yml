@@ -55,6 +55,8 @@ jobs:
         run: |
           mkdir -p site
           cp -v dist/*.deb site/
+      - name: Make sure GitHub Pages doesn't use Jekyll
+        run: touch site/.nojekyll
       - name: Scan packages
         run: |
           apt-ftparchive packages . > Packages
