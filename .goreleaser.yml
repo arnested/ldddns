@@ -64,6 +64,9 @@ nfpms:
       - src: deb/ldddns.gpg
         dst: /usr/share/keyrings/ldddns.gpg
 
+      - src: deb/ldddns.8
+        dst: /usr/share/man/man8/ldddns.8
+
     scripts:
       postinstall: "deb/postinstall.sh"
       preremove: "deb/preremove.sh"
