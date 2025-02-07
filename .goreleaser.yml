@@ -14,7 +14,8 @@ builds:
       - -s -w -X main.version={{.Tag}} -X main.Date={{.CommitDate}}
     mod_timestamp: '{{.CommitTimestamp}}'
 archives:
-  - format: binary
+  - formats:
+      - binary
     name_template: >-
       {{ .ProjectName }}_
       {{- if eq .Os "linux" }}Linux
@@ -62,6 +63,9 @@ nfpms:
 
       - src: deb/ldddns.gpg
         dst: /usr/share/keyrings/ldddns.gpg
+
+      - src: deb/ldddns.8
+        dst: /usr/share/man/man8/ldddns.8
 
     scripts:
       postinstall: "deb/postinstall.sh"
