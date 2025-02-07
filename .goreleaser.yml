@@ -14,7 +14,8 @@ builds:
       - -s -w -X main.version={{.Tag}} -X main.Date={{.CommitDate}}
     mod_timestamp: '{{.CommitTimestamp}}'
 archives:
-  - format: binary
+  - formats:
+      - binary
     name_template: >-
       {{ .ProjectName }}_
       {{- if eq .Os "linux" }}Linux
