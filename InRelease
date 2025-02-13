@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 13 Feb 2025 19:02:48 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ b902c5c328bfcb8f7d8aaeec3b22185a             1824 Packages
+ 1e2016d1796b12fa4accecf027b6204b              847 Packages.gz
+ 7ab514ca4aaed54d26bc8f95f811bb40               88 Release
+SHA1:
+ 38dd60612e989e2d3c600eeeb9c882044ad1eb6f             1824 Packages
+ e2d94554b9d2091783a0012d942c79ab27bb5d3d              847 Packages.gz
+ 23899bae2c037d22232a63f65579f58ec8210d67               88 Release
+SHA256:
+ 9e4bec4c6a55c1080bb2563ded3d021164d2ee8739e107ef3dbf181a5c13e0a2             1824 Packages
+ 68556242a17699d98dd247ae5dc73a59710d523924e747a1b47b84a0c6afc92a              847 Packages.gz
+ 8ec19753ef850186865b0b0aa24edaa88d4bab4d3024ebdb38427581368f36b3               88 Release
+SHA512:
+ 77f8da4cf9ef3b8fd80fdefd916004ee533ed18991ee9ad17e63441d131d44eb365686acbf7172405d55097e53aef077432c4feb1f273671737ce9870b5e86f9             1824 Packages
+ 2279b8686d3a79c03c1a8f71e3c99c552f206da5ebee5a70dbc7bc66a2016ade72c6cb55ea0f4966d151f86b6f5ce66b2ea80640078371c8c9b6cef7d6cf5671              847 Packages.gz
+ a4d1c8a2b2ba439d1b6277dc676b3d2f6b31131f2fa0f221a3be02dd29d170fd897a62bab7574c555bf673be016d526e27891e8306f7393c0d790caaedc05e15               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmeuQdkACgkQnwaxeMQI
+vd42OAwAhk+nVmbaXJtYJK0AqbG8pj863Hrs9KJb+WONfOi5ms21u4KdcAdSKjFJ
+9e669khEzW1GpyK7wdjOOyu/cqxIYxTY1CiKSMpFtp8hWHfj/PhpztpPgfSWKiQa
+1GTJJnZ+VyXjIm6ceF9gUEesxWUAxLPFLqWHhbA5mepuOiS7XhfWnPjzzUdeeMSP
+g8NfrMeLsD4oe8TBlpwhfbYCcguIRZAL5B0E3ELnNeGTrk9DnYeOv3D5835hKJDV
+otDD6EZUgCnApP8JjlKLfEjHpdzSSflu7X0fp3Q8UGumczCkowpReDOkkM/Gl08G
+qxdJf/5t1+Oke6ZZkTAMhYhm32aNND94WkmFlP66rA+2Oijm3r6pfWCtcKuXN7tO
+9nSEJJsn/Eepfl08wiySm3UZI+5lafmS5iCw1JQ3slu9nqbJQcUwLbpr42+6bqua
+IvnkMQYZdL98wDCzMvTx7+3ejeN6aMo/EjfxAO0jpbsl76JB28jrGuQzv4HIhCJq
+N14a81oa
+=v21q
+-----END PGP SIGNATURE-----
