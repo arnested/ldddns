@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Wed, 05 Mar 2025 19:08:41 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ b331c3569a371003948547f7e0614c72             1824 Packages
+ 87a22b3ee052ebdcfc2f857529aef59b              852 Packages.gz
+ f47d3e646e6074d7101660a37d894a11               88 Release
+SHA1:
+ 7ddd47a6d2344a994ee11f576348dd30da21c313             1824 Packages
+ 363e31e0635ae80e0bb856684b1f9735bc706d9e              852 Packages.gz
+ 2dee978514055a2816d108e57563a706d877505c               88 Release
+SHA256:
+ fdcfe64e81e6a83dd092dcdc6bb560c3c83e041ed8f93fc1e91371c5e1de3b6a             1824 Packages
+ 861624e85fa8f31433cb01be29353e74a139c6dc2fdfbb1e0fa0b178bc43a8c6              852 Packages.gz
+ 51efdf2e38b6ae056c337deecab699a80ef0a11c2a4581f4a84fd40309d88762               88 Release
+SHA512:
+ b0a1398d1e87cea604fd6f40335ddaa3f3eb61f5ffbcb0a7f6e7ba30b51b3d1a9a8aa1f9f076d6cfcbbe4bccbdf0da6e132aaf032a2dfbab48c7bcf4e2719bdd             1824 Packages
+ dcb7f062a1f5ae87550a63540d52c754310238ae6091460b5a60030e49b04e60b6147aa1ddbc1f1d23cb21f9efe5400122e29596dbe1d7c7dedd7cecfa135bf5              852 Packages.gz
+ a378be8a5fa3693671bddd3b9ea0e73168140d7cec6b50233a1f78671b1e807a3b782640e75d37e2a57a7113e93630281d47e80c61a621e7483dd4c7f9f293b0               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmfIoTkACgkQnwaxeMQI
+vd7Iowv9EEGJid0Lhj7GsAUbtHJ/Pigns6XI5t2+2xrgeiJaRuckwOFA8hvP0B6E
+NnIxoV7ehHo0MULCp8RDpFTVuSabOO2XdXJ/gUmlg/zaXYzPk8rMyyO6Zmputsp5
+NXWg4XfvHw3yvxijrKZZ1cawnPA9T5IDKSS8RK2vxz7Lnkh8ixXZr5znyU08dVI/
+ep75P+YKrU+uV90pTjRJ/7x42f9dHUf6md1FfIflKPrBYJFlNRywulP2ZwDRRK8j
+ZKVDBQUoe8YUDruhRV8ptmojIcJw1ljEWOxgKvmPfHZdN6R2HjTLMpkbfa2/iv1v
+OrZ17jJ+rjo+9C7Dn+NhEMvqRUW7XMLuUNALiW735XrFbyqUOb2aY2ON7zaCOHpW
+0U/8oIK+kp+jIHXjc9KgmDtlbvtDcWAZ3vQzB7LZPUgCspPZhhT1sBBiJYmTnmVn
+UbtW6fRWxr87NmYRlJc0g7c4I959u56gosnQVU1+4fUUcN+OVO+R/X0kZ76P6UbG
+DV4SIlY1
+=bg68
+-----END PGP SIGNATURE-----
