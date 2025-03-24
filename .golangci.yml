@@ -1,23 +1,41 @@
 ---
+version: "2"
 linters:
-  enable-all: true
+  default: all
   disable:
     - depguard
     - exhaustruct
     - tagliatelle
-
-linters-settings:
-  exhaustive:
-    # indicates that switch statements are to be considered exhaustive if a
-    # 'default' case is present, even if all enum members aren't listed in the
-    # switch
-    default-signifies-exhaustive: true
-  errcheck:
-    check-blank: true
-    check-type-assertions: true
-
-issues:
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - ifshort
+  settings:
+    errcheck:
+      check-type-assertions: true
+      check-blank: true
+    exhaustive:
+      default-signifies-exhaustive: true
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - ifshort
+        path: _test\.go
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
