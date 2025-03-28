@@ -1,6 +1,7 @@
 module ldddns.arnested.dk
 
 go 1.24.1
+
 require (
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/docker/docker v28.0.4+incompatible
