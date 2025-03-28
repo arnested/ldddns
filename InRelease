@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 28 Mar 2025 21:17:16 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 2613da46a0952b5815c982bc0fa79633             1824 Packages
+ f556ed56ce1374878578be5398e3dac6              855 Packages.gz
+ 273b73128195694f4266228433f680ff               88 Release
+SHA1:
+ a85f4c79d0cbad0d8c85c70b5bdf3daf13dfbe12             1824 Packages
+ 99213237ba695e3d00caabbe537edcf2855f9cf2              855 Packages.gz
+ 72ad86058b7a388581cbd86b704b289252e59349               88 Release
+SHA256:
+ 1ad3bc9c7838c32b6e6908ab1840ed23eae4d0b7dc9c5f4e14484e834862dd03             1824 Packages
+ 5bb8fc988caee256d1ca697db59c0f69c309971ea702792a09923df1d231a2ec              855 Packages.gz
+ ef44528ca7dca4446b1d621c798dd65596f38d9a65f3180422f1515ea003f7e3               88 Release
+SHA512:
+ 54d84b9f2190a51c53ac56cf4823a19ee5d5f71e162820e2cfdd7ffc4f82fc2f5aa8fed5f62298a4730c80df8a8398a6f5141d5fa0896be178af73377d8f8732             1824 Packages
+ 60c499fdfc205bfdd7df558948b4a82513e318e5b6bd80f1069e37efeb6c07288888f22810be2a118579d58d0cada870831981d2945cd317e761dc9b62eb321e              855 Packages.gz
+ 64014cc9c3d1e18294eba7418625f4b1a21be70673d97f9125e7fb3964cd496f9eb493cad4192e268198997c45cff0728d01605879f54988136b128490a9c882               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmfnEdwACgkQnwaxeMQI
+vd7vfAv/UF/9rwpGUx/oj5PNBcThUwob/KZ0uzV1xtNF3i2w4Edj5F41VD9CUJB1
+0i7/ig6qOHtFC2VDdMxEH9OupAcjWYKFFxIJ5qHceliWT5/i17dfqJCt+Z7d9pkm
+Ujfx1AhCTVMpBm2DwzdgzPaLjKwHZ0pH8UJ7V3tgdMrPFi3ZVMBaDfp8kBakFJgX
+B48uQAUw/vl70pjQRlFUWTsQnCQooTPMawnTJ2pry+yWJCuCTES+WR+JhMtg/1n4
+K5a7ZHTysrbXf6sRimXNh8jox1620XkD3dfHPeY3o03hvPx0hrSee7bAErn15/tM
+i2UUhobZuVus1VcivnrbRLdx+1a7ufPzTb+qF7qQeUYTdNqICa95ezhAdlw68l3o
+cKL18tKJLAPgJ/TyHJTxzfXSGgmhry3nvRC6HSZCfURLsOF73MO5HVxlOHZBQ8bn
+YMW9pbGgGyZQfB7inESaagVDZZ689/etKCzrXgeU6hpDal2WMgmp+9HhIjXg7GhE
+MmXGp5QG
+=HqFs
+-----END PGP SIGNATURE-----
