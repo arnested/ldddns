@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 04 Apr 2025 17:14:46 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ afeebf82212b4f0f6a357ead3c534c9c             1824 Packages
+ f420f6f24091c361e17b6bad72693943              853 Packages.gz
+ ac87298c0ed9a9384403f703f5a789f6               88 Release
+SHA1:
+ 15ee69c195b4d6df8dbdaba0d762ad15ab7e7606             1824 Packages
+ 29f9f3947d8e8f5912301c81204aaa567f0c49b6              853 Packages.gz
+ ab3cf1f65205866441b0705e900660c1eab08f73               88 Release
+SHA256:
+ c3a408b8e41be5915180df8362c51ad550565f2b04bc80d84e9943e92dcbc6d4             1824 Packages
+ f35af873776e9279b39b655cd4ac0ad26b120ca9d6861c9298bea9f5073c7ba0              853 Packages.gz
+ e1a7d1187c34cd58a473bcf383ff6de0d1b6fa8d992098fe6b422766d2fd1df9               88 Release
+SHA512:
+ efab534cf7f5ca293bc152d6738df8209670d9de80ded59859072db950c28e7b86da9a08b8521215e61300e12cd62fcd0f7a47ee417283887a824c938b0479c5             1824 Packages
+ dde6fa4d8cc5a0ea1034cbce641a4a93b82c697eedb8cf90e6a49fb9d65079479bdc7c907694fa644ca4102b8d8a43b7d98a2753f1d73144b68e6c3841fe3164              853 Packages.gz
+ 6329dbcf2d492e06dea56bcb83672382a956ace96bd0b2aa5e3e567c442912d6ad8c02428e8f98d66b214e42283306cefdd11ce876c2cc8225e4ff0fe1d85805               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmfwE4YACgkQnwaxeMQI
+vd5enAv+JA4/IVIbF4Y+2bfTa94reTRdcnVKswoVy2KPSYZqQ/mcrpiGyHDG4yHi
+aGKlxUwynlTE4ZnZY/rzAgTMSrWOiYXX6M+74tw7Lz+13je4ToIxiPjExuJ9zj6y
+WwMLP8blLBSgdlVIW924GF/ub5zbGPSAHTSWr/MkIunuFyzmPB+8HFSsB6ISV3ER
+99W7KPnL3xm0WgHKxYHVZAU++jkrLf6fZc6+fNtq0wrECCCEz6R0MD8Ul/NavRoh
+U1uf3329PsnDhi+7lgSKuFz3dXcjA43z0sMFkBzKW61vGHQ1hEB2tT3NqvR/xGjC
+O7eAZkHXQDLU5wUoWqn7WNIHQSDXLv6lQs293ao0Z81XcU4Eei/8I1b5+EJWfbQ9
+kC4z+7sltXQ0Eo1Bi+/k7ZDjg5qT9NEfzP2FICju9GKdLntYdxrsdx13owhGimvd
+MPhFrVbxPeIeYmy86fq3a2dKJ8B5UAhUlHILeFwNiGoUadFO4oriJAg2b1bM+2Og
+y1vRKzB+
+=FVM4
+-----END PGP SIGNATURE-----
