@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 18 Apr 2025 18:33:09 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 23dbd116d7d35f52ffe2806afed0d595             1824 Packages
+ 98a407e932328631dbe55cea3194e94c              854 Packages.gz
+ 12e0f2fe68e19b191ecd8522ae31d903               88 Release
+SHA1:
+ eff805090da10f52df9f038a8b2a1b5e39d5a653             1824 Packages
+ 07267b864da4092741cf6604b0043fd1b7d49800              854 Packages.gz
+ c4818fad91667a9a0e76634c7aceab9868da0dac               88 Release
+SHA256:
+ a8f71a685c6d31641d6a459c843b243f89a01dab558e3a7014e514ac9af5de11             1824 Packages
+ e0c184dcff71b3ebc90924df7f9ecab0cc06840825c177239a10573fed420f7d              854 Packages.gz
+ e5a07dbd390833896ce5cb13263664fdc56855a935f33778373cf3ffbe9685c2               88 Release
+SHA512:
+ f325da9eb9b72a8b459f3a9c3393b95afcd5ea041ba38ea16c92a504b31d9c51496be7299234c542f24ff402fdd351a0bad10f662564f63acacadc7cd5e1b43c             1824 Packages
+ 0a6b0d5cae1f95372e82137c7cb592c17ad87e80a4210ed0494fb541613067c7834a7b6b1d05650a0916e1d57ea533f3264a462ce1ae618f60e713c57715e9c7              854 Packages.gz
+ af74d2a28de627651cb6f9f93ea720b6bbb6676a452565f9c04dfbab42cb5365dbabdd7ea3aa7376f897f1eab69f9ec20c1e25e243666f65bfa8c89c2eafdec9               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmgCmuYACgkQnwaxeMQI
+vd5wgQv/cCeD82DBg98ZByVabcfYLbXniYdpJPDQsK6CQ1I1xALWscmBqV0M0Pbu
+krxrX5xQpGc7JrZCTteLadbRNLIt1yLAy6+nQ1IDby/aKPem5qV0C1eUoY7dJeaE
+xg+EifbexY7wFxrOnG29oF8XBGtI/bSj1prTxSF6dJXlEvY2rQA/pDLx8VM6Ew/h
+LIkgVu54xWFZ84hANQ0OAUOqHMguk2r+5+tPwuSzkx2jPHf1LDhisqN0VcSbN42c
+jq1U97M/X1WWhqJbWjBEsMAJbdAgENsvsDV6RpmhYXuk/zYtoCx46ASY1i7gxguP
+0pVwgpO/jYMJJyTRYEOoPxryX2r2ADD8XbFIqVq45vuiCr+KdrgNWKZFq4cfli6L
+Kh9nwU+5H4Gl6gV23wRklhoBfTNiMF4WRnsQ/C+hJ1jiMdLgnFwMKsS4Vxttehn/
+ZCpIFxYJtCfLADm3DA3+NJ/xu1vCv1zpJU+XAx0S0dbV7j8Mw6y2Hmr0Mt4NmiGV
+L5493Zuv
+=rno6
+-----END PGP SIGNATURE-----
