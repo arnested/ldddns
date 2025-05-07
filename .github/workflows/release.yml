@@ -18,7 +18,7 @@ jobs:
       - uses: arnested/go-version-action@v1
         id: go-version
       - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.71.0
+        uses: anothrNick/github-tag-action@1.73.0
         id: version
         env:
           GITHUB_TOKEN: ${{ github.token }}
