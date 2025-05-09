@@ -6,12 +6,8 @@ updates:
     schedule:
       interval: daily
       timezone: Europe/Copenhagen
-    reviewers:
-      - arnested
   - package-ecosystem: gomod
     directory: "/"
     schedule:
       interval: daily
       timezone: Europe/Copenhagen
-    reviewers:
-      - arnested
