@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 15 May 2025 17:54:15 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 04d1871a9e9513af9ff496c174ec46d6             1824 Packages
+ e65e40f269289b6c6f3f5ada9b284273              855 Packages.gz
+ 515e7ece1522db3dbb16ef61c418df69               88 Release
+SHA1:
+ 8a17b82c1f9348e99fa808b75d98b034075ba6da             1824 Packages
+ 4b3ec177aa34cafb6a42e698f9ea4db229225627              855 Packages.gz
+ 79999de636b3968ee363c2485c5e2c7dd68e581d               88 Release
+SHA256:
+ 16a80afbb91193b33672c8769770caaba4b15c01146aad3d9bea290cb7e5e096             1824 Packages
+ 072f2499e73facb8f12e474d71ffdbcc4061f8b8abc10788ff295d6360b2792b              855 Packages.gz
+ 87de95f407d9942fa3defd849b48dddb40730bc5f6ec03fa33816019a9acd007               88 Release
+SHA512:
+ b0287359795656f87ae4feb8fa07a8689ab62607e6b720b456ec0a9fcf1cbcb8dc699db0f23261fb30fbee19bf662860b055d6b4ca82f5537ad73219de504113             1824 Packages
+ 1857f5c17edca90c978a25ba91389b32c8ff8f5da131e0ef6b8413753c59cee3f1604953c334a9252b2958df554d53a20856a5348efb6888536284d329d12c0c              855 Packages.gz
+ be5f94c58b49debd2b625f3b0783f148ad81bcb5f8edfdd5b05712ef88a1676ee7d9dfb7a3610d6f7d312136bd491d65b88aa65471c22730cc2427d30c43deca               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmgmKkkACgkQnwaxeMQI
+vd45hQv8Dler3Z4O92PiYkYabNM4KgZZmxI5+wqGOnM1T1xDRLTqnWGqSWcMjpiu
+GIOVCTdVe7ztzcEi4/WyCC4IegqLNc3/n84NVYpZ3kgjP2gnnkwe4Pbh+cedy5JM
+5WdkIUWxkthWbg4H5JacaetDz31NK7BfdUb1rZ3ClY+t0oJnckm1/gNj0eFVpkqS
+lbeeM+XGnReDjPxbaRLGKx/QOEVeLI/NDugji9iMsHfGmujHGmT/XJWPMttUfzid
+2p1CMEzzCQY6Hzoa9GcPd8LWqpjxvHSJOch0fjUux1gpbqW6ckXp6AFZLt2WzFzH
+g+EcpIk3Va7wHo+7bNvPIL3mh4RTRgngLsz5O7QnGpHZbxR/K5K9ZYKxIDu6JC+a
+vcp9bLv9N37mvWlicQzT7hMiCsE6JLpUs7/e7hEK0E+G5jLY58PIsvY46fmZOUSx
+ahUbf3ukFZlEx+DisT1M3UjpG3hTrEbIO0LWxOfrCndxc6tddmQxq0rn3R9La0uj
+GPHcUEQQ
+=zQZl
+-----END PGP SIGNATURE-----
