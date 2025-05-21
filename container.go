@@ -31,19 +31,24 @@ func handleContainer(
 	defer commit()
 
 	if err != nil {
-		return fmt.Errorf("cannot get entry group for container: %w", err)
+		// The error from egs.get() already includes containerID and is descriptive
+		return fmt.Errorf("cannot get Avahi entry group for container %s: %w", containerID, err)
 	}
 
+	log.Logf(log.PriDebug, "Checking if Avahi entry group for container %s is empty (before potential reset)", containerID)
 	empty, err := entryGroup.IsEmpty()
 	if err != nil {
-		return fmt.Errorf("checking whether Avahi entry group is empty: %w", err)
+		return fmt.Errorf("error checking whether Avahi entry group for container %s is empty: %w", containerID, err)
 	}
+	log.Logf(log.PriDebug, "Result of IsEmpty check for Avahi entry group for container %s: %t", containerID, empty)
 
 	if !empty {
+		log.Logf(log.PriDebug, "Attempting to reset Avahi entry group for container %s because it was not empty", containerID)
 		err := entryGroup.Reset()
 		if err != nil {
-			return fmt.Errorf("resetting Avahi entry group is empty: %w", err)
+			return fmt.Errorf("error resetting Avahi entry group for container %s: %w", containerID, err)
 		}
+		log.Logf(log.PriDebug, "Successfully reset Avahi entry group for container %s", containerID)
 	}
 
 	if status == "die" || status == "kill" || status == "pause" {

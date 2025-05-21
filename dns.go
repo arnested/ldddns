@@ -18,14 +18,14 @@ func addAddress(entryGroup *avahi.EntryGroup, hostname string, ipNumbers []strin
 			continue
 		}
 
+		log.Logf(log.PriDebug, "Attempting to add address for hostname %s (IP: %s) to Avahi entry group", hostname, ipNumber)
 		err := entryGroup.AddAddress(iface, avahi.ProtoInet, uint32(net.FlagMulticast), hostname, ipNumber)
 		if err != nil {
-			log.Logf(log.PriErr, "addAddess() failed: %v", err)
-
+			log.Logf(log.PriErr, "Failed to add address for hostname %s (IP: %s): %v", hostname, ipNumber, err)
 			continue
 		}
 
-		log.Logf(log.PriDebug, "added address for %q pointing to %q", hostname, ipNumber)
+		log.Logf(log.PriDebug, "Successfully added address for hostname %s pointing to %s", hostname, ipNumber)
 	}
 }
 
@@ -36,24 +36,24 @@ func addServices(entryGroup *avahi.EntryGroup, hostname string, ips []string, se
 		}
 
 		for service, portNumber := range services {
+			log.Logf(log.PriDebug, "Attempting to add service %s for %s on hostname %s (port: %d, IP: %s) to Avahi entry group", service, name, hostname, portNumber, ip)
 			err := entryGroup.AddService(
 				iface,
 				avahi.ProtoInet,
 				0,
-				name,
-				service,
-				tld,
-				hostname,
-				portNumber,
-				nil,
+				name,      // Name of the service (e.g., container name)
+				service,   // Type of the service (e.g., _http._tcp)
+				tld,       // Domain (e.g., local)
+				hostname,  // Hostname where the service is running
+				portNumber, // Port number of the service
+				nil,       // TXT records
 			)
 			if err != nil {
-				log.Logf(log.PriErr, "AddService() failed: %v", err)
-
+				log.Logf(log.PriErr, "Failed to add service %s for %s on hostname %s (port: %d, IP: %s): %v", service, name, hostname, portNumber, ip, err)
 				continue
 			}
 
-			log.Logf(log.PriDebug, "added service %q pointing to %q", service, hostname)
+			log.Logf(log.PriDebug, "Successfully added service %s for %s pointing to hostname %s (port: %d, IP: %s)", service, name, hostname, portNumber, ip)
 		}
 	}
 }
