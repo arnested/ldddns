@@ -24,7 +24,7 @@ func handleContainer(
 	docker *client.Client,
 	containerID string,
 	egs *entryGroups,
-	status string,
+	status events.Action,
 	config Config,
 ) error {
 	entryGroup, commit, err := egs.get(containerID)
@@ -140,7 +140,7 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 		case err := <-errs:
 			panic(fmt.Errorf("go error reading docker events: %w", err))
 		case msg := <-msgs:
-			err := handleContainer(ctx, docker, msg.ID, egs, msg.Status, config)
+			err := handleContainer(ctx, docker, msg.Actor.ID, egs, msg.Action, config)
 			if err != nil {
 				log.Logf(log.PriErr, "handling container: %v", err)
 			}
