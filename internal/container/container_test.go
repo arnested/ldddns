@@ -7,11 +7,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/docker/docker/api/types"
+	docker_container "github.com/docker/docker/api/types/container"
 	"ldddns.arnested.dk/internal/container"
 )
 
-func containerJSON() (*types.ContainerJSON, error) {
+func containerJSON() (*docker_container.InspectResponse, error) {
 	jsonFile, err := os.Open("../../testdata/container.json")
 	if err != nil {
 		return nil, fmt.Errorf("opening JSON test data: %w", err)
@@ -25,7 +25,7 @@ func containerJSON() (*types.ContainerJSON, error) {
 	}
 
 	// we initialize our Users array
-	var containerJSON *types.ContainerJSON
+	var containerJSON *docker_container.InspectResponse
 
 	err = json.Unmarshal(byteValue, &containerJSON)
 	if err != nil {
