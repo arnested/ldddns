@@ -24,6 +24,8 @@ func newEntryGroups(avahiServer *avahi.Server) *entryGroups {
 
 func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error) {
 	commit := func() {
+		defer e.mutex.Unlock()
+
 		empty, err := e.groups[containerID].IsEmpty()
 		if err != nil {
 			log.Logf(log.PriErr, "checking whether Avahi entry group is empty: %v", err)
@@ -35,18 +37,18 @@ func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error)
 				log.Logf(log.PriErr, "error committing: %v", err)
 			}
 		}
-
-		e.mutex.Unlock()
 	}
 
 	e.mutex.Lock()
 	if _, ok := e.groups[containerID]; !ok {
-		eg, err := e.avahiServer.EntryGroupNew()
+		entryGroup, err := e.avahiServer.EntryGroupNew()
 		if err != nil {
-			return nil, commit, fmt.Errorf("error creating new entry group: %w", err)
+			e.mutex.Unlock()
+
+			return nil, func() {}, fmt.Errorf("error creating new entry group: %w", err)
 		}
 
-		e.groups[containerID] = eg
+		e.groups[containerID] = entryGroup
 	}
 
 	return e.groups[containerID], commit, nil
