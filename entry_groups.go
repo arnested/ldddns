@@ -41,12 +41,12 @@ func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error)
 
 	e.mutex.Lock()
 	if _, ok := e.groups[containerID]; !ok {
-		eg, err := e.avahiServer.EntryGroupNew()
+		entryGroup, err := e.avahiServer.EntryGroupNew()
 		if err != nil {
 			return nil, commit, fmt.Errorf("error creating new entry group: %w", err)
 		}
 
-		e.groups[containerID] = eg
+		e.groups[containerID] = entryGroup
 	}
 
 	return e.groups[containerID], commit, nil
