@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 30 May 2025 17:42:04 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ d3a47cb4b597d90b994e35136956e415             1824 Packages
+ aa3ec0b71f5bfb31c6f5ca8bafd7c917              851 Packages.gz
+ fe4c263ec0ae4c6705b6355e41c3181c               88 Release
+SHA1:
+ c1e852825103f66e2f9ac3b3cf95602dec6e85dc             1824 Packages
+ a8aae95ffb66803df4de97fd165df60b3dcc6038              851 Packages.gz
+ bc55871e30b2b0094a8b3a151798e8a2559ec1d4               88 Release
+SHA256:
+ c4f81862367025b28b832523b4695eeaa739f6db0a7e43dbbaf747152dc5316f             1824 Packages
+ 14a750c4dd0385313926830174c778e650d568886a0d39f8a4078fd0141ebb79              851 Packages.gz
+ 2ff7ce5090866d5aafbf89bb6d40df7daff39af7f20d52555f71aa3009359f80               88 Release
+SHA512:
+ 497a05ee2afc978804d74b33ae2a977e511edf6f6b70b4841a057a87bdb0379e18ee0f8c1e322fa159b634f03c0b569e538e8ce40b4a69520e235ca0187b10d7             1824 Packages
+ cf9b76a5d11d54c2ae2dc0ec7eb2912d3604a25e3ca2caf6f7ccfb588b204e49090ec3c7c0421bd15ea810b57722caca7e3199af872ac580f8fd081ce5291a31              851 Packages.gz
+ 261be0de145ee425f03cb1e17e6287bfe6c509824e95c48d4924679b16f1be828bb94556bc09d848a19ceac567ff74fff50486f4266885e48a5c122640963b2c               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmg57ewACgkQnwaxeMQI
+vd4cbwv/VqV2O293Yszlo/K8Fn9vgegSIv8DERrDiJZLG+giApUcVnwdxwyJEPZY
+SAMxG24YC8ovPQM2RaHR7vSLxggW5RJUDlNjap5haD/tnYFbUXgykI3MJxaEh0a8
+GWMLiAS872Kj2ih4S+aGydmBEniGdlfJWT4hmn3HKSM6/IJ3f9OvTKRuYFUgyLHz
+tMcXxA2o21JIPgE2zwnj5nuruxP9aColy2F0uVqkPSwFcNmTNBxHnvzBvOmyaFnt
+SFloNiX0jPwv7fxBIJLJYEMb7A+edqiF1jsshTKifiFukL0Ju9Mn4m27Y9cqMty+
+DHvYtDT4TY/l3DxbRjdOzfGOhqA/bJBxI3buiaxIRZB57T3FRQg5vLyTa7jfV83K
+phduguOZTfX07KFCj8AEvWrjWV+ygUjpBJkqFIz2hB9Mv0DGIJD6VLAPN9W3QxLH
+jXVOHPdcGd8T2Sf9cHrqVbDp8eY1XAMnTvE9sl1VfKHPzuyoXZ9G1G1dMN6h97/G
+IyFls3af
+=EMvD
+-----END PGP SIGNATURE-----
