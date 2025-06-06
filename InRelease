@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 06 Jun 2025 17:51:01 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ b66f9c605c1524e9a46f21eb5f0684fc             1824 Packages
+ 92c7df9e8d680806357416f56fdfc355              854 Packages.gz
+ 8a6bc232e848d442cd81f2206aa2daea               88 Release
+SHA1:
+ 97be1093477f0c169f4656d9087989612f420c17             1824 Packages
+ ccf5a28cc7babd1f5115774bb33fe25415d28efc              854 Packages.gz
+ d551086310fe6bdf27b21dc60ade4a827a2905b1               88 Release
+SHA256:
+ 17af0928e39e1652c25aea54cb8ccb6295b973cff023efd82f3f59fd07fd99ac             1824 Packages
+ 9ab6515f7d7868e1e56a20fa98c32d4231931181ec0cc583badf12107ce95e0e              854 Packages.gz
+ d2650cacba602378f2fcd597cb2bdfbef8cdf0e3fe12a103bbbe5ef97b7d6220               88 Release
+SHA512:
+ 104cda6d8af13673b9c8baecf7fa768dadfc7566eb7286b66bb1bfabd780bbd54b52877947612e0f99e1453ae7640560bec714d9665e22e28dd0e82517afc9eb             1824 Packages
+ 5afcaf03df5766ad3cd9830a854f95dca764e50b297464ea693ebb0abf216503ef9530d64a4bfa8640fe7b8457dfcaf0f8b41879cdb0e37d35cfd1997b88a81e              854 Packages.gz
+ 28934a2e24f11069374ed029658edc0904e6583823b56de8cf5fbd2234dd902ed065a90e54a88482224a808a986ca9ac5210e2e3f0666bf0cb4fc64694259e4d               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmhDKocACgkQnwaxeMQI
+vd7v0gv/Q9adyzkcbqJsfcMy0YfkjEj1VwX8bnC+PvQlacAoaA5bIIQY+y42KHQQ
+qjRkUTtkiu2av511ULKjL3vb9BoDdrys8mK2N0SCE8pi6h0flhKdqFAx88ldMMku
+oxksp26CGRWUISGwsMAxXrOswQMd6DAIPt0OaG29YXQSzTb6fI6Y12kJqYXTVX7h
+mMBgh46bbVKcOFW5Zf37aAlw8uwcT6Na/n7JnqcSlDhKksTH1d4UrFGB8HNhU55x
++f9tkE4/oxpDXj4OF1Tr6NDb2/cFuqSKEurEMTAmrSHZ5tA4gTkGYp5Buqp2oqA1
+cvTvzojlf+7NcOP47umpHF8BG2pgqwLkGKxIQSkb7dZ3/j+oqgWs28rw/fwzI3ek
+gexPeDZD+/vuGAZyhGkmwhuEObOaL85mQJebsje1KpmI7QPhgaUGuciXePMru0m5
+a7U3+o064mh8TSJ/QLMH0Z8M+kMiK9iRtuzogHkE3JeBC17pnrNfTBnoDtRAQPBH
+oM3tHnFk
+=vh1Y
+-----END PGP SIGNATURE-----
