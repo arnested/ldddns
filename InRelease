@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 03 Jul 2025 17:35:13 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 2d6c766ff450be486f20a0accf0667e9             1824 Packages
+ f240f437f2e3e779bb4dbc13cf06fc90              853 Packages.gz
+ 2a89304839c46ac9e9bb79f4e1b6152c               88 Release
+SHA1:
+ 4d9b9723513bb05d394a2ddc25cd726d701a29dc             1824 Packages
+ 5819aec209d4c75ad2d0a005a2db6566948afe3c              853 Packages.gz
+ 287c3530a6a476bb18dec01b26f9d82a37c181af               88 Release
+SHA256:
+ db87366dbd5cdafe2749589478c22d91dd59e6bbe20ff801511b60aaf9c62e19             1824 Packages
+ a54b999ca88724cf6a8504de8cabf07b44e33de2ecfa005ed7e647bd5a487269              853 Packages.gz
+ 7c83d1cf5e06b1cc13e1c307b877fa47daa8384697835863e8b60d8ee04a3a89               88 Release
+SHA512:
+ f4e19bf183903aa2335941ba4b2ff6c3e54b87c42f3f5f58849b2785ffc15c470d92006e0fef501596e55198f84aadc3bcd2102f7de47cc995ee5cb65edb2ef4             1824 Packages
+ b1c0fc520df286dbd789576d022b6702331d8553479be8ee4897c0ef8a2d8a0eea41176bd011d34dcedebf2c64c73c2d14d818126b9dc5c2ba82006346761425              853 Packages.gz
+ b64ae5300044dee18a11914037c343416a725b14832af876b50d99938db10fb66a5b1c9ed4eaa7092896341ea28935d957d99bc4762ba8dc7151665ad4ac418c               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmhmv1IACgkQnwaxeMQI
+vd7cugwAqr6w2t+nyReHmtqTdR6LWyVxffzuu7sSfvFQFFR51GtbtybUOFN4sKEH
+zDBvUKdhn6ClD/K1q908jsSe0QBrWoj60zNRB0w/boJDkI776JD6baDiGAbYbvhV
+lVfM9Xm/6Fo03N/oOmm39roohaMexIQZDQqx072tEjU7yU4awdIoIab+cjjfS5pR
+ASnB6H4HoxTUu9m+rnA3tVbVUABc/0pe4jpPyq6tc5oCdvue+RSkH/L6+ToBww7Q
+tIBa71rVfMFU+BsMflkBFYslUTwrCbbiw/AH6dolRRphPGjTHLOs49dSjbr+JosR
+H4po1eQp5ypU+BQC35MHdtYgHVx5meHL6Jrt1tBSv+Ibe4zDP4MjFnpbrkXLCfpK
+rNg/OWnnxyycxacTWNN6VD0rqUNj7Q/+zyG39y9Il9w/60QB6d0sw7U6i8TOABFW
+r60P24op0BmZPhcZO3r0Ysx1xXWPC8AIbk1Y8EocHa7FvPzJo/qqhFCRTsiL3oNQ
+FTxorR4m
+=2sBY
+-----END PGP SIGNATURE-----
