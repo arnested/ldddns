@@ -1,0 +1,48 @@
+Package: ldddns
+Architecture: i386
+Version: 1.0.317
+Priority: optional
+Maintainer: Arne Jørgensen <arne@arnested.dk>
+Installed-Size: 7723
+Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
+Filename: ./ldddns_1.0.317_linux_386.deb
+Size: 3283364
+MD5sum: 42f03bce95635c2075cc4cbaf962837d
+SHA1: 141cde3b70065405b23e7ea7de73ac18bcad1451
+SHA256: 7e684cee3ff244504c11296e4c8b6d15ebbc9986805104f32fd93b818e97fa5c
+SHA512: 090dff3a6797fe7d2cc9c936fb9995b8c7c713ba668f1d30a66b128d0e54bfcd916bd47c51dc5763e7a9e55c3ef66126028ea1c284ebb9e6fe266c7374e32e71
+Description: Local Docker Development DNS
+License: MIT
+
+Package: ldddns
+Architecture: amd64
+Version: 1.0.317
+Priority: optional
+Maintainer: Arne Jørgensen <arne@arnested.dk>
+Installed-Size: 8019
+Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
+Filename: ./ldddns_1.0.317_linux_amd64.deb
+Size: 3397820
+MD5sum: a04bfca33cd41bba5cdbe0ae2649b1a9
+SHA1: 0face41620a41b4f05ca0b114b9f98bdbdc16043
+SHA256: 8c3a559bf2118f8ed2451c0aa60b8cde8994e296a09be700dfe023e221e67d93
+SHA512: 96d2e4190e81ee3e57e4819aa3c79cc9ac455bb5f7399eb81cd7b1e86dedaf823aa067d962ba0d73ae1e56d21231cf8b162678db78f9a3e317f033c45ae8e272
+Description: Local Docker Development DNS
+License: MIT
+
+Package: ldddns
+Architecture: arm64
+Version: 1.0.317
+Priority: optional
+Maintainer: Arne Jørgensen <arne@arnested.dk>
+Installed-Size: 7643
+Depends: avahi-daemon, docker.io | docker-ce, libsystemd0
+Filename: ./ldddns_1.0.317_linux_arm64.deb
+Size: 3128292
+MD5sum: 333eba1ef59d73d412f5c2e7a2026d2e
+SHA1: 33492aa6db17f5a5d87ca6d73f1784489303665c
+SHA256: 8ba110552056c0fec58dc902054695f70fc286b9ada0f45893ff58d1fcdf1670
+SHA512: 945bb8601b7a87ca56ee1e2171e493cddfa2b5d69fdb70a53d741b8b03c3008066d4a9a64affb4cd33ec8d16063b430cb6babb75d7aef6c553439380ae1dd685
+Description: Local Docker Development DNS
+License: MIT
+
