@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout Source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Run Gosec Security Scanner
         uses: securego/gosec@v2.22.7
         with:
@@ -34,7 +34,7 @@ jobs:
     name: Govulncheck
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Setup Go
         uses: WillAbides/setup-go-faster@v1.14.0
         with:

@@ -13,7 +13,7 @@ jobs:
     name: Stable
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: arnested/go-version-action@v1
         id: go-version
         with:
@@ -43,7 +43,7 @@ jobs:
     name: Unstable
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: arnested/go-version-action@v1
         id: go-version-stable
         with:
