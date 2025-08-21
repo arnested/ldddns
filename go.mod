@@ -16,7 +16,7 @@ require (
 
 require (
 	github.com/carlmjohnson/versioninfo v0.22.5
-	github.com/coreos/go-systemd/v22 v22.5.0
+	github.com/coreos/go-systemd/v22 v22.6.0
 )
 
 require (
