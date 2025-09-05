@@ -40,6 +40,7 @@ func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error)
 	}
 
 	e.mutex.Lock()
+
 	if _, ok := e.groups[containerID]; !ok {
 		entryGroup, err := e.avahiServer.EntryGroupNew()
 		if err != nil {

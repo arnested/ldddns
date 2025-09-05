@@ -6,6 +6,7 @@ linters:
     - depguard
     - exhaustruct
     - tagliatelle
+    - wsl
   settings:
     errcheck:
       check-type-assertions: true
