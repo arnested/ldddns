@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 05 Sep 2025 22:07:13 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 55e5ae813c14eccead35e0ae38ac9744             1824 Packages
+ 9a9f8fa574379845ce1c6f51dc8c5dca              854 Packages.gz
+ 937af0a8bb978d364653f77675b659f4               88 Release
+SHA1:
+ dfe9e50097814d4dd0bdd13c649fc45d86243d37             1824 Packages
+ 226c84a1a0c65a5d2d40644978d81adde4a03e97              854 Packages.gz
+ 97f784c121550dc6760d9c794d1d712cf72e110a               88 Release
+SHA256:
+ 81fda01c75abb502348c682f46ae2c42bf4d000453d5d9bd8cd67d6142dc3860             1824 Packages
+ 76f8de7f10c01a97ef8e4130141c5f2836a1dc870b10e1130a934c22c13af7ff              854 Packages.gz
+ df738c9406496debae6069ebe965b8e63756ca1325ba85f10bc3b2954cf0ec97               88 Release
+SHA512:
+ 1250514f9de44b6c354c1945518e0386548d8d69d2332cc7f3a04e5637c63fdde082da77ae7ab7b974693fa70b02f1cd45eef1f0667aa2877544e9662812a178             1824 Packages
+ 82b0c2308aad53900a99e28394719fa4c2e4c0fec1447347c256fd8ce3626b540a5934b37010f8f1586a298024d73559ba2f82ddeccad713d26e3a8b24f5bb8d              854 Packages.gz
+ 7fa59a9c61152046ad75b48e526603e6bb333d0aed7daea203d828ca545eb4097de0704e66d7f0db33a7cc16855f3ee6e1e523806dfb6910b73b70bb4cfac6eb               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmi7XxMACgkQnwaxeMQI
+vd41dgv/bBrzZL8wgSIrGSShWI0bh+oF4kQwNsgoO+PAt0BJMo+WnPKHWCq3dqJN
++vjMAJ3lnE5wM4XfGnzy2qShohpILUv48kvQ1cMG/j5IMKVK9le8igR31RTSLqpg
+57cbIqbxjHGrJkb3Q7QOXOtPSm3w6VWNayu+nAihMv5XX0+2sGAtbRX3VR66hCCW
+jGcNr95rAaix1hOS8h24FXiiZUYEgXG/+xd6vccJtpu2dPnoGsrmm9J0INGDEqFp
+D+dVY3z/M6DPEz1E/w0KxVoQteWCJzt9DQoLh1xgO35SOV4Vn/e7reepesiNFxXa
+O9IaE1FAN8TyHUP5cxYyYhPXEG8oIJwZhbvdmsnUXoeVGaRfQwI3qxhcuHnmCcX1
+svMHJTYNoN4kI5UFyMaYTQMwK9rYdqBIvaGJMPdWTl7/Xauap/oUQpDEHHPQ5wb8
+X8x4BV+cSNQjmcb5B5n771VgCKjQPJ7xLudxW74mdGsPCjMosWzqytNIFaXAjYl5
+Ftbof5iO
+=ZJME
+-----END PGP SIGNATURE-----
