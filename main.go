@@ -13,6 +13,7 @@ import (
 	"github.com/coreos/go-systemd/v22/daemon"
 	"github.com/docker/docker/client"
 	"github.com/godbus/dbus/v5"
+	"github.com/google/gops/agent"
 	"github.com/holoplot/go-avahi"
 	"github.com/kelseyhightower/envconfig"
 	"ldddns.arnested.dk/internal/log"
@@ -29,6 +30,7 @@ var (
 //
 //nolint:lll
 type Config struct {
+	Gops                      bool     `default:"false"                          json:"Gops"                      split_words:"true"`
 	HostnameLookup            []string `default:"env:VIRTUAL_HOST,containerName" json:"HostnameLookup"            split_words:"true"`
 	IgnoreDockerComposeOneoff bool     `default:"true"                           json:"IgnoreDockerComposeOneoff" split_words:"true"`
 }
@@ -52,6 +54,8 @@ func main() {
 	if err != nil {
 		panic(fmt.Errorf("could not read environment config: %w", err))
 	}
+
+	gops(config.Gops)
 
 	docker, err := client.NewClientWithOpts(
 		client.FromEnv,
@@ -131,4 +135,18 @@ func getVersion() string {
 	}
 
 	return version
+}
+
+// gops starts the gops agent if the config option is set.
+func gops(start bool) {
+	if !start {
+		return
+	}
+
+	err := agent.Listen(agent.Options{
+		ShutdownCleanup: true, // automatically closes on os.Interrupt
+	})
+	if err != nil {
+		panic(fmt.Errorf("could not start gops agent: %w", err))
+	}
 }
