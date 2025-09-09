@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Tue, 09 Sep 2025 17:20:49 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 03644d750ffc8c61e2b0bc59aefc8dac             1824 Packages
+ a8918940605635c3858f657300a59ec7              846 Packages.gz
+ c8578ae0c098f5af6aaa89c67d2a6ace               88 Release
+SHA1:
+ e8174cf282c543d73887be0688d326d587cf5e00             1824 Packages
+ b37fef461bb52f17ac4858dcd5b91a3d291423f1              846 Packages.gz
+ 6769880c39cbd81532160f0e3b6478c671c37a76               88 Release
+SHA256:
+ 2abb152787976ee716d6e4127426f37db93ebd5c83534334499cedceeaa9cd06             1824 Packages
+ 960816a562f52716d5d5f0f610e4c8b14c9311f106590ef047a73a763048afcc              846 Packages.gz
+ 22168168efb2fec24ad5b9fe9778ef81b255ebca5a124f5e147467b8aa02608d               88 Release
+SHA512:
+ e0fe78d42dee2a11273ee769d4875c7618aa173a4d2f178176d1d237b308b202c8af4a51d86a2eb12867bc4e41f8683072cde13409aabdff27dd02c7ef7b6bf0             1824 Packages
+ ac9b0d0108f367b9027c8474384cc0bb5a3163e7ef6b762611e793a495fc3e9d99928cbba2c73bb12335b52faf39bfc998ee8c3370b60f665df1d7e98e8d3bd6              846 Packages.gz
+ 9e3ce867dfe30b769c59180f978835eede760ce462c6657d8ede2d5510de08563c28fd9be451d804a054d7fbd6b76a33e5e01af4a540c59a542ed5265edf8c76               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmjAYfIACgkQnwaxeMQI
+vd4W6wv/YzoVKjyoCY/Xi0iTbJVa7HHVpU6HJISS7R8xNSkWo46qVtnJhdtRAiNl
+5cup6g0RAEdxV0rDoxLBB+c5e6ZnOFKEXlvWr1p6A8P7Mh+ESI5p+pnt4huWpR3x
+6Po/2sFCIh6/DeEwQvr5u2k8Aa2LKl22jHhzllX+lm4ZZsa8u3dyWaAO8c39PaOv
+4OVY20+xlsjxl40qg4uSh1cLicDITq7z6SS3hWCReg9YcQyJz4PuTFFQPKvYklSm
+UPU2RcXFUgXqR3G0MaesRojB6T/x5ORCPdzh6RNDSeVD9fcHG9G0h0/kzFKPq6aH
+V1teDge5dPYrWzLveQ0H36cJ6Ze9qgvQjaj3JT/PAg+XK7pQEX32FMFNko2LBIQn
+AnS+CsAxW2wUeaGhjGeFYvFIVKeVVJP4GoVTRiUnG5pBxJcny4qd/KmokqwIAPZ2
+Wwvk+yjKqaPDF/HOCtNSLS0Eumr3Fs/IHWJb6VeH3iOAq4TmZHyB2tUF97J0u5IK
+fF4PKzo8
+=jh91
+-----END PGP SIGNATURE-----
