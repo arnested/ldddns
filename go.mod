@@ -4,7 +4,7 @@ go 1.25.2
 
 require (
 	github.com/Microsoft/go-winio v0.6.1 // indirect
-	github.com/docker/docker v28.5.0+incompatible
+	github.com/docker/docker v28.5.1+incompatible
 	github.com/docker/go-connections v0.5.0 // indirect
 	github.com/godbus/dbus/v5 v5.1.0
 	github.com/holoplot/go-avahi v1.0.1
