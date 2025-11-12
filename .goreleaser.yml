@@ -76,4 +76,4 @@ announce:
   bluesky:
     enabled: true
     message_template: 'ldddns {{.Tag}} is out! Get it at https://ldddns.arnested.dk or run `apt update && apt upgrade`.'
-    username: "ldddns.bsky.social"
+    username: "ldddns.arnested.dk"
