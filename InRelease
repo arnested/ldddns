@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Fri, 14 Nov 2025 18:14:57 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ cf1474e5a73c17a24fcdc5e3cd7a9131             1824 Packages
+ 1257e59a8acbe6cbdb6f8363ed62ab71              852 Packages.gz
+ 677977674f3f24d6cf220b4dd6adb8aa               88 Release
+SHA1:
+ c66465b3c14ee4519cb94ac9fc84fe49ad977c20             1824 Packages
+ 2d3eae9b333445d7a5d7b32c43da731306b2774a              852 Packages.gz
+ 7589b44f3cb1cf0266d2a50559e7a297d8b08c54               88 Release
+SHA256:
+ 4f5df1362e589875d6aea58aa5389ed00333993ee33a76855e07fac4d5726003             1824 Packages
+ d44620dec8623d88f4587f5cd2ea09c7435af045ed121d32429a7837a1c82d26              852 Packages.gz
+ d25eaa8333c39a26e2a6cc3202eeb5d0138cf902e5efb8ff61bebf57f25bf7f8               88 Release
+SHA512:
+ 7bc588848b9aa8b042d2d3c9e728632ab2002f6da16bece7ecd72c89cfd697492571678a19b4952d82507fb89f4c5b1268e5fb6d5d0391c75795bfbf7aba34c2             1824 Packages
+ 311eba4ea9664d6f42d04c319fce5ddb045079c8c5ea1b6c6d5d1ffe53e54400f82c4442d7249e0ea1d29e95b3078edc7f12070169a7d0b537b243272f051b90              852 Packages.gz
+ 4d78745bf125c7896c5045c121325454ad786ea9b3880342e9f842882466c702d2dc0193078ab52c5abc153c96994c87a3d8011423f745669c7dd4c060e895f4               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmkXcaMACgkQnwaxeMQI
+vd7FSgv/aF5zJ9cyQsT1lwfccXALIM/7iLWnE6yk73zDkFRgoKRtzJ94zvksPpYN
+iUhQ9bumBgPfLG634JKQqtX7uTpYM38CU+wh9ZDvfllKh3Ac9c7MuC7AHDGwv4S6
+306rIyq2ijqoAzZzX0TsDzPse2CfMB8MKJb4OtH6qqrUBh/wa0Qhlfe+Ht0FPMS1
+hJlXmDOi4+de0qnYBRKo0L4nRqofa2XUDvRfDJMLxsKxiFLsu/WLorcWiNKItdGI
+7gTRGgWqPW/+5iocuuLc+TehzWWg3Udl/J/nl80X+lVoM44dyu50MqUBUXmsf/QC
+IcfRwwFa684pup5sA9f+KwnJUhZynMZG6Zw7hlC8GsxxUA53/bPqQ+yaPr7RsK/i
+LlaCzTjmuknHOohL59noCWoeOwkCaiXzMJu5V+yJEO6GgKHs6gPozyf++ot5TU2q
+G0nnRKTujy2WbrkMotUoQzwD5NQwNtBtjPbAPHHMIbtT17HncNKCgfncO9Ge35xX
+i7Kf+kgE
+=mZkV
+-----END PGP SIGNATURE-----
