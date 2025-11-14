@@ -6,7 +6,7 @@ require (
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/docker/docker v28.5.2+incompatible
 	github.com/docker/go-connections v0.5.0 // indirect
-	github.com/godbus/dbus/v5 v5.1.0
+	github.com/godbus/dbus/v5 v5.2.0
 	github.com/holoplot/go-avahi v1.0.1
 	github.com/kelseyhightower/envconfig v1.4.0
 	golang.org/x/net v0.47.0
