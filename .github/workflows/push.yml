@@ -8,7 +8,7 @@ jobs:
     name: Check generated code is up to date
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup Go
         uses: WillAbides/setup-go-faster@v1.14.0
         with:
@@ -25,7 +25,7 @@ jobs:
     name: Build and test
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Setup Go
@@ -68,7 +68,7 @@ jobs:
     name: Nilaway
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Setup Go
@@ -84,7 +84,7 @@ jobs:
     name: License check
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup Go
         uses: WillAbides/setup-go-faster@v1.14.0
         with:
