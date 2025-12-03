@@ -10,20 +10,20 @@ permissions:
 
 jobs:
   actionlint:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
       - uses: reviewdog/action-actionlint@v1
   markdownlint:
     name: markdown
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
       - name: Run markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v21
   yamllint:
     name: Yamllint
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
       - name: Run Yamllint

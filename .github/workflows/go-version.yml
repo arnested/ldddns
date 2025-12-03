@@ -11,7 +11,7 @@ permissions:
 jobs:
   stable:
     name: Stable
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
       - uses: arnested/go-version-action@v1
@@ -41,7 +41,7 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
   unstable:
     name: Unstable
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
       - uses: arnested/go-version-action@v1
