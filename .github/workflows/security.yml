@@ -17,7 +17,7 @@ permissions:
 jobs:
   gosec:
     name: Golang Security Checker
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout Source
         uses: actions/checkout@v6
@@ -32,11 +32,11 @@ jobs:
           sarif_file: results.sarif
   govulncheck:
     name: Govulncheck
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
       - name: Setup Go
-        uses: WillAbides/setup-go-faster@v1.14.0
+        uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
       - id: govulncheck
