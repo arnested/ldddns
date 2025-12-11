@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 11 Dec 2025 18:09:17 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ e87954ee21193c44f3804c6650e03d8e             1824 Packages
+ c39b22a85141b017bbfd1fa89bbc8e51              851 Packages.gz
+ 389ca43ac36b51a1aa5989885fb50d01               88 Release
+SHA1:
+ 71d29ae39d183b52f0d8afab55e517587c04bc87             1824 Packages
+ 3c20f7050a8a636599970c20f246fe09fad7a84a              851 Packages.gz
+ 6f7331f59955366432d96ae7659637310bdc8ae9               88 Release
+SHA256:
+ 5d727b2144c47ccf5b65e169aaadf218c79499fe69128993e268d4c82033489a             1824 Packages
+ 6ff6035182603d4227c7278c361a91e3b523c18a9343ef25000e712c2fa92ce8              851 Packages.gz
+ b58c058a058b3e40ce65b65f37ab93cf2a4b584be747d2961139739439499406               88 Release
+SHA512:
+ 68be7411cc49b333b3805f4580d257e06a2ea46571fbf08ca094b1f07d152343cd2195c7bbd510aa35b8938ac6f2cdc97ff99ad9f9472ffc338f0725e44c34b9             1824 Packages
+ 9627132e6c39807b70822ec851a6788c5c44a6de7473aa5524dbea08529b6dc540c02188a8148d595782aa5fec6f84d7c791abc40f09a669b974979a5c8951f4              851 Packages.gz
+ 57bdf436a6796122d637adc5217124b815cd8cb15d77a23cef72472fc53fcbbb8465e946351af1befb737030954cbf3edd2d373a8fe26b80b3e8f5c247598c8e               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmk7CM0ACgkQnwaxeMQI
+vd4tYwv/Rd0ffg6KhL+gi2W5ngLYpydrcfBe9EtY/Jq/b5d+2PTFxjJs2azMeigb
+fQLnZtHjk3HVqCN0ybfGfCeenHUaFz14koPWbgenr79m4/jXpNHhRjHihHkSdH1M
+F4HAGouly9LkWQK622t2wsusrJnZ6ZBapAKADYzUFRtmzzZfcAuYAtdBAUenSOYQ
+IVZ2IZhznAprHpYZwiybH9b0vJctsY3UMl2q3wEknyFN/3TT6FKVvdfpfc9eHa+x
+9yLxAJ12NSCtOiCXspwkqjlQpta7ejAkfbDAbj4/VDeTsLBsctJvmmffaUbtUHac
+UWh3g+ex5ziOnnO9W7I3OutagyBSmfDS4oSOLuvExNbG8UgX/yxHc8aWHlq+Of8/
+8y2KeyVgQ1JLqiDduKBQpr9ZvKdLbNRiIvw0hlS5ed3qa0YzPCQvnpzvngYjflMV
+oCw6gAPGn1oyJ5YhVD3MVXkaeFWqXPVqWmlz2eUhup3IJW5BKpEmNLvu9KDj7G8c
+twBhpl5z
+=Z7z8
+-----END PGP SIGNATURE-----
