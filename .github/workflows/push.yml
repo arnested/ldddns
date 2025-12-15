@@ -59,7 +59,7 @@ jobs:
         with:
           version: "~> v2"
           args: release --snapshot
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: Debian packages
           path: dist/*.deb
