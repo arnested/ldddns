@@ -43,7 +43,7 @@ jobs:
           go fmt ./...
           git diff --exit-code
       - name: Test
-        uses: robherley/go-test-action@v0.6.0
+        uses: robherley/go-test-action@v0.7.1
         with:
           testArguments: -race -shuffle=on -benchtime=1x -cover -covermode=atomic -coverprofile=coverage.txt ./...
       - name: Upload coverage report to Codecov
