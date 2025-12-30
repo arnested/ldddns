@@ -5,5 +5,4 @@ deb:
   distribution: []
   urgency: ""
 debug: false
-owner: "Arne Jørgensen"
 package-name: "ldddns"
