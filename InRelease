@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 01 Jan 2026 18:56:21 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 1ebdd99d0b03e49d805bf65b18eed4da             1824 Packages
+ 3facee0864319d3720994115501b4c50              848 Packages.gz
+ e88a91ef16d77748deba8a24916f1363               88 Release
+SHA1:
+ 4578d346c43ec94b38a8f8220c2cc4b1c5d0b007             1824 Packages
+ 83cb6a7aee98b8726a5f7bcc7b3bff31de277312              848 Packages.gz
+ 55095af65c3336efbed3af6efe4d4d0364545792               88 Release
+SHA256:
+ ec1b1653f94954dcb66959f42a69418d1df6ca02b1c1a83eae7c988593d82da2             1824 Packages
+ af4e93d18ddb3a07858bff7237b2bc2ddee5ee998824f3f8978ded91bc0ae8a9              848 Packages.gz
+ 5bb12652f597832f16866f2a1929894a8ed41c26bf0dfd8304b884b3abbb0fc3               88 Release
+SHA512:
+ a776f3e780353b744633a8153256261967ddf091aaa3bc741c0f0982a99291a2803f6a601261a3f3994c066dac5a85877498d158bb3606183d23cfdbdc69f9a1             1824 Packages
+ ab89ff8f573ecfb6f19cd02ad679d9080c36b940964a2b778a43275b1567610a69dab4fa2469fe5b4e5a4ab3066f7cc8f7b1eba900bd900fb46f1dfa6d14de41              848 Packages.gz
+ fc3cdd62a7cc9de6cdcae404c63d0f6935494ab829c9c33646de64d1c7f3a5d0bbe2034efd2baadc23729b690074e7be34400229c15a5b782416da28ddce7314               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmlWw1UACgkQnwaxeMQI
+vd4PiAv8CmtsDmiHsMHkOWOgsSqP61aQ9sUozxxn7Fw7A1Ssa26X1w7NRnlUT6NU
+qVUnP/kgyj9s4LiuZWTmayfLe9vA2uDcW5BMLlSlB2iiYDWoPl4ymUvK1DhGqA1J
+xahtTdwkI55RhgBD0QcMaFhm+pBj4CQC8Lexx2hqwrIYLLP2S2A0Ws/dRKp67wsX
+37KCizsaJbqqNSDE86iQpV88lttcSmQqB0QcsNfhQSzK2fLR1Q7eHYAU4VQxtk1/
+LwhmVBWji5VmBV0pXDqLjA1LWWQKuazawJrHM6Xp3CPdlaL8pjM+lE6Wh0elgfIz
+JTVO0NyYtBX7knWqmPO+42FFpFNAOufiaO4HiEkvif+dAVvDyS8D/ivRUL7Mr11L
+lTDpb4q+2EQWWITAzM2IsE9+yyrYoXAQxNeD2/fJojKK/coTJBKh3Ffy/J1+vozR
+4s5rrVK859WYjSzp1HK+lYTuFbJgU7rhdikL3o6FXISy4bEIciZDWZfSdRffpJcQ
+cH5G5DV8
+=bApH
+-----END PGP SIGNATURE-----
