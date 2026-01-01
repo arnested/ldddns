@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
-      - uses: arnested/go-version-action@v1
+      - uses: arnested/go-version-action@v2
         id: go-version
         with:
           patch-level: true
@@ -44,11 +44,11 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
-      - uses: arnested/go-version-action@v1
+      - uses: arnested/go-version-action@v2
         id: go-version-stable
         with:
           patch-level: true
-      - uses: arnested/go-version-action@v1
+      - uses: arnested/go-version-action@v2
         id: go-version-unstable
         with:
           patch-level: true
