@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 08 Jan 2026 18:42:57 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 6a50fb12ba3f9170a0cfdc12b7c19a5d             1824 Packages
+ 2283e9ba34e52d032343df224d47ddec              856 Packages.gz
+ f877f35e686ffb8049f7d8d76fa6ad91               88 Release
+SHA1:
+ d07ea4ec9c6324f9b2ccb5e6b9546385ea940b5f             1824 Packages
+ 00befc07f65e3f0429a4d3963c0915a97f778430              856 Packages.gz
+ a1b84a4649e775f19ba03e47e25ab1f738c0f0f5               88 Release
+SHA256:
+ 5329d6091740b126ca01295558569ec7f09ba73cd52ccdb31cc4fc839be6debc             1824 Packages
+ 5574ce185b186251f7b630a3bcbce5b99d2d654ad11d53c2339d2a897c57c9b7              856 Packages.gz
+ 33069734068b0818246eb1f39bbead5e99204056c9e05bbb1c9a11017a53ba89               88 Release
+SHA512:
+ 0864e23e6ccfc635cce6b4c193bb8dc60819afa77003a6f011e979637fc06ac3743f078da192aa75ad2ab19961d9d8d633a8ae4943449fc5b21622e5245298d7             1824 Packages
+ d79fc737c4352293a113258cd9a27cb4e5f854fbd2ddeb9ba48ed3637ad014536a3044da2405d49e15c988b6f84300458392e7a68f0a94a766528409019cba60              856 Packages.gz
+ 1ad7da3d1328fd06481f63c50a45aefacf62190123e79aae1542a993133338de87d44dd133932b2d809c4cff2eb4eb49ef093fd99baf95d18d51cdc648c9e09e               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmlf+rIACgkQnwaxeMQI
+vd42Lgv9HHSNkYfiaJ+LEZ46TS3grSdqTaiFIXSynPl958oSKlXQp3zLekACGmZ1
+kaPRre2oKuVtSjW2Axd0Q0PDXiA2H+W+b8RMSIs+Uoa7OHJSnSAQdGapuLSF++dP
+7xXlZ3HFPbjztdoupQ3pRTvrEnQDihhKNDZ/2+L+Kgp7yBy0B9V37uqeTDTPUyRA
+gVCBnXLlJudWfeeUksCvZUS39nlJ8KB7fLy+ayesKKlbTpqygYVdG4eBMhUbfq9p
+ycWsW5J4KDkh011+xAY3lnEk3342I7tYUILFHc7H9HBYdYRZ+Qf9gq7jJDEm2Ed3
+JD0TIDQ0vhpHh5mriEkmqq98DibQMtQUvVS/XUG/b7+qiDIh2sFb3MaJtAP7AG3f
+Iivzm5ubLYTWdg1QMn1QKcv5mr4kEVtCceKHLYeCJ2rbFKHtRSM886axkFwwYH3d
+dztPGsSsfBeFesS0eTSSIEolqIW9oHGBdHYObJ5UH9hYJoIlu1Z6N0L2Lx8Y+Adt
+f4O9jBZR
+=EHoc
+-----END PGP SIGNATURE-----
