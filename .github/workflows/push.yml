@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
       - name: go mod tidy
@@ -29,7 +29,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
       - name: go version
@@ -71,7 +71,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
       - name: Install nilaway
@@ -85,7 +85,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
       - name: Install wwhrd

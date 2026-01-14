@@ -19,7 +19,7 @@ jobs:
         with:
           patch-level: true
       - name: Setup Go ${{ steps.go-version.outputs.latest }}
-        uses: actions/setup-go@v6
+        uses: arnested/setup-go@rc
         with:
           go-version: ${{ steps.go-version.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
@@ -61,7 +61,7 @@ jobs:
           echo "URL=https://tip.golang.org/doc/go$(sed -E 's/([0-9]+\.[0-9]+).*/\1/' <<< '${{ steps.go-version-unstable.outputs.latest }}')" >> $GITHUB_OUTPUT
       - name: Setup Go ${{ steps.go-version-unstable.outputs.latest }}
         if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
-        uses: actions/setup-go@v6
+        uses: arnested/setup-go@rc
         with:
           go-version: ${{ steps.go-version-unstable.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version-unstable.outputs.latest }}

@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
       - name: golangci-lint
