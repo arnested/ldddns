@@ -23,6 +23,7 @@ jobs:
         with:
           go-version: ${{ steps.go-version.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
+      - run: go fix ./...
       - run: git diff
       - name: "Create pull request"
         uses: peter-evans/create-pull-request@v8
@@ -65,6 +66,8 @@ jobs:
         with:
           go-version: ${{ steps.go-version-unstable.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version-unstable.outputs.latest }}
+        if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
+      - run: go fix ./...
         if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
       - run: git diff
         if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
