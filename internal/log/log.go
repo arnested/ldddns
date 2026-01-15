@@ -29,7 +29,7 @@ const (
 )
 
 // Logf formats a log entry to systemd's journald.
-func Logf(priority Priority, format string, a ...interface{}) {
+func Logf(priority Priority, format string, a ...any) {
 	err := journal.Print(journal.Priority(priority), format, a...)
 	if err != nil {
 		panic(fmt.Errorf("could not log: %w", err))
