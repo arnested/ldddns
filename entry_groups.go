@@ -39,7 +39,9 @@ func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error)
 		}
 	}
 
+	log.Logf(log.PriDebug, "about to get lock for container ID: %s", containerID)
 	e.mutex.Lock()
+	log.Logf(log.PriDebug, "got lock for container ID: %s", containerID)
 
 	if _, ok := e.groups[containerID]; !ok {
 		entryGroup, err := e.avahiServer.EntryGroupNew()
