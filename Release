@@ -1,0 +1,20 @@
+Date: Wed, 28 Jan 2026 20:21:57 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 86ee02a678db5124902dac87199199c3             1824 Packages
+ a8d98baa1ed45910ccf46847ec12bace              855 Packages.gz
+ a1704ff690d4278069f0c749d81fc932               88 Release
+SHA1:
+ 03ecddb45b281a151a8488b9c0a798cf1966eeda             1824 Packages
+ 66003a65379973852e081e57d138374e617705bb              855 Packages.gz
+ c2f86a26d34edb511a759858494e39f362ba8420               88 Release
+SHA256:
+ b5f8b6ff0444a99ee1faaf8430e47e35e855872b399ee91b1762ec864e265c4c             1824 Packages
+ 44c65000f0e39f26106c3e4ccbe3d8e7a031ae5af61ce2e65aa8f42c558c5642              855 Packages.gz
+ 2f206dda3a8745fb86fa72269ed2f3394b458414ea98a6c5972f41ee27c0f668               88 Release
+SHA512:
+ b0284acb3c61cf60fa5843988a69c39c81e2ce43b98f9fdb32b1236005f9758f34b07ca423a0d4a0b092f5d7a11c5f8e2423186befa604a6d8b817916176d1ec             1824 Packages
+ deb3025967e94e32a9b05cd75f1844e736d036dc8f4edf40bbe7df3b905b70d45249294bf51d11d24163e2685717a2571d8326cbbb525876d5cdb42dfdd5c231              855 Packages.gz
+ 08c4ab9e4e9a38683c824b5aabfc504915ea634b015c06eb3b1cd458d2b671f2da237833bdb758096cd03b6f87afb86e39fab2847f839a1f14436bb34c91f3dd               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
