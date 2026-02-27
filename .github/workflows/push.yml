@@ -58,7 +58,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v7
         with:
           args: release --snapshot
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: Debian packages
           path: dist/*.deb
