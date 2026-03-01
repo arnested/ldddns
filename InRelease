@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Sun, 01 Mar 2026 20:30:54 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 61ca7621f10bdf2cd5f3899d153e6e6c             1854 Packages
+ 4867e268363553c5c14eb8dbff61fbea              869 Packages.gz
+ 8e4b25842ad29b4c04fb083dd780b5d4               88 Release
+SHA1:
+ ec53bf87574b538fdc3a635103da77145ed70972             1854 Packages
+ b59a598b5f66f8d3967b334af71b7021fcc3e7f0              869 Packages.gz
+ 3b962c1b452b2086cbbdeb90860fc39af52cfcdb               88 Release
+SHA256:
+ dc291f054108d609f0a31cf9ae1344b741a6616cb47cb70604758ef800f18535             1854 Packages
+ cf0581919ccd1b6f5e0f5ee06188e19b30261efc1e611c60d31e97f643a35cf8              869 Packages.gz
+ 2873235acd51f936ba532be235a5a7ca8b714d4e0b38457d3f5cdbd82b8495c9               88 Release
+SHA512:
+ a7b2652a2658ab22bdd972428f5296e9372296010c52a10c467211cdbdddc878347510a20016359c6e035b51483e7a8d899381ecd0cc2a2362b05cd0a9e37c75             1854 Packages
+ 52eda4f3a489e86a27e59f8bca30d33d5dbe70b9b19ca73d850fa7c7e4fa4aef27cd6c7b7d2803d4ebb31e0f629353a025b8ec33602f87296af1330e0344df7f              869 Packages.gz
+ 231dd68fae2726cee4e6b642e5be57251771a00b4752bdee0b30f03beed68e38a5d611266d6afe8bdccab52251543f255f15a6f151107a79c3c9eba1cc5fe318               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmmkof4ACgkQnwaxeMQI
+vd6+IQv/ft5AVoKIVGWLMydcWdsqxPxMuG49S09p71CedjEfkGLKhoN/3UYHOZWE
+UaVrW2mmtcipXx4Rg4hT7rnKKo8lVcRDd9NplLxmE6PPhr0eimz2PTt4/7mBLZTT
+WCqa/8LZqLjKQ4v0U2ivJ1mqDeLRh34axAUggVXbkGDQ3CuOzahm8Psqqh02Zuw0
+hX0omkcIC3ih+g6AT0xkgQBYCZNj7pAyw7PO1Mu89rliSo2uf8jyuMdzB04EkSxT
+UpN0/KDNST4OYWptSCZG//+vYl1ayCiBun3tDNghzYeNwzN8CviVVeqAGm6+KkLU
+XSK0jVtQdMY1TYHICtDwqvPgRxHw4AyUoY5QOHOAA6mSOqgcnFxh5qHdFRSG5KyQ
+qBm9U8wc+76pm/AFAxsJs2K4zd/oBDlEOc4vQKK9+EiSCye1W4g75tKiCSB7QQjd
+xgMQJPgNkiao8o6kDiQlw4sTiKH9HBYhTjF5iupRjWoCzEmluIwggYgBIYo054VQ
+qUzTMqfW
+=s66c
+-----END PGP SIGNATURE-----

@@ -1,0 +1,4435 @@
+
+ldddns (1.0.375)
+  * Bump go.opentelemetry.io/otel/sdk from 1.22.0 to 1.40.0
+   - Bumps [go.opentelemetry.io/otel/sdk](https://github.com/open-telemetry/opentelemetry-go) from 1.22.0 to 1.40.0.
+   - - [Release notes](https://github.com/open-telemetry/opentelemetry-go/releases)
+   - - [Changelog](https://github.com/open-telemetry/opentelemetry-go/blob/main/CHANGELOG.md)
+   - - [Commits](https://github.com/open-telemetry/opentelemetry-go/compare/v1.22.0...v1.40.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: go.opentelemetry.io/otel/sdk
+   -   dependency-version: 1.40.0
+   -   dependency-type: indirect
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 01 Mar 2026 20:25:51 +0000
+
+ldddns (1.0.374)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 27 Feb 2026 18:43:48 +0000
+
+ldddns (1.0.373)
+  * Bump securego/gosec from 2.23.0 to 2.24.0
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.23.0 to 2.24.0.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.23.0...v2.24.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.24.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 27 Feb 2026 18:37:03 +0000
+
+ldddns (1.0.372)
+  * Bump golang.org/x/net from 0.50.0 to 0.51.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.50.0 to 0.51.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.50.0...v0.51.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.51.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 26 Feb 2026 18:36:10 +0000
+
+ldddns (1.0.371)
+  * Bump goreleaser/goreleaser-action from 6 to 7
+   - Bumps [goreleaser/goreleaser-action](https://github.com/goreleaser/goreleaser-action) from 6 to 7.
+   - - [Release notes](https://github.com/goreleaser/goreleaser-action/releases)
+   - - [Commits](https://github.com/goreleaser/goreleaser-action/compare/v6...v7)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: goreleaser/goreleaser-action
+   -   dependency-version: '7'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 23 Feb 2026 20:30:05 +0000
+
+ldddns (1.0.370)
+  * Bump securego/gosec from 2.22.11 to 2.23.0
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.11 to 2.23.0.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.11...v2.23.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.23.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 11 Feb 2026 18:34:30 +0000
+
+ldddns (1.0.369)
+  * Update Go version to 1.26.0
+   - See the release history: https://go.dev/doc/devel/release#go1.26.0.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 10 Feb 2026 20:25:58 +0000
+
+ldddns (1.0.368)
+  * Bump golang.org/x/net from 0.49.0 to 0.50.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.49.0 to 0.50.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.49.0...v0.50.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.50.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 09 Feb 2026 21:52:02 +0000
+
+ldddns (1.0.367)
+  * Update Go version to 1.25.7
+   - See the release history: https://go.dev/doc/devel/release#go1.25.7.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 04 Feb 2026 18:17:23 +0000
+
+ldddns (1.0.366)
+  * Bump github.com/coreos/go-systemd/v22 from 22.6.0 to 22.7.0
+   - Bumps [github.com/coreos/go-systemd/v22](https://github.com/coreos/go-systemd) from 22.6.0 to 22.7.0.
+   - - [Release notes](https://github.com/coreos/go-systemd/releases)
+   - - [Commits](https://github.com/coreos/go-systemd/compare/v22.6.0...v22.7.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/coreos/go-systemd/v22
+   -   dependency-version: 22.7.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 28 Jan 2026 20:16:40 +0000
+
+ldddns (1.0.365)
+  * Add logging around aquiring the entry group lock
+   - We still see what we expect to be some deadlocks. So just to gather
+   - more info we extend logging.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 21 Jan 2026 09:30:21 +0000
+
+ldddns (1.0.364)
+  * Use `any` insteadof `interface{}`
+   - Just a modernization.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 15 Jan 2026 19:30:01 +0000
+
+ldddns (1.0.363)
+  * Update Go version to 1.25.6
+   - See the release history: https://go.dev/doc/devel/release#go1.25.6.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 15 Jan 2026 19:05:37 +0000
+
+ldddns (1.0.362)
+  * Add `go fix ./...` to go version update workflow
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 14 Jan 2026 10:39:24 +0000
+
+ldddns (1.0.361)
+  * Use a fork of actions/setup-go
+   - The fork supports release candidate versions.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 14 Jan 2026 09:40:47 +0000
+
+ldddns (1.0.360)
+  * Bump golang.org/x/net from 0.48.0 to 0.49.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.48.0 to 0.49.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.48.0...v0.49.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.49.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 12 Jan 2026 22:43:09 +0000
+
+ldddns (1.0.359)
+  * Bump github.com/google/gops from 0.3.28 to 0.3.29
+   - Bumps [github.com/google/gops](https://github.com/google/gops) from 0.3.28 to 0.3.29.
+   - - [Release notes](https://github.com/google/gops/releases)
+   - - [Commits](https://github.com/google/gops/compare/v0.3.28...v0.3.29)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/google/gops
+   -   dependency-version: 0.3.29
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 08 Jan 2026 18:38:12 +0000
+
+ldddns (1.0.358)
+  * Bump arnested/go-version-action from 1 to 2
+   - Bumps [arnested/go-version-action](https://github.com/arnested/go-version-action) from 1 to 2.
+   - - [Release notes](https://github.com/arnested/go-version-action/releases)
+   - - [Commits](https://github.com/arnested/go-version-action/compare/v1...v2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: arnested/go-version-action
+   -   dependency-version: '2'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 01 Jan 2026 18:51:38 +0000
+
+ldddns (1.0.357)
+  * Update copyright years
+  * Let GitHub itself generate the release notes
+  * No need to run `go mod download` explicitly anymore
+  * Let the goreleaser-action default to the correct version of goreleaser
+  * chglog(1) can default to the owner, no need to be explicit
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 30 Dec 2025 11:36:03 +0000
+
+ldddns (1.0.356)
+  * Bump github.com/godbus/dbus/v5 from 5.2.1 to 5.2.2
+   - Bumps [github.com/godbus/dbus/v5](https://github.com/godbus/dbus) from 5.2.1 to 5.2.2.
+   - - [Release notes](https://github.com/godbus/dbus/releases)
+   - - [Commits](https://github.com/godbus/dbus/compare/v5.2.1...v5.2.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/godbus/dbus/v5
+   -   dependency-version: 5.2.2
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 29 Dec 2025 18:13:37 +0000
+
+ldddns (1.0.355)
+  * Bump github.com/godbus/dbus/v5 from 5.2.0 to 5.2.1
+   - Bumps [github.com/godbus/dbus/v5](https://github.com/godbus/dbus) from 5.2.0 to 5.2.1.
+   - - [Release notes](https://github.com/godbus/dbus/releases)
+   - - [Commits](https://github.com/godbus/dbus/compare/v5.2.0...v5.2.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/godbus/dbus/v5
+   -   dependency-version: 5.2.1
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 19 Dec 2025 18:09:10 +0000
+
+ldddns (1.0.354)
+  * Bump actions/upload-artifact from 5 to 6
+   - Bumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 5 to 6.
+   - - [Release notes](https://github.com/actions/upload-artifact/releases)
+   - - [Commits](https://github.com/actions/upload-artifact/compare/v5...v6)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: actions/upload-artifact
+   -   dependency-version: '6'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 15 Dec 2025 18:08:56 +0000
+
+ldddns (1.0.353)
+  * Bump robherley/go-test-action from 0.6.0 to 0.7.1
+   - Bumps [robherley/go-test-action](https://github.com/robherley/go-test-action) from 0.6.0 to 0.7.1.
+   - - [Release notes](https://github.com/robherley/go-test-action/releases)
+   - - [Commits](https://github.com/robherley/go-test-action/compare/v0.6.0...v0.7.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: robherley/go-test-action
+   -   dependency-version: 0.7.1
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 15 Dec 2025 18:05:22 +0000
+
+ldddns (1.0.352)
+  * Bump securego/gosec from 2.22.10 to 2.22.11
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.10 to 2.22.11.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.10...v2.22.11)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.11
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 11 Dec 2025 18:03:57 +0000
+
+ldddns (1.0.351)
+  * Bump peter-evans/create-pull-request from 7 to 8
+   - Bumps [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request) from 7 to 8.
+   - - [Release notes](https://github.com/peter-evans/create-pull-request/releases)
+   - - [Commits](https://github.com/peter-evans/create-pull-request/compare/v7...v8)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: peter-evans/create-pull-request
+   -   dependency-version: '8'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 10 Dec 2025 18:29:19 +0000
+
+ldddns (1.0.350)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Dec 2025 18:19:24 +0000
+
+ldddns (1.0.349)
+  * Bump DavidAnson/markdownlint-cli2-action from 21 to 22
+   - Bumps [DavidAnson/markdownlint-cli2-action](https://github.com/davidanson/markdownlint-cli2-action) from 21 to 22.
+   - - [Release notes](https://github.com/davidanson/markdownlint-cli2-action/releases)
+   - - [Commits](https://github.com/davidanson/markdownlint-cli2-action/compare/v21...v22)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: DavidAnson/markdownlint-cli2-action
+   -   dependency-version: '22'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Dec 2025 18:16:01 +0000
+
+ldddns (1.0.348)
+  * Update Go version to 1.25.5
+   - See the release history: https://go.dev/doc/devel/release#go1.25.5.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 03 Dec 2025 10:55:03 +0000
+
+ldddns (1.0.347)
+  * Use newest Ubuntu as action runner
+  * Use actions/setup-go
+   - Since it's version 6.1 it supports dowbnloading from go.dev which
+   - should ensure we always can get the newest Go version installed.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 03 Dec 2025 10:36:20 +0000
+
+ldddns (1.0.346)
+  * Bump actions/checkout from 5 to 6
+   - Bumps [actions/checkout](https://github.com/actions/checkout) from 5 to 6.
+   - - [Release notes](https://github.com/actions/checkout/releases)
+   - - [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+   - - [Commits](https://github.com/actions/checkout/compare/v5...v6)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: actions/checkout
+   -   dependency-version: '6'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 20 Nov 2025 20:27:12 +0000
+
+ldddns (1.0.345)
+  * Bump DavidAnson/markdownlint-cli2-action from 20 to 21
+   - Bumps [DavidAnson/markdownlint-cli2-action](https://github.com/davidanson/markdownlint-cli2-action) from 20 to 21.
+   - - [Release notes](https://github.com/davidanson/markdownlint-cli2-action/releases)
+   - - [Commits](https://github.com/davidanson/markdownlint-cli2-action/compare/v20...v21)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: DavidAnson/markdownlint-cli2-action
+   -   dependency-version: '21'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 17 Nov 2025 18:04:03 +0000
+
+ldddns (1.0.344)
+  * Bump github.com/godbus/dbus/v5 from 5.1.0 to 5.2.0
+   - Bumps [github.com/godbus/dbus/v5](https://github.com/godbus/dbus) from 5.1.0 to 5.2.0.
+   - - [Release notes](https://github.com/godbus/dbus/releases)
+   - - [Commits](https://github.com/godbus/dbus/compare/v5.1.0...v5.2.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/godbus/dbus/v5
+   -   dependency-version: 5.2.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 14 Nov 2025 18:09:24 +0000
+
+ldddns (1.0.343)
+  * Bump golang.org/x/net from 0.46.0 to 0.47.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.46.0 to 0.47.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.46.0...v0.47.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.47.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 12 Nov 2025 18:12:07 +0000
+
+ldddns (1.0.342)
+  * Revert "Change Bluesky username in goreleaser config"
+   - This reverts commit d2a5058d15f61706e3f67017298ad2e704683af1.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 12 Nov 2025 11:48:42 +0000
+
+ldddns (1.0.341)
+  * Bump golangci/golangci-lint-action from 8 to 9
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from 8 to 9.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v8...v9)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golangci/golangci-lint-action
+   -   dependency-version: '9'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 10 Nov 2025 18:49:35 +0000
+
+ldddns (1.0.340)
+  * Update Go version to 1.25.4
+   - See the release history: https://go.dev/doc/devel/release#go1.25.4.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 05 Nov 2025 19:51:22 +0000
+
+ldddns (1.0.339)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.5.1+incompatible to 28.5.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.5.1...v28.5.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.5.2+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 05 Nov 2025 18:05:18 +0000
+
+ldddns (1.0.338)
+  * Change Bluesky username in goreleaser config
+   - The old handle is broken and Blueskys support has stopped responding.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 03 Nov 2025 06:56:18 +0000
+
+ldddns (1.0.337)
+  * Bump actions/upload-artifact from 4 to 5
+   - Bumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 4 to 5.
+   - - [Release notes](https://github.com/actions/upload-artifact/releases)
+   - - [Commits](https://github.com/actions/upload-artifact/compare/v4...v5)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: actions/upload-artifact
+   -   dependency-version: '5'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 27 Oct 2025 18:55:28 +0000
+
+ldddns (1.0.336)
+  * Bump securego/gosec from 2.22.9 to 2.22.10
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.9 to 2.22.10.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.9...v2.22.10)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.10
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 15 Oct 2025 17:48:28 +0000
+
+ldddns (1.0.335)
+  * Update Go version to 1.25.3
+   - See the release history: https://go.dev/doc/devel/release#go1.25.3.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 14 Oct 2025 05:50:12 +0000
+
+ldddns (1.0.334)
+  * Bump golang.org/x/net from 0.45.0 to 0.46.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.45.0 to 0.46.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.45.0...v0.46.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.46.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 09 Oct 2025 18:00:59 +0000
+
+ldddns (1.0.333)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.5.0+incompatible to 28.5.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.5.0...v28.5.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.5.1+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 08 Oct 2025 17:20:39 +0000
+
+ldddns (1.0.332)
+  * Bump golang.org/x/net from 0.44.0 to 0.45.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.44.0 to 0.45.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.44.0...v0.45.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.45.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 08 Oct 2025 17:04:55 +0000
+
+ldddns (1.0.331)
+  * Update Go version to 1.25.2
+   - See the release history: https://go.dev/doc/devel/release#go1.25.2.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 07 Oct 2025 19:10:15 +0000
+
+ldddns (1.0.330)
+  * Bump github/codeql-action from 3 to 4
+   - Bumps [github/codeql-action](https://github.com/github/codeql-action) from 3 to 4.
+   - - [Release notes](https://github.com/github/codeql-action/releases)
+   - - [Changelog](https://github.com/github/codeql-action/blob/main/CHANGELOG.md)
+   - - [Commits](https://github.com/github/codeql-action/compare/v3...v4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github/codeql-action
+   -   dependency-version: '4'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 07 Oct 2025 17:05:06 +0000
+
+ldddns (1.0.329)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.4.0+incompatible to 28.5.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.4.0...v28.5.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.5.0+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 03 Oct 2025 17:04:10 +0000
+
+ldddns (1.0.328)
+  * Bump securego/gosec from 2.22.8 to 2.22.9
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.8 to 2.22.9.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.8...v2.22.9)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.9
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 22 Sep 2025 17:10:01 +0000
+
+ldddns (1.0.327)
+  * Bump golang.org/x/net from 0.43.0 to 0.44.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.43.0 to 0.44.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.43.0...v0.44.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.44.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 09 Sep 2025 17:15:20 +0000
+
+ldddns (1.0.326)
+  * Fix linting
+  * Add an option for starting a gops agent
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 05 Sep 2025 22:02:25 +0000
+
+ldddns (1.0.325)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.3.3+incompatible to 28.4.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.3.3...v28.4.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.4.0+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 04 Sep 2025 17:05:02 +0000
+
+ldddns (1.0.324)
+  * Update Go version to 1.25.1
+   - See the release history: https://go.dev/doc/devel/release#go1.25.1.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 03 Sep 2025 18:52:47 +0000
+
+ldddns (1.0.323)
+  * We have switched o the default CodeQL analysis setup
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 23 Aug 2025 19:46:35 +0000
+
+ldddns (1.0.322)
+  * Bump anothrNick/github-tag-action from 1.73.0 to 1.75.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrnick/github-tag-action) from 1.73.0 to 1.75.0.
+   - - [Release notes](https://github.com/anothrnick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrnick/github-tag-action/compare/1.73.0...1.75.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: anothrNick/github-tag-action
+   -   dependency-version: 1.75.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 22 Aug 2025 18:00:53 +0000
+
+ldddns (1.0.321)
+  * Bump github.com/coreos/go-systemd/v22 from 22.5.0 to 22.6.0
+   - Bumps [github.com/coreos/go-systemd/v22](https://github.com/coreos/go-systemd) from 22.5.0 to 22.6.0.
+   - - [Release notes](https://github.com/coreos/go-systemd/releases)
+   - - [Commits](https://github.com/coreos/go-systemd/compare/v22.5.0...v22.6.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/coreos/go-systemd/v22
+   -   dependency-version: 22.6.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 21 Aug 2025 17:25:49 +0000
+
+ldddns (1.0.320)
+  * Bump securego/gosec from 2.22.7 to 2.22.8
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.7 to 2.22.8.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.7...v2.22.8)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.8
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 14 Aug 2025 18:13:10 +0000
+
+ldddns (1.0.319)
+  * Update Go version to 1.25.0
+   - See the release history: https://go.dev/doc/devel/release#go1.25.0.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 13 Aug 2025 04:02:36 +0000
+
+ldddns (1.0.318)
+  * Bump actions/checkout from 4 to 5
+   - Bumps [actions/checkout](https://github.com/actions/checkout) from 4 to 5.
+   - - [Release notes](https://github.com/actions/checkout/releases)
+   - - [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+   - - [Commits](https://github.com/actions/checkout/compare/v4...v5)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: actions/checkout
+   -   dependency-version: '5'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 12 Aug 2025 04:19:30 +0000
+
+ldddns (1.0.317)
+  * Bump golang.org/x/net from 0.42.0 to 0.43.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.42.0 to 0.43.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.42.0...v0.43.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.43.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 08 Aug 2025 17:38:53 +0000
+
+ldddns (1.0.316)
+  * Update Go version to 1.24.6
+   - See the release history: https://go.dev/doc/devel/release#go1.24.6.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Aug 2025 18:58:35 +0000
+
+ldddns (1.0.315)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.3.2+incompatible to 28.3.3+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.3.2...v28.3.3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.3.3+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 29 Jul 2025 17:37:04 +0000
+
+ldddns (1.0.314)
+  * Bump securego/gosec from 2.22.5 to 2.22.7
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.5 to 2.22.7.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.5...v2.22.7)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.7
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 21 Jul 2025 19:53:53 +0000
+
+ldddns (1.0.313)
+  * Bump golang.org/x/net from 0.41.0 to 0.42.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.41.0 to 0.42.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.41.0...v0.42.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.42.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 11 Jul 2025 17:58:17 +0000
+
+ldddns (1.0.312)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.3.1+incompatible to 28.3.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.3.1...v28.3.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.3.2+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 10 Jul 2025 17:54:26 +0000
+
+ldddns (1.0.311)
+  * Update Go version to 1.24.5
+   - See the release history: https://go.dev/doc/devel/release#go1.24.5.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 08 Jul 2025 19:18:01 +0000
+
+ldddns (1.0.310)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.3.0+incompatible to 28.3.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.3.0...v28.3.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.3.1+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 03 Jul 2025 17:30:34 +0000
+
+ldddns (1.0.309)
+  * Avoid keeping an entrygroup locked
+  * Use longer variable name
+   - Recommended by golangci-lint
+  * Avoid deprecated types
+  * Fix golangci-lint warning
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 27 Jun 2025 08:35:13 +0000
+
+ldddns (1.0.308)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.2.2+incompatible to 28.3.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.2.2...v28.3.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.3.0+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 25 Jun 2025 06:56:28 +0000
+
+ldddns (1.0.307)
+  * Bump securego/gosec from 2.22.4 to 2.22.5
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.4 to 2.22.5.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.4...v2.22.5)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.5
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 16 Jun 2025 18:35:58 +0000
+
+ldddns (1.0.306)
+  * Bump golang.org/x/net from 0.40.0 to 0.41.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.40.0 to 0.41.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.40.0...v0.41.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.41.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 06 Jun 2025 17:45:05 +0000
+
+ldddns (1.0.305)
+  * Update Go version to 1.24.4
+   - See the release history: https://go.dev/doc/devel/release#go1.24.4.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 05 Jun 2025 19:16:02 +0000
+
+ldddns (1.0.304)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.2.1+incompatible to 28.2.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.2.1...v28.2.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.2.2+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 30 May 2025 17:37:12 +0000
+
+ldddns (1.0.303)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.1.1+incompatible to 28.2.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.1.1...v28.2.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.2.1+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 29 May 2025 18:06:18 +0000
+
+ldddns (1.0.302)
+  * Bump DavidAnson/markdownlint-cli2-action from 19 to 20
+   - Bumps [DavidAnson/markdownlint-cli2-action](https://github.com/davidanson/markdownlint-cli2-action) from 19 to 20.
+   - - [Release notes](https://github.com/davidanson/markdownlint-cli2-action/releases)
+   - - [Commits](https://github.com/davidanson/markdownlint-cli2-action/compare/v19...v20)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: DavidAnson/markdownlint-cli2-action
+   -   dependency-version: '20'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 15 May 2025 17:49:27 +0000
+
+ldddns (1.0.301)
+  * Remove reviewers from Dependabot configuration
+   - See https://github.blog/changelog/2025-04-29-dependabot-reviewers-configuration-option-being-replaced-by-code-owners/
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 09 May 2025 20:06:48 +0000
+
+ldddns (1.0.300)
+  * Bump securego/gosec from 2.22.3 to 2.22.4
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.3 to 2.22.4.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.3...v2.22.4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.4
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 08 May 2025 17:21:38 +0000
+
+ldddns (1.0.299)
+  * Bump anothrNick/github-tag-action from 1.71.0 to 1.73.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrnick/github-tag-action) from 1.71.0 to 1.73.0.
+   - - [Release notes](https://github.com/anothrnick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrnick/github-tag-action/compare/1.71.0...1.73.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: anothrNick/github-tag-action
+   -   dependency-version: 1.73.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 07 May 2025 18:02:14 +0000
+
+ldddns (1.0.298)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 07 May 2025 04:03:40 +0000
+
+ldddns (1.0.297)
+  * Update Go version to 1.24.3
+   - See the release history: https://go.dev/doc/devel/release#go1.24.3.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 06 May 2025 19:52:17 +0000
+
+ldddns (1.0.296)
+  * Bump golangci/golangci-lint-action from 7 to 8
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from 7 to 8.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v7...v8)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golangci/golangci-lint-action
+   -   dependency-version: '8'
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 05 May 2025 18:12:26 +0000
+
+ldddns (1.0.295)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.1.0+incompatible to 28.1.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.1.0...v28.1.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.1.1+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 18 Apr 2025 18:28:23 +0000
+
+ldddns (1.0.294)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.0.4+incompatible to 28.1.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.0.4...v28.1.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-version: 28.1.0+incompatible
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 17 Apr 2025 17:16:46 +0000
+
+ldddns (1.0.293)
+  * Bump golang.org/x/net from 0.38.0 to 0.39.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.38.0 to 0.39.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.38.0...v0.39.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-version: 0.39.0
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 08 Apr 2025 17:40:43 +0000
+
+ldddns (1.0.292)
+  * Bump securego/gosec from 2.22.2 to 2.22.3
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.2 to 2.22.3.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.2...v2.22.3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-version: 2.22.3
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 04 Apr 2025 17:09:29 +0000
+
+ldddns (1.0.291)
+  * Update Go version to 1.24.2
+   - See the release history: https://go.dev/doc/devel/release#go1.24.2.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 01 Apr 2025 21:47:11 +0000
+
+ldddns (1.0.290)
+  * Tidy `go.mod`
+  * Bump golang.org/x/net from 0.37.0 to 0.38.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.37.0 to 0.38.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.37.0...v0.38.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 28 Mar 2025 21:12:30 +0000
+
+ldddns (1.0.289)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.0.2+incompatible to 28.0.4+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.0.2...v28.0.4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 25 Mar 2025 18:42:05 +0000
+
+ldddns (1.0.288)
+  * Migrate golangci-lint config to version 2
+  * Bump golangci/golangci-lint-action from 6 to 7
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from 6 to 7.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v6...v7)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golangci/golangci-lint-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 24 Mar 2025 19:12:11 +0000
+
+ldddns (1.0.287)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.0.1+incompatible to 28.0.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.0.1...v28.0.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 19 Mar 2025 18:39:57 +0000
+
+ldddns (1.0.286)
+  * Bump golang.org/x/net from 0.36.0 to 0.37.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.36.0 to 0.37.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.36.0...v0.37.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 06 Mar 2025 18:58:08 +0000
+
+ldddns (1.0.285)
+  * Bump securego/gosec from 2.22.1 to 2.22.2
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.1 to 2.22.2.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.1...v2.22.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 05 Mar 2025 19:04:04 +0000
+
+ldddns (1.0.284)
+  * Bump golang.org/x/net from 0.35.0 to 0.36.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.35.0 to 0.36.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.35.0...v0.36.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 05 Mar 2025 18:29:44 +0000
+
+ldddns (1.0.283)
+  * Update Go version to 1.24.1
+   - See the release history: https://go.dev/doc/devel/release#go1.24.1.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 04 Mar 2025 20:55:43 +0000
+
+ldddns (1.0.282)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 28.0.0+incompatible to 28.0.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v28.0.0...v28.0.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 26 Feb 2025 19:05:23 +0000
+
+ldddns (1.0.281)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.5.1+incompatible to 28.0.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.5.1...v28.0.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 20 Feb 2025 20:43:30 +0000
+
+ldddns (1.0.280)
+  * Bump securego/gosec from 2.22.0 to 2.22.1
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.22.0 to 2.22.1.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.22.0...v2.22.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 13 Feb 2025 18:58:18 +0000
+
+ldddns (1.0.279)
+  * Update Go version to 1.24.0
+   - See the release history: https://go.dev/doc/devel/release#go1.24.0.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 11 Feb 2025 18:52:42 +0000
+
+ldddns (1.0.278)
+  * Bump golang.org/x/net from 0.34.0 to 0.35.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.34.0 to 0.35.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.34.0...v0.35.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 10 Feb 2025 18:43:18 +0000
+
+ldddns (1.0.277)
+  * Add simple man page
+  * Fix GoReleaser deprecation
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 07 Feb 2025 11:20:04 +0000
+
+ldddns (1.0.276)
+  * Update Go version to 1.23.6
+   - See the release history: https://go.dev/doc/devel/release#go1.23.6.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 04 Feb 2025 17:49:08 +0000
+
+ldddns (1.0.275)
+  * Use golangci-lint action in install-mode `goinstall`
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 31 Jan 2025 07:29:18 +0000
+
+ldddns (1.0.274)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.5.0+incompatible to 27.5.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.5.0...v27.5.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 22 Jan 2025 18:49:06 +0000
+
+ldddns (1.0.273)
+  * Update Go version to 1.23.5
+   - See the release history: https://go.dev/doc/devel/release#go1.23.5.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 16 Jan 2025 21:04:08 +0000
+
+ldddns (1.0.272)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.4.1+incompatible to 27.5.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.4.1...v27.5.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 14 Jan 2025 18:05:28 +0000
+
+ldddns (1.0.271)
+  * Bump securego/gosec from 2.21.4 to 2.22.0
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.21.4 to 2.22.0.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.21.4...v2.22.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 09 Jan 2025 18:51:50 +0000
+
+ldddns (1.0.270)
+  * Make sure GitHub Pages doesn't use Jekyll
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 06 Jan 2025 19:37:03 +0000
+
+ldddns (1.0.269)
+  * Add .well-known for Bluesky to GitHub Pages
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 06 Jan 2025 19:15:56 +0000
+
+ldddns (1.0.268)
+  * Bump golang.org/x/net from 0.33.0 to 0.34.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.33.0 to 0.34.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.33.0...v0.34.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 06 Jan 2025 18:07:15 +0000
+
+ldddns (1.0.267)
+  * Bump DavidAnson/markdownlint-cli2-action from 18 to 19
+   - Bumps [DavidAnson/markdownlint-cli2-action](https://github.com/davidanson/markdownlint-cli2-action) from 18 to 19.
+   - - [Release notes](https://github.com/davidanson/markdownlint-cli2-action/releases)
+   - - [Commits](https://github.com/davidanson/markdownlint-cli2-action/compare/v18...v19)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: DavidAnson/markdownlint-cli2-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 30 Dec 2024 18:18:13 +0000
+
+ldddns (1.0.266)
+  * Bump golang.org/x/net from 0.32.0 to 0.33.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.32.0 to 0.33.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.32.0...v0.33.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 19 Dec 2024 21:57:45 +0000
+
+ldddns (1.0.265)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.4.0+incompatible to 27.4.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.4.0...v27.4.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 18 Dec 2024 18:54:25 +0000
+
+ldddns (1.0.264)
+  * Bump robherley/go-test-action from 0.5.0 to 0.6.0
+   - Bumps [robherley/go-test-action](https://github.com/robherley/go-test-action) from 0.5.0 to 0.6.0.
+   - - [Release notes](https://github.com/robherley/go-test-action/releases)
+   - - [Commits](https://github.com/robherley/go-test-action/compare/v0.5.0...v0.6.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: robherley/go-test-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 17 Dec 2024 19:22:43 +0000
+
+ldddns (1.0.263)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.3.1+incompatible to 27.4.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.3.1...v27.4.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 09 Dec 2024 19:06:17 +0000
+
+ldddns (1.0.262)
+  * Bump golang.org/x/net from 0.31.0 to 0.32.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.31.0 to 0.32.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.31.0...v0.32.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 05 Dec 2024 18:45:44 +0000
+
+ldddns (1.0.261)
+  * Fix govulncheck-action
+  * Update Go version to 1.23.4
+   - See the release history: https://go.dev/doc/devel/release#go1.23.4.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 04 Dec 2024 06:17:39 +0000
+
+ldddns (1.0.260)
+  * Annouce new releases on Bluesky
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 19 Nov 2024 20:51:13 +0000
+
+ldddns (1.0.259)
+  * Bump DavidAnson/markdownlint-cli2-action from 17 to 18
+   - Bumps [DavidAnson/markdownlint-cli2-action](https://github.com/davidanson/markdownlint-cli2-action) from 17 to 18.
+   - - [Release notes](https://github.com/davidanson/markdownlint-cli2-action/releases)
+   - - [Commits](https://github.com/davidanson/markdownlint-cli2-action/compare/v17...v18)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: DavidAnson/markdownlint-cli2-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 15 Nov 2024 19:54:22 +0000
+
+ldddns (1.0.258)
+  * Bump codecov/codecov-action from 4 to 5
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from 4 to 5.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/main/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v4...v5)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: codecov/codecov-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 14 Nov 2024 21:17:08 +0000
+
+ldddns (1.0.257)
+  * Bump golang.org/x/net from 0.30.0 to 0.31.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.30.0 to 0.31.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.30.0...v0.31.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 08 Nov 2024 19:01:32 +0000
+
+ldddns (1.0.256)
+  * Update Go version to 1.23.3
+   - See the release history: https://go.dev/doc/devel/release#go1.23.3.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Nov 2024 06:20:00 +0000
+
+ldddns (1.0.255)
+  * Bump golang.org/x/net from 0.29.0 to 0.30.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.29.0 to 0.30.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.29.0...v0.30.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 04 Oct 2024 19:37:30 +0000
+
+ldddns (1.0.254)
+  * Bump golang/govulncheck-action from 1.0.3 to 1.0.4
+   - Bumps [golang/govulncheck-action](https://github.com/golang/govulncheck-action) from 1.0.3 to 1.0.4.
+   - - [Release notes](https://github.com/golang/govulncheck-action/releases)
+   - - [Commits](https://github.com/golang/govulncheck-action/compare/v1.0.3...v1.0.4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang/govulncheck-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 04 Oct 2024 12:09:23 +0000
+
+ldddns (1.0.253)
+  * Update Go version to 1.23.2
+   - See the release history: https://go.dev/doc/devel/release#go1.23.2.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 01 Oct 2024 18:18:11 +0000
+
+ldddns (1.0.252)
+  * Bump securego/gosec from 2.21.3 to 2.21.4
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.21.3 to 2.21.4.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.21.3...v2.21.4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 26 Sep 2024 17:14:52 +0000
+
+ldddns (1.0.251)
+  * Use BindsTo for systemd service dependencies
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 26 Sep 2024 16:36:00 +0000
+
+ldddns (1.0.250)
+  * Fix use of deprecated proprty in Goreleaser config
+  * Depend on the the avahi-daemon being running
+   - See #359.
+  * Use apt-get instead of dpkg for install
+   - dpkg won't install dependencies.
+   - See #359.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 26 Sep 2024 14:32:47 +0000
+
+ldddns (1.0.249)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.3.0+incompatible to 27.3.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.3.0...v27.3.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 23 Sep 2024 17:40:15 +0000
+
+ldddns (1.0.248)
+  * Bump anothrNick/github-tag-action from 1.70.0 to 1.71.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrnick/github-tag-action) from 1.70.0 to 1.71.0.
+   - - [Release notes](https://github.com/anothrnick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrnick/github-tag-action/compare/1.70.0...1.71.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: anothrNick/github-tag-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 23 Sep 2024 17:34:03 +0000
+
+ldddns (1.0.247)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.2.1+incompatible to 27.3.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.2.1...v27.3.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 20 Sep 2024 18:07:08 +0000
+
+ldddns (1.0.246)
+  * Fix issues reported by golangci-lint
+  * Ensure portNumber is not to large
+   - Otherwise we could have a potential integer overflow when converting
+   - to int in the following statement.
+  * Remove unused input govulncheck-action
+  * Bump securego/gosec from 2.21.2 to 2.21.3
+   - Bumps [securego/gosec](https://github.com/securego/gosec) from 2.21.2 to 2.21.3.
+   - - [Release notes](https://github.com/securego/gosec/releases)
+   - - [Changelog](https://github.com/securego/gosec/blob/master/.goreleaser.yml)
+   - - [Commits](https://github.com/securego/gosec/compare/v2.21.2...v2.21.3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: securego/gosec
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 18 Sep 2024 21:41:05 +0000
+
+ldddns (1.0.245)
+  * Bump DavidAnson/markdownlint-cli2-action from 16 to 17
+   - Bumps [DavidAnson/markdownlint-cli2-action](https://github.com/davidanson/markdownlint-cli2-action) from 16 to 17.
+   - - [Release notes](https://github.com/davidanson/markdownlint-cli2-action/releases)
+   - - [Commits](https://github.com/davidanson/markdownlint-cli2-action/compare/v16...v17)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: DavidAnson/markdownlint-cli2-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 11 Sep 2024 17:33:00 +0000
+
+ldddns (1.0.244)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.2.0+incompatible to 27.2.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.2.0...v27.2.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 10 Sep 2024 09:48:38 +0000
+
+ldddns (1.0.243)
+  * Use tagged versions of GitHub Actions
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 10 Sep 2024 09:45:14 +0000
+
+ldddns (1.0.242)
+  * Bump golang.org/x/net from 0.28.0 to 0.29.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.28.0 to 0.29.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.28.0...v0.29.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 06 Sep 2024 17:49:05 +0000
+
+ldddns (1.0.241)
+  * Bump robherley/go-test-action from 0.4.1 to 0.5.0
+   - Bumps [robherley/go-test-action](https://github.com/robherley/go-test-action) from 0.4.1 to 0.5.0.
+   - - [Release notes](https://github.com/robherley/go-test-action/releases)
+   - - [Commits](https://github.com/robherley/go-test-action/compare/v0.4.1...v0.5.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: robherley/go-test-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 06 Sep 2024 17:13:35 +0000
+
+ldddns (1.0.240)
+  * Bump peter-evans/create-pull-request from 6 to 7
+   - Bumps [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request) from 6 to 7.
+   - - [Release notes](https://github.com/peter-evans/create-pull-request/releases)
+   - - [Commits](https://github.com/peter-evans/create-pull-request/compare/v6...v7)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: peter-evans/create-pull-request
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 05 Sep 2024 18:43:12 +0000
+
+ldddns (1.0.239)
+  * Update Go version to 1.23.1
+   - See the release history: https://go.dev/doc/devel/release#go1.23.1.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 05 Sep 2024 17:10:01 +0000
+
+ldddns (1.0.238)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.1.2+incompatible to 27.2.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.1.2...v27.2.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 28 Aug 2024 18:01:16 +0000
+
+ldddns (1.0.237)
+  * Update Go version to 1.23.0
+   - See the release history: https://go.dev/doc/devel/release#go1.23.0.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 22 Aug 2024 03:18:33 +0000
+
+ldddns (1.0.236)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.1.1+incompatible to 27.1.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.1.1...v27.1.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 17 Aug 2024 12:32:18 +0000
+
+ldddns (1.0.235)
+  * Bump golang.org/x/net from 0.27.0 to 0.28.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.27.0 to 0.28.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.27.0...v0.28.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 07 Aug 2024 19:19:14 +0000
+
+ldddns (1.0.234)
+  * Update Go version to 1.22.6
+   - See the release history: https://go.dev/doc/devel/release#go1.22.6.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 06 Aug 2024 20:52:39 +0000
+
+ldddns (1.0.233)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.1.0+incompatible to 27.1.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.1.0...v27.1.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 24 Jul 2024 17:33:43 +0000
+
+ldddns (1.0.232)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.0.3+incompatible to 27.1.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.0.3...v27.1.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 22 Jul 2024 18:22:32 +0000
+
+ldddns (1.0.231)
+  * Use golang/govulncheck-action
+  * Use sarif output of golang.org/x/vuln/cmd/govulncheck
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 22 Jul 2024 07:11:31 +0000
+
+ldddns (1.0.230)
+  * Bump anothrNick/github-tag-action from 1.69.0 to 1.70.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrnick/github-tag-action) from 1.69.0 to 1.70.0.
+   - - [Release notes](https://github.com/anothrnick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrnick/github-tag-action/compare/1.69.0...1.70.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: anothrNick/github-tag-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 08 Jul 2024 19:05:00 +0000
+
+ldddns (1.0.229)
+  * Bump golang.org/x/net from 0.26.0 to 0.27.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.26.0 to 0.27.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.26.0...v0.27.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 05 Jul 2024 17:53:53 +0000
+
+ldddns (1.0.228)
+  * Goreleaser v2 config syntax
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 02 Jul 2024 20:18:48 +0000
+
+ldddns (1.0.227)
+  * Update Go version to 1.22.5
+   - See the release history: https://go.dev/doc/devel/release#go1.22.5.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 02 Jul 2024 19:51:29 +0000
+
+ldddns (1.0.226)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.0.2+incompatible to 27.0.3+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.0.2...v27.0.3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 01 Jul 2024 18:17:55 +0000
+
+ldddns (1.0.225)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.0.1+incompatible to 27.0.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v27.0.1...v27.0.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 27 Jun 2024 07:34:35 +0000
+
+ldddns (1.0.224)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 27.0.0+incompatible to 27.0.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/commits/v27.0.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 25 Jun 2024 19:51:30 +0000
+
+ldddns (1.0.223)
+  * Create the draft pull request for unstable version using a PAT token
+   - Otherwise actions will not run on the new pull request.
+   - Adjust the permissions for the autogenerated github.secrets token. Now
+   - that we use a PAT token we don't need anything beside read permission.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 22 Jun 2024 06:35:10 +0000
+
+ldddns (1.0.222)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.1.4+incompatible to 27.0.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/commits)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 13 Jun 2024 17:42:52 +0000
+
+ldddns (1.0.221)
+  * Fixate Goreleaser version
+   - Should have been together with cfcee0797df2fb4b9867fa1d29e934a07fc23caf.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 13 Jun 2024 12:21:42 +0000
+
+ldddns (1.0.220)
+  * Add step to warm proxy.go.dev with new version
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 13 Jun 2024 12:13:28 +0000
+
+ldddns (1.0.219)
+  * Add Codecov token
+  * Fixate Goreleaser version
+  * Tweak CI
+   - Based on input from https://github.com/golang/go/issues/42119
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 13 Jun 2024 11:54:49 +0000
+
+ldddns (1.0.218)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.1.3+incompatible to 26.1.4+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v26.1.3...v26.1.4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 06 Jun 2024 17:04:21 +0000
+
+ldddns (1.0.217)
+  * Bump goreleaser/goreleaser-action from 5 to 6
+   - Bumps [goreleaser/goreleaser-action](https://github.com/goreleaser/goreleaser-action) from 5 to 6.
+   - - [Release notes](https://github.com/goreleaser/goreleaser-action/releases)
+   - - [Commits](https://github.com/goreleaser/goreleaser-action/compare/v5...v6)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: goreleaser/goreleaser-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 05 Jun 2024 17:17:31 +0000
+
+ldddns (1.0.216)
+  * Update Go version to 1.22.4
+   - See the release history: https://go.dev/doc/devel/release#go1.22.4.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 04 Jun 2024 19:08:07 +0000
+
+ldddns (1.0.215)
+  * Bump golang.org/x/net from 0.25.0 to 0.26.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.25.0 to 0.26.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.25.0...v0.26.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 04 Jun 2024 17:59:33 +0000
+
+ldddns (1.0.214)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.1.2+incompatible to 26.1.3+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v26.1.2...v26.1.3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 16 May 2024 17:58:15 +0000
+
+ldddns (1.0.213)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.1.1+incompatible to 26.1.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v26.1.1...v26.1.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 09 May 2024 17:57:15 +0000
+
+ldddns (1.0.212)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 07 May 2024 17:34:56 +0000
+
+ldddns (1.0.211)
+  * Bump golangci/golangci-lint-action from 5 to 6
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from 5 to 6.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v5...v6)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golangci/golangci-lint-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 07 May 2024 17:30:00 +0000
+
+ldddns (1.0.210)
+  * Bump golang.org/x/net from 0.24.0 to 0.25.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.24.0 to 0.25.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.24.0...v0.25.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 06 May 2024 17:12:27 +0000
+
+ldddns (1.0.209)
+  * Revert "Bump BaileyJM02/markdown-to-pdf from 1.2.0 to 2"
+   - This reverts commit 0905517868cc37aded5e79266bb278633ff97648.
+   - v2 of BaileyJM02/markdown-to-pdf is broken.
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.1.0+incompatible to 26.1.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v26.1.0...v26.1.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+  * Bump golangci/golangci-lint-action from 4 to 5
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from 4 to 5.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v4...v5)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golangci/golangci-lint-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.0.2+incompatible to 26.1.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v26.0.2...v26.1.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.0.1+incompatible to 26.0.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v26.0.1...v26.0.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   - ...
+  * Bump anothrNick/github-tag-action from 1.67.0 to 1.69.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrnick/github-tag-action) from 1.67.0 to 1.69.0.
+   - - [Release notes](https://github.com/anothrnick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrnick/github-tag-action/compare/1.67.0...1.69.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: anothrNick/github-tag-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+  * Bump BaileyJM02/markdown-to-pdf from 1.2.0 to 2
+   - Bumps [BaileyJM02/markdown-to-pdf](https://github.com/baileyjm02/markdown-to-pdf) from 1.2.0 to 2.
+   - - [Release notes](https://github.com/baileyjm02/markdown-to-pdf/releases)
+   - - [Commits](https://github.com/baileyjm02/markdown-to-pdf/compare/v1.2.0...v2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: BaileyJM02/markdown-to-pdf
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 30 Apr 2024 20:05:17 +0000
+
+ldddns (1.0.208)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 26.0.0+incompatible to 26.0.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v26.0.0...v26.0.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 11 Apr 2024 17:27:53 +0000
+
+ldddns (1.0.207)
+  * Bump golang.org/x/net from 0.23.0 to 0.24.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.23.0 to 0.24.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.23.0...v0.24.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 09 Apr 2024 17:53:34 +0000
+
+ldddns (1.0.206)
+  * Bump robherley/go-test-action from 0.2.0 to 0.4.1
+   - Bumps [robherley/go-test-action](https://github.com/robherley/go-test-action) from 0.2.0 to 0.4.1.
+   - - [Release notes](https://github.com/robherley/go-test-action/releases)
+   - - [Commits](https://github.com/robherley/go-test-action/compare/v0.2.0...v0.4.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: robherley/go-test-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 08 Apr 2024 17:52:02 +0000
+
+ldddns (1.0.205)
+  * Bump DavidAnson/markdownlint-cli2-action from 15 to 16
+   - Bumps [DavidAnson/markdownlint-cli2-action](https://github.com/davidanson/markdownlint-cli2-action) from 15 to 16.
+   - - [Release notes](https://github.com/davidanson/markdownlint-cli2-action/releases)
+   - - [Commits](https://github.com/davidanson/markdownlint-cli2-action/compare/v15...v16)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: DavidAnson/markdownlint-cli2-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 08 Apr 2024 17:44:54 +0000
+
+ldddns (1.0.204)
+  * Update dependencies
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 04 Apr 2024 06:35:28 +0000
+
+ldddns (1.0.203)
+  * Update Go version to 1.22.2
+   - See the release history: https://go.dev/doc/devel/release#go1.22.2.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 03 Apr 2024 16:52:22 +0000
+
+ldddns (1.0.202)
+  * Fix some golangci-lint issues
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 22 Mar 2024 08:18:41 +0000
+
+ldddns (1.0.201)
+  * Fix use of deprecated container types in Docker library
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 25.0.5+incompatible to 26.0.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v25.0.5...v26.0.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 22 Mar 2024 07:48:05 +0000
+
+ldddns (1.0.200)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 25.0.4+incompatible to 25.0.5+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v25.0.4...v25.0.5)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 20 Mar 2024 18:20:38 +0000
+
+ldddns (1.0.199)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 25.0.3+incompatible to 25.0.4+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v25.0.3...v25.0.4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 07 Mar 2024 18:56:21 +0000
+
+ldddns (1.0.198)
+  * Bump golang.org/x/net from 0.21.0 to 0.22.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.21.0 to 0.22.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.21.0...v0.22.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 06 Mar 2024 18:48:08 +0000
+
+ldddns (1.0.197)
+  * Update go-version.yml
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 05 Mar 2024 19:55:59 +0000
+
+ldddns (1.0.196)
+  * Update Go version to 1.22.1
+   - See the release history: https://go.dev/doc/devel/release#go1.22.1.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 05 Mar 2024 18:47:57 +0000
+
+ldddns (1.0.195)
+  * Use robherley/go-test-action to get nice summary
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 04 Mar 2024 20:39:51 +0000
+
+ldddns (1.0.194)
+  * Bump frenck/action-yamllint from 1.4.2 to 1.5.0
+   - Bumps [frenck/action-yamllint](https://github.com/frenck/action-yamllint) from 1.4.2 to 1.5.0.
+   - - [Release notes](https://github.com/frenck/action-yamllint/releases)
+   - - [Commits](https://github.com/frenck/action-yamllint/compare/v1.4.2...v1.5.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: frenck/action-yamllint
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 16 Feb 2024 18:59:25 +0000
+
+ldddns (1.0.193)
+  * Only create draft PR with unstable if actually an unstable
+  * Add yaml and markdownlinting to CI
+  * Fixes issues reported by actionlint, markdownlint, and yamllint
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 16 Feb 2024 10:57:15 +0000
+
+ldddns (1.0.192)
+  * Bump golangci/golangci-lint-action from 3 to 4
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from 3 to 4.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v3...v4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golangci/golangci-lint-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 09 Feb 2024 18:43:01 +0000
+
+ldddns (1.0.191)
+  * Bump golang.org/x/net from 0.20.0 to 0.21.0
+   - Bumps [golang.org/x/net](https://github.com/golang/net) from 0.20.0 to 0.21.0.
+   - - [Commits](https://github.com/golang/net/compare/v0.20.0...v0.21.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang.org/x/net
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 08 Feb 2024 18:32:51 +0000
+
+ldddns (1.0.190)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 25.0.2+incompatible to 25.0.3+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v25.0.2...v25.0.3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 07 Feb 2024 18:29:30 +0000
+
+ldddns (1.0.189)
+  * Update Go version to 1.22.0
+   - See the release history: https://go.dev/doc/devel/release#go1.22.0.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 06 Feb 2024 23:06:08 +0000
+
+ldddns (1.0.188)
+  * Update Go version to 1.21.7
+   - See the release history: https://go.dev/doc/devel/release#go1.21.7.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 06 Feb 2024 21:23:41 +0000
+
+ldddns (1.0.187)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 25.0.1+incompatible to 25.0.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v25.0.1...v25.0.2)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 01 Feb 2024 18:35:52 +0000
+
+ldddns (1.0.186)
+  * Bump peter-evans/create-pull-request from 5 to 6
+   - Bumps [peter-evans/create-pull-request](https://github.com/peter-evans/create-pull-request) from 5 to 6.
+   - - [Release notes](https://github.com/peter-evans/create-pull-request/releases)
+   - - [Commits](https://github.com/peter-evans/create-pull-request/compare/v5...v6)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: peter-evans/create-pull-request
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 31 Jan 2024 18:25:29 +0000
+
+ldddns (1.0.185)
+  * Bump codecov/codecov-action from 3 to 4
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from 3 to 4.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/main/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v3...v4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: codecov/codecov-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 31 Jan 2024 18:15:13 +0000
+
+ldddns (1.0.184)
+  * Don't include merge commits in changelogs
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 26 Jan 2024 21:46:33 +0000
+
+ldddns (1.0.183)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 25.0.0+incompatible to 25.0.1+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v25.0.0...v25.0.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 24 Jan 2024 19:00:11 +0000
+
+ldddns (1.0.182)
+  * Don't hardcode changelog URL
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 20 Jan 2024 14:39:31 +0000
+
+ldddns (1.0.181)
+  * Use apt-ftparchive instead of dpkg-scanpackages
+  * Add package name to changelog
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 20 Jan 2024 11:21:24 +0000
+
+ldddns (1.0.180)
+  * Add changelog to site and Release file
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 20 Jan 2024 11:03:49 +0000
+
+ldddns (1.0.179)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 24.0.7+incompatible to 25.0.0+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Commits](https://github.com/docker/docker/compare/v24.0.7...v25.0.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 19 Jan 2024 18:59:04 +0000
+
+ldddns (1.0.178)
+  * Bump actions/dependency-review-action from 3 to 4
+   - Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 3 to 4.
+   - - [Release notes](https://github.com/actions/dependency-review-action/releases)
+   - - [Commits](https://github.com/actions/dependency-review-action/compare/v3...v4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: actions/dependency-review-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 18 Jan 2024 18:20:01 +0000
+
+ldddns (1.0.177)
+  * Bump WillAbides/setup-go-faster from 1.13.0 to 1.14.0
+   - Bumps [WillAbides/setup-go-faster](https://github.com/willabides/setup-go-faster) from 1.13.0 to 1.14.0.
+   - - [Release notes](https://github.com/willabides/setup-go-faster/releases)
+   - - [Commits](https://github.com/willabides/setup-go-faster/compare/v1.13.0...v1.14.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: WillAbides/setup-go-faster
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 16 Jan 2024 08:31:07 +0000
+
+ldddns (1.0.176)
+  * Add Changelog to deb files and workflow
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 13 Jan 2024 12:51:09 +0000
+
+ldddns (1.0.175)
+  * Add favicons for dark mode
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 10 Jan 2024 23:18:38 +0000
+
+ldddns (1.0.174)
+  * Update copyright years
+  * Add favicons to GitHub Pages
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 10 Jan 2024 23:07:14 +0000
+
+ldddns (1.0.173)
+  * We don't need permission to write pull requests
+   - We create the pull requests using the personal acces token.
+  * Add a nilaway check
+  * Dockerfile was removed in 87fe7b37a11e90ef3974b0fd1d55484ae83f3942
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Jan 2024 22:50:21 +0000
+
+ldddns (1.0.172)
+  * Add the APT::FTPArchive::Release::Label back
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Jan 2024 22:27:22 +0000
+
+ldddns (1.0.171)
+  * Fix draft release notes link
+  * Adjust workflows to be possible to run with unstable go versions
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Jan 2024 22:03:22 +0000
+
+ldddns (1.0.170)
+  * Update Go version to 1.21.6
+   - See the release history: https://go.dev/doc/devel/release#go1.21.6.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Jan 2024 20:19:38 +0000
+
+ldddns (1.0.169)
+  * Adjust pull request info for go version updates
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Jan 2024 20:14:30 +0000
+
+ldddns (1.0.168)
+  * Use scheduled workflow for updating Go version in go.mod
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 09 Jan 2024 20:03:48 +0000
+
+ldddns (1.0.167)
+  * Bump golang.org/x/net from 0.19.0 to 0.20.0 (#264)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 09 Jan 2024 18:39:29 +0000
+
+ldddns (1.0.166)
+  * Remove Twitter keys from release workflow
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 18 Dec 2023 06:00:40 +0000
+
+ldddns (1.0.165)
+  * Bump actions/upload-artifact from 3 to 4 (#262)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 14 Dec 2023 18:39:25 +0000
+
+ldddns (1.0.164)
+  * Bump github/codeql-action from 2 to 3 (#261)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 13 Dec 2023 18:07:37 +0000
+
+ldddns (1.0.163)
+  * Bump golang from 1.21.4 to 1.21.5 (#259)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 06 Dec 2023 20:04:45 +0000
+
+ldddns (1.0.162)
+  * Convert license file to markdown
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Dec 2023 08:28:15 +0000
+
+ldddns (1.0.161)
+  * Bump WillAbides/setup-go-faster from 1.12.0 to 1.13.0 (#258)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 04 Dec 2023 18:31:25 +0000
+
+ldddns (1.0.160)
+  * Bump golang.org/x/net from 0.18.0 to 0.19.0 (#257)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 27 Nov 2023 18:37:37 +0000
+
+ldddns (1.0.159)
+  * Fix issues identified by latest golangci-lint
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 25 Nov 2023 10:32:29 +0000
+
+ldddns (1.0.158)
+  * Harden code against potential nil panics
+   - Detected using go.uber.org/nilaway/cmd/nilaway
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 25 Nov 2023 10:05:11 +0000
+
+ldddns (1.0.157)
+  * Bump golang.org/x/net from 0.17.0 to 0.18.0 (#253)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 09 Nov 2023 22:58:24 +0000
+
+ldddns (1.0.156)
+  * Update security.yml
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 09 Nov 2023 22:54:04 +0000
+
+ldddns (1.0.155)
+  * Bump golang from 1.21.3 to 1.21.4 (#252)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 08 Nov 2023 08:08:48 +0000
+
+ldddns (1.0.154)
+  * Bump github.com/docker/docker (#251)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 26 Oct 2023 17:56:18 +0000
+
+ldddns (1.0.153)
+  * Bump golang from 1.21.2 to 1.21.3 (#250)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 11 Oct 2023 19:33:31 +0000
+
+ldddns (1.0.152)
+  * Bump golang.org/x/net from 0.16.0 to 0.17.0 (#249)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 10 Oct 2023 17:48:00 +0000
+
+ldddns (1.0.151)
+  * Bump golang.org/x/net from 0.15.0 to 0.16.0 (#248)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 06 Oct 2023 17:41:12 +0000
+
+ldddns (1.0.150)
+  * Bump golang from 1.21.1 to 1.21.2 (#247)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 06 Oct 2023 17:31:22 +0000
+
+ldddns (1.0.149)
+  * Bump WillAbides/setup-go-faster from 1.11.0 to 1.12.0 (#246)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 22 Sep 2023 17:42:53 +0000
+
+ldddns (1.0.148)
+  * Bump gopkg.in/yaml.v3 from 3.0.0-20210107192922-496545a6307b to 3.0.0 (#245)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 19 Sep 2023 19:55:02 +0000
+
+ldddns (1.0.147)
+  * Bump github.com/docker/docker (#242)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 19 Sep 2023 19:48:43 +0000
+
+ldddns (1.0.146)
+  * Bump golang.org/x/net from 0.14.0 to 0.15.0 (#241)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 19 Sep 2023 19:44:51 +0000
+
+ldddns (1.0.145)
+  * Revert "Bump codecov/codecov-action from 3 to 4 (#240)"
+   - This reverts commit 03c679b5888dea65f5d8057b15610a1ea7375c74.
+  * Revert "Revert "Bump actions/checkout from 3 to 4 (#235)""
+   - This reverts commit 8156c2dee8b5703accaaffa7dd84d51dda902ba5.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 19 Sep 2023 19:40:28 +0000
+
+ldddns (1.0.144)
+  * Revert "Bump actions/checkout from 3 to 4 (#235)"
+   - This reverts commit 674f013f2d4ebd0a80b83124b2c316b9043fb0a2.
+   - See https://github.com/codecov/codecov-action/issues/1089
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 19 Sep 2023 19:34:05 +0000
+
+ldddns (1.0.143)
+  * Bump codecov/codecov-action from 3 to 4 (#240)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 14 Sep 2023 17:14:09 +0000
+
+ldddns (1.0.142)
+  * Bump WillAbides/setup-go-faster from 1.10.1 to 1.11.0 (#239)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 13 Sep 2023 18:02:37 +0000
+
+ldddns (1.0.141)
+  * Bump goreleaser/goreleaser-action from 4 to 5 (#238)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 12 Sep 2023 17:58:48 +0000
+
+ldddns (1.0.140)
+  * Bump golang from 1.21.0 to 1.21.1 (#236)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 07 Sep 2023 17:43:25 +0000
+
+ldddns (1.0.139)
+  * Bump actions/checkout from 3 to 4 (#235)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 04 Sep 2023 17:57:13 +0000
+
+ldddns (1.0.138)
+  * Add govulncheck to GitHub Actions workflow
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 28 Aug 2023 19:10:36 +0000
+
+ldddns (1.0.137)
+  * Setup go in CodeQL workflow to make sure we have the right version of go
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 18 Aug 2023 17:56:28 +0000
+
+ldddns (1.0.136)
+  * Bump github/codeql-action from 1 to 2 (#232)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 18 Aug 2023 17:42:05 +0000
+
+ldddns (1.0.135)
+  * Also check tests with gosec
+  * Upload SARIF of gosec result
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 18 Aug 2023 17:31:46 +0000
+
+ldddns (1.0.134)
+  * Add gosec GitHub Action workflow
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 18 Aug 2023 17:16:57 +0000
+
+ldddns (1.0.133)
+  * Bump WillAbides/setup-go-faster from 1.10.0 to 1.10.1 (#228)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 14 Aug 2023 18:29:25 +0000
+
+ldddns (1.0.132)
+  * Update depenencies
+  * Bump minimum go version to 1.21
+  * Run all actions on explicit version of ubuntu instead of latest
+  * Add actionlint action
+  * Fix findings from github.com/rhysd/actionlint
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 12 Aug 2023 09:55:57 +0000
+
+ldddns (1.0.131)
+  * Bump WillAbides/setup-go-faster from 1.9.1 to 1.10.0 (#226)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 10 Aug 2023 19:12:28 +0000
+
+ldddns (1.0.130)
+  * Post release status to Google Chat
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 09 Aug 2023 13:01:37 +0000
+
+ldddns (1.0.129)
+  * Bump WillAbides/setup-go-faster from 1.9.0 to 1.9.1 (#224)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 09 Aug 2023 12:40:11 +0000
+
+ldddns (1.0.128)
+  * Bump golang from 1.20.7 to 1.21.0 (#223)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 09 Aug 2023 12:23:04 +0000
+
+ldddns (1.0.127)
+  * Bump golang.org/x/net from 0.13.0 to 0.14.0 (#222)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 07 Aug 2023 17:57:03 +0000
+
+ldddns (1.0.126)
+  * Bump WillAbides/setup-go-faster from 1.8.0 to 1.9.0 (#221)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 04 Aug 2023 17:40:50 +0000
+
+ldddns (1.0.125)
+  * Bump github.com/carlmjohnson/versioninfo from 0.22.4 to 0.22.5 (#220)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 03 Aug 2023 17:12:42 +0000
+
+ldddns (1.0.124)
+  * Bump golang.org/x/net from 0.12.0 to 0.13.0 (#218)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 02 Aug 2023 18:10:32 +0000
+
+ldddns (1.0.123)
+  * Bump golang from 1.20.6 to 1.20.7 (#219)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 02 Aug 2023 17:17:41 +0000
+
+ldddns (1.0.122)
+  * Bump github.com/docker/docker (#217)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 24 Jul 2023 17:21:13 +0000
+
+ldddns (1.0.121)
+  * Bump golang from 1.20.5 to 1.20.6 (#216)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 12 Jul 2023 09:21:12 +0000
+
+ldddns (1.0.120)
+  * Update dependencies
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 10 Jul 2023 14:39:54 +0000
+
+ldddns (1.0.119)
+  * Bump github.com/docker/docker (#214)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 06 Jul 2023 18:09:34 +0000
+
+ldddns (1.0.118)
+  * Bump golang.org/x/net from 0.11.0 to 0.12.0 (#213)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 05 Jul 2023 19:09:20 +0000
+
+ldddns (1.0.117)
+  * Bump anothrNick/github-tag-action from 1.66.0 to 1.67.0 (#212)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 14 Jun 2023 18:02:22 +0000
+
+ldddns (1.0.116)
+  * Bump golang.org/x/net from 0.10.0 to 0.11.0 (#211)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 13 Jun 2023 17:59:41 +0000
+
+ldddns (1.0.115)
+  * Bump golang from 1.20.4 to 1.20.5 (#210)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 07 Jun 2023 18:07:09 +0000
+
+ldddns (1.0.114)
+  * Bump github.com/docker/docker (#209)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 26 May 2023 18:28:41 +0000
+
+ldddns (1.0.113)
+  * Bump anothrNick/github-tag-action from 1.65.0 to 1.66.0 (#207)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 22 May 2023 18:43:12 +0000
+
+ldddns (1.0.112)
+  * Bump github.com/docker/docker (#208)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 22 May 2023 18:26:15 +0000
+
+ldddns (1.0.111)
+  * Bump github.com/docker/docker (#206)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 16 May 2023 18:02:30 +0000
+
+ldddns (1.0.110)
+  * Bump anothrNick/github-tag-action from 1.64.0 to 1.65.0 (#205)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 15 May 2023 18:21:20 +0000
+
+ldddns (1.0.109)
+  * Bump anothrNick/github-tag-action from 1.63.0 to 1.64.0 (#204)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 12 May 2023 18:06:58 +0000
+
+ldddns (1.0.108)
+  * Bump github.com/docker/distribution (#203)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 11 May 2023 20:49:37 +0000
+
+ldddns (1.0.107)
+  * Bump anothrNick/github-tag-action from 1.62.0 to 1.63.0 (#202)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 11 May 2023 18:04:29 +0000
+
+ldddns (1.0.106)
+  * Bump golang.org/x/net from 0.9.0 to 0.10.0 (#201)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 08 May 2023 18:10:26 +0000
+
+ldddns (1.0.105)
+  * Bump github.com/docker/docker (#200)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 08 May 2023 18:06:09 +0000
+
+ldddns (1.0.104)
+  * Remove Twitter
+   - Twitter removed the API access and we can no longer post tweets about
+   - new releases automatically.
+   - We abandon the Twitter account.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 04 May 2023 07:30:24 +0000
+
+ldddns (1.0.103)
+  * Bump golang from 1.20.3 to 1.20.4 (#198)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 03 May 2023 17:59:59 +0000
+
+ldddns (1.0.102)
+  * Bump github.com/docker/docker (#197)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 27 Apr 2023 17:31:26 +0000
+
+ldddns (1.0.101)
+  * Bump github.com/docker/docker (#196)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 18 Apr 2023 18:19:48 +0000
+
+ldddns (1.0.100)
+  * Bump anothrNick/github-tag-action from 1.61.0 to 1.62.0 (#195)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 10 Apr 2023 17:59:55 +0000
+
+ldddns (1.0.99)
+  * Bump golang.org/x/net from 0.8.0 to 0.9.0 (#194)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 06 Apr 2023 17:15:59 +0000
+
+ldddns (1.0.98)
+  * Bump golang from 1.20.2 to 1.20.3 (#192)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 05 Apr 2023 04:48:39 +0000
+
+ldddns (1.0.97)
+  * Bump github.com/docker/docker (#193)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 05 Apr 2023 04:43:28 +0000
+
+ldddns (1.0.96)
+  * Bump github.com/docker/docker (#191)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 28 Mar 2023 18:43:45 +0000
+
+ldddns (1.0.95)
+  * Bump golang from 1.20.1 to 1.20.2 (#190)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 08 Mar 2023 19:00:53 +0000
+
+ldddns (1.0.94)
+  * Bump golang.org/x/net from 0.7.0 to 0.8.0 (#189)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 06 Mar 2023 19:02:52 +0000
+
+ldddns (1.0.93)
+  * Bump golang from 1.20.0 to 1.20.1 (#188)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 15 Feb 2023 20:45:25 +0000
+
+ldddns (1.0.92)
+  * Bump golang.org/x/net from 0.6.0 to 0.7.0 (#187)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 14 Feb 2023 19:00:28 +0000
+
+ldddns (1.0.91)
+  * Bump github.com/docker/docker (#186)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 10 Feb 2023 19:00:11 +0000
+
+ldddns (1.0.90)
+  * Bump golang.org/x/net from 0.5.0 to 0.6.0 (#185)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 09 Feb 2023 18:59:38 +0000
+
+ldddns (1.0.89)
+  * Use single-commit for pages
+   - To reduce the size of the branch and hence the repository.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 04 Feb 2023 16:42:49 +0000
+
+ldddns (1.0.88)
+  * Make goreleaser builds reproducible
+   - See https://goreleaser.com/customization/build/#reproducible-builds
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 04 Feb 2023 14:52:34 +0000
+
+ldddns (1.0.87)
+  * Fix docs
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 04 Feb 2023 12:30:31 +0000
+
+ldddns (1.0.86)
+  * Fix docs
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 04 Feb 2023 12:21:51 +0000
+
+ldddns (1.0.85)
+  * Fix doc site
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 04 Feb 2023 12:12:38 +0000
+
+ldddns (1.0.84)
+  * Bump goreleaser/goreleaser-action from 3 to 4 (#164)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 04 Feb 2023 11:09:35 +0000
+
+ldddns (1.0.83)
+  * Bump github.com/docker/docker from 20.10.23+incompatible to 23.0.0+incompatible (#179)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 04 Feb 2023 10:08:16 +0000
+
+ldddns (1.0.82)
+  * Revert "Bump github.com/docker/docker (#177)"
+   - This reverts commit 93092e32a97bc00a77916025dff459474fd0ee8c.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 03 Feb 2023 09:57:05 +0000
+
+ldddns (1.0.81)
+  * Bump github.com/docker/docker (#177)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 02 Feb 2023 18:39:00 +0000
+
+ldddns (1.0.80)
+  * Bump golang from 1.19.5 to 1.20.0 (#176)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 01 Feb 2023 23:17:28 +0000
+
+ldddns (1.0.79)
+  * Bump ludeeus/action-shellcheck from 1.1.0 to 2.0.0 (#175)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 30 Jan 2023 18:32:52 +0000
+
+ldddns (1.0.78)
+  * Bump github.com/docker/docker (#174)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 20 Jan 2023 18:05:33 +0000
+
+ldddns (1.0.77)
+  * Bump golang from 1.19.4 to 1.19.5 (#173)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 11 Jan 2023 14:54:47 +0000
+
+ldddns (1.0.76)
+  * Bump anothrNick/github-tag-action from 1.60.0 to 1.61.0 (#172)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 09 Jan 2023 18:13:47 +0000
+
+ldddns (1.0.75)
+  * Add default branch config to anothrNick/github-tag-action
+  * Bump anothrNick/github-tag-action from 1.58.0 to 1.60.0 (#170)
+  * Bump anothrNick/github-tag-action from 1.57.0 to 1.58.0 (#169)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 06 Jan 2023 06:09:57 +0000
+
+ldddns (1.0.74)
+  * Bump golang.org/x/net from 0.4.0 to 0.5.0 (#168)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 04 Jan 2023 18:31:23 +0000
+
+ldddns (1.0.73)
+  * Bump anothrNick/github-tag-action from 1.56.0 to 1.57.0 (#167)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 04 Jan 2023 18:04:54 +0000
+
+ldddns (1.0.72)
+  * Bump anothrNick/github-tag-action from 1.55.0 to 1.56.0 (#166)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 03 Jan 2023 18:04:59 +0000
+
+ldddns (1.0.71)
+  * Update SECURITY.md
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 30 Dec 2022 23:13:35 +0000
+
+ldddns (1.0.70)
+  * Bump anothrNick/github-tag-action from 1.52.0 to 1.55.0 (#163)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 28 Dec 2022 11:20:12 +0000
+
+ldddns (1.0.69)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 28 Dec 2022 11:04:03 +0000
+
+ldddns (1.0.68)
+  * Bump github.com/docker/docker (#161)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 28 Dec 2022 11:01:19 +0000
+
+ldddns (1.0.67)
+  * Bump golang.org/x/net from 0.3.0 to 0.4.0 (#160)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 10 Dec 2022 12:54:56 +0000
+
+ldddns (1.0.66)
+  * Update other dependencies using `go get -u ./...`
+  * Update golang.org/x/net using github.com/icholy/gomajor
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 07 Dec 2022 06:02:12 +0000
+
+ldddns (1.0.65)
+  * Bump golang from 1.19.3 to 1.19.4 (#158)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 06 Dec 2022 21:56:38 +0000
+
+ldddns (1.0.64)
+  * Bump github.com/coreos/go-systemd/v22 from 22.4.0 to 22.5.0 (#157)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 01 Dec 2022 18:32:58 +0000
+
+ldddns (1.0.63)
+  * Bump WillAbides/setup-go-faster from 1.7.0 to 1.8.0 (#156)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 01 Dec 2022 18:26:00 +0000
+
+ldddns (1.0.62)
+  * Bump actions/dependency-review-action from 2 to 3 (#155)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 01 Dec 2022 18:17:59 +0000
+
+ldddns (1.0.61)
+  * Added fuzz test for RewriteHostname and fix findings
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 20 Nov 2022 11:15:42 +0000
+
+ldddns (1.0.60)
+  * Bump golang from 1.19.2 to 1.19.3 (#153)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 02 Nov 2022 18:33:17 +0000
+
+ldddns (1.0.59)
+  * Bump github.com/docker/docker (#152)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 01 Nov 2022 18:17:00 +0000
+
+ldddns (1.0.58)
+  * Update dependencies
+   - `go get -u ./...`
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 15 Oct 2022 14:35:08 +0000
+
+ldddns (1.0.57)
+  * Bump anothrNick/github-tag-action from 1.51.0 to 1.52.0 (#150)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 15 Oct 2022 14:23:03 +0000
+
+ldddns (1.0.56)
+  * Bump github.com/docker/docker (#149)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 15 Oct 2022 14:18:00 +0000
+
+ldddns (1.0.55)
+  * Bump golang from 1.19.1 to 1.19.2 (#148)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 04 Oct 2022 21:12:18 +0000
+
+ldddns (1.0.54)
+  * Bump github.com/coreos/go-systemd/v22 from 22.3.2 to 22.4.0 (#147)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 01 Oct 2022 17:19:13 +0000
+
+ldddns (1.0.53)
+  * Bump github.com/docker/docker (#146)
+  * Bump anothrNick/github-tag-action from 1.39.0 to 1.51.0 (#145)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 01 Oct 2022 17:13:32 +0000
+
+ldddns (1.0.52)
+  * Trigger a release build by Go 1.19.1
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 08 Sep 2022 08:50:27 +0000
+
+ldddns (1.0.51)
+  * Update to go 1.19 and update dependencies
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 02 Aug 2022 17:50:48 +0000
+
+ldddns (1.0.50)
+  * Bump golang from 1.18.4 to 1.18.5 (#142)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 02 Aug 2022 10:02:43 +0000
+
+ldddns (1.0.49)
+  * Tweak CodeQL config (#141)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 02 Aug 2022 09:56:57 +0000
+
+ldddns (1.0.48)
+  * Bump github.com/holoplot/go-avahi from 1.0.0 to 1.0.1 (#140)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 01 Aug 2022 18:01:55 +0000
+
+ldddns (1.0.47)
+  * Bump golang from 1.18.3 to 1.18.4 (#139)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 13 Jul 2022 07:08:22 +0000
+
+ldddns (1.0.46)
+  * Bump github.com/carlmjohnson/versioninfo from 0.22.2 to 0.22.4 (#137)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 01 Jul 2022 17:21:24 +0000
+
+ldddns (1.0.45)
+  * Bump github.com/docker/docker (#136)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 01 Jul 2022 17:17:11 +0000
+
+ldddns (1.0.44)
+  * Bump actions/dependency-review-action from 1 to 2 (#135)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 01 Jul 2022 17:11:38 +0000
+
+ldddns (1.0.43)
+  * Bump golang from 1.18.2 to 1.18.3 (#134)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 02 Jun 2022 04:20:06 +0000
+
+ldddns (1.0.42)
+  * Bump goreleaser/goreleaser-action from 2 to 3 (#133)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 26 May 2022 12:31:16 +0000
+
+ldddns (1.0.41)
+  * Bump github.com/docker/docker (#132)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 26 May 2022 12:25:50 +0000
+
+ldddns (1.0.40)
+  * Bump golang from 1.18.1 to 1.18.2 (#131)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 11 May 2022 17:44:43 +0000
+
+ldddns (1.0.39)
+  * Bump github.com/docker/docker (#130)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 10 May 2022 20:56:59 +0000
+
+ldddns (1.0.38)
+  * Bump github.com/carlmjohnson/versioninfo from 0.22.1 to 0.22.2 (#129)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 10 May 2022 20:50:18 +0000
+
+ldddns (1.0.37)
+  * Disable `DynamicUser` for now (#128)
+   - `DynamicUser=yes` in the systemd service and DBus stopped working
+   - together. For now we disable it.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 03 May 2022 10:54:50 +0000
+
+ldddns (1.0.36)
+  * Bump anothrNick/github-tag-action from 1.38.0 to 1.39.0 (#127)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sun, 01 May 2022 17:38:22 +0000
+
+ldddns (1.0.35)
+  * Bump actions/upload-artifact from 2 to 3 (#126)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sun, 01 May 2022 17:22:59 +0000
+
+ldddns (1.0.34)
+  * Bump github/codeql-action from 1 to 2 (#125)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sun, 01 May 2022 17:16:59 +0000
+
+ldddns (1.0.33)
+  * Bump codecov/codecov-action from 2 to 3 (#124)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sun, 01 May 2022 17:05:40 +0000
+
+ldddns (1.0.32)
+  * Use GitHub Actions token permissions (#123)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 18 Apr 2022 08:13:34 +0000
+
+ldddns (1.0.31)
+  * Update dependencies (#122)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 15 Apr 2022 15:26:07 +0000
+
+ldddns (1.0.30)
+  * Use github.com/coreos/go-systemd/v22 (#121)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 15 Apr 2022 15:07:04 +0000
+
+ldddns (1.0.29)
+  * Bump golang from 1.18.0 to 1.18.1 (#120)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 13 Apr 2022 06:28:41 +0000
+
+ldddns (1.0.28)
+  * Create dependency-review.yml
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Apr 2022 21:35:34 +0000
+
+ldddns (1.0.27)
+  * arnested/go-version-action doesn't need GITHUB_TOKEN anymore
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 05 Apr 2022 08:15:20 +0000
+
+ldddns (1.0.26)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.13+incompatible to 20.10.14+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.13...v20.10.14)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 02 Apr 2022 13:09:42 +0000
+
+ldddns (1.0.25)
+  * Only add vcs dirty state when using revision as version
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 24 Mar 2022 21:13:36 +0000
+
+ldddns (1.0.24)
+  * Increase test coverage
+  * Fix golangci-lint warnings
+  * Redo version info
+  * Use go1.18
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 24 Mar 2022 20:56:45 +0000
+
+ldddns (1.0.23)
+  * Bump golang from 1.17.8 to 1.18.0
+   - Bumps golang from 1.17.8 to 1.18.0.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 16 Mar 2022 20:54:56 +0000
+
+ldddns (1.0.22)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.12+incompatible to 20.10.13+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.12...v20.10.13)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 15 Mar 2022 19:09:49 +0000
+
+ldddns (1.0.21)
+  * Update dependencies
+   - Fixes CVE-2022-23648.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 05 Mar 2022 12:09:28 +0000
+
+ldddns (1.0.20)
+  * Bump golang from 1.17.7 to 1.17.8
+   - Bumps golang from 1.17.7 to 1.17.8.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 05 Mar 2022 11:54:05 +0000
+
+ldddns (1.0.19)
+  * Bump actions/checkout from 2 to 3
+   - Bumps [actions/checkout](https://github.com/actions/checkout) from 2 to 3.
+   - - [Release notes](https://github.com/actions/checkout/releases)
+   - - [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+   - - [Commits](https://github.com/actions/checkout/compare/v2...v3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: actions/checkout
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 01 Mar 2022 18:13:52 +0000
+
+ldddns (1.0.18)
+  * Use v3 of golangci-lint
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 01 Mar 2022 10:30:38 +0000
+
+ldddns (1.0.17)
+  * Bump anothrNick/github-tag-action from 1.36.0 to 1.38.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrNick/github-tag-action) from 1.36.0 to 1.38.0.
+   - - [Release notes](https://github.com/anothrNick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrNick/github-tag-action/compare/1.36.0...1.38.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: anothrNick/github-tag-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 01 Mar 2022 10:23:17 +0000
+
+ldddns (1.0.16)
+  * Update dependencies
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 01 Mar 2022 10:06:44 +0000
+
+ldddns (1.0.15)
+  * Bump golang from 1.17.6 to 1.17.7
+   - Bumps golang from 1.17.6 to 1.17.7.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 11 Feb 2022 19:00:53 +0000
+
+ldddns (1.0.14)
+  * Only refer to major version of JamesIves/github-pages-deploy-action
+  * Bump JamesIves/github-pages-deploy-action from 4.1.8 to 4.2.3
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 4.1.8 to 4.2.3.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/4.1.8...v4.2.3)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: JamesIves/github-pages-deploy-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 01 Feb 2022 19:21:40 +0000
+
+ldddns (1.0.13)
+  * Bump golang from 1.17.4 to 1.17.6
+   - Bumps golang from 1.17.4 to 1.17.6.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 08 Jan 2022 10:40:38 +0000
+
+ldddns (1.0.12)
+  * Update README example
+  * Bump copyright years
+  * Use WillAbides/setup-go-faster
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 08 Jan 2022 10:36:18 +0000
+
+ldddns (1.0.11)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.11+incompatible to 20.10.12+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.11...v20.10.12)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 01 Jan 2022 18:29:35 +0000
+
+ldddns (1.0.10)
+  * Bump JamesIves/github-pages-deploy-action from 4.1.7 to 4.1.8
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 4.1.7 to 4.1.8.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/4.1.7...4.1.8)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: JamesIves/github-pages-deploy-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 01 Jan 2022 18:05:54 +0000
+
+ldddns (1.0.9)
+  * Update dependencies
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 06 Dec 2021 19:39:02 +0000
+
+ldddns (1.0.8)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 06 Dec 2021 19:23:41 +0000
+
+ldddns (1.0.7)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.10+incompatible to 20.10.11+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.10...v20.10.11)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 06 Dec 2021 19:17:48 +0000
+
+ldddns (1.0.6)
+  * Bump golang from 1.17.3 to 1.17.4
+   - Bumps golang from 1.17.3 to 1.17.4.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 06 Dec 2021 19:09:43 +0000
+
+ldddns (1.0.5)
+  * Tweak pull request template
+  * Fix warnings and errors from shellcheck
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 06 Dec 2021 19:02:02 +0000
+
+ldddns (1.0.4)
+  * Bump golang from 1.17.2 to 1.17.3
+   - Bumps golang from 1.17.2 to 1.17.3.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 05 Nov 2021 19:06:32 +0000
+
+ldddns (1.0.3)
+  * Bump github.com/godbus/dbus/v5 from 5.0.5 to 5.0.6
+   - Bumps [github.com/godbus/dbus/v5](https://github.com/godbus/dbus) from 5.0.5 to 5.0.6.
+   - - [Release notes](https://github.com/godbus/dbus/releases)
+   - - [Commits](https://github.com/godbus/dbus/compare/v5.0.5...v5.0.6)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/godbus/dbus/v5
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 01 Nov 2021 18:49:22 +0000
+
+ldddns (1.0.2)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.8+incompatible to 20.10.10+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.8...v20.10.10)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 01 Nov 2021 18:26:24 +0000
+
+ldddns (1.0.1)
+  * Bump golang from 1.17.1 to 1.17.2
+   - Bumps golang from 1.17.1 to 1.17.2.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 08 Oct 2021 17:48:19 +0000
+
+ldddns (1.0.0)
+  * Adjust README for release v1.0.0
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 27 Sep 2021 21:21:29 +0000
+
+ldddns (0.1.20)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 11 Sep 2021 06:20:24 +0000
+
+ldddns (0.1.19)
+  * Trigger build with go1.17.1
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 11 Sep 2021 06:14:13 +0000
+
+ldddns (0.1.18)
+  * Bump anothrNick/github-tag-action from 1.35.0 to 1.36.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrNick/github-tag-action) from 1.35.0 to 1.36.0.
+   - - [Release notes](https://github.com/anothrNick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrNick/github-tag-action/compare/1.35.0...1.36.0)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: anothrNick/github-tag-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-minor
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sat, 11 Sep 2021 05:58:40 +0000
+
+ldddns (0.1.17)
+  * Bump JamesIves/github-pages-deploy-action from 4.1.4 to 4.1.5
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 4.1.4 to 4.1.5.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/4.1.4...4.1.5)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: JamesIves/github-pages-deploy-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 01 Sep 2021 17:07:50 +0000
+
+ldddns (0.1.16)
+  * Build with go 1.17
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 17 Aug 2021 06:57:47 +0000
+
+ldddns (0.1.15)
+  * Bump golang from 1.16.6 to 1.16.7
+   - Bumps golang from 1.16.6 to 1.16.7.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Sun, 08 Aug 2021 16:11:56 +0000
+
+ldddns (0.1.14)
+  * Check Dockerfile for new go version daily
+   - The Dockerfile is only used for detecting new version of Go. New go
+   - version doesn't happen often. We want to know that faster than waiting
+   - up to month.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 08 Aug 2021 15:50:33 +0000
+
+ldddns (0.1.13)
+  * Increase dependabot interval
+   - Check dependencies once per month instead of daily. We'll still get
+   - security updates faster.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 05 Aug 2021 12:43:33 +0000
+
+ldddns (0.1.12)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.7+incompatible to 20.10.8+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.7...v20.10.8)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 04 Aug 2021 17:23:30 +0000
+
+ldddns (0.1.11)
+  * Use v2 of Codecov
+  * Bump codecov/codecov-action from 1 to 2.0.1
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from 1 to 2.0.1.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1...v2.0.1)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: codecov/codecov-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-major
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 20 Jul 2021 19:32:17 +0000
+
+ldddns (0.1.10)
+  * Bump golang from 1.16.5 to 1.16.6
+   - Bumps golang from 1.16.5 to 1.16.6.
+   - ---
+   - updated-dependencies:
+   - - dependency-name: golang
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 14 Jul 2021 17:16:12 +0000
+
+ldddns (0.1.9)
+  * Build .deb packages and upload as artifacts
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 20 Jun 2021 14:00:24 +0000
+
+ldddns (0.1.8)
+  * Don't set `DOCKER_API_VERSION` during package install
+   - The Docker client library is apparently capable of finding the right
+   - version by itself.
+   - This makes our package install and removal much simpler and avoids the
+   - need to trigger a package reinstall whenever the Docker daemon gets
+   - updated.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 20 Jun 2021 11:59:46 +0000
+
+ldddns (0.1.7)
+  * Encode config in systemd status as JSON
+   - Uses less space than the Go-syntax representation and is probably more
+   - readable as well.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 19 Jun 2021 06:39:02 +0000
+
+ldddns (0.1.6)
+  * Dearmor GPG key for older versions of apt
+  * Move GPG for verifying package signature
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 10 Jun 2021 22:41:30 +0000
+
+ldddns (0.1.5)
+  * Bump JamesIves/github-pages-deploy-action from 4.1.3 to 4.1.4
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 4.1.3 to 4.1.4.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/4.1.3...4.1.4)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: JamesIves/github-pages-deploy-action
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 04 Jun 2021 16:58:39 +0000
+
+ldddns (0.1.4)
+  * Build a new release when a new go version is released
+   - The purpose of this Dockerfile is just to "trick" Dependabot into
+   - creating a pull request when a new version of Go is released. This way
+   - we can create a release and build it with the new Go version.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 04 Jun 2021 16:53:36 +0000
+
+ldddns (0.1.3)
+  * Adjust website
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 03 Jun 2021 15:05:50 +0000
+
+ldddns (0.1.2)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.6+incompatible to 20.10.7+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.6...v20.10.7)
+   - ---
+   - updated-dependencies:
+   - - dependency-name: github.com/docker/docker
+   -   dependency-type: direct:production
+   -   update-type: version-update:semver-patch
+   - ...
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 03 Jun 2021 03:16:09 +0000
+
+ldddns (0.1.1)
+  * Make links more visible in dark mode
+  * Set token to avoid API rate limit in GitHub Action
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 02 Jun 2021 15:00:02 +0000
+
+ldddns (0.1.0)
+  * Ignore `docker-compose run` containers
+   - Containers started with `docker-compose run` are for one-off commands
+   - and will by default be ignored.
+   - You can avoid this behavior by setting the environment variable
+   - `LDDDNS_IGNORE_DOCKER_COMPOSE_ONEOFF` to `false`. #minor
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 02 Jun 2021 13:42:57 +0000
+
+ldddns (0.0.114)
+  * Tweak DEB822 sources list
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 02 Jun 2021 10:21:11 +0000
+
+ldddns (0.0.113)
+  * Change apt sources list to DEB8222 format
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 02 Jun 2021 09:20:07 +0000
+
+ldddns (0.0.112)
+  * Fix CodeQL for dependabot
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 02 Jun 2021 07:33:01 +0000
+
+ldddns (0.0.111)
+  * Update example in README
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 29 May 2021 20:39:43 +0000
+
+ldddns (0.0.110)
+  * Fix message template field name in goreleaser
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 29 May 2021 19:36:16 +0000
+
+ldddns (0.0.109)
+  * Add Twitter announcement message
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 29 May 2021 19:33:30 +0000
+
+ldddns (0.0.108)
+  * Announce new releases on Twitter
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 29 May 2021 19:16:42 +0000
+
+ldddns (0.0.107)
+  * Move pull request template
+  * Add ISSUE_TEMPLATE config
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 29 May 2021 11:31:19 +0000
+
+ldddns (0.0.106)
+  * No longer check `github.event.deleted` -- not needed
+  * Run release workflow on Build and test workflow completion
+   - Make the release work with the tighten security around GitHub Actions
+   - secrets.
+  * No need for CODECOV_TOKEN on public repos
+  * Add simple pull request template
+  * Cleanup versions of GitHub Actions used
+   - If the action has a semver release and a "major-only tag" we prefer the
+   - last. We trust the action not to break and we avoid having to de
+   - frequent releases only for updating actions.
+  * Update dependencies
+  * Add systemd service status
+   - Put the version and the hostname config into the systemd service status
+   - field for easier debugging.
+  * Add .deb trigger when /usr/bin/dockerd is updated
+   - If the Docker daemon is updated we want to rerun our `postinst` script
+   - to update the `DOCKER_API_VERSION` and get the `ldddns` service
+   - restarted.
+  * Reverse order in .deb postinst
+   - Run `systemd` command before adding/updating the `docker-version.conf`
+   - drop-in. Otherwise `systemd` will complain about the drop-in having
+   - changed without a `systemctl daemon-reload`.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 29 May 2021 11:01:31 +0000
+
+ldddns (0.0.105)
+  * Bump JamesIves/github-pages-deploy-action from 4.1.2 to 4.1.3
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 4.1.2 to 4.1.3.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/4.1.2...4.1.3)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 12 May 2021 07:27:37 +0000
+
+ldddns (0.0.104)
+  * Bump JamesIves/github-pages-deploy-action from 4.1.1 to 4.1.2
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 4.1.1 to 4.1.2.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/4.1.1...fc8c70cff50fde90064206d16371f7b0fb936d7d)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 11 May 2021 05:29:42 +0000
+
+ldddns (0.0.103)
+  * Bump codecov/codecov-action from v1.4.1 to v1.5.0
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.4.1 to v1.5.0.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.4.1...a1ed4b322b4b38cb846afb5a0ebfa17086917d27)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 04 May 2021 21:50:46 +0000
+
+ldddns (0.0.102)
+  * Change interface to FlagUp
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 28 Apr 2021 10:50:26 +0000
+
+ldddns (0.0.101)
+  * Only broadcast on loopback
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 21 Apr 2021 13:30:33 +0000
+
+ldddns (0.0.100)
+  * Bump codecov/codecov-action from v1.4.0 to v1.4.1
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.4.0 to v1.4.1.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.4.0...967e2b38a85a62bd61be5529ada27ebc109948c2)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 21 Apr 2021 04:07:00 +0000
+
+ldddns (0.0.99)
+  * Bump codecov/codecov-action from v1.3.2 to v1.4.0
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.3.2 to v1.4.0.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.3.2...0e28ff86a50029a44d10df6ed4c308711925a6a8)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 19 Apr 2021 05:58:49 +0000
+
+ldddns (0.0.98)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.5+incompatible to 20.10.6+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.5...v20.10.6)
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 13 Apr 2021 04:05:24 +0000
+
+ldddns (0.0.97)
+  * Bump codecov/codecov-action from v1.3.1 to v1.3.2
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.3.1 to v1.3.2.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.3.1...9b0b9bbe2c64e9ed41413180dd7398450dfeee14)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 06 Apr 2021 04:40:39 +0000
+
+ldddns (0.0.96)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 05 Apr 2021 04:40:23 +0000
+
+ldddns (0.0.95)
+  * Bump golangci/golangci-lint-action from v2.5.1 to v2.5.2
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from v2.5.1 to v2.5.2.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v2.5.1...5c56cd6c9dc07901af25baab6f2b0d9f3b7c3018)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 05 Apr 2021 04:37:07 +0000
+
+ldddns (0.0.94)
+  * Bump ludeeus/action-shellcheck from 1.0.0 to 1.1.0
+   - Bumps [ludeeus/action-shellcheck](https://github.com/ludeeus/action-shellcheck) from 1.0.0 to 1.1.0.
+   - - [Release notes](https://github.com/ludeeus/action-shellcheck/releases)
+   - - [Commits](https://github.com/ludeeus/action-shellcheck/compare/1.0.0...94e0aab03ca135d11a35e5bfc14e6746dc56e7e9)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 01 Apr 2021 05:44:42 +0000
+
+ldddns (0.0.93)
+  * Bump github.com/godbus/dbus/v5 from 5.0.3 to 5.0.4
+   - Bumps [github.com/godbus/dbus/v5](https://github.com/godbus/dbus) from 5.0.3 to 5.0.4.
+   - - [Release notes](https://github.com/godbus/dbus/releases)
+   - - [Commits](https://github.com/godbus/dbus/compare/v5.0.3...v5.0.4)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 30 Mar 2021 04:59:14 +0000
+
+ldddns (0.0.92)
+  * Fix lint errors
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 22 Mar 2021 11:16:22 +0000
+
+ldddns (0.0.91)
+  * Cleanup CodeQL workflow
+  * Remove cleanup from early versions
+  * Fix some lint errors
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 22 Mar 2021 11:11:23 +0000
+
+ldddns (0.0.90)
+  * Embed license and version
+   - Output them if not started with the "start" argument. Add "start"
+   - argument to systemd unit.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 21 Mar 2021 16:15:42 +0000
+
+ldddns (0.0.89)
+  * Bump codecov/codecov-action from v1.2.2 to v1.3.1
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.2.2 to v1.3.1.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.2.2...fcebab03f26c7530a22baa63f06b3e0515f0c7cd)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 17 Mar 2021 05:04:04 +0000
+
+ldddns (0.0.88)
+  * Improve workaround for systemd bug
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 15 Mar 2021 12:26:11 +0000
+
+ldddns (0.0.87)
+  * Add hint on when we can remove workaround
+  * Add Origin and Label to APT archive
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 11 Mar 2021 13:47:10 +0000
+
+ldddns (0.0.86)
+  * Bump codecov/codecov-action from v1.2.1 to v1.2.2
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.2.1 to v1.2.2.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.2.1...1f8f3abcccf7960749744fd13547965f0e7d1bdd)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 10 Mar 2021 04:14:23 +0000
+
+ldddns (0.0.85)
+  * Bump JamesIves/github-pages-deploy-action from 4.0.0 to 4.1.0
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 4.0.0 to 4.1.0.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/4.0.0...3dbacc7e69578703f91f077118b3475862cb09b8)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Fri, 05 Mar 2021 06:25:11 +0000
+
+ldddns (0.0.84)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 03 Mar 2021 05:12:02 +0000
+
+ldddns (0.0.83)
+  * Bump anothrNick/github-tag-action from 1.34.0 to 1.35.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrNick/github-tag-action) from 1.34.0 to 1.35.0.
+   - - [Release notes](https://github.com/anothrNick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrNick/github-tag-action/compare/1.34.0...cfd2c75d0bf1071c5355d577f0018b0e1b515e9c)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 03 Mar 2021 05:06:18 +0000
+
+ldddns (0.0.82)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.3+incompatible to 20.10.4+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.3...v20.10.4)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 01 Mar 2021 05:04:54 +0000
+
+ldddns (0.0.81)
+  * Bump golangci/golangci-lint-action from v2.5.0 to v2.5.1
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from v2.5.0 to v2.5.1.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v2.5.0...d9f0e73c0497685d68af8c58280f49fcaf0545ff)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 24 Feb 2021 06:38:42 +0000
+
+ldddns (0.0.80)
+  * Use in arnested/go-version-action GitHub Actions
+  * Work around systemd reporting dropins being changed on disk
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 24 Feb 2021 06:28:20 +0000
+
+ldddns (0.0.79)
+  * Bump golangci/golangci-lint-action from v2.4.0 to v2.5.0
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from v2.4.0 to v2.5.0.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v2.4.0...51485a400157c52f3eb32373c318c69c43a6c48c)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 24 Feb 2021 05:08:15 +0000
+
+ldddns (0.0.78)
+  * Fix deprecated functions in go 1.16
+  * Use go 1.16
+  * Lookup go version from go.mod file
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 17 Feb 2021 08:43:39 +0000
+
+ldddns (0.0.77)
+  * Bump golangci/golangci-lint-action from v2 to v2.4.0
+   - Bumps [golangci/golangci-lint-action](https://github.com/golangci/golangci-lint-action) from v2 to v2.4.0.
+   - - [Release notes](https://github.com/golangci/golangci-lint-action/releases)
+   - - [Commits](https://github.com/golangci/golangci-lint-action/compare/v2...544d2efb307b3f205f34886f2787046abe7fb26e)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 15 Feb 2021 05:15:10 +0000
+
+ldddns (0.0.76)
+  * Cleanup codestyle
+  * Log some errors instead of panicking
+  * Improved shutdown of service
+   - - remember to close connections, etc. in defers
+   - - don't shutdown using os.Exit() -- it won't run defers
+   - - signal systemd that we are doing the shutdown
+   - - just exit normal -- no successful exit code above 0
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 13 Feb 2021 10:28:59 +0000
+
+ldddns (0.0.75)
+  * Switch to JamesIves/github-pages-deploy-action@4.0.0 syntax
+  * Bump JamesIves/github-pages-deploy-action from 3.7.1 to 4.0.0
+   - Bumps [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) from 3.7.1 to 4.0.0.
+   - - [Release notes](https://github.com/JamesIves/github-pages-deploy-action/releases)
+   - - [Commits](https://github.com/JamesIves/github-pages-deploy-action/compare/3.7.1...049a95c516cd5723d8cfde79dc7a79fcdcbd6c97)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 09 Feb 2021 05:55:13 +0000
+
+ldddns (0.0.74)
+  * Remove duplicate hostnames
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 07 Feb 2021 00:27:04 +0000
+
+ldddns (0.0.73)
+  * Fix CSS for ini examples
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 06 Feb 2021 23:58:24 +0000
+
+ldddns (0.0.72)
+  * Add issue templates, security policy, and codeowners
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 06 Feb 2021 23:55:47 +0000
+
+ldddns (0.0.71)
+  * Improved and hardened hostname rewriting, and refactoring
+  * Support hostnames from labels
+  * Woraround single level domains
+  * Refactor and read config from env
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 06 Feb 2021 23:43:23 +0000
+
+ldddns (0.0.70)
+  * Harden install
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 03 Feb 2021 11:56:38 +0000
+
+ldddns (0.0.69)
+  * Move systemd unit file out of git root
+  * Configure errcheck to be more aggresive
+  * Refactor container
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 03 Feb 2021 10:50:20 +0000
+
+ldddns (0.0.68)
+  * Revert "Drop .sh extionsion on install script"
+   - This reverts commit f803b8d9f1a2130d53c6703d5fe9b0c0cad199fc.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 02 Feb 2021 15:48:39 +0000
+
+ldddns (0.0.67)
+  * Use FlagBroadcast instead of FlagLoopback
+  * Add dark mode to website
+  * Drop .sh extionsion on install script
+  * Cleanup install script a bit
+  * Install .deb package using aptdaemon
+   - - Avoids running anything as root by asking the daemon to install the
+   -   file instead of using sudo or pkexec
+   - - Also polkit will ask for permission to install a package instead of
+   -   permissions to /usr/bin/dpkg
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 02 Feb 2021 15:37:54 +0000
+
+ldddns (0.0.66)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.2+incompatible to 20.10.3+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.2...v20.10.3)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 02 Feb 2021 12:11:48 +0000
+
+ldddns (0.0.65)
+  * Support both comma and space as separators
+  * Add support for multiple, comma-separated virtual host entries.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 29 Jan 2021 21:16:35 +0000
+
+ldddns (0.0.64)
+  * Inspect container later
+   - We postponed inspecting the container until we actually need data from
+   - it. The benefits are:
+   - * Simple code. We just have to inpect the container in one place instead
+   -   of two (DRY).
+   - * Faster. We don't need to inspect a container that is stopped or
+   -   killed.
+   - * Safer. We don't run into errors if we try to inspect a container that
+   -   vanished after it is stopped.
+   - * We have a chance to remove hostnames when a container stops even if it
+   -   vanishes.
+  * Add .git-blame-ignore-revs
+   - Empty for now.
+  * Add executable name to gitignore
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 27 Jan 2021 13:29:01 +0000
+
+ldddns (0.0.63)
+  * Improved error handling
+   - Fewer panics. Be better at continuing with containers, names, etc. that
+   - doensn't cause problems.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 27 Jan 2021 12:34:13 +0000
+
+ldddns (0.0.62)
+  * Improve error check
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 27 Jan 2021 08:37:37 +0000
+
+ldddns (0.0.61)
+  * Fix deb dependencies
+   - Docker has changed the name of their package over time.
+   - Let's make @achton happy and depend on `docker.io | docker-ce`.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 21 Jan 2021 11:28:16 +0000
+
+ldddns (0.0.60)
+  * Revert "Revert "Change module import path""
+   - This reverts commit 33e8f31b103fcdc9dff4a21e62948a8498992c0b.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 16 Jan 2021 22:24:22 +0000
+
+ldddns (0.0.59)
+  * Revert "Change module import path"
+   - This reverts commit 92fae9ab08db2e3b867e78524408dc3bfdfef09b.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 16 Jan 2021 22:21:33 +0000
+
+ldddns (0.0.58)
+  * Rename scripts folder to `deb`
+  * Move site building into `site` and site components into `page`
+  * Change module import path
+  * Fix copyright years
+  * Add documentation link to systemd unit
+  * Get rid of EnvironmentFile and `/etc/default/ldddns`
+   - see
+   - https://unix.stackexchange.com/questions/418851/location-to-place-systemd-service-environmentfile-when-creating-debian-package/419061#419061
+   - move the Docker version into an override file so it can managed and
+   - overridden through systemd.
+  * Move apt spurce list and key out of postinst
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 16 Jan 2021 22:14:19 +0000
+
+ldddns (0.0.57)
+  * Publish hostname for both container name and `VIRTUAL_HOST`
+   - Now publishes multiple hostnames. Always publish one based on the
+   - container name. And also publish one based on `VIRTUAL_HOST` if set.
+   - Only publishes one hostname as a service, though. Preferably the one
+   - based on `VIRTUAL_HOST` if set.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 16 Jan 2021 11:23:41 +0000
+
+ldddns (0.0.56)
+  * Bump anothrNick/github-tag-action from 1.33.0 to 1.34.0
+   - Bumps [anothrNick/github-tag-action](https://github.com/anothrNick/github-tag-action) from 1.33.0 to 1.34.0.
+   - - [Release notes](https://github.com/anothrNick/github-tag-action/releases)
+   - - [Commits](https://github.com/anothrNick/github-tag-action/compare/1.33.0...18284c78f6ac68868d5341f57c4f971fb5b7605c)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Tue, 12 Jan 2021 05:59:11 +0000
+
+ldddns (0.0.55)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 22:35:53 +0000
+
+ldddns (0.0.54)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 22:30:04 +0000
+
+ldddns (0.0.53)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 22:24:36 +0000
+
+ldddns (0.0.52)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 22:21:22 +0000
+
+ldddns (0.0.51)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 22:09:06 +0000
+
+ldddns (0.0.50)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 08:05:16 +0000
+
+ldddns (0.0.49)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 07:55:32 +0000
+
+ldddns (0.0.48)
+  * Improve GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 07:45:21 +0000
+
+ldddns (0.0.47)
+  * Add `markdown="block"` to body
+   - See https://python-markdown.github.io/extensions/md_in_html/#block
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 07:32:53 +0000
+
+ldddns (0.0.46)
+  * Add HTML header and footer to generated GitHub page
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 11 Jan 2021 07:23:50 +0000
+
+ldddns (0.0.45)
+  * Bump ZacJW/markdown-html-action from 1.1.0 to 1.1.1
+   - Bumps [ZacJW/markdown-html-action](https://github.com/ZacJW/markdown-html-action) from 1.1.0 to 1.1.1.
+   - - [Release notes](https://github.com/ZacJW/markdown-html-action/releases)
+   - - [Commits](https://github.com/ZacJW/markdown-html-action/compare/1.1.0...3865edcff67a98f3984bd6312111f0d4deec57d4)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 11 Jan 2021 06:19:12 +0000
+
+ldddns (0.0.44)
+  * Add DNS for container name
+   - If there is no `VIRTUAL_HOST` we add a hostname based on the container
+   - name.
+   - We cannot add more than one name to the same IP, apparently. Otherwise
+   - we could have added both of them.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 10:54:41 +0000
+
+ldddns (0.0.43)
+  * Improve css
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 10:07:37 +0000
+
+ldddns (0.0.42)
+  * Improve documentation
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 09:43:47 +0000
+
+ldddns (0.0.41)
+  * Improve documentation
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 09:23:53 +0000
+
+ldddns (0.0.40)
+  * Improve documentation
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 09:10:36 +0000
+
+ldddns (0.0.39)
+  * Improve css
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 09:05:26 +0000
+
+ldddns (0.0.38)
+  * Improve documentation
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 08:59:07 +0000
+
+ldddns (0.0.37)
+  * Improve css
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 08:21:55 +0000
+
+ldddns (0.0.36)
+  * Improve css
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 08:06:44 +0000
+
+ldddns (0.0.35)
+  * Improve css
+
+ -- Arne Jørgensen <arne@arnested.dk>  Fri, 08 Jan 2021 07:57:44 +0000
+
+ldddns (0.0.34)
+  * Fix link / package name in GitHub Pages
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 10:46:12 +0000
+
+ldddns (0.0.33)
+  * Add CSS for GitHub Pages site
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 10:28:46 +0000
+
+ldddns (0.0.32)
+  * Add install.sh to GitHub Pages site
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 07:34:04 +0000
+
+ldddns (0.0.31)
+  * Tweak Markdown to HTML config
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 07:23:29 +0000
+
+ldddns (0.0.30)
+  * Add index.html to deb site
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 07:15:38 +0000
+
+ldddns (0.0.29)
+  * Bump codecov/codecov-action from v1.2.0 to v1.2.1
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.2.0 to v1.2.1.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.2.0...e156083f13aff6830c92fc5faa23505779fbf649)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Thu, 07 Jan 2021 02:31:21 +0000
+
+ldddns (0.0.28)
+  * Add apt sources list and key
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 02:23:49 +0000
+
+ldddns (0.0.27)
+  * More deb package publishing tweaks - 6
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 01:43:32 +0000
+
+ldddns (0.0.26)
+  * More deb package publishing tweaks - 5
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 01:19:10 +0000
+
+ldddns (0.0.25)
+  * More deb package publishing tweaks - 4
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 01:16:30 +0000
+
+ldddns (0.0.24)
+  * More deb package publishing tweaks - 3
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 01:00:35 +0000
+
+ldddns (0.0.23)
+  * More deb package publishing tweaks - 2
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 00:52:51 +0000
+
+ldddns (0.0.22)
+  * More deb package publishing tweaks
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 00:50:45 +0000
+
+ldddns (0.0.21)
+  * Try to fix gpg key import
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 00:46:53 +0000
+
+ldddns (0.0.20)
+  * Publish Debian packages
+
+ -- Arne Jørgensen <arne@arnested.dk>  Thu, 07 Jan 2021 00:40:37 +0000
+
+ldddns (0.0.19)
+  * Service unit in /lib/systemd is not a config file
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Jan 2021 18:49:22 +0000
+
+ldddns (0.0.18)
+  * Fix feedback from shellcheck
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Jan 2021 17:42:23 +0000
+
+ldddns (0.0.17)
+  * Add an install.sh again
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Jan 2021 17:39:32 +0000
+
+ldddns (0.0.16)
+  * Build deb package
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Jan 2021 17:10:30 +0000
+
+ldddns (0.0.15)
+  * Only enable service if it is not enabled
+
+ -- Arne Jørgensen <arne@arnested.dk>  Wed, 06 Jan 2021 08:04:22 +0000
+
+ldddns (0.0.14)
+  * Bump github.com/docker/docker
+   - Bumps [github.com/docker/docker](https://github.com/docker/docker) from 20.10.1+incompatible to 20.10.2+incompatible.
+   - - [Release notes](https://github.com/docker/docker/releases)
+   - - [Changelog](https://github.com/moby/moby/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/docker/docker/compare/v20.10.1...v20.10.2)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Wed, 06 Jan 2021 06:51:46 +0000
+
+ldddns (0.0.13)
+  * Broadcast container name as name of service
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 05 Jan 2021 22:54:09 +0000
+
+ldddns (0.0.12)
+  * Broadcast only on loopback interface and IPv4
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 05 Jan 2021 22:26:35 +0000
+
+ldddns (0.0.11)
+  * Show progress bar while downloading binary
+
+ -- Arne Jørgensen <arne@arnested.dk>  Tue, 05 Jan 2021 14:50:33 +0000
+
+ldddns (0.0.10)
+  * Bump codecov/codecov-action from v1.1.0 to v1.2.0
+   - Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1.1.0 to v1.2.0.
+   - - [Release notes](https://github.com/codecov/codecov-action/releases)
+   - - [Changelog](https://github.com/codecov/codecov-action/blob/master/CHANGELOG.md)
+   - - [Commits](https://github.com/codecov/codecov-action/compare/v1.1.0...a92c414703a4bba586f6df7fcc885c9d0bdff772)
+
+ -- dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>  Mon, 04 Jan 2021 23:45:50 +0000
+
+ldddns (0.0.9)
+  * Use reviewers instead of assignees
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 04 Jan 2021 23:42:45 +0000
+
+ldddns (0.0.8)
+  * Add golangci-lint config
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 04 Jan 2021 23:33:39 +0000
+
+ldddns (0.0.7)
+  * Add install script
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 04 Jan 2021 23:24:48 +0000
+
+ldddns (0.0.6)
+  * Add systemd Please
+   - ```
+   - $ systemd-analyze --no-pager security ldddns.service
+   -   NAME                                  DESCRIPTION                           EXPOSURE
+   - ✓ PrivateNetwork=                       Service has no access to the host's …
+   - ✓ User=/DynamicUser=                    Service runs under a transient non-r…
+   - ✓ CapabilityBoundingSet=~CAP_SET(UID|G… Service cannot change UID/GID identi…
+   - ✓ CapabilityBoundingSet=~CAP_SYS_ADMIN  Service has no administrator privile…
+   - ✓ CapabilityBoundingSet=~CAP_SYS_PTRACE Service has no ptrace() debugging ab…
+   - ✓ RestrictAddressFamilies=~AF_(INET|IN… Service cannot allocate Internet soc…
+   - ✓ RestrictNamespaces=~CLONE_NEWUSER     Service cannot create user namespaces
+   - ✓ RestrictAddressFamilies=~…            Service cannot allocate exotic socke…
+   - ✓ CapabilityBoundingSet=~CAP_(CHOWN|FS… Service cannot change file ownership…
+   - ✓ CapabilityBoundingSet=~CAP_(DAC_*|FO… Service cannot override UNIX file/IP…
+   - ✓ CapabilityBoundingSet=~CAP_NET_ADMIN  Service has no network configuration…
+   - ✓ CapabilityBoundingSet=~CAP_SYS_MODULE Service cannot load kernel modules
+   - ✓ CapabilityBoundingSet=~CAP_SYS_RAWIO  Service has no raw I/O access
+   - ✓ CapabilityBoundingSet=~CAP_SYS_TIME   Service processes cannot change the …
+   - ✗ DeviceAllow=                          Service has a device ACL with some s…      0.1
+   - ✓ IPAddressDeny=                        Service blocks all IP address ranges
+   - ✓ KeyringMode=                          Service doesn't share key material w…
+   - ✓ NoNewPrivileges=                      Service processes cannot acquire new…
+   - ✓ NotifyAccess=                         Service child processes cannot alter…
+   - ✓ PrivateDevices=                       Service has no access to hardware de…
+   - ✓ PrivateMounts=                        Service cannot install system mounts
+   - ✓ PrivateTmp=                           Service has no access to other softw…
+   - ✓ PrivateUsers=                         Service does not have access to othe…
+   - ✓ ProtectClock=                         Service cannot write to the hardware…
+   - ✓ ProtectControlGroups=                 Service cannot modify the control gr…
+   - ✓ ProtectHome=                          Service has no access to home direct…
+   - ✓ ProtectKernelLogs=                    Service cannot read from or write to…
+   - ✓ ProtectKernelModules=                 Service cannot load or read kernel m…
+   - ✓ ProtectKernelTunables=                Service cannot alter kernel tunables…
+   - ✓ ProtectSystem=                        Service has strict read-only access …
+   - ✓ RestrictAddressFamilies=~AF_PACKET    Service cannot allocate packet socke…
+   - ✓ RestrictSUIDSGID=                     SUID/SGID file creation by service i…
+   - ✓ SystemCallArchitectures=              Service may execute system calls onl…
+   - ✓ SystemCallFilter=~@clock              System call allow list defined for s…
+   - ✓ SystemCallFilter=~@debug              System call allow list defined for s…
+   - ✓ SystemCallFilter=~@module             System call allow list defined for s…
+   - ✓ SystemCallFilter=~@mount              System call allow list defined for s…
+   - ✓ SystemCallFilter=~@raw-io             System call allow list defined for s…
+   - ✓ SystemCallFilter=~@reboot             System call allow list defined for s…
+   - ✓ SystemCallFilter=~@swap               System call allow list defined for s…
+   - ✗ SystemCallFilter=~@privileged         System call allow list defined for s…      0.2
+   - ✗ SystemCallFilter=~@resources          System call allow list defined for s…      0.2
+   - ✓ AmbientCapabilities=                  Service process does not receive amb…
+   - ✓ CapabilityBoundingSet=~CAP_AUDIT_*    Service has no audit subsystem access
+   - ✓ CapabilityBoundingSet=~CAP_KILL       Service cannot send UNIX signals to …
+   - ✓ CapabilityBoundingSet=~CAP_MKNOD      Service cannot create device nodes
+   - ✓ CapabilityBoundingSet=~CAP_NET_(BIND… Service has no elevated networking p…
+   - ✓ CapabilityBoundingSet=~CAP_SYSLOG     Service has no access to kernel logg…
+   - ✓ CapabilityBoundingSet=~CAP_SYS_(NICE… Service has no privileges to change …
+   - ✓ RestrictNamespaces=~CLONE_NEWCGROUP   Service cannot create cgroup namespa…
+   - ✓ RestrictNamespaces=~CLONE_NEWIPC      Service cannot create IPC namespaces
+   - ✓ RestrictNamespaces=~CLONE_NEWNET      Service cannot create network namesp…
+   - ✓ RestrictNamespaces=~CLONE_NEWNS       Service cannot create file system na…
+   - ✓ RestrictNamespaces=~CLONE_NEWPID      Service cannot create process namesp…
+   - ✓ RestrictRealtime=                     Service realtime scheduling access i…
+   - ✓ SystemCallFilter=~@cpu-emulation      System call allow list defined for s…
+   - ✓ SystemCallFilter=~@obsolete           System call allow list defined for s…
+   - ✓ RestrictAddressFamilies=~AF_NETLINK   Service cannot allocate netlink sock…
+   - ✗ RootDirectory=/RootImage=             Service runs within the host's root …      0.1
+   - ✗ SupplementaryGroups=                  Service runs with supplementary grou…      0.1
+   - ✓ CapabilityBoundingSet=~CAP_MAC_*      Service cannot adjust SMACK MAC
+   - ✓ CapabilityBoundingSet=~CAP_SYS_BOOT   Service cannot issue reboot()
+   - ✓ Delegate=                             Service does not maintain its own de…
+   - ✓ LockPersonality=                      Service cannot change ABI personality
+   - ✓ MemoryDenyWriteExecute=               Service cannot create writable execu…
+   - ✓ RemoveIPC=                            Service user cannot leave SysV IPC o…
+   - ✓ RestrictNamespaces=~CLONE_NEWUTS      Service cannot create hostname names…
+   - ✓ UMask=                                Files created by service are accessi…
+   - ✓ CapabilityBoundingSet=~CAP_LINUX_IMM… Service cannot mark files immutable
+   - ✓ CapabilityBoundingSet=~CAP_IPC_LOCK   Service cannot lock memory into RAM
+   - ✓ CapabilityBoundingSet=~CAP_SYS_CHROOT Service cannot issue chroot()
+   - ✓ ProtectHostname=                      Service cannot change system host/do…
+   - ✓ CapabilityBoundingSet=~CAP_BLOCK_SUS… Service cannot establish wake locks
+   - ✓ CapabilityBoundingSet=~CAP_LEASE      Service cannot create file leases
+   - ✓ CapabilityBoundingSet=~CAP_SYS_PACCT  Service cannot use acct()
+   - ✓ CapabilityBoundingSet=~CAP_SYS_TTY_C… Service cannot issue vhangup()
+   - ✓ CapabilityBoundingSet=~CAP_WAKE_ALARM Service cannot program timers that w…
+   - ✗ RestrictAddressFamilies=~AF_UNIX      Service may allocate local sockets         0.1
+   - Overall exposure level for ldddns.service: 0.4 SAFE 😀
+   - ```
+
+ -- Arne Jørgensen <arne@arnested.dk>  Mon, 04 Jan 2021 19:02:14 +0000
+
+ldddns (0.0.5)
+  * Use github.com/coreos/go-systemd/unit for creating unit
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sun, 03 Jan 2021 22:19:06 +0000
+
+ldddns (0.0.4)
+  * Improve install documentation
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 02 Jan 2021 16:22:03 +0000
+
+ldddns (0.0.3)
+  * Remove version for from binary artifact name
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 02 Jan 2021 16:11:06 +0000
+
+ldddns (0.0.2)
+  * Fix version for goreleaser
+   - It should be the version of goreleaser to use. Not the version of ldddns
+   - we would like to release.
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 02 Jan 2021 16:07:09 +0000
+
+ldddns (0.0.1)
+  * Fix releases
+  * Build releases on push to main
+  * Fix name
+  * Update README.md
+  * Update README.md
+  * Fix conversion between integer sizes
+   - See https://github.com/arnested/ldddns/security/code-scanning/1
+  * Add README
+  * Add license file and more
+  * Initial version
+
+ -- Arne Jørgensen <arne@arnested.dk>  Sat, 02 Jan 2021 16:04:33 +0000
+
