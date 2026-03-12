@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 12 Mar 2026 20:19:33 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ 76e2ce20c90f741c32f350fec5b9dcf8             1854 Packages
+ f25d35edc2ce1bf6f967e96f53761982              877 Packages.gz
+ d54a5d3c069d9adbba4453f44406b2de               88 Release
+SHA1:
+ b7a103898181f5d9a193ee180ff39bb736665b35             1854 Packages
+ 6a41b0ac9b9c531a687c06ef2f7e21d116342971              877 Packages.gz
+ 1a031612551e959ff409bb108a3d763aebe8f793               88 Release
+SHA256:
+ 00b8b2448b890bdf1da7d8d0e656ce28046ec267eb8dd253fd4b173d5fc47aa1             1854 Packages
+ 45437f6301cfd2753cca05a9e51541c1c4f6570028ccf1944336f3bcc8eec29a              877 Packages.gz
+ e1f2f253e6c16f388a52ad5e54945c6089e46bcb42bfad64324f65231bb26d0e               88 Release
+SHA512:
+ 893a41c66f7ddd5ae64917456bfb0b38d76099262f9caa08fccafb606b89a5143aff821947b3016bf0cf04277af33f061b39733415257d93935ccfab546c3878             1854 Packages
+ 2b8de46a3e40f7d8779b8260bee4bdd513eae9a183e9459f9a42cb3288bd7c35d9dcfb36f74f1d695eeba6e9b8397d2d6ac3e58311da05efaa4fac7ac7ef26cc              877 Packages.gz
+ b67b90804b0e42989f922887c045801ff542b001c426ba2bae5de14f4bde4e81c652ecbb3500126bc7b032218ea90c4a0e9f99ad307c4d629a4006b38096c767               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmmzH9UACgkQnwaxeMQI
+vd7d4Av+O+EgDfiEATqfwf+3LbB3XVR+jspo1qCa7AispVO4EHFuBjP73uT4qNVu
+HkRwLE1fDmd8hcJu4Nuba5QGXEztpeTUKQtbg1cprcpJp/NOfHjhn35oEC3I5Fg2
+YkuRPvPdJSuyYn9sx2Fx5/B2Sn1Xb4DpEp/uwy7eSOB9C+Fw1L93QvmZpvSuMEV6
+r2j8cegX3rg/NZohKIVJ4dwf2GavxNK4CjTEhmGlgvLUqvpmpHo20ean/IcBYV2H
+ADUtYRJog0zMWQ5Xxa0Q+jJD//U8Oe16PZKUS7sXxkmOPIntIP8TxOyGOU6d1oY6
+tDaReGCBo8ZQ/HvucTdVC5ESeIvqNh1mPDMC+MFE0ATakpajBfn4pypWNRBTKGAN
+fymYqYMCT1suSMF/m4K53jGoZcq384mjCi59xgr9MyWrhz/uirUz/727qknAWc+b
+Dlr+ZUos8LJL1Ph+NgOavICYc+WgMZ3vhpLeZnwk6ONjbcFVomi6lNA9GrCIAhAb
+IEOf43h2
+=Ohf8
+-----END PGP SIGNATURE-----
