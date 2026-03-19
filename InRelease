@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Thu, 19 Mar 2026 18:40:35 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ db50d654d218ae51b96f5a17ff6f4fa0             1854 Packages
+ 591936a98dbaec71a3f4ca636f4fe1d2              873 Packages.gz
+ fc5481ccbb6093e1d0d6fd7a6b84ddc9               88 Release
+SHA1:
+ 1ffa1b0551d00ed81adab7b6d7b9b39d3e99e4f3             1854 Packages
+ 4d9340351e7db73bc7a6c4e7c157356e91aa2fa6              873 Packages.gz
+ 02b5b87f97c666d41ce456425dfee36ff496c1aa               88 Release
+SHA256:
+ b5b198c22acdeacb35baca8f1fffd9adf97903a272170fade01f2f798baf57ba             1854 Packages
+ 304a58cade4d26ce66126dfc0b8478a77d1de09606067748edf9d48d771816f2              873 Packages.gz
+ af6dfeee9debb534cdc59106f31555704b2ed8d153459bd4727d3ee7ee144bc0               88 Release
+SHA512:
+ a6c802618c2dcc5f00af5905129d44540d79854e0aa23148a3cf5fd04998abef7ba00206fdd39c57733f2659782bf7ebda74a2b9b2c7dd4c23c9c3d2eab780aa             1854 Packages
+ 7596f46ff47c7527128ba0279d26edcaf4764124ab4b2092cb51b4547257dddf9c96cb9f1c9bada5c3e3b9522691411505317e986ce7c2d0c90b6defdd28f5c1              873 Packages.gz
+ 5506201b49bd64a8de85631f08a79e1392e04579f7efebc3b9ec4b4d79d77939e01f3d01215c0b94426292b9ff29a21605a62df712d05919c164d4f36ca710d4               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmm8QyMACgkQnwaxeMQI
+vd7hGwwAhNCd73TUgbyoQOmcBncHS/wO2joMlzTeNZSTzhh9XYsAM2u4FytyU4Mz
+zKUYhNPGLrw1q0/CSuXG7ZMgeMTityThx3QoGbwZKLzyonz/ktJb1Gi7qMHf75NQ
+uUofWGNqjk1nOqtqIgrg6mvk7+W+6qRq6EtNeilKCO4S9bx0RKiv9atFPRjKuWYt
+DkiXcaQzIcLAPrMprwdWJiHix+B0OMdOfMFo8pBlkPvJmIcyRNcMXxw3NPVkWxEQ
+w6V9LQ25MaiJZfGDDru3nWDa8pgHFJbzRfQ4uAaELXEP72p5i6v7pTxJzTqPjuhg
+8aIeVmeH5xA+d51HWti359anDdwPfr46y71/5wfD/t3Bz6QPxTzvy1blbtooRm2b
+UX/Pgg0ZOYDlaYCmrY4eV/MdJjJ44vzwe2z6X8MLsD47gMPkRcuMHDLisR5rahpG
+VDijx9tLTWwCH2+QZmNDq0iDt71nvfAM+TW/2I5Us3paMpzCn3yLiu1E1TznTMz8
+WawarEEw
+=GSOS
+-----END PGP SIGNATURE-----
