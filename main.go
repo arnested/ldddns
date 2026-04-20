@@ -57,10 +57,7 @@ func main() {
 
 	gops(config.Gops)
 
-	docker, err := client.NewClientWithOpts(
-		client.FromEnv,
-		client.WithAPIVersionNegotiation(),
-	)
+	docker, err := client.New(client.FromEnv)
 	if err != nil {
 		panic(fmt.Errorf("cannot create docker client: %w", err))
 	}

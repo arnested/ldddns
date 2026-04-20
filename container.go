@@ -138,7 +138,7 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 		case err := <-result.Err:
 			panic(fmt.Errorf("go error reading docker events: %w", err))
 		case msg := <-result.Messages:
-			err := handleContainer(ctx, docker, msg.Actor.ID, egs, events.Action(msg.Action), config)
+			err := handleContainer(ctx, docker, msg.Actor.ID, egs, msg.Action, config)
 			if err != nil {
 				log.Logf(log.PriErr, "handling container: %v", err)
 			}
