@@ -13,20 +13,25 @@ jobs:
     name: Stable
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
-      - uses: arnested/go-version-action@v2
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: arnested/go-version-action@6343454db06c63467680c5dc1f4f382fe9fe6303 # v2.1.2
         id: go-version
         with:
           patch-level: true
       - name: Setup Go ${{ steps.go-version.outputs.latest }}
-        uses: arnested/setup-go@rc
+        uses: arnested/setup-go@27a670ec1a85aa0757dce6658ff5bfdce62f4d06 # rc
         with:
           go-version: ${{ steps.go-version.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
       - run: go fix ./...
       - run: git diff
       - name: "Create pull request"
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           commit-message: |
             Update Go version to ${{ steps.go-version.outputs.latest }}
@@ -44,12 +49,17 @@ jobs:
     name: Unstable
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
-      - uses: arnested/go-version-action@v2
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: arnested/go-version-action@6343454db06c63467680c5dc1f4f382fe9fe6303 # v2.1.2
         id: go-version-stable
         with:
           patch-level: true
-      - uses: arnested/go-version-action@v2
+      - uses: arnested/go-version-action@6343454db06c63467680c5dc1f4f382fe9fe6303 # v2.1.2
         id: go-version-unstable
         with:
           patch-level: true
@@ -62,7 +72,7 @@ jobs:
           echo "URL=https://tip.golang.org/doc/go$(sed -E 's/([0-9]+\.[0-9]+).*/\1/' <<< '${{ steps.go-version-unstable.outputs.latest }}')" >> $GITHUB_OUTPUT
       - name: Setup Go ${{ steps.go-version-unstable.outputs.latest }}
         if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
-        uses: arnested/setup-go@rc
+        uses: arnested/setup-go@27a670ec1a85aa0757dce6658ff5bfdce62f4d06 # rc
         with:
           go-version: ${{ steps.go-version-unstable.outputs.latest }}
       - run: go mod edit -go ${{ steps.go-version-unstable.outputs.latest }}
@@ -72,7 +82,7 @@ jobs:
       - run: git diff
         if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
       - name: "Create pull request"
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           draft: true
           commit-message: |

@@ -12,13 +12,18 @@ jobs:
   bump-version:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
-      - uses: arnested/go-version-action@v2
+      - uses: arnested/go-version-action@6343454db06c63467680c5dc1f4f382fe9fe6303 # v2.1.2
         id: go-version
       - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.75.0
+        uses: anothrNick/github-tag-action@4ed44965e0db8dab2b466a16da04aec3cc312fd8 # 1.75.0
         id: version
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -27,7 +32,7 @@ jobs:
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           RELEASE_BRANCHES: main
       - name: Setup Go
-        uses: arnested/setup-go@rc
+        uses: arnested/setup-go@27a670ec1a85aa0757dce6658ff5bfdce62f4d06 # rc
         with:
           go-version-file: go.mod
       - name: go version
@@ -39,7 +44,7 @@ jobs:
       - name: Build changelog
         run: chglog init
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v7
+        uses: goreleaser/goreleaser-action@e24998b8b67b290c2fa8b7c14fcfa7de2c5c9b8c # v7.1.0
         with:
           args: release
         env:
@@ -70,7 +75,7 @@ jobs:
         working-directory: site
         env:
           GH_TOKEN: ${{ github.token }}
-      - uses: BaileyJM02/markdown-to-pdf@v1.2.0
+      - uses: BaileyJM02/markdown-to-pdf@1be26775add5f94fb55d4a2ce36ff7cad23b8dd0 # v1.2.0
         with:
           input_path: index.md
           output_dir: site/
@@ -90,7 +95,7 @@ jobs:
       - name: Add .well-known for Bluesky to GitHub Pages
         run: cp -vR page/.well-known site/
       - name: Deploy deb packages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
         with:
           branch: gh-pages
           folder: site
@@ -98,7 +103,7 @@ jobs:
           single-commit: true
       - name: Post status to Google Chat
         if: ${{ always() }}
-        uses: containrrr/shoutrrr-action@v1
+        uses: containrrr/shoutrrr-action@a478c36b6a37012a65dc756032c4367b3221768d # v1.0.98
         with:
           url: "${{ secrets.WATCHTOWER_NOTIFICATION_URL }}"
           message: "Released `${{ github.repository }}`@`${{ github.sha }}` as ${{ steps.version.outputs.tag }}: *${{ job.status }}*."

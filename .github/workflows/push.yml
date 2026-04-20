@@ -8,9 +8,14 @@ jobs:
     name: Check generated code is up to date
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Setup Go
-        uses: arnested/setup-go@rc
+        uses: arnested/setup-go@27a670ec1a85aa0757dce6658ff5bfdce62f4d06 # rc
         with:
           go-version-file: go.mod
       - name: go mod tidy
@@ -25,11 +30,16 @@ jobs:
     name: Build and test
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
       - name: Setup Go
-        uses: arnested/setup-go@rc
+        uses: arnested/setup-go@27a670ec1a85aa0757dce6658ff5bfdce62f4d06 # rc
         with:
           go-version-file: go.mod
       - name: go version
@@ -43,11 +53,11 @@ jobs:
           go fmt ./...
           git diff --exit-code
       - name: Test
-        uses: robherley/go-test-action@v1.0.0
+        uses: robherley/go-test-action@72d31c2e7a3502ad0639274dcdc7ffbc7c9c6c4c # v1.0.0
         with:
           testArguments: -race -shuffle=on -benchtime=1x -cover -covermode=atomic -coverprofile=coverage.txt ./...
       - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6.0.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Install changelog management tool
@@ -55,10 +65,10 @@ jobs:
       - name: Build changelog
         run: chglog init
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v7
+        uses: goreleaser/goreleaser-action@e24998b8b67b290c2fa8b7c14fcfa7de2c5c9b8c # v7.1.0
         with:
           args: release --snapshot
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: Debian packages
           path: dist/*.deb
@@ -67,11 +77,16 @@ jobs:
     name: Nilaway
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
       - name: Setup Go
-        uses: arnested/setup-go@rc
+        uses: arnested/setup-go@27a670ec1a85aa0757dce6658ff5bfdce62f4d06 # rc
         with:
           go-version-file: go.mod
       - name: Install nilaway
@@ -83,9 +98,14 @@ jobs:
     name: License check
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Setup Go
-        uses: arnested/setup-go@rc
+        uses: arnested/setup-go@27a670ec1a85aa0757dce6658ff5bfdce62f4d06 # rc
         with:
           go-version-file: go.mod
       - name: Install wwhrd
