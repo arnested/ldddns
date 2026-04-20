@@ -11,11 +11,11 @@ import (
 
 	"github.com/carlmjohnson/versioninfo"
 	"github.com/coreos/go-systemd/v22/daemon"
-	"github.com/docker/docker/client"
 	"github.com/godbus/dbus/v5"
 	"github.com/google/gops/agent"
 	"github.com/holoplot/go-avahi"
 	"github.com/kelseyhightower/envconfig"
+	"github.com/moby/moby/client"
 	"ldddns.arnested.dk/internal/log"
 )
 
@@ -57,10 +57,7 @@ func main() {
 
 	gops(config.Gops)
 
-	docker, err := client.NewClientWithOpts(
-		client.FromEnv,
-		client.WithAPIVersionNegotiation(),
-	)
+	docker, err := client.New(client.FromEnv)
 	if err != nil {
 		panic(fmt.Errorf("cannot create docker client: %w", err))
 	}

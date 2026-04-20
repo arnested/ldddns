@@ -7,11 +7,11 @@ import (
 	"os"
 	"testing"
 
-	docker_container "github.com/docker/docker/api/types/container"
-	"ldddns.arnested.dk/internal/container"
+	"github.com/moby/moby/api/types/container"
+	internalContainer "ldddns.arnested.dk/internal/container"
 )
 
-func containerJSON() (*docker_container.InspectResponse, error) {
+func containerJSON() (*container.InspectResponse, error) {
 	jsonFile, err := os.Open("../../testdata/container.json")
 	if err != nil {
 		return nil, fmt.Errorf("opening JSON test data: %w", err)
@@ -25,7 +25,7 @@ func containerJSON() (*docker_container.InspectResponse, error) {
 	}
 
 	// we initialize our Users array
-	var containerJSON *docker_container.InspectResponse
+	var containerJSON *container.InspectResponse
 
 	err = json.Unmarshal(byteValue, &containerJSON)
 	if err != nil {
@@ -35,13 +35,13 @@ func containerJSON() (*docker_container.InspectResponse, error) {
 	return containerJSON, nil
 }
 
-func containerData() (*container.Container, error) {
+func containerData() (*internalContainer.Container, error) {
 	containerJSON, err := containerJSON()
 	if (err != nil) || (containerJSON == nil) {
 		return nil, fmt.Errorf("getting JSON test data: %w", err)
 	}
 
-	data := container.Container{ContainerJSON: *containerJSON}
+	data := internalContainer.Container{InspectResponse: *containerJSON}
 
 	return &data, nil
 }
@@ -106,6 +106,112 @@ func TestServices(t *testing.T) {
 			expectedPort,
 			services[expectedService],
 		)
+	}
+}
+
+func TestServicesEdgeCases(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name     string
+		ports    string
+		expected int
+	}{
+		{
+			name:     "valid http port",
+			ports:    `{"80/tcp": [{"HostIp": "", "HostPort": ""}]}`,
+			expected: 1,
+		},
+		{
+			name:     "unknown service port - no service found",
+			ports:    `{"9999/tcp": [{"HostIp": "", "HostPort": ""}]}`,
+			expected: 0,
+		},
+		{
+			name:     "unknown protocol type",
+			ports:    `{"80/unknown": [{"HostIp": "", "HostPort": ""}]}`,
+			expected: 0,
+		},
+		{
+			name: "multiple ports with mixed results",
+			ports: `{
+				"80/tcp": [{"HostIp": "", "HostPort": ""}],
+				"9999/tcp": [{"HostIp": "", "HostPort": ""}],
+				"22/tcp": [{"HostIp": "", "HostPort": ""}]
+			}`,
+			expected: 2, // http and ssh are known services, 9999 is not
+		},
+	}
+
+	for _, testCase := range tests {
+		t.Run(testCase.name, func(t *testing.T) {
+			t.Parallel()
+
+			c := createTestContainerWithPorts(t, testCase.ports)
+			services := c.Services()
+
+			if len(services) != testCase.expected {
+				t.Errorf("Expected %d services, got %d: %v", testCase.expected, len(services), services)
+			}
+		})
+	}
+}
+
+func createTestContainerWithPorts(t *testing.T, ports string) internalContainer.Container {
+	t.Helper()
+
+	jsonData := fmt.Sprintf(`{
+		"Id": "test",
+		"Name": "/test",
+		"NetworkSettings": {
+			"Ports": %s,
+			"Networks": {}
+		},
+		"Config": {
+			"Env": [],
+			"Labels": {}
+		}
+	}`, ports)
+
+	var inspectResponse container.InspectResponse
+
+	err := json.Unmarshal([]byte(jsonData), &inspectResponse)
+	if err != nil {
+		t.Fatalf("failed to unmarshal test data: %v", err)
+	}
+
+	return internalContainer.Container{InspectResponse: inspectResponse}
+}
+
+func TestIPAddressesEmpty(t *testing.T) {
+	t.Parallel()
+
+	// Test container with no network settings
+	jsonData := `{
+		"Id": "test",
+		"Name": "/test",
+		"NetworkSettings": {
+			"Ports": {},
+			"Networks": {}
+		},
+		"Config": {
+			"Env": [],
+			"Labels": {}
+		}
+	}`
+
+	var inspectResponse container.InspectResponse
+
+	err := json.Unmarshal([]byte(jsonData), &inspectResponse)
+	if err != nil {
+		t.Fatalf("failed to unmarshal test data: %v", err)
+	}
+
+	c := internalContainer.Container{InspectResponse: inspectResponse}
+	ips := c.IPAddresses()
+
+	if len(ips) != 0 {
+		t.Errorf("Expected 0 IP addresses for container with no networks, got %d", len(ips))
 	}
 }
 
