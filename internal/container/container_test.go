@@ -109,6 +109,112 @@ func TestServices(t *testing.T) {
 	}
 }
 
+func TestServicesEdgeCases(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name     string
+		ports    string
+		expected int
+	}{
+		{
+			name:     "valid http port",
+			ports:    `{"80/tcp": [{"HostIp": "", "HostPort": ""}]}`,
+			expected: 1,
+		},
+		{
+			name:     "unknown service port - no service found",
+			ports:    `{"9999/tcp": [{"HostIp": "", "HostPort": ""}]}`,
+			expected: 0,
+		},
+		{
+			name:     "unknown protocol type",
+			ports:    `{"80/unknown": [{"HostIp": "", "HostPort": ""}]}`,
+			expected: 0,
+		},
+		{
+			name: "multiple ports with mixed results",
+			ports: `{
+				"80/tcp": [{"HostIp": "", "HostPort": ""}],
+				"9999/tcp": [{"HostIp": "", "HostPort": ""}],
+				"22/tcp": [{"HostIp": "", "HostPort": ""}]
+			}`,
+			expected: 2, // http and ssh are known services, 9999 is not
+		},
+	}
+
+	for _, testCase := range tests {
+		t.Run(testCase.name, func(t *testing.T) {
+			t.Parallel()
+
+			c := createTestContainerWithPorts(t, testCase.ports)
+			services := c.Services()
+
+			if len(services) != testCase.expected {
+				t.Errorf("Expected %d services, got %d: %v", testCase.expected, len(services), services)
+			}
+		})
+	}
+}
+
+func createTestContainerWithPorts(t *testing.T, ports string) internalContainer.Container {
+	t.Helper()
+
+	jsonData := fmt.Sprintf(`{
+		"Id": "test",
+		"Name": "/test",
+		"NetworkSettings": {
+			"Ports": %s,
+			"Networks": {}
+		},
+		"Config": {
+			"Env": [],
+			"Labels": {}
+		}
+	}`, ports)
+
+	var inspectResponse container.InspectResponse
+
+	err := json.Unmarshal([]byte(jsonData), &inspectResponse)
+	if err != nil {
+		t.Fatalf("failed to unmarshal test data: %v", err)
+	}
+
+	return internalContainer.Container{InspectResponse: inspectResponse}
+}
+
+func TestIPAddressesEmpty(t *testing.T) {
+	t.Parallel()
+
+	// Test container with no network settings
+	jsonData := `{
+		"Id": "test",
+		"Name": "/test",
+		"NetworkSettings": {
+			"Ports": {},
+			"Networks": {}
+		},
+		"Config": {
+			"Env": [],
+			"Labels": {}
+		}
+	}`
+
+	var inspectResponse container.InspectResponse
+
+	err := json.Unmarshal([]byte(jsonData), &inspectResponse)
+	if err != nil {
+		t.Fatalf("failed to unmarshal test data: %v", err)
+	}
+
+	c := internalContainer.Container{InspectResponse: inspectResponse}
+	ips := c.IPAddresses()
+
+	if len(ips) != 0 {
+		t.Errorf("Expected 0 IP addresses for container with no networks, got %d", len(ips))
+	}
+}
+
 func TestHostnamesFromEnv(t *testing.T) {
 	t.Parallel()
 
