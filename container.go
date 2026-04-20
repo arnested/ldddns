@@ -9,11 +9,9 @@ import (
 	"syscall"
 	"time"
 
-	typesContainer "github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/api/types/events"
-	"github.com/docker/docker/api/types/filters"
-	"github.com/docker/docker/client"
-	"ldddns.arnested.dk/internal/container"
+	"github.com/moby/moby/api/types/events"
+	"github.com/moby/moby/client"
+	internalContainer "ldddns.arnested.dk/internal/container"
 	"ldddns.arnested.dk/internal/hostname"
 	"ldddns.arnested.dk/internal/log"
 )
@@ -50,12 +48,12 @@ func handleContainer(
 		return nil
 	}
 
-	containerJSON, err := docker.ContainerInspect(ctx, containerID)
+	result, err := docker.ContainerInspect(ctx, containerID, client.ContainerInspectOptions{})
 	if err != nil {
 		return fmt.Errorf("inspecting container: %w", err)
 	}
 
-	containerInfo := container.Container{ContainerJSON: containerJSON}
+	containerInfo := internalContainer.Container{InspectResponse: result.Container}
 
 	if ignoreOneoff(containerInfo, config) {
 		return nil
@@ -82,7 +80,7 @@ func handleContainer(
 	return nil
 }
 
-func ignoreOneoff(containerInfo container.Container, config Config) bool {
+func ignoreOneoff(containerInfo internalContainer.Container, config Config) bool {
 	if !config.IgnoreDockerComposeOneoff {
 		return false
 	}
@@ -102,12 +100,12 @@ func ignoreOneoff(containerInfo container.Container, config Config) bool {
 }
 
 func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *entryGroups) {
-	containers, err := docker.ContainerList(ctx, typesContainer.ListOptions{})
+	result, err := docker.ContainerList(ctx, client.ContainerListOptions{})
 	if err != nil {
 		log.Logf(log.PriErr, "getting container list: %v", err)
 	}
 
-	for _, container := range containers {
+	for _, container := range result.Items {
 		err = handleContainer(ctx, docker, container.ID, egs, "start", config)
 		if err != nil {
 			log.Logf(log.PriErr, "handling container: %v", err)
@@ -118,7 +116,7 @@ func handleExistingContainers(ctx context.Context, config Config, docker *client
 }
 
 func listen(ctx context.Context, config Config, docker *client.Client, egs *entryGroups, started time.Time) {
-	filter := filters.NewArgs()
+	filter := make(client.Filters)
 	filter.Add("type", "container")
 	filter.Add("event", "die")
 	filter.Add("event", "kill")
@@ -126,7 +124,7 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 	filter.Add("event", "start")
 	filter.Add("event", "unpause")
 
-	msgs, errs := docker.Events(ctx, events.ListOptions{
+	result := docker.Events(ctx, client.EventsListOptions{
 		Filters: filter,
 		Since:   strconv.FormatInt(started.Unix(), 10),
 		Until:   "",
@@ -137,10 +135,10 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 
 	for {
 		select {
-		case err := <-errs:
+		case err := <-result.Err:
 			panic(fmt.Errorf("go error reading docker events: %w", err))
-		case msg := <-msgs:
-			err := handleContainer(ctx, docker, msg.Actor.ID, egs, msg.Action, config)
+		case msg := <-result.Messages:
+			err := handleContainer(ctx, docker, msg.Actor.ID, egs, events.Action(msg.Action), config)
 			if err != nil {
 				log.Logf(log.PriErr, "handling container: %v", err)
 			}

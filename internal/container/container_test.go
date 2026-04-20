@@ -7,11 +7,11 @@ import (
 	"os"
 	"testing"
 
-	docker_container "github.com/docker/docker/api/types/container"
-	"ldddns.arnested.dk/internal/container"
+	"github.com/moby/moby/api/types/container"
+	internalContainer "ldddns.arnested.dk/internal/container"
 )
 
-func containerJSON() (*docker_container.InspectResponse, error) {
+func containerJSON() (*container.InspectResponse, error) {
 	jsonFile, err := os.Open("../../testdata/container.json")
 	if err != nil {
 		return nil, fmt.Errorf("opening JSON test data: %w", err)
@@ -25,7 +25,7 @@ func containerJSON() (*docker_container.InspectResponse, error) {
 	}
 
 	// we initialize our Users array
-	var containerJSON *docker_container.InspectResponse
+	var containerJSON *container.InspectResponse
 
 	err = json.Unmarshal(byteValue, &containerJSON)
 	if err != nil {
@@ -35,13 +35,13 @@ func containerJSON() (*docker_container.InspectResponse, error) {
 	return containerJSON, nil
 }
 
-func containerData() (*container.Container, error) {
+func containerData() (*internalContainer.Container, error) {
 	containerJSON, err := containerJSON()
 	if (err != nil) || (containerJSON == nil) {
 		return nil, fmt.Errorf("getting JSON test data: %w", err)
 	}
 
-	data := container.Container{ContainerJSON: *containerJSON}
+	data := internalContainer.Container{InspectResponse: *containerJSON}
 
 	return &data, nil
 }

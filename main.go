@@ -11,11 +11,11 @@ import (
 
 	"github.com/carlmjohnson/versioninfo"
 	"github.com/coreos/go-systemd/v22/daemon"
-	"github.com/docker/docker/client"
 	"github.com/godbus/dbus/v5"
 	"github.com/google/gops/agent"
 	"github.com/holoplot/go-avahi"
 	"github.com/kelseyhightower/envconfig"
+	"github.com/moby/moby/client"
 	"ldddns.arnested.dk/internal/log"
 )
 

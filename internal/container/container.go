@@ -5,31 +5,29 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/docker/docker/api/types"
+	"github.com/moby/moby/api/types/container"
 	"honnef.co/go/netdb"
 	"ldddns.arnested.dk/internal/log"
 )
 
 // Container holds information about a container.
 type Container struct {
-	types.ContainerJSON
+	container.InspectResponse
 }
 
 // Name is the containers name without the leading '/'.
 func (c Container) Name() string {
-	return c.ContainerJSON.Name[1:]
+	return c.InspectResponse.Name[1:]
 }
 
 // IPAddresses returns a slice of the IPv4 addresses of the container.
 func (c Container) IPAddresses() []string {
 	ips := []string{}
 
-	if c.NetworkSettings.IPAddress != "" {
-		ips = append(ips, c.NetworkSettings.IPAddress)
-	}
-
 	for _, v := range c.NetworkSettings.Networks {
-		ips = append(ips, v.IPAddress)
+		if v.IPAddress.IsValid() {
+			ips = append(ips, v.IPAddress.String())
+		}
 	}
 
 	return ips
@@ -40,7 +38,7 @@ func (c Container) Services() map[string]uint16 {
 	services := map[string]uint16{}
 
 	for portProto := range c.NetworkSettings.Ports {
-		port, protoName, found := strings.Cut(string(portProto), "/")
+		port, protoName, found := strings.Cut(portProto.String(), "/")
 		if !found {
 			log.Logf(log.PriErr, "Port not found in: %q", portProto)
 
