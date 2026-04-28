@@ -1,0 +1,10 @@
+---
+config:
+  MD013:
+    code_blocks: false
+
+globs:
+  - "**/*.md"
+
+ignores:
+  - ".github/ISSUE_TEMPLATE/*"
