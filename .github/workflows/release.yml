@@ -44,7 +44,6 @@ jobs:
           args: release
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
       - name: Import GPG signing key
         run: |
           mkdir -m 0700 ~/.gnupg/
@@ -87,8 +86,6 @@ jobs:
         run: cp -vR page/favicons site/
       - name: Add changelog to GitHub Pages
         run: chglog format --template deb --output site/changelog
-      - name: Add .well-known for Bluesky to GitHub Pages
-        run: cp -vR page/.well-known site/
       - name: Deploy deb packages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
