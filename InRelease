@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Date: Tue, 12 May 2026 05:29:35 +0000
+Label: ldddns.arnested.dk
+Origin: Arne Jørgensen
+MD5Sum:
+ d8ede45b9e566ed4e07d96014b23cd4f             1815 Packages
+ 34c8ee3165d02dcc8d9691a2bc7318ce              858 Packages.gz
+ 733a0cc48fdff82f085d7149205b7999               88 Release
+SHA1:
+ 7e92b18d4aed73a3971385121373c1596cd70042             1815 Packages
+ 4dabd76cabb3aa5ae39f99481c2e9d696a029622              858 Packages.gz
+ 9c71d61a30ed127b14aa66a629310b9339048d29               88 Release
+SHA256:
+ 185bb5bcddaa875e9100c90ed19f7220226afa8118331916e5eba9e57dfc9743             1815 Packages
+ 97e6ba6858ff497027808066f6bc23046c81990f7b338ff24828c96e74947092              858 Packages.gz
+ 1def173672384875c7c1674d62deefa071aff8870b266377add163412e42d8e4               88 Release
+SHA512:
+ 03917d54e0ddcc9f5b9f1a79ed25bd44f79d83dd1d73e75af2d0aeb3acabd8bbcb6950ef81751e05aeb7c2ff43ea2eb411e297cb526f97ea0fab8d286256a86f             1815 Packages
+ 62304d7fd1d06257c45e426cce5abf3f5c2e5411b0813032dae1a4385e17d4b1f66d72edb151de0d560b5a1ccd840dd2ba574bdb4774c9945fea994b089c1c79              858 Packages.gz
+ fcc8eaab58497545f16bfab86088d1c8d2bf4b816b042b1bd044846b2b7d07715b866e97a652048526f1f037db84343fb65df378fbad2360cccba60531a7b193               88 Release
+Changelogs: https://ldddns.arnested.dk/changelog?path=@CHANGEPATH@
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOaW5aMP09wCi81cVnwaxeMQIvd4FAmoCur8ACgkQnwaxeMQI
+vd5rhQv+MtfYSJRE4LHt0TrNABdJzqi9iq7A6KOcgBEM2oD+IjvdPZ0wcEGXXxX/
+od4CC4IExyrUw3vkQPZJXoiicMVAbcPDfvHnmtH2t4Mli2x6XbqoxU9EV7GDwNUp
+sT4SmTqYMWjfQHBmY9Uf/2zjnTpiCy/kIIM79Cqdpaik5ZpkvGJp4uTqdR34eXgs
+qZvN0uUhatTEjcoAXdjJGXK1lv4aGuMw7jUgn2Spm2YWTdiX/JZfZo/u0Q9P/9GW
+jQ+p1qRiS7AQhFfJhx7CfV5AMlR/ZJ4E6AHcPirq/b8vbmXzHkce7jSHQiFbItlF
+rRgMRWWJCf4mEQh6RoqRZL2uH2JPvPfg0Mee1H7KzIVGTK05d9fUJnSkXWjRV/g2
+YYKAJMop3R+f59sGKajzpf7tKsu3/yWiD5oYx1K7VdNoWe7ZcBpee9dYr17qk5e0
+o82yX5aj86JKfWxQo0AMNns/clMFK/Ll0KkZPwKohj9NwSppi4+1bisdp+QGhlcr
+8PyCGohA
+=ublZ
+-----END PGP SIGNATURE-----
