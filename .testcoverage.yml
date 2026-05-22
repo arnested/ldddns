@@ -1,0 +1,12 @@
+---
+profile: coverage.txt
+local-prefix: ldddns.arnested.dk
+
+threshold:
+  file: 0
+  package: 0
+  total: 35
+
+exclude:
+  paths:
+    - ^internal/log/logtest/

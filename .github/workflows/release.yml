@@ -2,7 +2,7 @@
 name: Release
 on:
   workflow_run:
-    workflows: ["Build and test"]
+    workflows: ["Build"]
     branches: [main]
     types:
       - completed
@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: false
       - uses: arnested/go-version-action@v2
         id: go-version
       - name: Bump version and push tag
@@ -32,12 +33,13 @@ jobs:
           go-version-file: go.mod
       - name: go version
         run: go version
-      - name: run go install to warm proxy.go.dev
-        run: go install ${{ steps.go-version.outputs.module }}@${{ steps.version.outputs.tag }}
-      - name: Install changelog management tool
-        run: go install github.com/goreleaser/chglog/cmd/chglog@main
-      - name: Build changelog
-        run: chglog init
+      - name: Warm proxy.go.dev and build changelog
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          persist-workspace-changes: 'true'
+          run: |
+            go install ${{ steps.go-version.outputs.module }}@${{ steps.version.outputs.tag }}
+            go tool chglog init
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v7
         with:
@@ -85,7 +87,10 @@ jobs:
       - name: Add favicons to GitHub Pages
         run: cp -vR page/favicons site/
       - name: Add changelog to GitHub Pages
-        run: chglog format --template deb --output site/changelog
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          persist-workspace-changes: 'true'
+          run: go tool chglog format --template deb --output site/changelog
       - name: Deploy deb packages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

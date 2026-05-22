@@ -1,0 +1,47 @@
+---
+name: Test
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '22 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        go:
+          - go-version: stable
+          - go-version-file: go.mod
+        deps:
+          - locked
+          - latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Setup Go
+        uses: arnested/setup-go@rc
+        with:
+          go-version: ${{ matrix.go.go-version }}
+          go-version-file: ${{ matrix.go.go-version-file }}
+      - name: Test
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          persist-workspace-changes: 'true'
+          run: |
+            if [ "${{ matrix.deps }}" = "latest" ]; then
+              go get -u -t ./...
+            fi
+            go test -race -shuffle=on -v -cover -covermode=atomic -coverprofile=coverage.txt ./...
+      - name: Check test coverage
+        if: matrix.go.go-version-file == 'go.mod' && matrix.deps == 'locked'
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          run: go tool go-test-coverage --config=./.testcoverage.yml --github-action-output

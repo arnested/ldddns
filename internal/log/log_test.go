@@ -1,10 +1,63 @@
 package log_test
 
 import (
+	"errors"
+	"fmt"
+	"os"
 	"testing"
 
 	"ldddns.arnested.dk/internal/log"
+	"ldddns.arnested.dk/internal/log/logtest"
 )
+
+func TestMain(m *testing.M) {
+	logtest.SilenceAll()
+	os.Exit(m.Run())
+}
+
+type entry struct {
+	priority log.Priority
+	message  string
+}
+
+// installMock swaps log.Output for a capturing implementation that records
+// each entry and returns no error. The original is restored when the test
+// ends.
+func installMock(t *testing.T) *[]entry {
+	t.Helper()
+
+	var captured []entry
+
+	orig := log.Output
+	log.Output = func(priority log.Priority, format string, a ...any) error {
+		captured = append(captured, entry{priority, fmt.Sprintf(format, a...)})
+
+		return nil
+	}
+
+	t.Cleanup(func() { log.Output = orig })
+
+	return &captured
+}
+
+// assertOne fails the test unless captured contains exactly one entry with
+// the given priority and message.
+func assertOne(t *testing.T, captured *[]entry, priority log.Priority, message string) {
+	t.Helper()
+
+	if len(*captured) != 1 {
+		t.Fatalf("expected 1 captured entry, got %d", len(*captured))
+	}
+
+	got := (*captured)[0]
+	if got.priority != priority {
+		t.Errorf("priority: got %d, want %d", got.priority, priority)
+	}
+
+	if got.message != message {
+		t.Errorf("message: got %q, want %q", got.message, message)
+	}
+}
 
 func TestPriorityConstants(t *testing.T) {
 	t.Parallel()
@@ -35,77 +88,37 @@ func TestPriorityConstants(t *testing.T) {
 	}
 }
 
+// TestLogf and TestLogfAllPriorities mutate the package-level log.Output and
+// therefore cannot run in parallel with each other or with themselves.
+//
+//nolint:paralleltest // mutates shared log.Output.
 func TestLogf(t *testing.T) {
-	t.Parallel()
-
-	// Test that Logf doesn't panic with valid inputs
 	tests := []struct {
 		name     string
 		priority log.Priority
 		format   string
 		args     []any
+		want     string
 	}{
-		{
-			name:     "simple message",
-			priority: log.PriInfo,
-			format:   "test message",
-			args:     nil,
-		},
-		{
-			name:     "formatted message",
-			priority: log.PriNotice,
-			format:   "test %s message %d",
-			args:     []any{"formatted", 123},
-		},
-		{
-			name:     "emergency priority",
-			priority: log.PriEmerg,
-			format:   "emergency: %v",
-			args:     []any{"critical situation"},
-		},
-		{
-			name:     "debug priority",
-			priority: log.PriDebug,
-			format:   "debug: value=%d",
-			args:     []any{42},
-		},
-		{
-			name:     "empty message",
-			priority: log.PriInfo,
-			format:   "",
-			args:     nil,
-		},
+		{"simple message", log.PriInfo, "test message", nil, "test message"},
+		{"formatted message", log.PriNotice, "test %s message %d", []any{"formatted", 123}, "test formatted message 123"},
+		{"emergency priority", log.PriEmerg, "emergency: %v", []any{"critical situation"}, "emergency: critical situation"},
+		{"debug priority", log.PriDebug, "debug: value=%d", []any{42}, "debug: value=42"},
+		{"empty message", log.PriInfo, "", nil, ""},
 	}
 
-	for _, testCase := range tests {
-		t.Run(testCase.name, func(t *testing.T) {
-			t.Parallel()
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			captured := installMock(t)
 
-			// This test verifies that Logf doesn't panic
-			// We can't easily verify the output goes to journald in unit tests,
-			// but we can verify the function executes without error
-			defer func() {
-				if recovered := recover(); recovered != nil {
-					// If we're not running in a systemd environment, the journal
-					// might not be available, which is OK for unit tests
-					// Only fail if it's an unexpected panic
-					if err, ok := recovered.(error); ok {
-						// Expected error when journald is not available
-						t.Logf("Journal not available (expected in test environment): %v", err)
-					} else {
-						t.Errorf("Unexpected panic: %v", recovered)
-					}
-				}
-			}()
-
-			log.Logf(testCase.priority, testCase.format, testCase.args...)
+			log.Logf(tc.priority, tc.format, tc.args...)
+			assertOne(t, captured, tc.priority, tc.want)
 		})
 	}
 }
 
+//nolint:paralleltest // mutates shared log.Output.
 func TestLogfAllPriorities(t *testing.T) {
-	t.Parallel()
-
 	priorities := []struct {
 		name     string
 		priority log.Priority
@@ -120,21 +133,42 @@ func TestLogfAllPriorities(t *testing.T) {
 		{"debug", log.PriDebug},
 	}
 
-	for _, testCase := range priorities {
-		t.Run(testCase.name, func(t *testing.T) {
-			t.Parallel()
+	for _, tc := range priorities {
+		t.Run(tc.name, func(t *testing.T) {
+			captured := installMock(t)
 
-			defer func() {
-				if recovered := recover(); recovered != nil {
-					if err, ok := recovered.(error); ok {
-						t.Logf("Journal not available (expected): %v", err)
-					} else {
-						t.Errorf("Unexpected panic: %v", recovered)
-					}
-				}
-			}()
-
-			log.Logf(testCase.priority, "test message at priority %d", testCase.priority)
+			log.Logf(tc.priority, "test message at priority %d", tc.priority)
+			assertOne(t, captured, tc.priority, fmt.Sprintf("test message at priority %d", tc.priority))
 		})
 	}
+}
+
+var errBackendUnavailable = errors.New("backend unavailable")
+
+//nolint:paralleltest // mutates shared log.Output.
+func TestLogfPanicsOnError(t *testing.T) {
+	orig := log.Output
+	log.Output = func(_ log.Priority, _ string, _ ...any) error {
+		return errBackendUnavailable
+	}
+
+	t.Cleanup(func() { log.Output = orig })
+
+	defer func() {
+		recovered := recover()
+		if recovered == nil {
+			t.Fatalf("expected panic when Output returns an error")
+		}
+
+		err, ok := recovered.(error)
+		if !ok {
+			t.Fatalf("expected panic value to be an error, got %T", recovered)
+		}
+
+		if !errors.Is(err, errBackendUnavailable) {
+			t.Errorf("unexpected error: %v", err)
+		}
+	}()
+
+	log.Logf(log.PriErr, "boom")
 }

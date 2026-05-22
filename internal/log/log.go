@@ -28,9 +28,17 @@ const (
 	PriDebug
 )
 
-// Logf formats a log entry to systemd's journald.
+// Output is invoked by Logf to emit a log entry. It defaults to systemd's
+// journald; tests can replace it with a capturing implementation.
+//
+//nolint:gochecknoglobals // intentional: a swappable sink is the point.
+var Output = func(priority Priority, format string, a ...any) error {
+	return journal.Print(journal.Priority(priority), format, a...)
+}
+
+// Logf formats a log entry and sends it through Output.
 func Logf(priority Priority, format string, a ...any) {
-	err := journal.Print(journal.Priority(priority), format, a...)
+	err := Output(priority, format, a...)
 	if err != nil {
 		panic(fmt.Errorf("could not log: %w", err))
 	}
