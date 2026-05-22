@@ -1,6 +1,6 @@
 ---
 on: push
-name: Build and test
+name: Build
 permissions:
   contents: read
 jobs:
@@ -27,8 +27,8 @@ jobs:
           run: |
             go generate -x
             git diff --exit-code
-  build_and_test:
-    name: Build and test
+  snapshot:
+    name: Snapshot
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
@@ -49,14 +49,6 @@ jobs:
         run: |
           go fmt ./...
           git diff --exit-code
-      - name: Test
-        uses: robherley/go-test-action@v1.0.1
-        with:
-          testArguments: -race -shuffle=on -benchtime=1x -cover -covermode=atomic -coverprofile=coverage.txt ./...
-      - name: Check test coverage
-        uses: vladopajic/go-test-coverage@v2
-        with:
-          config: ./.testcoverage.yml
       - name: Build changelog
         uses: geomys/sandboxed-step@v1.2.1
         with:

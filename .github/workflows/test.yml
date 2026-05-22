@@ -1,5 +1,5 @@
 ---
-name: Go tests
+name: Test
 on:
   push:
   pull_request:
@@ -34,8 +34,14 @@ jobs:
       - name: Test
         uses: geomys/sandboxed-step@v1.2.1
         with:
+          persist-workspace-changes: 'true'
           run: |
             if [ "${{ matrix.deps }}" = "latest" ]; then
               go get -u -t ./...
             fi
-            go test -race -shuffle=on -v ./...
+            go test -race -shuffle=on -v -cover -covermode=atomic -coverprofile=coverage.txt ./...
+      - name: Check test coverage
+        if: matrix.go.go-version-file == 'go.mod' && matrix.deps == 'locked'
+        uses: vladopajic/go-test-coverage@v2
+        with:
+          config: ./.testcoverage.yml
