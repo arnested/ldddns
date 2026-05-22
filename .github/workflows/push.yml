@@ -9,18 +9,24 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: Setup Go
         uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
       - name: go mod tidy
-        run: |
-          go mod tidy
-          git diff --exit-code
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          run: |
+            go mod tidy
+            git diff --exit-code
       - name: go generate
-        run: |
-          go generate -x
-          git diff --exit-code
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          run: |
+            go generate -x
+            git diff --exit-code
   build_and_test:
     name: Build and test
     runs-on: ubuntu-24.04
@@ -28,6 +34,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Setup Go
         uses: arnested/setup-go@rc
         with:
@@ -50,10 +57,13 @@ jobs:
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Install changelog management tool
-        run: go install github.com/goreleaser/chglog/cmd/chglog@main
-      - name: Build changelog
-        run: chglog init
+      - name: Install changelog tool and build changelog
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          persist-workspace-changes: 'true'
+          run: |
+            go install github.com/goreleaser/chglog/cmd/chglog@main
+            chglog init
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v7
         with:
@@ -70,29 +80,35 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Setup Go
         uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
-      - name: Install nilaway
-        run: go install go.uber.org/nilaway/cmd/nilaway@latest
-      - name: Run nilaway
-        run: nilaway ./...
+      - name: Install and run nilaway
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          run: |
+            go install go.uber.org/nilaway/cmd/nilaway@latest
+            nilaway ./...
 
   license_check:
     name: License check
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: Setup Go
         uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
-      - name: Install wwhrd
-        run: go install github.com/frapposelli/wwhrd@latest
-      - name: go mod vendor
-        env:
-          GO111MODULE: 'on'
-        run: go mod vendor
-      - name: wwhrd check
-        run: wwhrd check
+      - name: Install wwhrd and run license check
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          env: |
+            GO111MODULE=on
+          run: |
+            go install github.com/frapposelli/wwhrd@latest
+            go mod vendor
+            wwhrd check
