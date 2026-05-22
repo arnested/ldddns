@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: arnested/go-version-action@v2
         id: go-version
         with:
@@ -22,9 +24,14 @@ jobs:
         uses: arnested/setup-go@rc
         with:
           go-version: ${{ steps.go-version.outputs.latest }}
-      - run: go mod edit -go ${{ steps.go-version.outputs.latest }}
-      - run: go fix ./...
-      - run: git diff
+      - name: Apply Go version bump
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          persist-workspace-changes: 'true'
+          run: |
+            go mod edit -go ${{ steps.go-version.outputs.latest }}
+            go fix ./...
+            git diff
       - name: "Create pull request"
         uses: peter-evans/create-pull-request@v8
         with:
@@ -45,6 +52,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: arnested/go-version-action@v2
         id: go-version-stable
         with:
@@ -65,12 +74,15 @@ jobs:
         uses: arnested/setup-go@rc
         with:
           go-version: ${{ steps.go-version-unstable.outputs.latest }}
-      - run: go mod edit -go ${{ steps.go-version-unstable.outputs.latest }}
+      - name: Apply unstable Go version bump
         if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
-      - run: go fix ./...
-        if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
-      - run: git diff
-        if: steps.go-version-unstable.outputs.latest != steps.go-version-stable.outputs.latest
+        uses: geomys/sandboxed-step@v1.2.1
+        with:
+          persist-workspace-changes: 'true'
+          run: |
+            go mod edit -go ${{ steps.go-version-unstable.outputs.latest }}
+            go fix ./...
+            git diff
       - name: "Create pull request"
         uses: peter-evans/create-pull-request@v8
         with:
