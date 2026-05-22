@@ -53,10 +53,10 @@ jobs:
         uses: robherley/go-test-action@v1.0.1
         with:
           testArguments: -race -shuffle=on -benchtime=1x -cover -covermode=atomic -coverprofile=coverage.txt ./...
-      - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v6
+      - name: Check test coverage
+        uses: vladopajic/go-test-coverage@v2
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          config: ./.testcoverage.yml
       - name: Build changelog
         uses: geomys/sandboxed-step@v1.2.1
         with:
