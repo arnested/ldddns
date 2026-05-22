@@ -39,8 +39,7 @@ jobs:
           persist-workspace-changes: 'true'
           run: |
             go install ${{ steps.go-version.outputs.module }}@${{ steps.version.outputs.tag }}
-            go install github.com/goreleaser/chglog/cmd/chglog@main
-            chglog init
+            go tool chglog init
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v7
         with:
@@ -91,9 +90,7 @@ jobs:
         uses: geomys/sandboxed-step@v1.2.1
         with:
           persist-workspace-changes: 'true'
-          run: |
-            go install github.com/goreleaser/chglog/cmd/chglog@main
-            chglog format --template deb --output site/changelog
+          run: go tool chglog format --template deb --output site/changelog
       - name: Deploy deb packages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

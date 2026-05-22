@@ -57,13 +57,11 @@ jobs:
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Install changelog tool and build changelog
+      - name: Build changelog
         uses: geomys/sandboxed-step@v1.2.1
         with:
           persist-workspace-changes: 'true'
-          run: |
-            go install github.com/goreleaser/chglog/cmd/chglog@main
-            chglog init
+          run: go tool chglog init
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v7
         with:
@@ -85,9 +83,7 @@ jobs:
         uses: arnested/setup-go@rc
         with:
           go-version-file: go.mod
-      - name: Install and run nilaway
+      - name: Run nilaway
         uses: geomys/sandboxed-step@v1.2.1
         with:
-          run: |
-            go install go.uber.org/nilaway/cmd/nilaway@latest
-            nilaway ./...
+          run: go tool nilaway ./...
