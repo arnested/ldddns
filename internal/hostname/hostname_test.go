@@ -10,7 +10,13 @@ import (
 	"github.com/moby/moby/api/types/container"
 	internalContainer "ldddns.arnested.dk/internal/container"
 	"ldddns.arnested.dk/internal/hostname"
+	"ldddns.arnested.dk/internal/log/logtest"
 )
+
+func TestMain(m *testing.M) {
+	logtest.SilenceAll()
+	os.Exit(m.Run())
+}
 
 func containerJSON() (*container.InspectResponse, error) {
 	jsonFile, err := os.Open("../../testdata/container.json")
