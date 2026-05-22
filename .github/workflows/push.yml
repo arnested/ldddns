@@ -2,7 +2,7 @@
 on: push
 name: Build and test
 permissions:
-  contents: write
+  contents: read
 jobs:
   generated:
     name: Check generated code is up to date
