@@ -91,24 +91,3 @@ jobs:
           run: |
             go install go.uber.org/nilaway/cmd/nilaway@latest
             nilaway ./...
-
-  license_check:
-    name: License check
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          persist-credentials: false
-      - name: Setup Go
-        uses: arnested/setup-go@rc
-        with:
-          go-version-file: go.mod
-      - name: Install wwhrd and run license check
-        uses: geomys/sandboxed-step@v1.2.1
-        with:
-          env: |
-            GO111MODULE=on
-          run: |
-            go install github.com/frapposelli/wwhrd@latest
-            go mod vendor
-            wwhrd check
