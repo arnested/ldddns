@@ -8,8 +8,8 @@ require (
 	github.com/godbus/dbus/v5 v5.2.2
 	github.com/holoplot/go-avahi v1.0.1
 	github.com/kelseyhightower/envconfig v1.4.0
-	golang.org/x/net v0.54.0
-	golang.org/x/sys v0.44.0 // indirect
+	golang.org/x/net v0.55.0
+	golang.org/x/sys v0.45.0 // indirect
 	honnef.co/go/netdb v0.0.0-20210921115105-e902e863d85d
 )
 
