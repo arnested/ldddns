@@ -88,6 +88,10 @@ jobs:
         run: cp -vR page/favicons site/
       - name: Add changelog to GitHub Pages
         run: chglog format --template deb --output site/changelog
+      - name: Clean stale git locks
+        run: |
+          rm -f .git/index.lock
+          find .git -name "*.lock" -type f -delete
       - name: Deploy deb packages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
