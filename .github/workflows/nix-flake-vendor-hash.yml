@@ -1,0 +1,84 @@
+---
+name: Update vendorHash in Nix Flake
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - go.mod
+      - go.sum
+  pull_request_target:
+    paths:
+      - go.mod
+      - go.sum
+
+permissions:
+  contents: read
+
+jobs:
+  vendor-hash:
+    name: Update vendorHash
+    runs-on: ubuntu-24.04
+    steps:
+      # Decide whether we trust this run *before* checking out any code.
+      # pull_request_target runs trusted base-repo workflow code with a
+      # writable token, so we must gate it: only Dependabot, or an actor with
+      # write access to the repo, may reach the checkout/build steps. Pushes
+      # to main are implicitly trusted (you cannot push there without access).
+      - name: Check authorization
+        id: auth
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "authorized=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          actor='${{ github.actor }}'
+          if [ "$actor" = "dependabot[bot]" ]; then
+            echo "authorized=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          perm="$(gh api "repos/${{ github.repository }}/collaborators/$actor/permission" --jq '.permission' 2>/dev/null || echo none)"
+          case "$perm" in
+            admin | write | maintain)
+              echo "authorized=true" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "::notice::skipping vendorHash update for untrusted actor $actor ($perm)"
+              echo "authorized=false" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+      - uses: actions/checkout@v6
+        if: steps.auth.outputs.authorized == 'true'
+        with:
+          # Push: the branch that was pushed (main). PR: the PR's head branch,
+          # so the fixup commit lands on the PR. Both are checked out by branch
+          # name (not detached) so we can commit and push back.
+          ref: >-
+            ${{ github.event_name == 'pull_request_target'
+            && github.event.pull_request.head.ref
+            || github.ref_name }}
+          token: ${{ secrets.PAT_TOKEN }}
+      - uses: DeterminateSystems/nix-installer-action@main
+        if: steps.auth.outputs.authorized == 'true'
+      - name: Recompute vendorHash
+        if: steps.auth.outputs.authorized == 'true'
+        run: |
+          # Force a mismatch so Nix prints the correct hash, then write it back.
+          sed -i 's|vendorHash = "[^"]*"|vendorHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="|' flake.nix
+          hash="$(nix build .#ldddns 2>&1 | sed -n 's/.*got:[[:space:]]*//p')"
+          if [ -z "$hash" ]; then
+            echo "::error::could not determine vendorHash from nix build output" >&2
+            exit 1
+          fi
+          sed -i "s|vendorHash = \"sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\"|vendorHash = \"$hash\"|" flake.nix
+      - name: Commit if changed
+        if: steps.auth.outputs.authorized == 'true'
+        run: |
+          if ! git diff --quiet -- flake.nix; then
+            git config user.name 'github-actions[bot]'
+            git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git commit -am 'Update Nix Flake vendorHash for Go module changes'
+            git push
+          fi
