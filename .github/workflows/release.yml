@@ -88,17 +88,14 @@ jobs:
         run: cp -vR page/favicons site/
       - name: Add changelog to GitHub Pages
         run: chglog format --template deb --output site/changelog
-      - name: Clean stale git locks
-        run: |
-          rm -f .git/index.lock
-          find .git -name "*.lock" -type f -delete
-      - name: Deploy deb packages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload site files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v5
         with:
-          branch: gh-pages
-          folder: site
-          clean: true
-          single-commit: true
+          path: site/
+          include-hidden-files: true
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v5
       - name: Post status to Google Chat
         if: ${{ always() }}
         uses: containrrr/shoutrrr-action@v1
