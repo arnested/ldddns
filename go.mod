@@ -1,6 +1,6 @@
 module ldddns.arnested.dk
 
-go 1.26.4
+go 1.26.5
 
 require (
 	github.com/Microsoft/go-winio v0.6.2 // indirect
