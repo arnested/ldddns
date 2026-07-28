@@ -18,7 +18,7 @@ require (
 	github.com/coreos/go-systemd/v22 v22.7.0
 	github.com/google/gops v0.3.29
 	github.com/moby/moby/api v1.55.0
-	github.com/moby/moby/client v0.5.0
+	github.com/moby/moby/client v0.5.1
 )
 
 require (
