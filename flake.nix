@@ -2,7 +2,7 @@
   description = "Local Docker Development DNS";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -19,15 +19,19 @@
       in
       {
         packages = {
-          ldddns = pkgs.buildGo126Module {
+          ldddns = pkgs.buildGoModule {
             pname = "ldddns";
             version = self.shortRev or self.dirtyShortRev or "dev";
 
             src = self;
 
-            # Relax the go directive to match the Go version available in nixpkgs.
+            # Drop the patch component from the go directive so the build never
+            # demands a newer Go toolchain than the one nixpkgs ships. Written
+            # version agnostically on purpose: the go-version workflow bumps
+            # go.mod to every new Go patch release, so matching a literal
+            # version here breaks the build on each bump.
             prePatch = ''
-              substituteInPlace go.mod --replace-fail "go 1.26.3" "go 1.26"
+              sed -i -E 's/^(go [0-9]+\.[0-9]+).*$/\1/' go.mod
             '';
 
             vendorHash = "sha256-FI7kSIn1QNDcEqDECiGNVLZ5z7LWPxxunK6eKH3D46Y=";
@@ -63,7 +67,7 @@
 
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            go_1_26
+            go
             gopls
             goreleaser
           ];
