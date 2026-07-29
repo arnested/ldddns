@@ -34,7 +34,7 @@
               sed -i -E 's/^(go [0-9]+\.[0-9]+).*$/\1/' go.mod
             '';
 
-            vendorHash = "sha256-FI7kSIn1QNDcEqDECiGNVLZ5z7LWPxxunK6eKH3D46Y=";
+            vendorHash = "sha256-wPqALHdMyb/Ic5LaJhMJr1ceFvPQfdldRf+m2NVQNYQ=";
 
             # Tests require /etc/protocols which is unavailable in the Nix sandbox.
             doCheck = false;
