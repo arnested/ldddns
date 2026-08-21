@@ -9,11 +9,9 @@ import (
 
 func createTestContainer(labels map[string]string) internalContainer.Container {
 	return internalContainer.Container{
-		InspectResponse: container.InspectResponse{
-			ID: "test-container",
-			Config: &container.Config{
-				Labels: labels,
-			},
+		ID: "test-container",
+		Config: &container.Config{
+			Labels: labels,
 		},
 	}
 }
