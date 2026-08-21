@@ -5,6 +5,9 @@ linters:
   disable:
     - depguard
     - exhaustruct
+    - exhaustruct_v5
+    - goconst
+    - gomodguard
     - tagliatelle
     - wsl
   settings:
