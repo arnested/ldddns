@@ -1,6 +1,6 @@
 module ldddns.arnested.dk
 
-go 1.27.0
+go 1.27.1
 
 require (
 	github.com/carlmjohnson/versioninfo v0.22.5
