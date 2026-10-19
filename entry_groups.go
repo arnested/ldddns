@@ -51,8 +51,25 @@ func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error)
 			return nil, func() {}, fmt.Errorf("error creating new entry group: %w", err)
 		}
 
+		go logStateChanges(containerID, entryGroup.StateChangeChannel)
+
 		e.groups[containerID] = entryGroup
 	}
 
 	return e.groups[containerID], commit, nil
+}
+
+// logStateChanges reads the state changes of an entry group. When one of
+// these channels is full, go-avahi stops sending signals to all entry groups.
+func logStateChanges(containerID string, states <-chan avahi.EntryGroupState) {
+	for state := range states {
+		switch state.State {
+		case avahi.EntryGroupCollision:
+			log.Logf(log.PriWarning, "Avahi name collision for container %s", containerID)
+		case avahi.EntryGroupFailure:
+			log.Logf(log.PriWarning, "Avahi registration failed for container %s: %s", containerID, state.Error)
+		default:
+			log.Logf(log.PriDebug, "Avahi entry group state for container %s: %d", containerID, state.State)
+		}
+	}
 }
