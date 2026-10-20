@@ -42,9 +42,10 @@ nfpms:
     formats:
       - deb
     dependencies:
-      - avahi-daemon
       - docker.io | docker-ce
       - libsystemd0
+    recommends:
+      - libnss-mdns | systemd-resolved
     bindir: /usr/libexec
     changelog: ./changelog.yml
     contents:
