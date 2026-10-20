@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"slices"
 	"testing"
 
 	"github.com/moby/moby/api/types/container"
@@ -116,6 +117,70 @@ func TestRewriteHostname(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestRewriteHostnameLabels(t *testing.T) {
+	t.Parallel()
+
+	testdata := []struct {
+		in  string
+		out string
+	}{
+		{"www.my-project.local", "www.my-project.local"},
+		{"my.example.com", "my.example.local"},
+		{"a.b.co.uk", "a.b.local"},
+		{"a_b..c.docker", "a-b.c.local"},
+		{"-www-._foo_.local", "www.foo.local"},
+		{"example.com", "example.local"},
+		{"www-my-project.local", "www-my-project.local"},
+		{"blåbær.grød.dk", "xn--blbr-roah.xn--grd-1na.local"},
+	}
+
+	for _, tt := range testdata {
+		t.Run(tt.in, func(t *testing.T) {
+			t.Parallel()
+
+			if s := hostname.RewriteHostnameLabels(tt.in); s != tt.out {
+				t.Errorf("got %q from %q, want %q", s, tt.in, tt.out)
+			}
+		})
+	}
+}
+
+func TestHostnamesWithMoreLabels(t *testing.T) {
+	t.Parallel()
+
+	data := internalContainer.Container{InspectResponse: container.InspectResponse{
+		Name:   "/www.app",
+		Config: &container.Config{Env: []string{"VIRTUAL_HOST=www.my-project.local,example.com"}},
+	}}
+
+	hostnames, err := hostname.Hostnames(data, []string{"env:VIRTUAL_HOST", "containerName"})
+	if err != nil {
+		t.Fatalf("Unexpected error getting hostnames: %s", err)
+	}
+
+	// Each flat name comes first, then the name with more labels.
+	expected := []string{
+		"www-my-project.local", "www.my-project.local",
+		"example.local",
+		"www-app.local", "www.app.local",
+	}
+
+	if !slices.Equal(hostnames, expected) {
+		t.Errorf("Expected %v, got %v", expected, hostnames)
+	}
+}
+
+func FuzzRewriteHostnameLabels(f *testing.F) {
+	f.Add("www.my-project.local")
+	f.Add("a_b..c.docker")
+	f.Add("blåbær.grød.dk")
+	f.Add("-www-._foo_.local")
+
+	f.Fuzz(func(_ *testing.T, a string) {
+		hostname.RewriteHostnameLabels(a)
+	})
 }
 
 func FuzzRewriteHostname(f *testing.F) {

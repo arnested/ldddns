@@ -13,12 +13,11 @@ import (
 
 	"github.com/carlmjohnson/versioninfo"
 	"github.com/coreos/go-systemd/v22/daemon"
-	"github.com/godbus/dbus/v5"
 	"github.com/google/gops/agent"
-	"github.com/holoplot/go-avahi"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/moby/moby/client"
 	"ldddns.arnested.dk/internal/log"
+	"ldddns.arnested.dk/internal/mdns"
 )
 
 // shutdownTimeout is how long ldddns waits for a clean shutdown after
@@ -74,19 +73,17 @@ func main() {
 
 	go exitAfterShutdownTimeout(ctx, shutdownTimeout, os.Exit)
 
-	conn, err := dbus.SystemBus()
+	responder, err := mdns.New(ctx)
 	if err != nil {
-		panic(fmt.Errorf("cannot get dbus system bus: %w", err))
+		panic(fmt.Errorf("cannot start mDNS responder: %w", err))
 	}
-	defer conn.Close()
 
-	avahiServer, err := avahi.ServerNew(conn)
-	if err != nil {
-		panic(fmt.Errorf("avahi new failed: %w", err))
-	}
-	defer avahiServer.Close()
-
-	egs := newEntryGroups(avahiServer)
+	defer func() {
+		err := responder.Close()
+		if err != nil {
+			log.Logf(log.PriErr, "closing mDNS responder: %v", err)
+		}
+	}()
 
 	started := time.Now()
 
@@ -96,8 +93,8 @@ func main() {
 	}
 
 	// Do the magic work.
-	handleExistingContainers(ctx, config, docker, egs)
-	listen(ctx, config, docker, egs, started)
+	handleExistingContainers(ctx, config, docker, responder)
+	listen(ctx, config, docker, responder, started)
 
 	err = sdNotify(daemon.SdNotifyStopping, version, config)
 	if err != nil {
@@ -106,8 +103,7 @@ func main() {
 }
 
 // exitAfterShutdownTimeout exits the process if a clean shutdown takes too
-// long. The go-avahi and D-Bus calls take no context, so a blocked call can
-// keep the event loop from returning.
+// long. It is a safety net, because all blocking calls take a context.
 func exitAfterShutdownTimeout(ctx context.Context, timeout time.Duration, exit func(int)) {
 	<-ctx.Done()
 	time.Sleep(timeout)

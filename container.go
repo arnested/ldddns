@@ -3,34 +3,38 @@ package main
 import (
 	"context"
 	"fmt"
+	"maps"
+	"net/netip"
+	"slices"
 	"strconv"
 	"time"
 
-	"github.com/holoplot/go-avahi"
 	"github.com/moby/moby/api/types/events"
 	"github.com/moby/moby/client"
 	internalContainer "ldddns.arnested.dk/internal/container"
 	"ldddns.arnested.dk/internal/hostname"
 	"ldddns.arnested.dk/internal/log"
+	"ldddns.arnested.dk/internal/mdns"
 )
 
-//nolint:cyclop
+// publisher publishes the mDNS records of containers.
+type publisher interface {
+	Publish(owner string, set mdns.RecordSet)
+	Unpublish(owner string)
+}
+
 func handleContainer(
 	ctx context.Context,
 	docker *client.Client,
 	containerID string,
-	egs *entryGroups,
+	pub publisher,
 	status events.Action,
 	config Config,
 ) error {
-	if status == "destroy" {
-		egs.free(containerID)
+	if status == "destroy" || status == "die" || status == "kill" || status == "pause" {
+		pub.Unpublish(containerID)
 
 		return nil
-	}
-
-	if status == "die" || status == "kill" || status == "pause" {
-		return resetContainer(egs, containerID)
 	}
 
 	result, err := docker.ContainerInspect(ctx, containerID, client.ContainerInspectOptions{})
@@ -44,21 +48,10 @@ func handleContainer(
 		return nil
 	}
 
-	ipNumbers := containerInfo.IPAddresses()
+	addresses := ipv4Addresses(containerInfo.IPAddresses())
+	if len(addresses) == 0 {
+		pub.Unpublish(containerID)
 
-	entryGroup, commit, err := egs.get(containerID, len(ipNumbers) > 0)
-	defer commit()
-
-	if err != nil {
-		return fmt.Errorf("cannot get entry group for container: %w", err)
-	}
-
-	err = resetEntryGroup(entryGroup)
-	if err != nil {
-		return err
-	}
-
-	if len(ipNumbers) == 0 {
 		return nil
 	}
 
@@ -67,50 +60,41 @@ func handleContainer(
 		return fmt.Errorf("getting hostnames: %w", err)
 	}
 
-	for _, hostname := range hostnames {
-		addAddress(entryGroup, hostname, ipNumbers)
-	}
-
-	if services := containerInfo.Services(); len(hostnames) > 0 {
-		addServices(entryGroup, hostnames[0], ipNumbers, services, containerInfo.Name())
-	}
+	pub.Publish(containerID, mdns.RecordSet{
+		Hostnames: hostnames,
+		Addresses: addresses,
+		Instance:  containerInfo.Name(),
+		Services:  services(containerInfo.Services()),
+	})
 
 	return nil
 }
 
-// resetContainer removes the entries of a container without creating an
-// entry group for it.
-func resetContainer(egs *entryGroups, containerID string) error {
-	entryGroup, commit, err := egs.get(containerID, false)
-	defer commit()
+func ipv4Addresses(ipNumbers []string) []netip.Addr {
+	var addresses []netip.Addr
 
-	if err != nil {
-		return fmt.Errorf("cannot get entry group for container: %w", err)
-	}
-
-	return resetEntryGroup(entryGroup)
-}
-
-// resetEntryGroup removes all entries from an entry group. A nil group is
-// a container without a group, so there is nothing to reset.
-func resetEntryGroup(entryGroup *avahi.EntryGroup) error {
-	if entryGroup == nil {
-		return nil
-	}
-
-	empty, err := entryGroup.IsEmpty()
-	if err != nil {
-		return fmt.Errorf("checking whether Avahi entry group is empty: %w", err)
-	}
-
-	if !empty {
-		err := entryGroup.Reset()
-		if err != nil {
-			return fmt.Errorf("resetting Avahi entry group: %w", err)
+	for _, ipNumber := range ipNumbers {
+		addr, err := netip.ParseAddr(ipNumber)
+		if err != nil || !addr.Is4() {
+			continue
 		}
+
+		addresses = append(addresses, addr)
 	}
 
-	return nil
+	return addresses
+}
+
+// services returns the services sorted by type, so that the same
+// container gives the same record set.
+func services(ports map[string]uint16) []mdns.Service {
+	result := make([]mdns.Service, 0, len(ports))
+
+	for _, serviceType := range slices.Sorted(maps.Keys(ports)) {
+		result = append(result, mdns.Service{Type: serviceType, Port: ports[serviceType]})
+	}
+
+	return result
 }
 
 func ignoreOneoff(containerInfo internalContainer.Container, config Config) bool {
@@ -132,7 +116,7 @@ func ignoreOneoff(containerInfo internalContainer.Container, config Config) bool
 	return true
 }
 
-func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, egs *entryGroups) {
+func handleExistingContainers(ctx context.Context, config Config, docker *client.Client, pub publisher) {
 	result, err := docker.ContainerList(ctx, client.ContainerListOptions{})
 	if err != nil {
 		log.Logf(log.PriErr, "getting container list: %v", err)
@@ -143,7 +127,7 @@ func handleExistingContainers(ctx context.Context, config Config, docker *client
 			return
 		}
 
-		err = handleContainer(ctx, docker, container.ID, egs, "start", config)
+		err = handleContainer(ctx, docker, container.ID, pub, "start", config)
 		if err != nil {
 			log.Logf(log.PriErr, "handling container: %v", err)
 
@@ -152,7 +136,7 @@ func handleExistingContainers(ctx context.Context, config Config, docker *client
 	}
 }
 
-func listen(ctx context.Context, config Config, docker *client.Client, egs *entryGroups, started time.Time) {
+func listen(ctx context.Context, config Config, docker *client.Client, pub publisher, started time.Time) {
 	filter := make(client.Filters)
 	filter.Add("type", "container")
 	filter.Add("event", "destroy")
@@ -180,7 +164,7 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 
 			panic(fmt.Errorf("go error reading docker events: %w", err))
 		case msg := <-result.Messages:
-			err := handleContainer(ctx, docker, msg.Actor.ID, egs, msg.Action, config)
+			err := handleContainer(ctx, docker, msg.Actor.ID, pub, msg.Action, config)
 			if err != nil {
 				log.Logf(log.PriErr, "handling container: %v", err)
 			}
