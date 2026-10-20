@@ -52,9 +52,12 @@ func TestBuildRecordsWithoutAddresses(t *testing.T) {
 func TestRecordsPackAndUnpack(t *testing.T) {
 	t.Parallel()
 
+	set := testSet
+	set.Hostnames = []string{"www.my-project.local", "www-my-project.local"}
+
 	msg := newResponse()
 
-	for _, rec := range buildRecords(testSet) {
+	for _, rec := range buildRecords(set) {
 		msg.Answer = append(msg.Answer, rec.res)
 	}
 

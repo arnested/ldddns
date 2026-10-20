@@ -7,10 +7,9 @@ The service answers for the domain names with its own multicast DNS
 responder (a.k.a. mDNS, zeroconf, Bonjour). It answers only on the
 Docker networks of the containers, so the names do not reach your LAN.
 
-A limitation of this is that domains name can only be on the `.local`
-TLD and only have one level below the TLD. A benefit is that you don't
-have to change your DNS server or configure stuff in `/etc/resolv` or
-similar.
+A limitation of this is that domain names can only be on the `.local`
+TLD. A benefit is that you don't have to change your DNS server or
+configure stuff in `/etc/resolv` or similar.
 
 If the containers also have exposed ports (and the ports can be looked
 up in `/etc/services`) the service will also broadcast the
@@ -22,9 +21,19 @@ Per default domain names will be generated from the `VIRTUAL_HOST`
 environment variable is present (several hostnames can be separated by
 space or comma) and from the container name.
 
-If the hostnames do not fulfill the rule of being on the `.local` TLD
-and have only one level below the service will rewrite it.
-I.e. `my.example.com` will be rewritten to `my-example.local`.
+If a hostname is not on the `.local` TLD, the service replaces the
+public suffix with `.local`. The service keeps the dots, and it also
+publishes a flat name with only one level below `.local`. For
+example, `my.example.com` gives both `my.example.local` and
+`my-example.local`.
+
+The default configuration of nss-mdns (`mdns4_minimal` in
+`/etc/nsswitch.conf`) resolves only names with one level below
+`.local`. The flat names work everywhere, so the DNS-SD services
+point to the flat name. To resolve names like
+`my.example.local` too, use systemd-resolved with `MulticastDNS=yes`.
+Or change `mdns4_minimal` to `mdns4` in `/etc/nsswitch.conf`, and
+create `/etc/mdns.allow` with the two lines `.local.` and `.local`.
 
 ## Configuration
 

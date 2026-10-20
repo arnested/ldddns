@@ -2,6 +2,7 @@ package hostname
 
 import (
 	"regexp"
+	"strings"
 
 	"golang.org/x/net/idna"
 	"golang.org/x/net/publicsuffix"
@@ -29,15 +30,41 @@ func Hostnames(containerInfo container.Container, hostnameLookup []string) ([]st
 		}
 	}
 
-	for i, hostname := range hostnames {
-		hostnames[i] = RewriteHostname(hostname)
+	// Each host name gives a flat name with one label below .local and
+	// a name that keeps the dots. The flat name comes first, because the
+	// services point to the first name, and the default configuration
+	// of nss-mdns resolves only flat names.
+	rewritten := make([]string, 0, 2*len(hostnames)) //nolint:mnd // Two names per host name.
+
+	for _, hostname := range hostnames {
+		rewritten = append(rewritten, RewriteHostname(hostname), RewriteHostnameLabels(hostname))
 	}
 
-	return removeDuplicates(hostnames), nil
+	return removeDuplicates(rewritten), nil
 }
 
-// RewriteHostname will make `hostname` suitable for dns-sd.
+// The regular expressions that sanitize a label.
+var (
+	invalidRunes = regexp.MustCompile(`[^\pL\d-]`)
+	dashes       = regexp.MustCompile(`--+`)
+	outerDashes  = regexp.MustCompile(`(^-+|-+$)`)
+)
+
+// RewriteHostname will make `hostname` suitable for dns-sd. The result
+// has one label below .local, so `my.example.com` becomes
+// `my-example.local`.
 func RewriteHostname(hostname string) string {
+	return rewrite(hostname, false)
+}
+
+// RewriteHostnameLabels makes `hostname` suitable for mDNS like
+// RewriteHostname, but it keeps the dots between the labels, so
+// `my.example.com` becomes `my.example.local`.
+func RewriteHostnameLabels(hostname string) string {
+	return rewrite(hostname, true)
+}
+
+func rewrite(hostname string, keepDots bool) string {
 	profile := idna.New(
 		idna.BidiRule(),
 		idna.MapForLookup(),
@@ -59,16 +86,21 @@ func RewriteHostname(hostname string) string {
 	suffixRegExp := regexp.MustCompile(`\.` + regexp.QuoteMeta(suffix) + `$`)
 	basename := suffixRegExp.ReplaceAllString(unicodeHostname, "")
 
-	suffixRegExp = regexp.MustCompile(`[^\pL\d-]`)
-	basename = suffixRegExp.ReplaceAllString(basename, "-")
+	labels := []string{basename}
+	if keepDots {
+		labels = strings.Split(basename, ".")
+	}
 
-	suffixRegExp = regexp.MustCompile(`--+`)
-	basename = suffixRegExp.ReplaceAllString(basename, "-")
+	sanitized := make([]string, 0, len(labels))
 
-	suffixRegExp = regexp.MustCompile(`(^-+|-+$)`)
-	basename = suffixRegExp.ReplaceAllString(basename, "")
+	for _, label := range labels {
+		label = sanitizeLabel(label)
+		if label != "" || !keepDots {
+			sanitized = append(sanitized, label)
+		}
+	}
 
-	sanitizedHostname := basename + tld
+	sanitizedHostname := strings.Join(sanitized, ".") + tld
 
 	sanitizedHostname, err := profile.ToASCII(sanitizedHostname)
 	if err != nil {
@@ -80,6 +112,16 @@ func RewriteHostname(hostname string) string {
 	}
 
 	return sanitizedHostname
+}
+
+// sanitizeLabel replaces the characters that are not letters, digits
+// or dashes with dashes, and removes repeated, leading and trailing
+// dashes.
+func sanitizeLabel(label string) string {
+	label = invalidRunes.ReplaceAllString(label, "-")
+	label = dashes.ReplaceAllString(label, "-")
+
+	return outerDashes.ReplaceAllString(label, "")
 }
 
 // removeDuplicates and keep the order.
