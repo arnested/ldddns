@@ -6,7 +6,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"os/signal"
 	"runtime/debug"
+	"syscall"
 	"time"
 
 	"github.com/carlmjohnson/versioninfo"
@@ -18,6 +20,10 @@ import (
 	"github.com/moby/moby/client"
 	"ldddns.arnested.dk/internal/log"
 )
+
+// shutdownTimeout is how long ldddns waits for a clean shutdown after
+// SIGTERM. It is shorter than the stop timeout of systemd.
+const shutdownTimeout = 10 * time.Second
 
 var (
 	//go:embed LICENSE.md
@@ -63,8 +69,10 @@ func main() {
 	}
 	defer docker.Close()
 
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
+	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGTERM)
+	defer stop()
+
+	go exitAfterShutdownTimeout(ctx)
 
 	conn, err := dbus.SystemBus()
 	if err != nil {
@@ -95,6 +103,17 @@ func main() {
 	if err != nil {
 		log.Logf(log.PriErr, "notifying systemd we're shutting down: %v", err)
 	}
+}
+
+// exitAfterShutdownTimeout exits the process if a clean shutdown takes too
+// long. The go-avahi and D-Bus calls take no context, so a blocked call can
+// keep the event loop from returning.
+func exitAfterShutdownTimeout(ctx context.Context) {
+	<-ctx.Done()
+	time.Sleep(shutdownTimeout)
+
+	log.Logf(log.PriErr, "Shutdown did not finish within %s, exiting.", shutdownTimeout)
+	os.Exit(1)
 }
 
 func sdNotify(state string, version string, config Config) error {

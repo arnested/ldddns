@@ -3,10 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"os"
-	"os/signal"
 	"strconv"
-	"syscall"
 	"time"
 
 	"github.com/holoplot/go-avahi"
@@ -142,6 +139,10 @@ func handleExistingContainers(ctx context.Context, config Config, docker *client
 	}
 
 	for _, container := range result.Items {
+		if ctx.Err() != nil {
+			return
+		}
+
 		err = handleContainer(ctx, docker, container.ID, egs, "start", config)
 		if err != nil {
 			log.Logf(log.PriErr, "handling container: %v", err)
@@ -167,20 +168,22 @@ func listen(ctx context.Context, config Config, docker *client.Client, egs *entr
 		Until:   "",
 	})
 
-	sig := make(chan os.Signal, 1)
-	signal.Notify(sig, syscall.SIGTERM)
-
 	for {
 		select {
+		case <-ctx.Done():
+			return
 		case err := <-result.Err:
+			// A cancelled context closes the event stream with an error.
+			if ctx.Err() != nil {
+				return
+			}
+
 			panic(fmt.Errorf("go error reading docker events: %w", err))
 		case msg := <-result.Messages:
 			err := handleContainer(ctx, docker, msg.Actor.ID, egs, msg.Action, config)
 			if err != nil {
 				log.Logf(log.PriErr, "handling container: %v", err)
 			}
-		case <-sig:
-			return
 		}
 	}
 }
