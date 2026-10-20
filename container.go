@@ -9,6 +9,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/holoplot/go-avahi"
 	"github.com/moby/moby/api/types/events"
 	"github.com/moby/moby/client"
 	internalContainer "ldddns.arnested.dk/internal/container"
@@ -25,27 +26,14 @@ func handleContainer(
 	status events.Action,
 	config Config,
 ) error {
-	entryGroup, commit, err := egs.get(containerID)
-	defer commit()
+	if status == "destroy" {
+		egs.free(containerID)
 
-	if err != nil {
-		return fmt.Errorf("cannot get entry group for container: %w", err)
-	}
-
-	empty, err := entryGroup.IsEmpty()
-	if err != nil {
-		return fmt.Errorf("checking whether Avahi entry group is empty: %w", err)
-	}
-
-	if !empty {
-		err := entryGroup.Reset()
-		if err != nil {
-			return fmt.Errorf("resetting Avahi entry group is empty: %w", err)
-		}
+		return nil
 	}
 
 	if status == "die" || status == "kill" || status == "pause" {
-		return nil
+		return resetContainer(egs, containerID)
 	}
 
 	result, err := docker.ContainerInspect(ctx, containerID, client.ContainerInspectOptions{})
@@ -60,6 +48,19 @@ func handleContainer(
 	}
 
 	ipNumbers := containerInfo.IPAddresses()
+
+	entryGroup, commit, err := egs.get(containerID, len(ipNumbers) > 0)
+	defer commit()
+
+	if err != nil {
+		return fmt.Errorf("cannot get entry group for container: %w", err)
+	}
+
+	err = resetEntryGroup(entryGroup)
+	if err != nil {
+		return err
+	}
+
 	if len(ipNumbers) == 0 {
 		return nil
 	}
@@ -75,6 +76,41 @@ func handleContainer(
 
 	if services := containerInfo.Services(); len(hostnames) > 0 {
 		addServices(entryGroup, hostnames[0], ipNumbers, services, containerInfo.Name())
+	}
+
+	return nil
+}
+
+// resetContainer removes the entries of a container without creating an
+// entry group for it.
+func resetContainer(egs *entryGroups, containerID string) error {
+	entryGroup, commit, err := egs.get(containerID, false)
+	defer commit()
+
+	if err != nil {
+		return fmt.Errorf("cannot get entry group for container: %w", err)
+	}
+
+	return resetEntryGroup(entryGroup)
+}
+
+// resetEntryGroup removes all entries from an entry group. A nil group is
+// a container without a group, so there is nothing to reset.
+func resetEntryGroup(entryGroup *avahi.EntryGroup) error {
+	if entryGroup == nil {
+		return nil
+	}
+
+	empty, err := entryGroup.IsEmpty()
+	if err != nil {
+		return fmt.Errorf("checking whether Avahi entry group is empty: %w", err)
+	}
+
+	if !empty {
+		err := entryGroup.Reset()
+		if err != nil {
+			return fmt.Errorf("resetting Avahi entry group: %w", err)
+		}
 	}
 
 	return nil
@@ -118,6 +154,7 @@ func handleExistingContainers(ctx context.Context, config Config, docker *client
 func listen(ctx context.Context, config Config, docker *client.Client, egs *entryGroups, started time.Time) {
 	filter := make(client.Filters)
 	filter.Add("type", "container")
+	filter.Add("event", "destroy")
 	filter.Add("event", "die")
 	filter.Add("event", "kill")
 	filter.Add("event", "pause")
