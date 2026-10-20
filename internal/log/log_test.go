@@ -38,7 +38,8 @@ func TestPriorityConstants(t *testing.T) {
 func TestLogf(t *testing.T) {
 	t.Parallel()
 
-	// Test that Logf doesn't panic with valid inputs
+	// Test that Logf doesn't panic with valid inputs. In tests Logf
+	// writes to stderr, not to the host journal.
 	tests := []struct {
 		name     string
 		priority log.Priority
@@ -81,23 +82,6 @@ func TestLogf(t *testing.T) {
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			// This test verifies that Logf doesn't panic
-			// We can't easily verify the output goes to journald in unit tests,
-			// but we can verify the function executes without error
-			defer func() {
-				if recovered := recover(); recovered != nil {
-					// If we're not running in a systemd environment, the journal
-					// might not be available, which is OK for unit tests
-					// Only fail if it's an unexpected panic
-					if err, ok := recovered.(error); ok {
-						// Expected error when journald is not available
-						t.Logf("Journal not available (expected in test environment): %v", err)
-					} else {
-						t.Errorf("Unexpected panic: %v", recovered)
-					}
-				}
-			}()
-
 			log.Logf(testCase.priority, testCase.format, testCase.args...)
 		})
 	}
@@ -123,16 +107,6 @@ func TestLogfAllPriorities(t *testing.T) {
 	for _, testCase := range priorities {
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-
-			defer func() {
-				if recovered := recover(); recovered != nil {
-					if err, ok := recovered.(error); ok {
-						t.Logf("Journal not available (expected): %v", err)
-					} else {
-						t.Errorf("Unexpected panic: %v", recovered)
-					}
-				}
-			}()
 
 			log.Logf(testCase.priority, "test message at priority %d", testCase.priority)
 		})

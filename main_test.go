@@ -153,3 +153,35 @@ func TestConstants(t *testing.T) {
 		t.Errorf("Expected tld to be 'local', got %q", tld)
 	}
 }
+
+func TestEntryGroupsWithoutGroup(t *testing.T) {
+	t.Parallel()
+
+	egs := newEntryGroups(nil)
+
+	// get without create must not create a group, and commit must release
+	// the lock.
+	entryGroup, commit, err := egs.get("unknown", false)
+	commit()
+
+	if err != nil {
+		t.Fatalf("Expected no error, got %v", err)
+	}
+
+	if entryGroup != nil {
+		t.Error("Expected no entry group for an unknown container")
+	}
+
+	if len(egs.groups) != 0 {
+		t.Error("Expected get without create to leave the groups map empty")
+	}
+
+	// free of an unknown container must do nothing. It must not call the
+	// nil Avahi server.
+	egs.free("unknown")
+
+	err = resetContainer(egs, "unknown")
+	if err != nil {
+		t.Errorf("Expected no error resetting an unknown container, got %v", err)
+	}
+}

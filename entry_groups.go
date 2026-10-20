@@ -22,17 +22,25 @@ func newEntryGroups(avahiServer *avahi.Server) *entryGroups {
 	}
 }
 
-func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error) {
+// get returns the entry group of a container and holds the lock until the
+// returned commit function runs. If the group does not exist, get creates it
+// when create is true and returns a nil group otherwise.
+func (e *entryGroups) get(containerID string, create bool) (*avahi.EntryGroup, func(), error) {
 	commit := func() {
 		defer e.mutex.Unlock()
 
-		empty, err := e.groups[containerID].IsEmpty()
+		entryGroup, ok := e.groups[containerID]
+		if !ok {
+			return
+		}
+
+		empty, err := entryGroup.IsEmpty()
 		if err != nil {
 			log.Logf(log.PriErr, "checking whether Avahi entry group is empty: %v", err)
 		}
 
 		if !empty {
-			err := e.groups[containerID].Commit()
+			err := entryGroup.Commit()
 			if err != nil {
 				log.Logf(log.PriErr, "error committing: %v", err)
 			}
@@ -43,7 +51,7 @@ func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error)
 	e.mutex.Lock()
 	log.Logf(log.PriDebug, "got lock for container ID: %s", containerID)
 
-	if _, ok := e.groups[containerID]; !ok {
+	if _, ok := e.groups[containerID]; !ok && create {
 		entryGroup, err := e.avahiServer.EntryGroupNew()
 		if err != nil {
 			e.mutex.Unlock()
@@ -57,6 +65,23 @@ func (e *entryGroups) get(containerID string) (*avahi.EntryGroup, func(), error)
 	}
 
 	return e.groups[containerID], commit, nil
+}
+
+// free frees the entry group of a container and forgets it. Freeing the
+// group closes its state channel, which stops logStateChanges.
+func (e *entryGroups) free(containerID string) {
+	e.mutex.Lock()
+	defer e.mutex.Unlock()
+
+	entryGroup, ok := e.groups[containerID]
+	if !ok {
+		return
+	}
+
+	e.avahiServer.EntryGroupFree(entryGroup)
+	delete(e.groups, containerID)
+
+	log.Logf(log.PriDebug, "freed Avahi entry group for container %s", containerID)
 }
 
 // logStateChanges reads the state changes of an entry group. When one of
