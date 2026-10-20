@@ -3,8 +3,9 @@
 A systemd service that will monitor your Docker host and provide
 DNS names for the containers.
 
-The service broadcasts the domain names using multicast DNS
-(a.k.a. mDNS, zeroconf, Bonjour, Avahi).
+The service answers for the domain names with its own multicast DNS
+responder (a.k.a. mDNS, zeroconf, Bonjour). It answers only on the
+Docker networks of the containers, so the names do not reach your LAN.
 
 A limitation of this is that domains name can only be on the `.local`
 TLD and only have one level below the TLD. A benefit is that you don't
@@ -66,6 +67,17 @@ Environment=LDDDNS_HOSTNAME_LOOKUP=env:VIRTUAL_HOST,containerName
 Environment=LDDDNS_IGNORE_DOCKER_COMPOSE_ONEOFF=true
 ```
 
+## Requirements
+
+The host needs an mDNS resolver, because `ldddns` only answers for
+the names. Use one of these:
+
+* Avahi with nss-mdns (`avahi-daemon` and `libnss-mdns`). Most
+  desktop distributions install these by default.
+* systemd-resolved with `MulticastDNS=yes`.
+
+`ldddns` shares UDP port 5353 with the resolver.
+
 ## Install
 
 For Pop!_OS, Ubuntu, Debian and the like, download the `.deb` package
@@ -117,8 +129,8 @@ jan 07 12:46:11 pop-os systemd[1]: Starting Local Docker Development DNS...
 jan 07 12:46:11 pop-os ldddns[5414]: Starting ldddns v1.0.13...
 jan 07 12:46:11 pop-os systemd[1]: Started Local Docker Development DNS.
 jan 07 12:46:11 pop-os ldddns[5414]: Rewrote hostname from "my.example.com" to "my-example.local"
-jan 07 12:46:11 pop-os ldddns[5414]: added address for "my-example.local" pointing to "172.18.0.2"
-jan 07 12:46:11 pop-os ldddns[5414]: added service "_https._tcp" pointing to "my-example.local"
+jan 07 12:46:12 pop-os ldddns[5414]: mDNS name my-example.local. of container 3f0c… is live
+jan 07 12:46:12 pop-os ldddns[5414]: mDNS name my-example._https._tcp.local. of container 3f0c… is live
 ```
 
 Or follow the log with:
