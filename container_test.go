@@ -20,7 +20,8 @@ const (
 
 	inspectWithoutIPs = `{"Id":"abc123","Name":"/test","Config":{"Labels":{}},"NetworkSettings":{"Networks":{}}}`
 	inspectOneoff     = `{"Id":"abc123","Name":"/test",` +
-		`"Config":{"Labels":{"com.docker.compose.oneoff":"True"}},"NetworkSettings":{"Networks":{}}}`
+		`"Config":{"Labels":{"com.docker.compose.oneoff":"True"}},` +
+		`"NetworkSettings":{"Networks":{"bridge":{"IPAddress":"172.17.0.2"}}}}`
 )
 
 // fakeDocker is a fake Docker API. It answers container list and inspect
