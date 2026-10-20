@@ -72,7 +72,7 @@ func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGTERM)
 	defer stop()
 
-	go exitAfterShutdownTimeout(ctx)
+	go exitAfterShutdownTimeout(ctx, shutdownTimeout, os.Exit)
 
 	conn, err := dbus.SystemBus()
 	if err != nil {
@@ -108,12 +108,12 @@ func main() {
 // exitAfterShutdownTimeout exits the process if a clean shutdown takes too
 // long. The go-avahi and D-Bus calls take no context, so a blocked call can
 // keep the event loop from returning.
-func exitAfterShutdownTimeout(ctx context.Context) {
+func exitAfterShutdownTimeout(ctx context.Context, timeout time.Duration, exit func(int)) {
 	<-ctx.Done()
-	time.Sleep(shutdownTimeout)
+	time.Sleep(timeout)
 
-	log.Logf(log.PriErr, "Shutdown did not finish within %s, exiting.", shutdownTimeout)
-	os.Exit(1)
+	log.Logf(log.PriErr, "Shutdown did not finish within %s, exiting.", timeout)
+	exit(1)
 }
 
 func sdNotify(state string, version string, config Config) error {
