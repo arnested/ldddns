@@ -3,6 +3,7 @@ module ldddns.arnested.dk
 go 1.27.3
 
 require (
+	codeberg.org/miekg/dns v0.6.118
 	github.com/carlmjohnson/versioninfo v0.22.5
 	github.com/coreos/go-systemd/v22 v22.7.0
 	github.com/godbus/dbus/v5 v5.2.4
@@ -12,6 +13,7 @@ require (
 	github.com/moby/moby/api v1.56.1
 	github.com/moby/moby/client v0.6.2
 	golang.org/x/net v0.61.0
+	golang.org/x/sys v0.49.0
 	honnef.co/go/netdb v0.0.0-20210921115105-e902e863d85d
 )
 
@@ -35,6 +37,6 @@ require (
 	go.opentelemetry.io/otel/log v1.47.0 // indirect
 	go.opentelemetry.io/otel/metric v1.47.0 // indirect
 	go.opentelemetry.io/otel/trace v1.47.0 // indirect
-	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/crypto v0.58.0 // indirect
 	golang.org/x/text v0.43.0 // indirect
 )
