@@ -198,9 +198,9 @@ func (r *Responder) probingDone(owner string) bool {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 
-	ent, ok := r.entries[owner]
+	ent := r.entries[owner]
 
-	return ok && !ent.probing
+	return ent != nil && !ent.probing
 }
 
 // publishLive publishes the test set and waits until probing and the
@@ -604,10 +604,16 @@ func TestOwnPacketsAreNoConflict(t *testing.T) {
 	response := newResponse()
 
 	responder.mutex.Lock()
-	for _, rec := range responder.entries["c1"].records {
+	ent := responder.entries["c1"]
+	responder.mutex.Unlock()
+
+	if ent == nil {
+		t.Fatal("Expected an entry for c1")
+	}
+
+	for _, rec := range ent.records {
 		response.Answer = append(response.Answer, rec.res)
 	}
-	responder.mutex.Unlock()
 
 	err := response.Pack()
 	if err != nil {
