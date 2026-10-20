@@ -6,9 +6,7 @@ require (
 	codeberg.org/miekg/dns v0.6.118
 	github.com/carlmjohnson/versioninfo v0.22.5
 	github.com/coreos/go-systemd/v22 v22.7.0
-	github.com/godbus/dbus/v5 v5.2.4
 	github.com/google/gops v0.3.29
-	github.com/holoplot/go-avahi v1.1.0
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/moby/moby/api v1.56.1
 	github.com/moby/moby/client v0.6.2

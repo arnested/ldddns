@@ -5,13 +5,16 @@ import (
 	"fmt"
 	"net/http"
 	"net/http/httptest"
+	"net/netip"
+	"slices"
+	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
 
-	"github.com/holoplot/go-avahi"
 	"github.com/moby/moby/api/types/events"
 	"github.com/moby/moby/client"
+	"ldddns.arnested.dk/internal/mdns"
 )
 
 const (
@@ -22,7 +25,36 @@ const (
 	inspectOneoff     = `{"Id":"abc123","Name":"/test",` +
 		`"Config":{"Labels":{"com.docker.compose.oneoff":"True"}},` +
 		`"NetworkSettings":{"Networks":{"bridge":{"IPAddress":"172.17.0.2"}}}}`
+	inspectWithIPs = `{"Id":"abc123","Name":"/test",` +
+		`"Config":{"Labels":{},"Env":["VIRTUAL_HOST=foo.local"]},` +
+		`"NetworkSettings":{"Networks":{"bridge":{"IPAddress":"172.17.0.2"}},` +
+		`"Ports":{"443/tcp":null,"80/tcp":null}}}`
 )
+
+// fakePublisher records the calls of handleContainer.
+type fakePublisher struct {
+	mutex       sync.Mutex
+	published   map[string]mdns.RecordSet
+	unpublished []string
+}
+
+func newFakePublisher() *fakePublisher {
+	return &fakePublisher{mutex: sync.Mutex{}, published: make(map[string]mdns.RecordSet), unpublished: nil}
+}
+
+func (f *fakePublisher) Publish(owner string, set mdns.RecordSet) {
+	f.mutex.Lock()
+	defer f.mutex.Unlock()
+
+	f.published[owner] = set
+}
+
+func (f *fakePublisher) Unpublish(owner string) {
+	f.mutex.Lock()
+	defer f.mutex.Unlock()
+
+	f.unpublished = append(f.unpublished, owner)
+}
 
 // fakeDocker is a fake Docker API. It answers container list and inspect
 // requests and streams the events it reads from its events channel.
@@ -117,16 +149,16 @@ func TestHandleContainerStopEvents(t *testing.T) {
 		t.Run(status, func(t *testing.T) {
 			t.Parallel()
 
-			egs := newEntryGroups(nil)
+			pub := newFakePublisher()
 
 			// A nil Docker client proves that stop events make no Docker calls.
-			err := handleContainer(t.Context(), nil, testContainerID, egs, events.Action(status), Config{})
+			err := handleContainer(t.Context(), nil, testContainerID, pub, events.Action(status), Config{})
 			if err != nil {
 				t.Errorf("Expected no error, got %v", err)
 			}
 
-			if len(egs.groups) != 0 {
-				t.Error("Expected stop events to create no entry group")
+			if len(pub.published) != 0 || !slices.Equal(pub.unpublished, []string{testContainerID}) {
+				t.Error("Expected stop events to unpublish the container")
 			}
 		})
 	}
@@ -136,13 +168,14 @@ func TestHandleContainerStart(t *testing.T) {
 	t.Parallel()
 
 	tests := []struct {
-		name      string
-		inspect   string
-		expectErr bool
+		name        string
+		inspect     string
+		expectErr   bool
+		unpublished bool
 	}{
-		{name: "without IP addresses", inspect: inspectWithoutIPs, expectErr: false},
-		{name: "oneoff", inspect: inspectOneoff, expectErr: false},
-		{name: "inspect fails", inspect: "", expectErr: true},
+		{name: "without IP addresses", inspect: inspectWithoutIPs, expectErr: false, unpublished: true},
+		{name: "oneoff", inspect: inspectOneoff, expectErr: false, unpublished: false},
+		{name: "inspect fails", inspect: "", expectErr: true, unpublished: false},
 	}
 
 	for _, testCase := range tests {
@@ -150,18 +183,64 @@ func TestHandleContainerStart(t *testing.T) {
 			t.Parallel()
 
 			fake := &fakeDocker{inspect: testCase.inspect}
-			egs := newEntryGroups(nil)
+			pub := newFakePublisher()
 			config := Config{IgnoreDockerComposeOneoff: true}
 
-			err := handleContainer(t.Context(), fake.client(t), testContainerID, egs, "start", config)
+			err := handleContainer(t.Context(), fake.client(t), testContainerID, pub, "start", config)
 			if (err != nil) != testCase.expectErr {
 				t.Errorf("Expected error %v, got %v", testCase.expectErr, err)
 			}
 
-			if len(egs.groups) != 0 {
-				t.Error("Expected no entry group")
+			if len(pub.published) != 0 {
+				t.Error("Expected nothing published")
+			}
+
+			if (len(pub.unpublished) > 0) != testCase.unpublished {
+				t.Errorf("Expected unpublish %v, got %v", testCase.unpublished, pub.unpublished)
 			}
 		})
+	}
+}
+
+func TestHandleContainerPublishes(t *testing.T) {
+	t.Parallel()
+
+	fake := &fakeDocker{inspect: inspectWithIPs}
+	pub := newFakePublisher()
+	config := Config{HostnameLookup: []string{"env:VIRTUAL_HOST", "containerName"}}
+
+	err := handleContainer(t.Context(), fake.client(t), testContainerID, pub, "start", config)
+	if err != nil {
+		t.Fatalf("Expected no error, got %v", err)
+	}
+
+	set, ok := pub.published[testContainerID]
+	if !ok {
+		t.Fatal("Expected the container to be published")
+	}
+
+	if !slices.Equal(set.Hostnames, []string{"foo.local", "test.local"}) {
+		t.Errorf("Unexpected hostnames %v", set.Hostnames)
+	}
+
+	if !slices.Equal(set.Addresses, []netip.Addr{netip.MustParseAddr("172.17.0.2")}) || set.Instance != "test" {
+		t.Errorf("Unexpected addresses %v or instance %q", set.Addresses, set.Instance)
+	}
+
+	// The services are sorted by type.
+	for i := 1; i < len(set.Services); i++ {
+		if set.Services[i-1].Type > set.Services[i].Type {
+			t.Errorf("Expected sorted services, got %v", set.Services)
+		}
+	}
+}
+
+func TestIPv4Addresses(t *testing.T) {
+	t.Parallel()
+
+	got := ipv4Addresses([]string{"172.17.0.2", "", "fd00::2", "bad"})
+	if !slices.Equal(got, []netip.Addr{netip.MustParseAddr("172.17.0.2")}) {
+		t.Errorf("Expected only the IPv4 address, got %v", got)
 	}
 }
 
@@ -170,7 +249,7 @@ func TestHandleExistingContainers(t *testing.T) {
 
 	fake := &fakeDocker{inspect: inspectWithoutIPs, containers: 2}
 
-	handleExistingContainers(t.Context(), Config{}, fake.client(t), newEntryGroups(nil))
+	handleExistingContainers(t.Context(), Config{}, fake.client(t), newFakePublisher())
 
 	if got := fake.inspected.Load(); got != 2 {
 		t.Errorf("Expected 2 inspected containers, got %d", got)
@@ -185,7 +264,7 @@ func TestHandleExistingContainersStopsOnCancel(t *testing.T) {
 
 	fake := &fakeDocker{inspect: inspectWithoutIPs, containers: 2, onInspect: cancel}
 
-	handleExistingContainers(ctx, Config{}, fake.client(t), newEntryGroups(nil))
+	handleExistingContainers(ctx, Config{}, fake.client(t), newFakePublisher())
 
 	if got := fake.inspected.Load(); got != 1 {
 		t.Errorf("Expected 1 inspected container before the cancel, got %d", got)
@@ -211,7 +290,7 @@ func TestListen(t *testing.T) {
 	go func() {
 		defer close(done)
 
-		listen(ctx, Config{}, docker, newEntryGroups(nil), time.Now())
+		listen(ctx, Config{}, docker, newFakePublisher(), time.Now())
 	}()
 
 	fake.events <- `{"Type":"container","Action":"start","Actor":{"ID":"abc123"}}`
@@ -229,22 +308,6 @@ func TestListen(t *testing.T) {
 	case <-time.After(testTimeout):
 		t.Fatal("Expected listen to return when the context is cancelled")
 	}
-}
-
-func TestLogStateChanges(t *testing.T) {
-	t.Parallel()
-
-	states := make(chan avahi.EntryGroupState, 3)
-	states <- avahi.EntryGroupState{State: avahi.EntryGroupCollision, Error: ""}
-
-	states <- avahi.EntryGroupState{State: avahi.EntryGroupFailure, Error: "failed"}
-
-	states <- avahi.EntryGroupState{State: avahi.EntryGroupEstablished, Error: ""}
-
-	close(states)
-
-	// logStateChanges must return when the channel closes.
-	logStateChanges(testContainerID, states)
 }
 
 func TestExitAfterShutdownTimeout(t *testing.T) {
