@@ -11,7 +11,7 @@ require (
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/moby/moby/api v1.56.1
 	github.com/moby/moby/client v0.6.2
-	golang.org/x/net v0.61.0
+	golang.org/x/net v0.62.0
 	honnef.co/go/netdb v0.0.0-20210921115105-e902e863d85d
 )
 
